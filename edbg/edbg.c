@@ -841,7 +841,7 @@ static void print_help(char *name)
   printf("  -p, --program              program the chip\n");
   printf("  -v, --verify               verify memory\n");
   printf("  -k, --lock                 lock the chip (set security bit)\n");
-  printf("  -r, --read                 read the conents of the chip\n");
+  printf("  -r, --read                 read the contents of the chip\n");
   printf("  -f, --file <file>          binary file to be programmed or verified\n");
   printf("  -l, --list                 list all available debuggers\n");
   printf("  -s, --serial <number>      use a debugger with a specified serial number\n");
