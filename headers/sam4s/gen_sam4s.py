@@ -124,15 +124,22 @@ def main():
     print ''
     print '// 0x%08x %s' % (base, name)
     for reg in regs:
+      print ''
       if len(reg) == 2:
         reg_offs, reg_name = reg
-        print ''
-        print '#define %s_%s\tMMIO_REG(0x%08x, uint32_t)' % (name, reg_name, base + reg_offs)
+
+        if isinstance(reg_offs, tuple):
+          print '#define %s_%s(n)\tMMIO_REG(0x%08x + n*4, uint32_t)' % (name, reg_name, base + reg_offs[0])
+        else:
+          print '#define %s_%s\tMMIO_REG(0x%08x, uint32_t)' % (name, reg_name, base + reg_offs)
 
       else:
         reg_offs, reg_name, reg_fields = reg
-        print ''
-        print '#define %s_%s\tMMIO_REG(0x%08x, uint32_t)' % (name, reg_name, base + reg_offs)
+
+        if isinstance(reg_offs, tuple):
+          print '#define %s_%s(n)\tMMIO_REG(0x%08x + n*4, uint32_t)' % (name, reg_name, base + reg_offs[0])
+        else:
+          print '#define %s_%s\tMMIO_REG(0x%08x, uint32_t)' % (name, reg_name, base + reg_offs)
 
         field_offset = 0
         for field_name, field_size in reg_fields:
@@ -150,7 +157,10 @@ def main():
           field_offset += field_size
 
         print ''
-        print '#define %s_%s_s    MMIO_REG(0x%08x, struct __struct_%s_%s)' % (name, reg_name, base + reg_offs, name, reg_name)
+        if isinstance(reg_offs, tuple):
+          print '#define %s_%s_s(n)\tMMIO_REG(0x%08x + n*4, struct __struct_%s_%s)' % (name, reg_name, base + reg_offs[0], name, reg_name)
+        else:
+          print '#define %s_%s_s\tMMIO_REG(0x%08x, struct __struct_%s_%s)' % (name, reg_name, base + reg_offs, name, reg_name)
         print 'struct __struct_%s_%s' % (name, reg_name)
         print '{'
         for field_name, field_size in reg_fields:

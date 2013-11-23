@@ -38,7 +38,7 @@
 #define NVIC_ISER0_DACC	(1 << 30)
 #define NVIC_ISER0_PWM	(1 << 31)
 
-#define NVIC_ISER0_s    MMIO_REG(0xe000e100, struct __struct_NVIC_ISER0)
+#define NVIC_ISER0_s	MMIO_REG(0xe000e100, struct __struct_NVIC_ISER0)
 struct __struct_NVIC_ISER0
 {
   uint32_t supc : 1;
@@ -79,7 +79,7 @@ struct __struct_NVIC_ISER0
 #define NVIC_ISER1_ACC	(1 << 1)
 #define NVIC_ISER1_UDP	(1 << 2)
 
-#define NVIC_ISER1_s    MMIO_REG(0xe000e104, struct __struct_NVIC_ISER1)
+#define NVIC_ISER1_s	MMIO_REG(0xe000e104, struct __struct_NVIC_ISER1)
 struct __struct_NVIC_ISER1
 {
   uint32_t crccu : 1;
@@ -120,7 +120,7 @@ struct __struct_NVIC_ISER1
 #define NVIC_ICER0_DACC	(1 << 30)
 #define NVIC_ICER0_PWM	(1 << 31)
 
-#define NVIC_ICER0_s    MMIO_REG(0xe000e180, struct __struct_NVIC_ICER0)
+#define NVIC_ICER0_s	MMIO_REG(0xe000e180, struct __struct_NVIC_ICER0)
 struct __struct_NVIC_ICER0
 {
   uint32_t supc : 1;
@@ -161,7 +161,7 @@ struct __struct_NVIC_ICER0
 #define NVIC_ICER1_ACC	(1 << 1)
 #define NVIC_ICER1_UDP	(1 << 2)
 
-#define NVIC_ICER1_s    MMIO_REG(0xe000e184, struct __struct_NVIC_ICER1)
+#define NVIC_ICER1_s	MMIO_REG(0xe000e184, struct __struct_NVIC_ICER1)
 struct __struct_NVIC_ICER1
 {
   uint32_t crccu : 1;
@@ -202,7 +202,7 @@ struct __struct_NVIC_ICER1
 #define NVIC_ISPR0_DACC	(1 << 30)
 #define NVIC_ISPR0_PWM	(1 << 31)
 
-#define NVIC_ISPR0_s    MMIO_REG(0xe000e200, struct __struct_NVIC_ISPR0)
+#define NVIC_ISPR0_s	MMIO_REG(0xe000e200, struct __struct_NVIC_ISPR0)
 struct __struct_NVIC_ISPR0
 {
   uint32_t supc : 1;
@@ -243,7 +243,7 @@ struct __struct_NVIC_ISPR0
 #define NVIC_ISPR1_ACC	(1 << 1)
 #define NVIC_ISPR1_UDP	(1 << 2)
 
-#define NVIC_ISPR1_s    MMIO_REG(0xe000e204, struct __struct_NVIC_ISPR1)
+#define NVIC_ISPR1_s	MMIO_REG(0xe000e204, struct __struct_NVIC_ISPR1)
 struct __struct_NVIC_ISPR1
 {
   uint32_t crccu : 1;
@@ -284,7 +284,7 @@ struct __struct_NVIC_ISPR1
 #define NVIC_ICPR0_DACC	(1 << 30)
 #define NVIC_ICPR0_PWM	(1 << 31)
 
-#define NVIC_ICPR0_s    MMIO_REG(0xe000e280, struct __struct_NVIC_ICPR0)
+#define NVIC_ICPR0_s	MMIO_REG(0xe000e280, struct __struct_NVIC_ICPR0)
 struct __struct_NVIC_ICPR0
 {
   uint32_t supc : 1;
@@ -325,7 +325,7 @@ struct __struct_NVIC_ICPR0
 #define NVIC_ICPR1_ACC	(1 << 1)
 #define NVIC_ICPR1_UDP	(1 << 2)
 
-#define NVIC_ICPR1_s    MMIO_REG(0xe000e284, struct __struct_NVIC_ICPR1)
+#define NVIC_ICPR1_s	MMIO_REG(0xe000e284, struct __struct_NVIC_ICPR1)
 struct __struct_NVIC_ICPR1
 {
   uint32_t crccu : 1;
@@ -366,7 +366,7 @@ struct __struct_NVIC_ICPR1
 #define NVIC_IABR0_DACC	(1 << 30)
 #define NVIC_IABR0_PWM	(1 << 31)
 
-#define NVIC_IABR0_s    MMIO_REG(0xe000e300, struct __struct_NVIC_IABR0)
+#define NVIC_IABR0_s	MMIO_REG(0xe000e300, struct __struct_NVIC_IABR0)
 struct __struct_NVIC_IABR0
 {
   uint32_t supc : 1;
@@ -407,7 +407,7 @@ struct __struct_NVIC_IABR0
 #define NVIC_IABR1_ACC	(1 << 1)
 #define NVIC_IABR1_UDP	(1 << 2)
 
-#define NVIC_IABR1_s    MMIO_REG(0xe000e304, struct __struct_NVIC_IABR1)
+#define NVIC_IABR1_s	MMIO_REG(0xe000e304, struct __struct_NVIC_IABR1)
 struct __struct_NVIC_IABR1
 {
   uint32_t crccu : 1;
@@ -430,7 +430,7 @@ struct __struct_NVIC_IABR1
 #define NVIC_IPR0_RTT_MSK	0xff000000
 #define NVIC_IPR0_RTT_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR0_s    MMIO_REG(0xe000e400, struct __struct_NVIC_IPR0)
+#define NVIC_IPR0_s	MMIO_REG(0xe000e400, struct __struct_NVIC_IPR0)
 struct __struct_NVIC_IPR0
 {
   uint32_t supc : 8;
@@ -453,7 +453,7 @@ struct __struct_NVIC_IPR0
 #define NVIC_IPR1_EEFC1_MSK	0xff000000
 #define NVIC_IPR1_EEFC1_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR1_s    MMIO_REG(0xe000e404, struct __struct_NVIC_IPR1)
+#define NVIC_IPR1_s	MMIO_REG(0xe000e404, struct __struct_NVIC_IPR1)
 struct __struct_NVIC_IPR1
 {
   uint32_t wdt : 8;
@@ -476,7 +476,7 @@ struct __struct_NVIC_IPR1
 #define NVIC_IPR2_PIOA_MSK	0xff000000
 #define NVIC_IPR2_PIOA_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR2_s    MMIO_REG(0xe000e408, struct __struct_NVIC_IPR2)
+#define NVIC_IPR2_s	MMIO_REG(0xe000e408, struct __struct_NVIC_IPR2)
 struct __struct_NVIC_IPR2
 {
   uint32_t uart0 : 8;
@@ -499,7 +499,7 @@ struct __struct_NVIC_IPR2
 #define NVIC_IPR3_USART1_MSK	0xff000000
 #define NVIC_IPR3_USART1_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR3_s    MMIO_REG(0xe000e40c, struct __struct_NVIC_IPR3)
+#define NVIC_IPR3_s	MMIO_REG(0xe000e40c, struct __struct_NVIC_IPR3)
 struct __struct_NVIC_IPR3
 {
   uint32_t piob : 8;
@@ -516,7 +516,7 @@ struct __struct_NVIC_IPR3
 #define NVIC_IPR4_TWI0_MSK	0xff000000
 #define NVIC_IPR4_TWI0_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR4_s    MMIO_REG(0xe000e410, struct __struct_NVIC_IPR4)
+#define NVIC_IPR4_s	MMIO_REG(0xe000e410, struct __struct_NVIC_IPR4)
 struct __struct_NVIC_IPR4
 {
   uint32_t  : 8;
@@ -539,7 +539,7 @@ struct __struct_NVIC_IPR4
 #define NVIC_IPR5_TC0_MSK	0xff000000
 #define NVIC_IPR5_TC0_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR5_s    MMIO_REG(0xe000e414, struct __struct_NVIC_IPR5)
+#define NVIC_IPR5_s	MMIO_REG(0xe000e414, struct __struct_NVIC_IPR5)
 struct __struct_NVIC_IPR5
 {
   uint32_t twi1 : 8;
@@ -562,7 +562,7 @@ struct __struct_NVIC_IPR5
 #define NVIC_IPR6_TC4_MSK	0xff000000
 #define NVIC_IPR6_TC4_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR6_s    MMIO_REG(0xe000e418, struct __struct_NVIC_IPR6)
+#define NVIC_IPR6_s	MMIO_REG(0xe000e418, struct __struct_NVIC_IPR6)
 struct __struct_NVIC_IPR6
 {
   uint32_t tc1 : 8;
@@ -585,7 +585,7 @@ struct __struct_NVIC_IPR6
 #define NVIC_IPR7_PWM_MSK	0xff000000
 #define NVIC_IPR7_PWM_VAL(x)	(((x) >> 24) & 0xff)
 
-#define NVIC_IPR7_s    MMIO_REG(0xe000e41c, struct __struct_NVIC_IPR7)
+#define NVIC_IPR7_s	MMIO_REG(0xe000e41c, struct __struct_NVIC_IPR7)
 struct __struct_NVIC_IPR7
 {
   uint32_t tc5 : 8;
@@ -605,7 +605,7 @@ struct __struct_NVIC_IPR7
 #define NVIC_IPR8_UDP_MSK	0x00ff0000
 #define NVIC_IPR8_UDP_VAL(x)	(((x) >> 16) & 0xff)
 
-#define NVIC_IPR8_s    MMIO_REG(0xe000e420, struct __struct_NVIC_IPR8)
+#define NVIC_IPR8_s	MMIO_REG(0xe000e420, struct __struct_NVIC_IPR8)
 struct __struct_NVIC_IPR8
 {
   uint32_t crccu : 8;
@@ -619,7 +619,7 @@ struct __struct_NVIC_IPR8
 #define NVIC_STIR_INTID_MSK	0x000001ff
 #define NVIC_STIR_INTID_VAL(x)	(((x) >> 0) & 0x1ff)
 
-#define NVIC_STIR_s    MMIO_REG(0xe000ef00, struct __struct_NVIC_STIR)
+#define NVIC_STIR_s	MMIO_REG(0xe000ef00, struct __struct_NVIC_STIR)
 struct __struct_NVIC_STIR
 {
   uint32_t intid : 9;
@@ -635,7 +635,7 @@ struct __struct_NVIC_STIR
 #define SCB_ACTLR_DISFPCA	(1 << 8)
 #define SCB_ACTLR_DISOOFP	(1 << 9)
 
-#define SCB_ACTLR_s    MMIO_REG(0xe000e008, struct __struct_SCB_ACTLR)
+#define SCB_ACTLR_s	MMIO_REG(0xe000e008, struct __struct_SCB_ACTLR)
 struct __struct_SCB_ACTLR
 {
   uint32_t dismcycint : 1;
@@ -664,7 +664,7 @@ struct __struct_SCB_ACTLR
 #define SCB_CPUID_IMPLEMENTER_MSK	0xff000000
 #define SCB_CPUID_IMPLEMENTER_VAL(x)	(((x) >> 24) & 0xff)
 
-#define SCB_CPUID_s    MMIO_REG(0xe000ed00, struct __struct_SCB_CPUID)
+#define SCB_CPUID_s	MMIO_REG(0xe000ed00, struct __struct_SCB_CPUID)
 struct __struct_SCB_CPUID
 {
   uint32_t revision : 4;
@@ -689,7 +689,7 @@ struct __struct_SCB_CPUID
 #define SCB_ICSR_PENDSVSET	(1 << 28)
 #define SCB_ICSR_NMIPENDSET	(1 << 31)
 
-#define SCB_ICSR_s    MMIO_REG(0xe000ed04, struct __struct_SCB_ICSR)
+#define SCB_ICSR_s	MMIO_REG(0xe000ed04, struct __struct_SCB_ICSR)
 struct __struct_SCB_ICSR
 {
   uint32_t vectactive : 9;
@@ -711,7 +711,7 @@ struct __struct_SCB_ICSR
 #define SCB_VTOR_TBLOFF_MSK	0xffffff80
 #define SCB_VTOR_TBLOFF_VAL(x)	(((x) >> 7) & 0x1ffffff)
 
-#define SCB_VTOR_s    MMIO_REG(0xe000ed08, struct __struct_SCB_VTOR)
+#define SCB_VTOR_s	MMIO_REG(0xe000ed08, struct __struct_SCB_VTOR)
 struct __struct_SCB_VTOR
 {
   uint32_t  : 7;
@@ -730,7 +730,7 @@ struct __struct_SCB_VTOR
 #define SCB_AIRCR_VECTKEY_MSK	0xffff0000
 #define SCB_AIRCR_VECTKEY_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define SCB_AIRCR_s    MMIO_REG(0xe000ed0c, struct __struct_SCB_AIRCR)
+#define SCB_AIRCR_s	MMIO_REG(0xe000ed0c, struct __struct_SCB_AIRCR)
 struct __struct_SCB_AIRCR
 {
   uint32_t vectreset : 1;
@@ -748,7 +748,7 @@ struct __struct_SCB_AIRCR
 #define SCB_SCR_SLEEPDEEP	(1 << 2)
 #define SCB_SCR_SEVONPEND	(1 << 4)
 
-#define SCB_SCR_s    MMIO_REG(0xe000ed10, struct __struct_SCB_SCR)
+#define SCB_SCR_s	MMIO_REG(0xe000ed10, struct __struct_SCB_SCR)
 struct __struct_SCB_SCR
 {
   uint32_t  : 1;
@@ -767,7 +767,7 @@ struct __struct_SCB_SCR
 #define SCB_CCR_BFHFNMIGN	(1 << 8)
 #define SCB_CCR_STKALIGN	(1 << 9)
 
-#define SCB_CCR_s    MMIO_REG(0xe000ed14, struct __struct_SCB_CCR)
+#define SCB_CCR_s	MMIO_REG(0xe000ed14, struct __struct_SCB_CCR)
 struct __struct_SCB_CCR
 {
   uint32_t nonebasethrdena : 1;
@@ -792,7 +792,7 @@ struct __struct_SCB_CCR
 #define SCB_SHPR1_PRI_6_MSK	0x00ff0000
 #define SCB_SHPR1_PRI_6_VAL(x)	(((x) >> 16) & 0xff)
 
-#define SCB_SHPR1_s    MMIO_REG(0xe000ed18, struct __struct_SCB_SHPR1)
+#define SCB_SHPR1_s	MMIO_REG(0xe000ed18, struct __struct_SCB_SHPR1)
 struct __struct_SCB_SHPR1
 {
   uint32_t pri_4 : 8;
@@ -806,7 +806,7 @@ struct __struct_SCB_SHPR1
 #define SCB_SHPR2_PRI_11_MSK	0xff000000
 #define SCB_SHPR2_PRI_11_VAL(x)	(((x) >> 24) & 0xff)
 
-#define SCB_SHPR2_s    MMIO_REG(0xe000ed1c, struct __struct_SCB_SHPR2)
+#define SCB_SHPR2_s	MMIO_REG(0xe000ed1c, struct __struct_SCB_SHPR2)
 struct __struct_SCB_SHPR2
 {
   uint32_t  : 24;
@@ -821,7 +821,7 @@ struct __struct_SCB_SHPR2
 #define SCB_SHPR3_PRI_15_MSK	0xff000000
 #define SCB_SHPR3_PRI_15_VAL(x)	(((x) >> 24) & 0xff)
 
-#define SCB_SHPR3_s    MMIO_REG(0xe000ed20, struct __struct_SCB_SHPR3)
+#define SCB_SHPR3_s	MMIO_REG(0xe000ed20, struct __struct_SCB_SHPR3)
 struct __struct_SCB_SHPR3
 {
   uint32_t  : 16;
@@ -845,7 +845,7 @@ struct __struct_SCB_SHPR3
 #define SCB_SHCSR_BUSFAULTENA	(1 << 17)
 #define SCB_SHCSR_USGFAULTENA	(1 << 18)
 
-#define SCB_SHCSR_s    MMIO_REG(0xe000ed24, struct __struct_SCB_SHCSR)
+#define SCB_SHCSR_s	MMIO_REG(0xe000ed24, struct __struct_SCB_SHCSR)
 struct __struct_SCB_SHCSR
 {
   uint32_t memfaultact : 1;
@@ -888,7 +888,7 @@ struct __struct_SCB_SHCSR
 #define SCB_CFSR_UNALIGNED	(1 << 24)
 #define SCB_CFSR_DIVBYZERO	(1 << 25)
 
-#define SCB_CFSR_s    MMIO_REG(0xe000ed28, struct __struct_SCB_CFSR)
+#define SCB_CFSR_s	MMIO_REG(0xe000ed28, struct __struct_SCB_CFSR)
 struct __struct_SCB_CFSR
 {
   uint32_t iaccviol : 1;
@@ -921,7 +921,7 @@ struct __struct_SCB_CFSR
 #define SCB_HFSR_FORCED	(1 << 30)
 #define SCB_HFSR_DEBUGEVT	(1 << 31)
 
-#define SCB_HFSR_s    MMIO_REG(0xe000ed2c, struct __struct_SCB_HFSR)
+#define SCB_HFSR_s	MMIO_REG(0xe000ed2c, struct __struct_SCB_HFSR)
 struct __struct_SCB_HFSR
 {
   uint32_t  : 1;
@@ -945,7 +945,7 @@ struct __struct_SCB_HFSR
 #define SYST_CSR_CLKSOURCE	(1 << 2)
 #define SYST_CSR_COUNTFLAG	(1 << 16)
 
-#define SYST_CSR_s    MMIO_REG(0xe000e010, struct __struct_SYST_CSR)
+#define SYST_CSR_s	MMIO_REG(0xe000e010, struct __struct_SYST_CSR)
 struct __struct_SYST_CSR
 {
   uint32_t enable : 1;
@@ -961,7 +961,7 @@ struct __struct_SYST_CSR
 #define SYST_RVR_RELOAD_MSK	0x00ffffff
 #define SYST_RVR_RELOAD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define SYST_RVR_s    MMIO_REG(0xe000e014, struct __struct_SYST_RVR)
+#define SYST_RVR_s	MMIO_REG(0xe000e014, struct __struct_SYST_RVR)
 struct __struct_SYST_RVR
 {
   uint32_t reload : 24;
@@ -973,7 +973,7 @@ struct __struct_SYST_RVR
 #define SYST_CVR_CURRENT_MSK	0x00ffffff
 #define SYST_CVR_CURRENT_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define SYST_CVR_s    MMIO_REG(0xe000e018, struct __struct_SYST_CVR)
+#define SYST_CVR_s	MMIO_REG(0xe000e018, struct __struct_SYST_CVR)
 struct __struct_SYST_CVR
 {
   uint32_t current : 24;
@@ -987,7 +987,7 @@ struct __struct_SYST_CVR
 #define SYST_CALIB_SKEW	(1 << 30)
 #define SYST_CALIB_NOREF	(1 << 31)
 
-#define SYST_CALIB_s    MMIO_REG(0xe000e01c, struct __struct_SYST_CALIB)
+#define SYST_CALIB_s	MMIO_REG(0xe000e01c, struct __struct_SYST_CALIB)
 struct __struct_SYST_CALIB
 {
   uint32_t tenms : 24;
@@ -1007,7 +1007,7 @@ struct __struct_SYST_CALIB
 #define MPU_TYPE_IREGION_MSK	0x00ff0000
 #define MPU_TYPE_IREGION_VAL(x)	(((x) >> 16) & 0xff)
 
-#define MPU_TYPE_s    MMIO_REG(0xe000ed90, struct __struct_MPU_TYPE)
+#define MPU_TYPE_s	MMIO_REG(0xe000ed90, struct __struct_MPU_TYPE)
 struct __struct_MPU_TYPE
 {
   uint32_t separate : 1;
@@ -1022,7 +1022,7 @@ struct __struct_MPU_TYPE
 #define MPU_CTRL_HFNMIENA	(1 << 1)
 #define MPU_CTRL_PRIVDEFENA	(1 << 2)
 
-#define MPU_CTRL_s    MMIO_REG(0xe000ed94, struct __struct_MPU_CTRL)
+#define MPU_CTRL_s	MMIO_REG(0xe000ed94, struct __struct_MPU_CTRL)
 struct __struct_MPU_CTRL
 {
   uint32_t enable : 1;
@@ -1036,7 +1036,7 @@ struct __struct_MPU_CTRL
 #define MPU_RNR_REGION_MSK	0x000000ff
 #define MPU_RNR_REGION_VAL(x)	(((x) >> 0) & 0xff)
 
-#define MPU_RNR_s    MMIO_REG(0xe000ed98, struct __struct_MPU_RNR)
+#define MPU_RNR_s	MMIO_REG(0xe000ed98, struct __struct_MPU_RNR)
 struct __struct_MPU_RNR
 {
   uint32_t region : 8;
@@ -1052,7 +1052,7 @@ struct __struct_MPU_RNR
 #define MPU_RBAR_ADDR_MSK	0xffffff00
 #define MPU_RBAR_ADDR_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define MPU_RBAR_s    MMIO_REG(0xe000ed9c, struct __struct_MPU_RBAR)
+#define MPU_RBAR_s	MMIO_REG(0xe000ed9c, struct __struct_MPU_RBAR)
 struct __struct_MPU_RBAR
 {
   uint32_t region : 4;
@@ -1080,7 +1080,7 @@ struct __struct_MPU_RBAR
 #define MPU_RASR_AP_VAL(x)	(((x) >> 24) & 0x7)
 #define MPU_RASR_XN	(1 << 28)
 
-#define MPU_RASR_s    MMIO_REG(0xe000eda0, struct __struct_MPU_RASR)
+#define MPU_RASR_s	MMIO_REG(0xe000eda0, struct __struct_MPU_RASR)
 struct __struct_MPU_RASR
 {
   uint32_t enable : 1;
@@ -1107,7 +1107,7 @@ struct __struct_MPU_RASR
 #define MPU_RBAR_A1_ADDR_MSK	0xffffff00
 #define MPU_RBAR_A1_ADDR_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define MPU_RBAR_A1_s    MMIO_REG(0xe000eda4, struct __struct_MPU_RBAR_A1)
+#define MPU_RBAR_A1_s	MMIO_REG(0xe000eda4, struct __struct_MPU_RBAR_A1)
 struct __struct_MPU_RBAR_A1
 {
   uint32_t region : 4;
@@ -1135,7 +1135,7 @@ struct __struct_MPU_RBAR_A1
 #define MPU_RASR_A1_AP_VAL(x)	(((x) >> 24) & 0x7)
 #define MPU_RASR_A1_XN	(1 << 28)
 
-#define MPU_RASR_A1_s    MMIO_REG(0xe000eda8, struct __struct_MPU_RASR_A1)
+#define MPU_RASR_A1_s	MMIO_REG(0xe000eda8, struct __struct_MPU_RASR_A1)
 struct __struct_MPU_RASR_A1
 {
   uint32_t enable : 1;
@@ -1162,7 +1162,7 @@ struct __struct_MPU_RASR_A1
 #define MPU_RBAR_A2_ADDR_MSK	0xffffff00
 #define MPU_RBAR_A2_ADDR_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define MPU_RBAR_A2_s    MMIO_REG(0xe000edac, struct __struct_MPU_RBAR_A2)
+#define MPU_RBAR_A2_s	MMIO_REG(0xe000edac, struct __struct_MPU_RBAR_A2)
 struct __struct_MPU_RBAR_A2
 {
   uint32_t region : 4;
@@ -1190,7 +1190,7 @@ struct __struct_MPU_RBAR_A2
 #define MPU_RASR_A2_AP_VAL(x)	(((x) >> 24) & 0x7)
 #define MPU_RASR_A2_XN	(1 << 28)
 
-#define MPU_RASR_A2_s    MMIO_REG(0xe000edb0, struct __struct_MPU_RASR_A2)
+#define MPU_RASR_A2_s	MMIO_REG(0xe000edb0, struct __struct_MPU_RASR_A2)
 struct __struct_MPU_RASR_A2
 {
   uint32_t enable : 1;
@@ -1217,7 +1217,7 @@ struct __struct_MPU_RASR_A2
 #define MPU_RBAR_A3_ADDR_MSK	0xffffff00
 #define MPU_RBAR_A3_ADDR_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define MPU_RBAR_A3_s    MMIO_REG(0xe000edb4, struct __struct_MPU_RBAR_A3)
+#define MPU_RBAR_A3_s	MMIO_REG(0xe000edb4, struct __struct_MPU_RBAR_A3)
 struct __struct_MPU_RBAR_A3
 {
   uint32_t region : 4;
@@ -1245,7 +1245,7 @@ struct __struct_MPU_RBAR_A3
 #define MPU_RASR_A3_AP_VAL(x)	(((x) >> 24) & 0x7)
 #define MPU_RASR_A3_XN	(1 << 28)
 
-#define MPU_RASR_A3_s    MMIO_REG(0xe000edb8, struct __struct_MPU_RASR_A3)
+#define MPU_RASR_A3_s	MMIO_REG(0xe000edb8, struct __struct_MPU_RASR_A3)
 struct __struct_MPU_RASR_A3
 {
   uint32_t enable : 1;
@@ -1289,7 +1289,7 @@ struct __struct_MPU_RASR_A3
 #define HSMCI_PDC_PTCR_TXTEN	(1 << 8)
 #define HSMCI_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define HSMCI_PDC_PTCR_s    MMIO_REG(0x40000120, struct __struct_HSMCI_PDC_PTCR)
+#define HSMCI_PDC_PTCR_s	MMIO_REG(0x40000120, struct __struct_HSMCI_PDC_PTCR)
 struct __struct_HSMCI_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -1304,7 +1304,7 @@ struct __struct_HSMCI_PDC_PTCR
 #define HSMCI_PDC_PTSR_RXTEN	(1 << 0)
 #define HSMCI_PDC_PTSR_TXTEN	(1 << 8)
 
-#define HSMCI_PDC_PTSR_s    MMIO_REG(0x40000124, struct __struct_HSMCI_PDC_PTSR)
+#define HSMCI_PDC_PTSR_s	MMIO_REG(0x40000124, struct __struct_HSMCI_PDC_PTSR)
 struct __struct_HSMCI_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -1375,7 +1375,7 @@ struct __struct_HSMCI_PDC_PTSR
 #define SSC_PDC_PTCR_TXTEN	(1 << 8)
 #define SSC_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define SSC_PDC_PTCR_s    MMIO_REG(0x40004120, struct __struct_SSC_PDC_PTCR)
+#define SSC_PDC_PTCR_s	MMIO_REG(0x40004120, struct __struct_SSC_PDC_PTCR)
 struct __struct_SSC_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -1390,7 +1390,7 @@ struct __struct_SSC_PDC_PTCR
 #define SSC_PDC_PTSR_RXTEN	(1 << 0)
 #define SSC_PDC_PTSR_TXTEN	(1 << 8)
 
-#define SSC_PDC_PTSR_s    MMIO_REG(0x40004124, struct __struct_SSC_PDC_PTSR)
+#define SSC_PDC_PTSR_s	MMIO_REG(0x40004124, struct __struct_SSC_PDC_PTSR)
 struct __struct_SSC_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -1453,7 +1453,7 @@ struct __struct_SSC_PDC_PTSR
 #define SPI_PDC_PTCR_TXTEN	(1 << 8)
 #define SPI_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define SPI_PDC_PTCR_s    MMIO_REG(0x40008120, struct __struct_SPI_PDC_PTCR)
+#define SPI_PDC_PTCR_s	MMIO_REG(0x40008120, struct __struct_SPI_PDC_PTCR)
 struct __struct_SPI_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -1468,7 +1468,7 @@ struct __struct_SPI_PDC_PTCR
 #define SPI_PDC_PTSR_RXTEN	(1 << 0)
 #define SPI_PDC_PTSR_TXTEN	(1 << 8)
 
-#define SPI_PDC_PTSR_s    MMIO_REG(0x40008124, struct __struct_SPI_PDC_PTSR)
+#define SPI_PDC_PTSR_s	MMIO_REG(0x40008124, struct __struct_SPI_PDC_PTSR)
 struct __struct_SPI_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -1484,7 +1484,7 @@ struct __struct_SPI_PDC_PTSR
 #define TC0_CCR0_CLKDIS	(1 << 1)
 #define TC0_CCR0_SWTRG	(1 << 2)
 
-#define TC0_CCR0_s    MMIO_REG(0x40010000, struct __struct_TC0_CCR0)
+#define TC0_CCR0_s	MMIO_REG(0x40010000, struct __struct_TC0_CCR0)
 struct __struct_TC0_CCR0
 {
   uint32_t clken : 1;
@@ -1539,7 +1539,7 @@ struct __struct_TC0_CCR0
 #define TC0_CMR0_BSWTRG_MSK	0xc0000000
 #define TC0_CMR0_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC0_CMR0_s    MMIO_REG(0x40010004, struct __struct_TC0_CMR0)
+#define TC0_CMR0_s	MMIO_REG(0x40010004, struct __struct_TC0_CMR0)
 struct __struct_TC0_CMR0
 {
   uint32_t tcclks : 3;
@@ -1585,7 +1585,7 @@ struct __struct_TC0_CMR0
 #define TC0_CMR0W_LDRB_MSK	0x000c0000
 #define TC0_CMR0W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC0_CMR0W_s    MMIO_REG(0x40010004, struct __struct_TC0_CMR0W)
+#define TC0_CMR0W_s	MMIO_REG(0x40010004, struct __struct_TC0_CMR0W)
 struct __struct_TC0_CMR0W
 {
   uint32_t tcclks : 3;
@@ -1607,7 +1607,7 @@ struct __struct_TC0_CMR0W
 #define TC0_SMMR0_GCEN	(1 << 0)
 #define TC0_SMMR0_DOWN	(1 << 1)
 
-#define TC0_SMMR0_s    MMIO_REG(0x40010008, struct __struct_TC0_SMMR0)
+#define TC0_SMMR0_s	MMIO_REG(0x40010008, struct __struct_TC0_SMMR0)
 struct __struct_TC0_SMMR0
 {
   uint32_t gcen : 1;
@@ -1636,7 +1636,7 @@ struct __struct_TC0_SMMR0
 #define TC0_SR0_MTIOA	(1 << 17)
 #define TC0_SR0_MTIOB	(1 << 18)
 
-#define TC0_SR0_s    MMIO_REG(0x40010020, struct __struct_TC0_SR0)
+#define TC0_SR0_s	MMIO_REG(0x40010020, struct __struct_TC0_SR0)
 struct __struct_TC0_SR0
 {
   uint32_t covfs : 1;
@@ -1664,7 +1664,7 @@ struct __struct_TC0_SR0
 #define TC0_IER0_LDRBS	(1 << 6)
 #define TC0_IER0_ETRGS	(1 << 7)
 
-#define TC0_IER0_s    MMIO_REG(0x40010024, struct __struct_TC0_IER0)
+#define TC0_IER0_s	MMIO_REG(0x40010024, struct __struct_TC0_IER0)
 struct __struct_TC0_IER0
 {
   uint32_t covfs : 1;
@@ -1688,7 +1688,7 @@ struct __struct_TC0_IER0
 #define TC0_IDR0_LDRBS	(1 << 6)
 #define TC0_IDR0_ETRGS	(1 << 7)
 
-#define TC0_IDR0_s    MMIO_REG(0x40010028, struct __struct_TC0_IDR0)
+#define TC0_IDR0_s	MMIO_REG(0x40010028, struct __struct_TC0_IDR0)
 struct __struct_TC0_IDR0
 {
   uint32_t covfs : 1;
@@ -1712,7 +1712,7 @@ struct __struct_TC0_IDR0
 #define TC0_IMR0_LDRBS	(1 << 6)
 #define TC0_IMR0_ETRGS	(1 << 7)
 
-#define TC0_IMR0_s    MMIO_REG(0x4001002c, struct __struct_TC0_IMR0)
+#define TC0_IMR0_s	MMIO_REG(0x4001002c, struct __struct_TC0_IMR0)
 struct __struct_TC0_IMR0
 {
   uint32_t covfs : 1;
@@ -1731,7 +1731,7 @@ struct __struct_TC0_IMR0
 #define TC0_CCR1_CLKDIS	(1 << 1)
 #define TC0_CCR1_SWTRG	(1 << 2)
 
-#define TC0_CCR1_s    MMIO_REG(0x40010040, struct __struct_TC0_CCR1)
+#define TC0_CCR1_s	MMIO_REG(0x40010040, struct __struct_TC0_CCR1)
 struct __struct_TC0_CCR1
 {
   uint32_t clken : 1;
@@ -1786,7 +1786,7 @@ struct __struct_TC0_CCR1
 #define TC0_CMR1_BSWTRG_MSK	0xc0000000
 #define TC0_CMR1_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC0_CMR1_s    MMIO_REG(0x40010044, struct __struct_TC0_CMR1)
+#define TC0_CMR1_s	MMIO_REG(0x40010044, struct __struct_TC0_CMR1)
 struct __struct_TC0_CMR1
 {
   uint32_t tcclks : 3;
@@ -1832,7 +1832,7 @@ struct __struct_TC0_CMR1
 #define TC0_CMR1W_LDRB_MSK	0x000c0000
 #define TC0_CMR1W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC0_CMR1W_s    MMIO_REG(0x40010044, struct __struct_TC0_CMR1W)
+#define TC0_CMR1W_s	MMIO_REG(0x40010044, struct __struct_TC0_CMR1W)
 struct __struct_TC0_CMR1W
 {
   uint32_t tcclks : 3;
@@ -1854,7 +1854,7 @@ struct __struct_TC0_CMR1W
 #define TC0_SMMR1_GCEN	(1 << 0)
 #define TC0_SMMR1_DOWN	(1 << 1)
 
-#define TC0_SMMR1_s    MMIO_REG(0x40010048, struct __struct_TC0_SMMR1)
+#define TC0_SMMR1_s	MMIO_REG(0x40010048, struct __struct_TC0_SMMR1)
 struct __struct_TC0_SMMR1
 {
   uint32_t gcen : 1;
@@ -1883,7 +1883,7 @@ struct __struct_TC0_SMMR1
 #define TC0_SR1_MTIOA	(1 << 17)
 #define TC0_SR1_MTIOB	(1 << 18)
 
-#define TC0_SR1_s    MMIO_REG(0x40010060, struct __struct_TC0_SR1)
+#define TC0_SR1_s	MMIO_REG(0x40010060, struct __struct_TC0_SR1)
 struct __struct_TC0_SR1
 {
   uint32_t covfs : 1;
@@ -1911,7 +1911,7 @@ struct __struct_TC0_SR1
 #define TC0_IER1_LDRBS	(1 << 6)
 #define TC0_IER1_ETRGS	(1 << 7)
 
-#define TC0_IER1_s    MMIO_REG(0x40010064, struct __struct_TC0_IER1)
+#define TC0_IER1_s	MMIO_REG(0x40010064, struct __struct_TC0_IER1)
 struct __struct_TC0_IER1
 {
   uint32_t covfs : 1;
@@ -1935,7 +1935,7 @@ struct __struct_TC0_IER1
 #define TC0_IDR1_LDRBS	(1 << 6)
 #define TC0_IDR1_ETRGS	(1 << 7)
 
-#define TC0_IDR1_s    MMIO_REG(0x40010068, struct __struct_TC0_IDR1)
+#define TC0_IDR1_s	MMIO_REG(0x40010068, struct __struct_TC0_IDR1)
 struct __struct_TC0_IDR1
 {
   uint32_t covfs : 1;
@@ -1959,7 +1959,7 @@ struct __struct_TC0_IDR1
 #define TC0_IMR1_LDRBS	(1 << 6)
 #define TC0_IMR1_ETRGS	(1 << 7)
 
-#define TC0_IMR1_s    MMIO_REG(0x4001006c, struct __struct_TC0_IMR1)
+#define TC0_IMR1_s	MMIO_REG(0x4001006c, struct __struct_TC0_IMR1)
 struct __struct_TC0_IMR1
 {
   uint32_t covfs : 1;
@@ -1978,7 +1978,7 @@ struct __struct_TC0_IMR1
 #define TC0_CCR2_CLKDIS	(1 << 1)
 #define TC0_CCR2_SWTRG	(1 << 2)
 
-#define TC0_CCR2_s    MMIO_REG(0x40010080, struct __struct_TC0_CCR2)
+#define TC0_CCR2_s	MMIO_REG(0x40010080, struct __struct_TC0_CCR2)
 struct __struct_TC0_CCR2
 {
   uint32_t clken : 1;
@@ -2033,7 +2033,7 @@ struct __struct_TC0_CCR2
 #define TC0_CMR2_BSWTRG_MSK	0xc0000000
 #define TC0_CMR2_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC0_CMR2_s    MMIO_REG(0x40010084, struct __struct_TC0_CMR2)
+#define TC0_CMR2_s	MMIO_REG(0x40010084, struct __struct_TC0_CMR2)
 struct __struct_TC0_CMR2
 {
   uint32_t tcclks : 3;
@@ -2079,7 +2079,7 @@ struct __struct_TC0_CMR2
 #define TC0_CMR2W_LDRB_MSK	0x000c0000
 #define TC0_CMR2W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC0_CMR2W_s    MMIO_REG(0x40010084, struct __struct_TC0_CMR2W)
+#define TC0_CMR2W_s	MMIO_REG(0x40010084, struct __struct_TC0_CMR2W)
 struct __struct_TC0_CMR2W
 {
   uint32_t tcclks : 3;
@@ -2101,7 +2101,7 @@ struct __struct_TC0_CMR2W
 #define TC0_SMMR2_GCEN	(1 << 0)
 #define TC0_SMMR2_DOWN	(1 << 1)
 
-#define TC0_SMMR2_s    MMIO_REG(0x40010088, struct __struct_TC0_SMMR2)
+#define TC0_SMMR2_s	MMIO_REG(0x40010088, struct __struct_TC0_SMMR2)
 struct __struct_TC0_SMMR2
 {
   uint32_t gcen : 1;
@@ -2130,7 +2130,7 @@ struct __struct_TC0_SMMR2
 #define TC0_SR2_MTIOA	(1 << 17)
 #define TC0_SR2_MTIOB	(1 << 18)
 
-#define TC0_SR2_s    MMIO_REG(0x400100a0, struct __struct_TC0_SR2)
+#define TC0_SR2_s	MMIO_REG(0x400100a0, struct __struct_TC0_SR2)
 struct __struct_TC0_SR2
 {
   uint32_t covfs : 1;
@@ -2158,7 +2158,7 @@ struct __struct_TC0_SR2
 #define TC0_IER2_LDRBS	(1 << 6)
 #define TC0_IER2_ETRGS	(1 << 7)
 
-#define TC0_IER2_s    MMIO_REG(0x400100a4, struct __struct_TC0_IER2)
+#define TC0_IER2_s	MMIO_REG(0x400100a4, struct __struct_TC0_IER2)
 struct __struct_TC0_IER2
 {
   uint32_t covfs : 1;
@@ -2182,7 +2182,7 @@ struct __struct_TC0_IER2
 #define TC0_IDR2_LDRBS	(1 << 6)
 #define TC0_IDR2_ETRGS	(1 << 7)
 
-#define TC0_IDR2_s    MMIO_REG(0x400100a8, struct __struct_TC0_IDR2)
+#define TC0_IDR2_s	MMIO_REG(0x400100a8, struct __struct_TC0_IDR2)
 struct __struct_TC0_IDR2
 {
   uint32_t covfs : 1;
@@ -2206,7 +2206,7 @@ struct __struct_TC0_IDR2
 #define TC0_IMR2_LDRBS	(1 << 6)
 #define TC0_IMR2_ETRGS	(1 << 7)
 
-#define TC0_IMR2_s    MMIO_REG(0x400100ac, struct __struct_TC0_IMR2)
+#define TC0_IMR2_s	MMIO_REG(0x400100ac, struct __struct_TC0_IMR2)
 struct __struct_TC0_IMR2
 {
   uint32_t covfs : 1;
@@ -2223,7 +2223,7 @@ struct __struct_TC0_IMR2
 #define TC0_BCR	MMIO_REG(0x400100c0, uint32_t)
 #define TC0_BCR_SYNC	(1 << 0)
 
-#define TC0_BCR_s    MMIO_REG(0x400100c0, struct __struct_TC0_BCR)
+#define TC0_BCR_s	MMIO_REG(0x400100c0, struct __struct_TC0_BCR)
 struct __struct_TC0_BCR
 {
   uint32_t sync : 1;
@@ -2255,7 +2255,7 @@ struct __struct_TC0_BCR
 #define TC0_BMR_MAXFILT_MSK	0x03f00000
 #define TC0_BMR_MAXFILT_VAL(x)	(((x) >> 20) & 0x3f)
 
-#define TC0_BMR_s    MMIO_REG(0x400100c4, struct __struct_TC0_BMR)
+#define TC0_BMR_s	MMIO_REG(0x400100c4, struct __struct_TC0_BMR)
 struct __struct_TC0_BMR
 {
   uint32_t tc0xc0s : 2;
@@ -2283,7 +2283,7 @@ struct __struct_TC0_BMR
 #define TC0_QIER_DIRCHG	(1 << 1)
 #define TC0_QIER_QERR	(1 << 2)
 
-#define TC0_QIER_s    MMIO_REG(0x400100c8, struct __struct_TC0_QIER)
+#define TC0_QIER_s	MMIO_REG(0x400100c8, struct __struct_TC0_QIER)
 struct __struct_TC0_QIER
 {
   uint32_t idx : 1;
@@ -2297,7 +2297,7 @@ struct __struct_TC0_QIER
 #define TC0_QIDR_DIRCHG	(1 << 1)
 #define TC0_QIDR_QERR	(1 << 2)
 
-#define TC0_QIDR_s    MMIO_REG(0x400100cc, struct __struct_TC0_QIDR)
+#define TC0_QIDR_s	MMIO_REG(0x400100cc, struct __struct_TC0_QIDR)
 struct __struct_TC0_QIDR
 {
   uint32_t idx : 1;
@@ -2311,7 +2311,7 @@ struct __struct_TC0_QIDR
 #define TC0_QIMR_DIRCHG	(1 << 1)
 #define TC0_QIMR_QERR	(1 << 2)
 
-#define TC0_QIMR_s    MMIO_REG(0x400100d0, struct __struct_TC0_QIMR)
+#define TC0_QIMR_s	MMIO_REG(0x400100d0, struct __struct_TC0_QIMR)
 struct __struct_TC0_QIMR
 {
   uint32_t idx : 1;
@@ -2326,7 +2326,7 @@ struct __struct_TC0_QIMR
 #define TC0_QISR_QERR	(1 << 2)
 #define TC0_QISR_DIR	(1 << 8)
 
-#define TC0_QISR_s    MMIO_REG(0x400100d4, struct __struct_TC0_QISR)
+#define TC0_QISR_s	MMIO_REG(0x400100d4, struct __struct_TC0_QISR)
 struct __struct_TC0_QISR
 {
   uint32_t idx : 1;
@@ -2341,7 +2341,7 @@ struct __struct_TC0_QISR
 #define TC0_FMR_ENCF0	(1 << 0)
 #define TC0_FMR_ENCF1	(1 << 1)
 
-#define TC0_FMR_s    MMIO_REG(0x400100d8, struct __struct_TC0_FMR)
+#define TC0_FMR_s	MMIO_REG(0x400100d8, struct __struct_TC0_FMR)
 struct __struct_TC0_FMR
 {
   uint32_t encf0 : 1;
@@ -2355,7 +2355,7 @@ struct __struct_TC0_FMR
 #define TC0_WPMR_WPKEY_MSK	0xffffff00
 #define TC0_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define TC0_WPMR_s    MMIO_REG(0x400100e4, struct __struct_TC0_WPMR)
+#define TC0_WPMR_s	MMIO_REG(0x400100e4, struct __struct_TC0_WPMR)
 struct __struct_TC0_WPMR
 {
   uint32_t wpen : 1;
@@ -2370,7 +2370,7 @@ struct __struct_TC0_WPMR
 #define TC1_CCR0_CLKDIS	(1 << 1)
 #define TC1_CCR0_SWTRG	(1 << 2)
 
-#define TC1_CCR0_s    MMIO_REG(0x40014000, struct __struct_TC1_CCR0)
+#define TC1_CCR0_s	MMIO_REG(0x40014000, struct __struct_TC1_CCR0)
 struct __struct_TC1_CCR0
 {
   uint32_t clken : 1;
@@ -2425,7 +2425,7 @@ struct __struct_TC1_CCR0
 #define TC1_CMR0_BSWTRG_MSK	0xc0000000
 #define TC1_CMR0_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC1_CMR0_s    MMIO_REG(0x40014004, struct __struct_TC1_CMR0)
+#define TC1_CMR0_s	MMIO_REG(0x40014004, struct __struct_TC1_CMR0)
 struct __struct_TC1_CMR0
 {
   uint32_t tcclks : 3;
@@ -2471,7 +2471,7 @@ struct __struct_TC1_CMR0
 #define TC1_CMR0W_LDRB_MSK	0x000c0000
 #define TC1_CMR0W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC1_CMR0W_s    MMIO_REG(0x40014004, struct __struct_TC1_CMR0W)
+#define TC1_CMR0W_s	MMIO_REG(0x40014004, struct __struct_TC1_CMR0W)
 struct __struct_TC1_CMR0W
 {
   uint32_t tcclks : 3;
@@ -2493,7 +2493,7 @@ struct __struct_TC1_CMR0W
 #define TC1_SMMR0_GCEN	(1 << 0)
 #define TC1_SMMR0_DOWN	(1 << 1)
 
-#define TC1_SMMR0_s    MMIO_REG(0x40014008, struct __struct_TC1_SMMR0)
+#define TC1_SMMR0_s	MMIO_REG(0x40014008, struct __struct_TC1_SMMR0)
 struct __struct_TC1_SMMR0
 {
   uint32_t gcen : 1;
@@ -2522,7 +2522,7 @@ struct __struct_TC1_SMMR0
 #define TC1_SR0_MTIOA	(1 << 17)
 #define TC1_SR0_MTIOB	(1 << 18)
 
-#define TC1_SR0_s    MMIO_REG(0x40014020, struct __struct_TC1_SR0)
+#define TC1_SR0_s	MMIO_REG(0x40014020, struct __struct_TC1_SR0)
 struct __struct_TC1_SR0
 {
   uint32_t covfs : 1;
@@ -2550,7 +2550,7 @@ struct __struct_TC1_SR0
 #define TC1_IER0_LDRBS	(1 << 6)
 #define TC1_IER0_ETRGS	(1 << 7)
 
-#define TC1_IER0_s    MMIO_REG(0x40014024, struct __struct_TC1_IER0)
+#define TC1_IER0_s	MMIO_REG(0x40014024, struct __struct_TC1_IER0)
 struct __struct_TC1_IER0
 {
   uint32_t covfs : 1;
@@ -2574,7 +2574,7 @@ struct __struct_TC1_IER0
 #define TC1_IDR0_LDRBS	(1 << 6)
 #define TC1_IDR0_ETRGS	(1 << 7)
 
-#define TC1_IDR0_s    MMIO_REG(0x40014028, struct __struct_TC1_IDR0)
+#define TC1_IDR0_s	MMIO_REG(0x40014028, struct __struct_TC1_IDR0)
 struct __struct_TC1_IDR0
 {
   uint32_t covfs : 1;
@@ -2598,7 +2598,7 @@ struct __struct_TC1_IDR0
 #define TC1_IMR0_LDRBS	(1 << 6)
 #define TC1_IMR0_ETRGS	(1 << 7)
 
-#define TC1_IMR0_s    MMIO_REG(0x4001402c, struct __struct_TC1_IMR0)
+#define TC1_IMR0_s	MMIO_REG(0x4001402c, struct __struct_TC1_IMR0)
 struct __struct_TC1_IMR0
 {
   uint32_t covfs : 1;
@@ -2617,7 +2617,7 @@ struct __struct_TC1_IMR0
 #define TC1_CCR1_CLKDIS	(1 << 1)
 #define TC1_CCR1_SWTRG	(1 << 2)
 
-#define TC1_CCR1_s    MMIO_REG(0x40014040, struct __struct_TC1_CCR1)
+#define TC1_CCR1_s	MMIO_REG(0x40014040, struct __struct_TC1_CCR1)
 struct __struct_TC1_CCR1
 {
   uint32_t clken : 1;
@@ -2672,7 +2672,7 @@ struct __struct_TC1_CCR1
 #define TC1_CMR1_BSWTRG_MSK	0xc0000000
 #define TC1_CMR1_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC1_CMR1_s    MMIO_REG(0x40014044, struct __struct_TC1_CMR1)
+#define TC1_CMR1_s	MMIO_REG(0x40014044, struct __struct_TC1_CMR1)
 struct __struct_TC1_CMR1
 {
   uint32_t tcclks : 3;
@@ -2718,7 +2718,7 @@ struct __struct_TC1_CMR1
 #define TC1_CMR1W_LDRB_MSK	0x000c0000
 #define TC1_CMR1W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC1_CMR1W_s    MMIO_REG(0x40014044, struct __struct_TC1_CMR1W)
+#define TC1_CMR1W_s	MMIO_REG(0x40014044, struct __struct_TC1_CMR1W)
 struct __struct_TC1_CMR1W
 {
   uint32_t tcclks : 3;
@@ -2740,7 +2740,7 @@ struct __struct_TC1_CMR1W
 #define TC1_SMMR1_GCEN	(1 << 0)
 #define TC1_SMMR1_DOWN	(1 << 1)
 
-#define TC1_SMMR1_s    MMIO_REG(0x40014048, struct __struct_TC1_SMMR1)
+#define TC1_SMMR1_s	MMIO_REG(0x40014048, struct __struct_TC1_SMMR1)
 struct __struct_TC1_SMMR1
 {
   uint32_t gcen : 1;
@@ -2769,7 +2769,7 @@ struct __struct_TC1_SMMR1
 #define TC1_SR1_MTIOA	(1 << 17)
 #define TC1_SR1_MTIOB	(1 << 18)
 
-#define TC1_SR1_s    MMIO_REG(0x40014060, struct __struct_TC1_SR1)
+#define TC1_SR1_s	MMIO_REG(0x40014060, struct __struct_TC1_SR1)
 struct __struct_TC1_SR1
 {
   uint32_t covfs : 1;
@@ -2797,7 +2797,7 @@ struct __struct_TC1_SR1
 #define TC1_IER1_LDRBS	(1 << 6)
 #define TC1_IER1_ETRGS	(1 << 7)
 
-#define TC1_IER1_s    MMIO_REG(0x40014064, struct __struct_TC1_IER1)
+#define TC1_IER1_s	MMIO_REG(0x40014064, struct __struct_TC1_IER1)
 struct __struct_TC1_IER1
 {
   uint32_t covfs : 1;
@@ -2821,7 +2821,7 @@ struct __struct_TC1_IER1
 #define TC1_IDR1_LDRBS	(1 << 6)
 #define TC1_IDR1_ETRGS	(1 << 7)
 
-#define TC1_IDR1_s    MMIO_REG(0x40014068, struct __struct_TC1_IDR1)
+#define TC1_IDR1_s	MMIO_REG(0x40014068, struct __struct_TC1_IDR1)
 struct __struct_TC1_IDR1
 {
   uint32_t covfs : 1;
@@ -2845,7 +2845,7 @@ struct __struct_TC1_IDR1
 #define TC1_IMR1_LDRBS	(1 << 6)
 #define TC1_IMR1_ETRGS	(1 << 7)
 
-#define TC1_IMR1_s    MMIO_REG(0x4001406c, struct __struct_TC1_IMR1)
+#define TC1_IMR1_s	MMIO_REG(0x4001406c, struct __struct_TC1_IMR1)
 struct __struct_TC1_IMR1
 {
   uint32_t covfs : 1;
@@ -2864,7 +2864,7 @@ struct __struct_TC1_IMR1
 #define TC1_CCR2_CLKDIS	(1 << 1)
 #define TC1_CCR2_SWTRG	(1 << 2)
 
-#define TC1_CCR2_s    MMIO_REG(0x40014080, struct __struct_TC1_CCR2)
+#define TC1_CCR2_s	MMIO_REG(0x40014080, struct __struct_TC1_CCR2)
 struct __struct_TC1_CCR2
 {
   uint32_t clken : 1;
@@ -2919,7 +2919,7 @@ struct __struct_TC1_CCR2
 #define TC1_CMR2_BSWTRG_MSK	0xc0000000
 #define TC1_CMR2_BSWTRG_VAL(x)	(((x) >> 30) & 0x3)
 
-#define TC1_CMR2_s    MMIO_REG(0x40014084, struct __struct_TC1_CMR2)
+#define TC1_CMR2_s	MMIO_REG(0x40014084, struct __struct_TC1_CMR2)
 struct __struct_TC1_CMR2
 {
   uint32_t tcclks : 3;
@@ -2965,7 +2965,7 @@ struct __struct_TC1_CMR2
 #define TC1_CMR2W_LDRB_MSK	0x000c0000
 #define TC1_CMR2W_LDRB_VAL(x)	(((x) >> 18) & 0x3)
 
-#define TC1_CMR2W_s    MMIO_REG(0x40014084, struct __struct_TC1_CMR2W)
+#define TC1_CMR2W_s	MMIO_REG(0x40014084, struct __struct_TC1_CMR2W)
 struct __struct_TC1_CMR2W
 {
   uint32_t tcclks : 3;
@@ -2987,7 +2987,7 @@ struct __struct_TC1_CMR2W
 #define TC1_SMMR2_GCEN	(1 << 0)
 #define TC1_SMMR2_DOWN	(1 << 1)
 
-#define TC1_SMMR2_s    MMIO_REG(0x40014088, struct __struct_TC1_SMMR2)
+#define TC1_SMMR2_s	MMIO_REG(0x40014088, struct __struct_TC1_SMMR2)
 struct __struct_TC1_SMMR2
 {
   uint32_t gcen : 1;
@@ -3016,7 +3016,7 @@ struct __struct_TC1_SMMR2
 #define TC1_SR2_MTIOA	(1 << 17)
 #define TC1_SR2_MTIOB	(1 << 18)
 
-#define TC1_SR2_s    MMIO_REG(0x400140a0, struct __struct_TC1_SR2)
+#define TC1_SR2_s	MMIO_REG(0x400140a0, struct __struct_TC1_SR2)
 struct __struct_TC1_SR2
 {
   uint32_t covfs : 1;
@@ -3044,7 +3044,7 @@ struct __struct_TC1_SR2
 #define TC1_IER2_LDRBS	(1 << 6)
 #define TC1_IER2_ETRGS	(1 << 7)
 
-#define TC1_IER2_s    MMIO_REG(0x400140a4, struct __struct_TC1_IER2)
+#define TC1_IER2_s	MMIO_REG(0x400140a4, struct __struct_TC1_IER2)
 struct __struct_TC1_IER2
 {
   uint32_t covfs : 1;
@@ -3068,7 +3068,7 @@ struct __struct_TC1_IER2
 #define TC1_IDR2_LDRBS	(1 << 6)
 #define TC1_IDR2_ETRGS	(1 << 7)
 
-#define TC1_IDR2_s    MMIO_REG(0x400140a8, struct __struct_TC1_IDR2)
+#define TC1_IDR2_s	MMIO_REG(0x400140a8, struct __struct_TC1_IDR2)
 struct __struct_TC1_IDR2
 {
   uint32_t covfs : 1;
@@ -3092,7 +3092,7 @@ struct __struct_TC1_IDR2
 #define TC1_IMR2_LDRBS	(1 << 6)
 #define TC1_IMR2_ETRGS	(1 << 7)
 
-#define TC1_IMR2_s    MMIO_REG(0x400140ac, struct __struct_TC1_IMR2)
+#define TC1_IMR2_s	MMIO_REG(0x400140ac, struct __struct_TC1_IMR2)
 struct __struct_TC1_IMR2
 {
   uint32_t covfs : 1;
@@ -3109,7 +3109,7 @@ struct __struct_TC1_IMR2
 #define TC1_BCR	MMIO_REG(0x400140c0, uint32_t)
 #define TC1_BCR_SYNC	(1 << 0)
 
-#define TC1_BCR_s    MMIO_REG(0x400140c0, struct __struct_TC1_BCR)
+#define TC1_BCR_s	MMIO_REG(0x400140c0, struct __struct_TC1_BCR)
 struct __struct_TC1_BCR
 {
   uint32_t sync : 1;
@@ -3141,7 +3141,7 @@ struct __struct_TC1_BCR
 #define TC1_BMR_MAXFILT_MSK	0x03f00000
 #define TC1_BMR_MAXFILT_VAL(x)	(((x) >> 20) & 0x3f)
 
-#define TC1_BMR_s    MMIO_REG(0x400140c4, struct __struct_TC1_BMR)
+#define TC1_BMR_s	MMIO_REG(0x400140c4, struct __struct_TC1_BMR)
 struct __struct_TC1_BMR
 {
   uint32_t tc0xc0s : 2;
@@ -3169,7 +3169,7 @@ struct __struct_TC1_BMR
 #define TC1_QIER_DIRCHG	(1 << 1)
 #define TC1_QIER_QERR	(1 << 2)
 
-#define TC1_QIER_s    MMIO_REG(0x400140c8, struct __struct_TC1_QIER)
+#define TC1_QIER_s	MMIO_REG(0x400140c8, struct __struct_TC1_QIER)
 struct __struct_TC1_QIER
 {
   uint32_t idx : 1;
@@ -3183,7 +3183,7 @@ struct __struct_TC1_QIER
 #define TC1_QIDR_DIRCHG	(1 << 1)
 #define TC1_QIDR_QERR	(1 << 2)
 
-#define TC1_QIDR_s    MMIO_REG(0x400140cc, struct __struct_TC1_QIDR)
+#define TC1_QIDR_s	MMIO_REG(0x400140cc, struct __struct_TC1_QIDR)
 struct __struct_TC1_QIDR
 {
   uint32_t idx : 1;
@@ -3197,7 +3197,7 @@ struct __struct_TC1_QIDR
 #define TC1_QIMR_DIRCHG	(1 << 1)
 #define TC1_QIMR_QERR	(1 << 2)
 
-#define TC1_QIMR_s    MMIO_REG(0x400140d0, struct __struct_TC1_QIMR)
+#define TC1_QIMR_s	MMIO_REG(0x400140d0, struct __struct_TC1_QIMR)
 struct __struct_TC1_QIMR
 {
   uint32_t idx : 1;
@@ -3212,7 +3212,7 @@ struct __struct_TC1_QIMR
 #define TC1_QISR_QERR	(1 << 2)
 #define TC1_QISR_DIR	(1 << 8)
 
-#define TC1_QISR_s    MMIO_REG(0x400140d4, struct __struct_TC1_QISR)
+#define TC1_QISR_s	MMIO_REG(0x400140d4, struct __struct_TC1_QISR)
 struct __struct_TC1_QISR
 {
   uint32_t idx : 1;
@@ -3227,7 +3227,7 @@ struct __struct_TC1_QISR
 #define TC1_FMR_ENCF0	(1 << 0)
 #define TC1_FMR_ENCF1	(1 << 1)
 
-#define TC1_FMR_s    MMIO_REG(0x400140d8, struct __struct_TC1_FMR)
+#define TC1_FMR_s	MMIO_REG(0x400140d8, struct __struct_TC1_FMR)
 struct __struct_TC1_FMR
 {
   uint32_t encf0 : 1;
@@ -3241,7 +3241,7 @@ struct __struct_TC1_FMR
 #define TC1_WPMR_WPKEY_MSK	0xffffff00
 #define TC1_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define TC1_WPMR_s    MMIO_REG(0x400140e4, struct __struct_TC1_WPMR)
+#define TC1_WPMR_s	MMIO_REG(0x400140e4, struct __struct_TC1_WPMR)
 struct __struct_TC1_WPMR
 {
   uint32_t wpen : 1;
@@ -3261,7 +3261,7 @@ struct __struct_TC1_WPMR
 #define TWI0_CR_QUICK	(1 << 6)
 #define TWI0_CR_SWRST	(1 << 7)
 
-#define TWI0_CR_s    MMIO_REG(0x40018000, struct __struct_TWI0_CR)
+#define TWI0_CR_s	MMIO_REG(0x40018000, struct __struct_TWI0_CR)
 struct __struct_TWI0_CR
 {
   uint32_t start : 1;
@@ -3284,7 +3284,7 @@ struct __struct_TWI0_CR
 #define TWI0_MMR_DADDR_MSK	0x007f0000
 #define TWI0_MMR_DADDR_VAL(x)	(((x) >> 16) & 0x7f)
 
-#define TWI0_MMR_s    MMIO_REG(0x40018004, struct __struct_TWI0_MMR)
+#define TWI0_MMR_s	MMIO_REG(0x40018004, struct __struct_TWI0_MMR)
 struct __struct_TWI0_MMR
 {
   uint32_t  : 8;
@@ -3301,7 +3301,7 @@ struct __struct_TWI0_MMR
 #define TWI0_SMR_SADR_MSK	0x007f0000
 #define TWI0_SMR_SADR_VAL(x)	(((x) >> 16) & 0x7f)
 
-#define TWI0_SMR_s    MMIO_REG(0x40018008, struct __struct_TWI0_SMR)
+#define TWI0_SMR_s	MMIO_REG(0x40018008, struct __struct_TWI0_SMR)
 struct __struct_TWI0_SMR
 {
   uint32_t  : 16;
@@ -3314,7 +3314,7 @@ struct __struct_TWI0_SMR
 #define TWI0_IADR_IADR_MSK	0x00ffffff
 #define TWI0_IADR_IADR_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define TWI0_IADR_s    MMIO_REG(0x4001800c, struct __struct_TWI0_IADR)
+#define TWI0_IADR_s	MMIO_REG(0x4001800c, struct __struct_TWI0_IADR)
 struct __struct_TWI0_IADR
 {
   uint32_t iadr : 24;
@@ -3332,7 +3332,7 @@ struct __struct_TWI0_IADR
 #define TWI0_CWGR_CKDIV_MSK	0x00070000
 #define TWI0_CWGR_CKDIV_VAL(x)	(((x) >> 16) & 0x7)
 
-#define TWI0_CWGR_s    MMIO_REG(0x40018010, struct __struct_TWI0_CWGR)
+#define TWI0_CWGR_s	MMIO_REG(0x40018010, struct __struct_TWI0_CWGR)
 struct __struct_TWI0_CWGR
 {
   uint32_t cldiv : 8;
@@ -3358,7 +3358,7 @@ struct __struct_TWI0_CWGR
 #define TWI0_SR_RXBUFF	(1 << 14)
 #define TWI0_SR_TXBUFE	(1 << 15)
 
-#define TWI0_SR_s    MMIO_REG(0x40018020, struct __struct_TWI0_SR)
+#define TWI0_SR_s	MMIO_REG(0x40018020, struct __struct_TWI0_SR)
 struct __struct_TWI0_SR
 {
   uint32_t txcomp : 1;
@@ -3396,7 +3396,7 @@ struct __struct_TWI0_SR
 #define TWI0_IER_RXBUFF	(1 << 14)
 #define TWI0_IER_TXBUFE	(1 << 15)
 
-#define TWI0_IER_s    MMIO_REG(0x40018024, struct __struct_TWI0_IER)
+#define TWI0_IER_s	MMIO_REG(0x40018024, struct __struct_TWI0_IER)
 struct __struct_TWI0_IER
 {
   uint32_t txcomp : 1;
@@ -3434,7 +3434,7 @@ struct __struct_TWI0_IER
 #define TWI0_IDR_RXBUFF	(1 << 14)
 #define TWI0_IDR_TXBUFE	(1 << 15)
 
-#define TWI0_IDR_s    MMIO_REG(0x40018028, struct __struct_TWI0_IDR)
+#define TWI0_IDR_s	MMIO_REG(0x40018028, struct __struct_TWI0_IDR)
 struct __struct_TWI0_IDR
 {
   uint32_t txcomp : 1;
@@ -3472,7 +3472,7 @@ struct __struct_TWI0_IDR
 #define TWI0_IMR_RXBUFF	(1 << 14)
 #define TWI0_IMR_TXBUFE	(1 << 15)
 
-#define TWI0_IMR_s    MMIO_REG(0x4001802c, struct __struct_TWI0_IMR)
+#define TWI0_IMR_s	MMIO_REG(0x4001802c, struct __struct_TWI0_IMR)
 struct __struct_TWI0_IMR
 {
   uint32_t txcomp : 1;
@@ -3499,7 +3499,7 @@ struct __struct_TWI0_IMR
 #define TWI0_RHR_RXDATA_MSK	0x000000ff
 #define TWI0_RHR_RXDATA_VAL(x)	(((x) >> 0) & 0xff)
 
-#define TWI0_RHR_s    MMIO_REG(0x40018030, struct __struct_TWI0_RHR)
+#define TWI0_RHR_s	MMIO_REG(0x40018030, struct __struct_TWI0_RHR)
 struct __struct_TWI0_RHR
 {
   uint32_t rxdata : 8;
@@ -3511,7 +3511,7 @@ struct __struct_TWI0_RHR
 #define TWI0_THR_TXDATA_MSK	0x000000ff
 #define TWI0_THR_TXDATA_VAL(x)	(((x) >> 0) & 0xff)
 
-#define TWI0_THR_s    MMIO_REG(0x40018034, struct __struct_TWI0_THR)
+#define TWI0_THR_s	MMIO_REG(0x40018034, struct __struct_TWI0_THR)
 struct __struct_TWI0_THR
 {
   uint32_t txdata : 8;
@@ -3542,7 +3542,7 @@ struct __struct_TWI0_THR
 #define TWI0_PDC_PTCR_TXTEN	(1 << 8)
 #define TWI0_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define TWI0_PDC_PTCR_s    MMIO_REG(0x40018120, struct __struct_TWI0_PDC_PTCR)
+#define TWI0_PDC_PTCR_s	MMIO_REG(0x40018120, struct __struct_TWI0_PDC_PTCR)
 struct __struct_TWI0_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -3557,7 +3557,7 @@ struct __struct_TWI0_PDC_PTCR
 #define TWI0_PDC_PTSR_RXTEN	(1 << 0)
 #define TWI0_PDC_PTSR_TXTEN	(1 << 8)
 
-#define TWI0_PDC_PTSR_s    MMIO_REG(0x40018124, struct __struct_TWI0_PDC_PTSR)
+#define TWI0_PDC_PTSR_s	MMIO_REG(0x40018124, struct __struct_TWI0_PDC_PTSR)
 struct __struct_TWI0_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -3578,7 +3578,7 @@ struct __struct_TWI0_PDC_PTSR
 #define TWI1_CR_QUICK	(1 << 6)
 #define TWI1_CR_SWRST	(1 << 7)
 
-#define TWI1_CR_s    MMIO_REG(0x4001c000, struct __struct_TWI1_CR)
+#define TWI1_CR_s	MMIO_REG(0x4001c000, struct __struct_TWI1_CR)
 struct __struct_TWI1_CR
 {
   uint32_t start : 1;
@@ -3601,7 +3601,7 @@ struct __struct_TWI1_CR
 #define TWI1_MMR_DADDR_MSK	0x007f0000
 #define TWI1_MMR_DADDR_VAL(x)	(((x) >> 16) & 0x7f)
 
-#define TWI1_MMR_s    MMIO_REG(0x4001c004, struct __struct_TWI1_MMR)
+#define TWI1_MMR_s	MMIO_REG(0x4001c004, struct __struct_TWI1_MMR)
 struct __struct_TWI1_MMR
 {
   uint32_t  : 8;
@@ -3618,7 +3618,7 @@ struct __struct_TWI1_MMR
 #define TWI1_SMR_SADR_MSK	0x007f0000
 #define TWI1_SMR_SADR_VAL(x)	(((x) >> 16) & 0x7f)
 
-#define TWI1_SMR_s    MMIO_REG(0x4001c008, struct __struct_TWI1_SMR)
+#define TWI1_SMR_s	MMIO_REG(0x4001c008, struct __struct_TWI1_SMR)
 struct __struct_TWI1_SMR
 {
   uint32_t  : 16;
@@ -3631,7 +3631,7 @@ struct __struct_TWI1_SMR
 #define TWI1_IADR_IADR_MSK	0x00ffffff
 #define TWI1_IADR_IADR_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define TWI1_IADR_s    MMIO_REG(0x4001c00c, struct __struct_TWI1_IADR)
+#define TWI1_IADR_s	MMIO_REG(0x4001c00c, struct __struct_TWI1_IADR)
 struct __struct_TWI1_IADR
 {
   uint32_t iadr : 24;
@@ -3649,7 +3649,7 @@ struct __struct_TWI1_IADR
 #define TWI1_CWGR_CKDIV_MSK	0x00070000
 #define TWI1_CWGR_CKDIV_VAL(x)	(((x) >> 16) & 0x7)
 
-#define TWI1_CWGR_s    MMIO_REG(0x4001c010, struct __struct_TWI1_CWGR)
+#define TWI1_CWGR_s	MMIO_REG(0x4001c010, struct __struct_TWI1_CWGR)
 struct __struct_TWI1_CWGR
 {
   uint32_t cldiv : 8;
@@ -3675,7 +3675,7 @@ struct __struct_TWI1_CWGR
 #define TWI1_SR_RXBUFF	(1 << 14)
 #define TWI1_SR_TXBUFE	(1 << 15)
 
-#define TWI1_SR_s    MMIO_REG(0x4001c020, struct __struct_TWI1_SR)
+#define TWI1_SR_s	MMIO_REG(0x4001c020, struct __struct_TWI1_SR)
 struct __struct_TWI1_SR
 {
   uint32_t txcomp : 1;
@@ -3713,7 +3713,7 @@ struct __struct_TWI1_SR
 #define TWI1_IER_RXBUFF	(1 << 14)
 #define TWI1_IER_TXBUFE	(1 << 15)
 
-#define TWI1_IER_s    MMIO_REG(0x4001c024, struct __struct_TWI1_IER)
+#define TWI1_IER_s	MMIO_REG(0x4001c024, struct __struct_TWI1_IER)
 struct __struct_TWI1_IER
 {
   uint32_t txcomp : 1;
@@ -3751,7 +3751,7 @@ struct __struct_TWI1_IER
 #define TWI1_IDR_RXBUFF	(1 << 14)
 #define TWI1_IDR_TXBUFE	(1 << 15)
 
-#define TWI1_IDR_s    MMIO_REG(0x4001c028, struct __struct_TWI1_IDR)
+#define TWI1_IDR_s	MMIO_REG(0x4001c028, struct __struct_TWI1_IDR)
 struct __struct_TWI1_IDR
 {
   uint32_t txcomp : 1;
@@ -3789,7 +3789,7 @@ struct __struct_TWI1_IDR
 #define TWI1_IMR_RXBUFF	(1 << 14)
 #define TWI1_IMR_TXBUFE	(1 << 15)
 
-#define TWI1_IMR_s    MMIO_REG(0x4001c02c, struct __struct_TWI1_IMR)
+#define TWI1_IMR_s	MMIO_REG(0x4001c02c, struct __struct_TWI1_IMR)
 struct __struct_TWI1_IMR
 {
   uint32_t txcomp : 1;
@@ -3816,7 +3816,7 @@ struct __struct_TWI1_IMR
 #define TWI1_RHR_RXDATA_MSK	0x000000ff
 #define TWI1_RHR_RXDATA_VAL(x)	(((x) >> 0) & 0xff)
 
-#define TWI1_RHR_s    MMIO_REG(0x4001c030, struct __struct_TWI1_RHR)
+#define TWI1_RHR_s	MMIO_REG(0x4001c030, struct __struct_TWI1_RHR)
 struct __struct_TWI1_RHR
 {
   uint32_t rxdata : 8;
@@ -3828,7 +3828,7 @@ struct __struct_TWI1_RHR
 #define TWI1_THR_TXDATA_MSK	0x000000ff
 #define TWI1_THR_TXDATA_VAL(x)	(((x) >> 0) & 0xff)
 
-#define TWI1_THR_s    MMIO_REG(0x4001c034, struct __struct_TWI1_THR)
+#define TWI1_THR_s	MMIO_REG(0x4001c034, struct __struct_TWI1_THR)
 struct __struct_TWI1_THR
 {
   uint32_t txdata : 8;
@@ -3859,7 +3859,7 @@ struct __struct_TWI1_THR
 #define TWI1_PDC_PTCR_TXTEN	(1 << 8)
 #define TWI1_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define TWI1_PDC_PTCR_s    MMIO_REG(0x4001c120, struct __struct_TWI1_PDC_PTCR)
+#define TWI1_PDC_PTCR_s	MMIO_REG(0x4001c120, struct __struct_TWI1_PDC_PTCR)
 struct __struct_TWI1_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -3874,7 +3874,7 @@ struct __struct_TWI1_PDC_PTCR
 #define TWI1_PDC_PTSR_RXTEN	(1 << 0)
 #define TWI1_PDC_PTSR_TXTEN	(1 << 8)
 
-#define TWI1_PDC_PTSR_s    MMIO_REG(0x4001c124, struct __struct_TWI1_PDC_PTSR)
+#define TWI1_PDC_PTSR_s	MMIO_REG(0x4001c124, struct __struct_TWI1_PDC_PTSR)
 struct __struct_TWI1_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -3899,7 +3899,7 @@ struct __struct_TWI1_PDC_PTSR
 #define PWM_CLK_PREB_MSK	0x0f000000
 #define PWM_CLK_PREB_VAL(x)	(((x) >> 24) & 0xf)
 
-#define PWM_CLK_s    MMIO_REG(0x40020000, struct __struct_PWM_CLK)
+#define PWM_CLK_s	MMIO_REG(0x40020000, struct __struct_PWM_CLK)
 struct __struct_PWM_CLK
 {
   uint32_t diva : 8;
@@ -3916,7 +3916,7 @@ struct __struct_PWM_CLK
 #define PWM_ENA_CHID2	(1 << 2)
 #define PWM_ENA_CHID3	(1 << 3)
 
-#define PWM_ENA_s    MMIO_REG(0x40020004, struct __struct_PWM_ENA)
+#define PWM_ENA_s	MMIO_REG(0x40020004, struct __struct_PWM_ENA)
 struct __struct_PWM_ENA
 {
   uint32_t chid0 : 1;
@@ -3932,7 +3932,7 @@ struct __struct_PWM_ENA
 #define PWM_DIS_CHID2	(1 << 2)
 #define PWM_DIS_CHID3	(1 << 3)
 
-#define PWM_DIS_s    MMIO_REG(0x40020008, struct __struct_PWM_DIS)
+#define PWM_DIS_s	MMIO_REG(0x40020008, struct __struct_PWM_DIS)
 struct __struct_PWM_DIS
 {
   uint32_t chid0 : 1;
@@ -3948,7 +3948,7 @@ struct __struct_PWM_DIS
 #define PWM_SR_CHID2	(1 << 2)
 #define PWM_SR_CHID3	(1 << 3)
 
-#define PWM_SR_s    MMIO_REG(0x4002000c, struct __struct_PWM_SR)
+#define PWM_SR_s	MMIO_REG(0x4002000c, struct __struct_PWM_SR)
 struct __struct_PWM_SR
 {
   uint32_t chid0 : 1;
@@ -3968,7 +3968,7 @@ struct __struct_PWM_SR
 #define PWM_IER1_FCHID2	(1 << 18)
 #define PWM_IER1_FCHID3	(1 << 19)
 
-#define PWM_IER1_s    MMIO_REG(0x40020010, struct __struct_PWM_IER1)
+#define PWM_IER1_s	MMIO_REG(0x40020010, struct __struct_PWM_IER1)
 struct __struct_PWM_IER1
 {
   uint32_t chid0 : 1;
@@ -3993,7 +3993,7 @@ struct __struct_PWM_IER1
 #define PWM_IDR1_FCHID2	(1 << 18)
 #define PWM_IDR1_FCHID3	(1 << 19)
 
-#define PWM_IDR1_s    MMIO_REG(0x40020014, struct __struct_PWM_IDR1)
+#define PWM_IDR1_s	MMIO_REG(0x40020014, struct __struct_PWM_IDR1)
 struct __struct_PWM_IDR1
 {
   uint32_t chid0 : 1;
@@ -4018,7 +4018,7 @@ struct __struct_PWM_IDR1
 #define PWM_IMR1_FCHID2	(1 << 18)
 #define PWM_IMR1_FCHID3	(1 << 19)
 
-#define PWM_IMR1_s    MMIO_REG(0x40020018, struct __struct_PWM_IMR1)
+#define PWM_IMR1_s	MMIO_REG(0x40020018, struct __struct_PWM_IMR1)
 struct __struct_PWM_IMR1
 {
   uint32_t chid0 : 1;
@@ -4043,7 +4043,7 @@ struct __struct_PWM_IMR1
 #define PWM_ISR1_FCHID2	(1 << 18)
 #define PWM_ISR1_FCHID3	(1 << 19)
 
-#define PWM_ISR1_s    MMIO_REG(0x4002001c, struct __struct_PWM_ISR1)
+#define PWM_ISR1_s	MMIO_REG(0x4002001c, struct __struct_PWM_ISR1)
 struct __struct_PWM_ISR1
 {
   uint32_t chid0 : 1;
@@ -4071,7 +4071,7 @@ struct __struct_PWM_ISR1
 #define PWM_SCM_PTRCS_MSK	0x00e00000
 #define PWM_SCM_PTRCS_VAL(x)	(((x) >> 21) & 0x7)
 
-#define PWM_SCM_s    MMIO_REG(0x40020020, struct __struct_PWM_SCM)
+#define PWM_SCM_s	MMIO_REG(0x40020020, struct __struct_PWM_SCM)
 struct __struct_PWM_SCM
 {
   uint32_t sync0 : 1;
@@ -4089,7 +4089,7 @@ struct __struct_PWM_SCM
 #define PWM_SCUC	MMIO_REG(0x40020028, uint32_t)
 #define PWM_SCUC_UPDULOCK	(1 << 0)
 
-#define PWM_SCUC_s    MMIO_REG(0x40020028, struct __struct_PWM_SCUC)
+#define PWM_SCUC_s	MMIO_REG(0x40020028, struct __struct_PWM_SCUC)
 struct __struct_PWM_SCUC
 {
   uint32_t updulock : 1;
@@ -4104,7 +4104,7 @@ struct __struct_PWM_SCUC
 #define PWM_SCUP_UPRCNT_MSK	0x000000f0
 #define PWM_SCUP_UPRCNT_VAL(x)	(((x) >> 4) & 0xf)
 
-#define PWM_SCUP_s    MMIO_REG(0x4002002c, struct __struct_PWM_SCUP)
+#define PWM_SCUP_s	MMIO_REG(0x4002002c, struct __struct_PWM_SCUP)
 struct __struct_PWM_SCUP
 {
   uint32_t upr : 4;
@@ -4117,7 +4117,7 @@ struct __struct_PWM_SCUP
 #define PWM_SCUPUPD_UPRUPD_MSK	0x0000000f
 #define PWM_SCUPUPD_UPRUPD_VAL(x)	(((x) >> 0) & 0xf)
 
-#define PWM_SCUPUPD_s    MMIO_REG(0x40020030, struct __struct_PWM_SCUPUPD)
+#define PWM_SCUPUPD_s	MMIO_REG(0x40020030, struct __struct_PWM_SCUPUPD)
 struct __struct_PWM_SCUPUPD
 {
   uint32_t uprupd : 4;
@@ -4146,7 +4146,7 @@ struct __struct_PWM_SCUPUPD
 #define PWM_IER2_CMPU6	(1 << 22)
 #define PWM_IER2_CMPU7	(1 << 23)
 
-#define PWM_IER2_s    MMIO_REG(0x40020034, struct __struct_PWM_IER2)
+#define PWM_IER2_s	MMIO_REG(0x40020034, struct __struct_PWM_IER2)
 struct __struct_PWM_IER2
 {
   uint32_t wrdy : 1;
@@ -4195,7 +4195,7 @@ struct __struct_PWM_IER2
 #define PWM_IDR2_CMPU6	(1 << 22)
 #define PWM_IDR2_CMPU7	(1 << 23)
 
-#define PWM_IDR2_s    MMIO_REG(0x40020038, struct __struct_PWM_IDR2)
+#define PWM_IDR2_s	MMIO_REG(0x40020038, struct __struct_PWM_IDR2)
 struct __struct_PWM_IDR2
 {
   uint32_t wrdy : 1;
@@ -4244,7 +4244,7 @@ struct __struct_PWM_IDR2
 #define PWM_IMR2_CMPU6	(1 << 22)
 #define PWM_IMR2_CMPU7	(1 << 23)
 
-#define PWM_IMR2_s    MMIO_REG(0x4002003c, struct __struct_PWM_IMR2)
+#define PWM_IMR2_s	MMIO_REG(0x4002003c, struct __struct_PWM_IMR2)
 struct __struct_PWM_IMR2
 {
   uint32_t wrdy : 1;
@@ -4293,7 +4293,7 @@ struct __struct_PWM_IMR2
 #define PWM_ISR2_CMPU6	(1 << 22)
 #define PWM_ISR2_CMPU7	(1 << 23)
 
-#define PWM_ISR2_s    MMIO_REG(0x40020040, struct __struct_PWM_ISR2)
+#define PWM_ISR2_s	MMIO_REG(0x40020040, struct __struct_PWM_ISR2)
 struct __struct_PWM_ISR2
 {
   uint32_t wrdy : 1;
@@ -4330,7 +4330,7 @@ struct __struct_PWM_ISR2
 #define PWM_OOV_OOVL2	(1 << 18)
 #define PWM_OOV_OOVL3	(1 << 19)
 
-#define PWM_OOV_s    MMIO_REG(0x40020044, struct __struct_PWM_OOV)
+#define PWM_OOV_s	MMIO_REG(0x40020044, struct __struct_PWM_OOV)
 struct __struct_PWM_OOV
 {
   uint32_t oovh0 : 1;
@@ -4355,7 +4355,7 @@ struct __struct_PWM_OOV
 #define PWM_OS_OSL2	(1 << 18)
 #define PWM_OS_OSL3	(1 << 19)
 
-#define PWM_OS_s    MMIO_REG(0x40020048, struct __struct_PWM_OS)
+#define PWM_OS_s	MMIO_REG(0x40020048, struct __struct_PWM_OS)
 struct __struct_PWM_OS
 {
   uint32_t osh0 : 1;
@@ -4380,7 +4380,7 @@ struct __struct_PWM_OS
 #define PWM_OSS_OSSL2	(1 << 18)
 #define PWM_OSS_OSSL3	(1 << 19)
 
-#define PWM_OSS_s    MMIO_REG(0x4002004c, struct __struct_PWM_OSS)
+#define PWM_OSS_s	MMIO_REG(0x4002004c, struct __struct_PWM_OSS)
 struct __struct_PWM_OSS
 {
   uint32_t ossh0 : 1;
@@ -4405,7 +4405,7 @@ struct __struct_PWM_OSS
 #define PWM_OSC_OSCL2	(1 << 18)
 #define PWM_OSC_OSCL3	(1 << 19)
 
-#define PWM_OSC_s    MMIO_REG(0x40020050, struct __struct_PWM_OSC)
+#define PWM_OSC_s	MMIO_REG(0x40020050, struct __struct_PWM_OSC)
 struct __struct_PWM_OSC
 {
   uint32_t osch0 : 1;
@@ -4430,7 +4430,7 @@ struct __struct_PWM_OSC
 #define PWM_OSSUPD_OSSUPL2	(1 << 18)
 #define PWM_OSSUPD_OSSUPL3	(1 << 19)
 
-#define PWM_OSSUPD_s    MMIO_REG(0x40020054, struct __struct_PWM_OSSUPD)
+#define PWM_OSSUPD_s	MMIO_REG(0x40020054, struct __struct_PWM_OSSUPD)
 struct __struct_PWM_OSSUPD
 {
   uint32_t ossuph0 : 1;
@@ -4455,7 +4455,7 @@ struct __struct_PWM_OSSUPD
 #define PWM_OSCUPD_OSCUPL2	(1 << 18)
 #define PWM_OSCUPD_OSCUPL3	(1 << 19)
 
-#define PWM_OSCUPD_s    MMIO_REG(0x40020058, struct __struct_PWM_OSCUPD)
+#define PWM_OSCUPD_s	MMIO_REG(0x40020058, struct __struct_PWM_OSCUPD)
 struct __struct_PWM_OSCUPD
 {
   uint32_t oscuph0 : 1;
@@ -4481,7 +4481,7 @@ struct __struct_PWM_OSCUPD
 #define PWM_FMR_FFIL_MSK	0x00ff0000
 #define PWM_FMR_FFIL_VAL(x)	(((x) >> 16) & 0xff)
 
-#define PWM_FMR_s    MMIO_REG(0x4002005c, struct __struct_PWM_FMR)
+#define PWM_FMR_s	MMIO_REG(0x4002005c, struct __struct_PWM_FMR)
 struct __struct_PWM_FMR
 {
   uint32_t fpol : 8;
@@ -4498,7 +4498,7 @@ struct __struct_PWM_FMR
 #define PWM_FSR_FS_MSK	0x0000ff00
 #define PWM_FSR_FS_VAL(x)	(((x) >> 8) & 0xff)
 
-#define PWM_FSR_s    MMIO_REG(0x40020060, struct __struct_PWM_FSR)
+#define PWM_FSR_s	MMIO_REG(0x40020060, struct __struct_PWM_FSR)
 struct __struct_PWM_FSR
 {
   uint32_t fiv : 8;
@@ -4511,7 +4511,7 @@ struct __struct_PWM_FSR
 #define PWM_FCR_FCLR_MSK	0x000000ff
 #define PWM_FCR_FCLR_VAL(x)	(((x) >> 0) & 0xff)
 
-#define PWM_FCR_s    MMIO_REG(0x40020064, struct __struct_PWM_FCR)
+#define PWM_FCR_s	MMIO_REG(0x40020064, struct __struct_PWM_FCR)
 struct __struct_PWM_FCR
 {
   uint32_t fclr : 8;
@@ -4528,7 +4528,7 @@ struct __struct_PWM_FCR
 #define PWM_FPV_FPVL2	(1 << 18)
 #define PWM_FPV_FPVL3	(1 << 19)
 
-#define PWM_FPV_s    MMIO_REG(0x40020068, struct __struct_PWM_FPV)
+#define PWM_FPV_s	MMIO_REG(0x40020068, struct __struct_PWM_FPV)
 struct __struct_PWM_FPV
 {
   uint32_t fpvh0 : 1;
@@ -4557,7 +4557,7 @@ struct __struct_PWM_FPV
 #define PWM_FPE_FPE3_MSK	0xff000000
 #define PWM_FPE_FPE3_VAL(x)	(((x) >> 24) & 0xff)
 
-#define PWM_FPE_s    MMIO_REG(0x4002006c, struct __struct_PWM_FPE)
+#define PWM_FPE_s	MMIO_REG(0x4002006c, struct __struct_PWM_FPE)
 struct __struct_PWM_FPE
 {
   uint32_t fpe0 : 8;
@@ -4576,7 +4576,7 @@ struct __struct_PWM_FPE
 #define PWM_ELMR0_CSEL6	(1 << 6)
 #define PWM_ELMR0_CSEL7	(1 << 7)
 
-#define PWM_ELMR0_s    MMIO_REG(0x4002007c, struct __struct_PWM_ELMR0)
+#define PWM_ELMR0_s	MMIO_REG(0x4002007c, struct __struct_PWM_ELMR0)
 struct __struct_PWM_ELMR0
 {
   uint32_t csel0 : 1;
@@ -4600,7 +4600,7 @@ struct __struct_PWM_ELMR0
 #define PWM_ELMR1_CSEL6	(1 << 6)
 #define PWM_ELMR1_CSEL7	(1 << 7)
 
-#define PWM_ELMR1_s    MMIO_REG(0x40020080, struct __struct_PWM_ELMR1)
+#define PWM_ELMR1_s	MMIO_REG(0x40020080, struct __struct_PWM_ELMR1)
 struct __struct_PWM_ELMR1
 {
   uint32_t csel0 : 1;
@@ -4620,7 +4620,7 @@ struct __struct_PWM_ELMR1
 #define PWM_SMMR_DOWN0	(1 << 16)
 #define PWM_SMMR_DOWN1	(1 << 17)
 
-#define PWM_SMMR_s    MMIO_REG(0x400200b0, struct __struct_PWM_SMMR)
+#define PWM_SMMR_s	MMIO_REG(0x400200b0, struct __struct_PWM_SMMR)
 struct __struct_PWM_SMMR
 {
   uint32_t gcen0 : 1;
@@ -4645,7 +4645,7 @@ struct __struct_PWM_SMMR
 #define PWM_WPCR_WPKEY_MSK	0xffffff00
 #define PWM_WPCR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define PWM_WPCR_s    MMIO_REG(0x400200e4, struct __struct_PWM_WPCR)
+#define PWM_WPCR_s	MMIO_REG(0x400200e4, struct __struct_PWM_WPCR)
 struct __struct_PWM_WPCR
 {
   uint32_t wpcmd : 2;
@@ -4676,7 +4676,7 @@ struct __struct_PWM_WPCR
 #define PWM_WPSR_WPVSRC_MSK	0xffff0000
 #define PWM_WPSR_WPVSRC_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_WPSR_s    MMIO_REG(0x400200e8, struct __struct_PWM_WPSR)
+#define PWM_WPSR_s	MMIO_REG(0x400200e8, struct __struct_PWM_WPSR)
 struct __struct_PWM_WPSR
 {
   uint32_t wpsws0 : 1;
@@ -4703,7 +4703,7 @@ struct __struct_PWM_WPSR
 #define PWM_CMPV0_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV0_CVM	(1 << 24)
 
-#define PWM_CMPV0_s    MMIO_REG(0x40020130, struct __struct_PWM_CMPV0)
+#define PWM_CMPV0_s	MMIO_REG(0x40020130, struct __struct_PWM_CMPV0)
 struct __struct_PWM_CMPV0
 {
   uint32_t cv : 24;
@@ -4717,7 +4717,7 @@ struct __struct_PWM_CMPV0
 #define PWM_CMPVUPD0_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD0_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD0_s    MMIO_REG(0x40020134, struct __struct_PWM_CMPVUPD0)
+#define PWM_CMPVUPD0_s	MMIO_REG(0x40020134, struct __struct_PWM_CMPVUPD0)
 struct __struct_PWM_CMPVUPD0
 {
   uint32_t cvupd : 24;
@@ -4743,7 +4743,7 @@ struct __struct_PWM_CMPVUPD0
 #define PWM_CMPM0_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM0_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM0_s    MMIO_REG(0x40020138, struct __struct_PWM_CMPM0)
+#define PWM_CMPM0_s	MMIO_REG(0x40020138, struct __struct_PWM_CMPM0)
 struct __struct_PWM_CMPM0
 {
   uint32_t cen : 1;
@@ -4768,7 +4768,7 @@ struct __struct_PWM_CMPM0
 #define PWM_CMPMUPD0_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD0_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD0_s    MMIO_REG(0x4002013c, struct __struct_PWM_CMPMUPD0)
+#define PWM_CMPMUPD0_s	MMIO_REG(0x4002013c, struct __struct_PWM_CMPMUPD0)
 struct __struct_PWM_CMPMUPD0
 {
   uint32_t cenupd : 1;
@@ -4786,7 +4786,7 @@ struct __struct_PWM_CMPMUPD0
 #define PWM_CMPV1_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV1_CVM	(1 << 24)
 
-#define PWM_CMPV1_s    MMIO_REG(0x40020140, struct __struct_PWM_CMPV1)
+#define PWM_CMPV1_s	MMIO_REG(0x40020140, struct __struct_PWM_CMPV1)
 struct __struct_PWM_CMPV1
 {
   uint32_t cv : 24;
@@ -4800,7 +4800,7 @@ struct __struct_PWM_CMPV1
 #define PWM_CMPVUPD1_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD1_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD1_s    MMIO_REG(0x40020144, struct __struct_PWM_CMPVUPD1)
+#define PWM_CMPVUPD1_s	MMIO_REG(0x40020144, struct __struct_PWM_CMPVUPD1)
 struct __struct_PWM_CMPVUPD1
 {
   uint32_t cvupd : 24;
@@ -4826,7 +4826,7 @@ struct __struct_PWM_CMPVUPD1
 #define PWM_CMPM1_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM1_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM1_s    MMIO_REG(0x40020148, struct __struct_PWM_CMPM1)
+#define PWM_CMPM1_s	MMIO_REG(0x40020148, struct __struct_PWM_CMPM1)
 struct __struct_PWM_CMPM1
 {
   uint32_t cen : 1;
@@ -4851,7 +4851,7 @@ struct __struct_PWM_CMPM1
 #define PWM_CMPMUPD1_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD1_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD1_s    MMIO_REG(0x4002014c, struct __struct_PWM_CMPMUPD1)
+#define PWM_CMPMUPD1_s	MMIO_REG(0x4002014c, struct __struct_PWM_CMPMUPD1)
 struct __struct_PWM_CMPMUPD1
 {
   uint32_t cenupd : 1;
@@ -4869,7 +4869,7 @@ struct __struct_PWM_CMPMUPD1
 #define PWM_CMPV2_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV2_CVM	(1 << 24)
 
-#define PWM_CMPV2_s    MMIO_REG(0x40020150, struct __struct_PWM_CMPV2)
+#define PWM_CMPV2_s	MMIO_REG(0x40020150, struct __struct_PWM_CMPV2)
 struct __struct_PWM_CMPV2
 {
   uint32_t cv : 24;
@@ -4883,7 +4883,7 @@ struct __struct_PWM_CMPV2
 #define PWM_CMPVUPD2_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD2_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD2_s    MMIO_REG(0x40020154, struct __struct_PWM_CMPVUPD2)
+#define PWM_CMPVUPD2_s	MMIO_REG(0x40020154, struct __struct_PWM_CMPVUPD2)
 struct __struct_PWM_CMPVUPD2
 {
   uint32_t cvupd : 24;
@@ -4909,7 +4909,7 @@ struct __struct_PWM_CMPVUPD2
 #define PWM_CMPM2_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM2_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM2_s    MMIO_REG(0x40020158, struct __struct_PWM_CMPM2)
+#define PWM_CMPM2_s	MMIO_REG(0x40020158, struct __struct_PWM_CMPM2)
 struct __struct_PWM_CMPM2
 {
   uint32_t cen : 1;
@@ -4934,7 +4934,7 @@ struct __struct_PWM_CMPM2
 #define PWM_CMPMUPD2_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD2_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD2_s    MMIO_REG(0x4002015c, struct __struct_PWM_CMPMUPD2)
+#define PWM_CMPMUPD2_s	MMIO_REG(0x4002015c, struct __struct_PWM_CMPMUPD2)
 struct __struct_PWM_CMPMUPD2
 {
   uint32_t cenupd : 1;
@@ -4952,7 +4952,7 @@ struct __struct_PWM_CMPMUPD2
 #define PWM_CMPV3_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV3_CVM	(1 << 24)
 
-#define PWM_CMPV3_s    MMIO_REG(0x40020160, struct __struct_PWM_CMPV3)
+#define PWM_CMPV3_s	MMIO_REG(0x40020160, struct __struct_PWM_CMPV3)
 struct __struct_PWM_CMPV3
 {
   uint32_t cv : 24;
@@ -4966,7 +4966,7 @@ struct __struct_PWM_CMPV3
 #define PWM_CMPVUPD3_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD3_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD3_s    MMIO_REG(0x40020164, struct __struct_PWM_CMPVUPD3)
+#define PWM_CMPVUPD3_s	MMIO_REG(0x40020164, struct __struct_PWM_CMPVUPD3)
 struct __struct_PWM_CMPVUPD3
 {
   uint32_t cvupd : 24;
@@ -4992,7 +4992,7 @@ struct __struct_PWM_CMPVUPD3
 #define PWM_CMPM3_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM3_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM3_s    MMIO_REG(0x40020168, struct __struct_PWM_CMPM3)
+#define PWM_CMPM3_s	MMIO_REG(0x40020168, struct __struct_PWM_CMPM3)
 struct __struct_PWM_CMPM3
 {
   uint32_t cen : 1;
@@ -5017,7 +5017,7 @@ struct __struct_PWM_CMPM3
 #define PWM_CMPMUPD3_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD3_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD3_s    MMIO_REG(0x4002016c, struct __struct_PWM_CMPMUPD3)
+#define PWM_CMPMUPD3_s	MMIO_REG(0x4002016c, struct __struct_PWM_CMPMUPD3)
 struct __struct_PWM_CMPMUPD3
 {
   uint32_t cenupd : 1;
@@ -5035,7 +5035,7 @@ struct __struct_PWM_CMPMUPD3
 #define PWM_CMPV4_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV4_CVM	(1 << 24)
 
-#define PWM_CMPV4_s    MMIO_REG(0x40020170, struct __struct_PWM_CMPV4)
+#define PWM_CMPV4_s	MMIO_REG(0x40020170, struct __struct_PWM_CMPV4)
 struct __struct_PWM_CMPV4
 {
   uint32_t cv : 24;
@@ -5049,7 +5049,7 @@ struct __struct_PWM_CMPV4
 #define PWM_CMPVUPD4_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD4_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD4_s    MMIO_REG(0x40020174, struct __struct_PWM_CMPVUPD4)
+#define PWM_CMPVUPD4_s	MMIO_REG(0x40020174, struct __struct_PWM_CMPVUPD4)
 struct __struct_PWM_CMPVUPD4
 {
   uint32_t cvupd : 24;
@@ -5075,7 +5075,7 @@ struct __struct_PWM_CMPVUPD4
 #define PWM_CMPM4_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM4_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM4_s    MMIO_REG(0x40020178, struct __struct_PWM_CMPM4)
+#define PWM_CMPM4_s	MMIO_REG(0x40020178, struct __struct_PWM_CMPM4)
 struct __struct_PWM_CMPM4
 {
   uint32_t cen : 1;
@@ -5100,7 +5100,7 @@ struct __struct_PWM_CMPM4
 #define PWM_CMPMUPD4_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD4_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD4_s    MMIO_REG(0x4002017c, struct __struct_PWM_CMPMUPD4)
+#define PWM_CMPMUPD4_s	MMIO_REG(0x4002017c, struct __struct_PWM_CMPMUPD4)
 struct __struct_PWM_CMPMUPD4
 {
   uint32_t cenupd : 1;
@@ -5118,7 +5118,7 @@ struct __struct_PWM_CMPMUPD4
 #define PWM_CMPV5_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV5_CVM	(1 << 24)
 
-#define PWM_CMPV5_s    MMIO_REG(0x40020180, struct __struct_PWM_CMPV5)
+#define PWM_CMPV5_s	MMIO_REG(0x40020180, struct __struct_PWM_CMPV5)
 struct __struct_PWM_CMPV5
 {
   uint32_t cv : 24;
@@ -5132,7 +5132,7 @@ struct __struct_PWM_CMPV5
 #define PWM_CMPVUPD5_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD5_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD5_s    MMIO_REG(0x40020184, struct __struct_PWM_CMPVUPD5)
+#define PWM_CMPVUPD5_s	MMIO_REG(0x40020184, struct __struct_PWM_CMPVUPD5)
 struct __struct_PWM_CMPVUPD5
 {
   uint32_t cvupd : 24;
@@ -5158,7 +5158,7 @@ struct __struct_PWM_CMPVUPD5
 #define PWM_CMPM5_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM5_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM5_s    MMIO_REG(0x40020188, struct __struct_PWM_CMPM5)
+#define PWM_CMPM5_s	MMIO_REG(0x40020188, struct __struct_PWM_CMPM5)
 struct __struct_PWM_CMPM5
 {
   uint32_t cen : 1;
@@ -5183,7 +5183,7 @@ struct __struct_PWM_CMPM5
 #define PWM_CMPMUPD5_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD5_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD5_s    MMIO_REG(0x4002018c, struct __struct_PWM_CMPMUPD5)
+#define PWM_CMPMUPD5_s	MMIO_REG(0x4002018c, struct __struct_PWM_CMPMUPD5)
 struct __struct_PWM_CMPMUPD5
 {
   uint32_t cenupd : 1;
@@ -5201,7 +5201,7 @@ struct __struct_PWM_CMPMUPD5
 #define PWM_CMPV6_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV6_CVM	(1 << 24)
 
-#define PWM_CMPV6_s    MMIO_REG(0x40020190, struct __struct_PWM_CMPV6)
+#define PWM_CMPV6_s	MMIO_REG(0x40020190, struct __struct_PWM_CMPV6)
 struct __struct_PWM_CMPV6
 {
   uint32_t cv : 24;
@@ -5215,7 +5215,7 @@ struct __struct_PWM_CMPV6
 #define PWM_CMPVUPD6_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD6_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD6_s    MMIO_REG(0x40020194, struct __struct_PWM_CMPVUPD6)
+#define PWM_CMPVUPD6_s	MMIO_REG(0x40020194, struct __struct_PWM_CMPVUPD6)
 struct __struct_PWM_CMPVUPD6
 {
   uint32_t cvupd : 24;
@@ -5241,7 +5241,7 @@ struct __struct_PWM_CMPVUPD6
 #define PWM_CMPM6_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM6_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM6_s    MMIO_REG(0x40020198, struct __struct_PWM_CMPM6)
+#define PWM_CMPM6_s	MMIO_REG(0x40020198, struct __struct_PWM_CMPM6)
 struct __struct_PWM_CMPM6
 {
   uint32_t cen : 1;
@@ -5266,7 +5266,7 @@ struct __struct_PWM_CMPM6
 #define PWM_CMPMUPD6_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD6_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD6_s    MMIO_REG(0x4002019c, struct __struct_PWM_CMPMUPD6)
+#define PWM_CMPMUPD6_s	MMIO_REG(0x4002019c, struct __struct_PWM_CMPMUPD6)
 struct __struct_PWM_CMPMUPD6
 {
   uint32_t cenupd : 1;
@@ -5284,7 +5284,7 @@ struct __struct_PWM_CMPMUPD6
 #define PWM_CMPV7_CV_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPV7_CVM	(1 << 24)
 
-#define PWM_CMPV7_s    MMIO_REG(0x400201a0, struct __struct_PWM_CMPV7)
+#define PWM_CMPV7_s	MMIO_REG(0x400201a0, struct __struct_PWM_CMPV7)
 struct __struct_PWM_CMPV7
 {
   uint32_t cv : 24;
@@ -5298,7 +5298,7 @@ struct __struct_PWM_CMPV7
 #define PWM_CMPVUPD7_CVUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 #define PWM_CMPVUPD7_CVMUPD	(1 << 24)
 
-#define PWM_CMPVUPD7_s    MMIO_REG(0x400201a4, struct __struct_PWM_CMPVUPD7)
+#define PWM_CMPVUPD7_s	MMIO_REG(0x400201a4, struct __struct_PWM_CMPVUPD7)
 struct __struct_PWM_CMPVUPD7
 {
   uint32_t cvupd : 24;
@@ -5324,7 +5324,7 @@ struct __struct_PWM_CMPVUPD7
 #define PWM_CMPM7_CUPRCNT_MSK	0x00f00000
 #define PWM_CMPM7_CUPRCNT_VAL(x)	(((x) >> 20) & 0xf)
 
-#define PWM_CMPM7_s    MMIO_REG(0x400201a8, struct __struct_PWM_CMPM7)
+#define PWM_CMPM7_s	MMIO_REG(0x400201a8, struct __struct_PWM_CMPM7)
 struct __struct_PWM_CMPM7
 {
   uint32_t cen : 1;
@@ -5349,7 +5349,7 @@ struct __struct_PWM_CMPM7
 #define PWM_CMPMUPD7_CUPRUPD_MSK	0x000f0000
 #define PWM_CMPMUPD7_CUPRUPD_VAL(x)	(((x) >> 16) & 0xf)
 
-#define PWM_CMPMUPD7_s    MMIO_REG(0x400201ac, struct __struct_PWM_CMPMUPD7)
+#define PWM_CMPMUPD7_s	MMIO_REG(0x400201ac, struct __struct_PWM_CMPMUPD7)
 struct __struct_PWM_CMPMUPD7
 {
   uint32_t cenupd : 1;
@@ -5372,7 +5372,7 @@ struct __struct_PWM_CMPMUPD7
 #define PWM_CMR0_DTHI	(1 << 17)
 #define PWM_CMR0_DTLI	(1 << 18)
 
-#define PWM_CMR0_s    MMIO_REG(0x40020200, struct __struct_PWM_CMR0)
+#define PWM_CMR0_s	MMIO_REG(0x40020200, struct __struct_PWM_CMR0)
 struct __struct_PWM_CMR0
 {
   uint32_t cpre : 4;
@@ -5392,7 +5392,7 @@ struct __struct_PWM_CMR0
 #define PWM_CDTY0_CDTY_MSK	0x00ffffff
 #define PWM_CDTY0_CDTY_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTY0_s    MMIO_REG(0x40020204, struct __struct_PWM_CDTY0)
+#define PWM_CDTY0_s	MMIO_REG(0x40020204, struct __struct_PWM_CDTY0)
 struct __struct_PWM_CDTY0
 {
   uint32_t cdty : 24;
@@ -5404,7 +5404,7 @@ struct __struct_PWM_CDTY0
 #define PWM_CDTYUPD0_CDTYUPD_MSK	0x00ffffff
 #define PWM_CDTYUPD0_CDTYUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTYUPD0_s    MMIO_REG(0x40020208, struct __struct_PWM_CDTYUPD0)
+#define PWM_CDTYUPD0_s	MMIO_REG(0x40020208, struct __struct_PWM_CDTYUPD0)
 struct __struct_PWM_CDTYUPD0
 {
   uint32_t cdtyupd : 24;
@@ -5416,7 +5416,7 @@ struct __struct_PWM_CDTYUPD0
 #define PWM_CPRD0_CPRD_MSK	0x00ffffff
 #define PWM_CPRD0_CPRD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRD0_s    MMIO_REG(0x4002020c, struct __struct_PWM_CPRD0)
+#define PWM_CPRD0_s	MMIO_REG(0x4002020c, struct __struct_PWM_CPRD0)
 struct __struct_PWM_CPRD0
 {
   uint32_t cprd : 24;
@@ -5428,7 +5428,7 @@ struct __struct_PWM_CPRD0
 #define PWM_CPRDUPD0_CPRDUPD_MSK	0x00ffffff
 #define PWM_CPRDUPD0_CPRDUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRDUPD0_s    MMIO_REG(0x40020210, struct __struct_PWM_CPRDUPD0)
+#define PWM_CPRDUPD0_s	MMIO_REG(0x40020210, struct __struct_PWM_CPRDUPD0)
 struct __struct_PWM_CPRDUPD0
 {
   uint32_t cprdupd : 24;
@@ -5440,7 +5440,7 @@ struct __struct_PWM_CPRDUPD0
 #define PWM_CCNT0_CNT_MSK	0x00ffffff
 #define PWM_CCNT0_CNT_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CCNT0_s    MMIO_REG(0x40020214, struct __struct_PWM_CCNT0)
+#define PWM_CCNT0_s	MMIO_REG(0x40020214, struct __struct_PWM_CCNT0)
 struct __struct_PWM_CCNT0
 {
   uint32_t cnt : 24;
@@ -5455,7 +5455,7 @@ struct __struct_PWM_CCNT0
 #define PWM_DT0_DTL_MSK	0xffff0000
 #define PWM_DT0_DTL_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DT0_s    MMIO_REG(0x40020218, struct __struct_PWM_DT0)
+#define PWM_DT0_s	MMIO_REG(0x40020218, struct __struct_PWM_DT0)
 struct __struct_PWM_DT0
 {
   uint32_t dth : 16;
@@ -5470,7 +5470,7 @@ struct __struct_PWM_DT0
 #define PWM_DTUPD0_DTLUPD_MSK	0xffff0000
 #define PWM_DTUPD0_DTLUPD_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DTUPD0_s    MMIO_REG(0x4002021c, struct __struct_PWM_DTUPD0)
+#define PWM_DTUPD0_s	MMIO_REG(0x4002021c, struct __struct_PWM_DTUPD0)
 struct __struct_PWM_DTUPD0
 {
   uint32_t dthupd : 16;
@@ -5488,7 +5488,7 @@ struct __struct_PWM_DTUPD0
 #define PWM_CMR1_DTHI	(1 << 17)
 #define PWM_CMR1_DTLI	(1 << 18)
 
-#define PWM_CMR1_s    MMIO_REG(0x40020220, struct __struct_PWM_CMR1)
+#define PWM_CMR1_s	MMIO_REG(0x40020220, struct __struct_PWM_CMR1)
 struct __struct_PWM_CMR1
 {
   uint32_t cpre : 4;
@@ -5508,7 +5508,7 @@ struct __struct_PWM_CMR1
 #define PWM_CDTY1_CDTY_MSK	0x00ffffff
 #define PWM_CDTY1_CDTY_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTY1_s    MMIO_REG(0x40020224, struct __struct_PWM_CDTY1)
+#define PWM_CDTY1_s	MMIO_REG(0x40020224, struct __struct_PWM_CDTY1)
 struct __struct_PWM_CDTY1
 {
   uint32_t cdty : 24;
@@ -5520,7 +5520,7 @@ struct __struct_PWM_CDTY1
 #define PWM_CDTYUPD1_CDTYUPD_MSK	0x00ffffff
 #define PWM_CDTYUPD1_CDTYUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTYUPD1_s    MMIO_REG(0x40020228, struct __struct_PWM_CDTYUPD1)
+#define PWM_CDTYUPD1_s	MMIO_REG(0x40020228, struct __struct_PWM_CDTYUPD1)
 struct __struct_PWM_CDTYUPD1
 {
   uint32_t cdtyupd : 24;
@@ -5532,7 +5532,7 @@ struct __struct_PWM_CDTYUPD1
 #define PWM_CPRD1_CPRD_MSK	0x00ffffff
 #define PWM_CPRD1_CPRD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRD1_s    MMIO_REG(0x4002022c, struct __struct_PWM_CPRD1)
+#define PWM_CPRD1_s	MMIO_REG(0x4002022c, struct __struct_PWM_CPRD1)
 struct __struct_PWM_CPRD1
 {
   uint32_t cprd : 24;
@@ -5544,7 +5544,7 @@ struct __struct_PWM_CPRD1
 #define PWM_CPRDUPD1_CPRDUPD_MSK	0x00ffffff
 #define PWM_CPRDUPD1_CPRDUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRDUPD1_s    MMIO_REG(0x40020230, struct __struct_PWM_CPRDUPD1)
+#define PWM_CPRDUPD1_s	MMIO_REG(0x40020230, struct __struct_PWM_CPRDUPD1)
 struct __struct_PWM_CPRDUPD1
 {
   uint32_t cprdupd : 24;
@@ -5556,7 +5556,7 @@ struct __struct_PWM_CPRDUPD1
 #define PWM_CCNT1_CNT_MSK	0x00ffffff
 #define PWM_CCNT1_CNT_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CCNT1_s    MMIO_REG(0x40020234, struct __struct_PWM_CCNT1)
+#define PWM_CCNT1_s	MMIO_REG(0x40020234, struct __struct_PWM_CCNT1)
 struct __struct_PWM_CCNT1
 {
   uint32_t cnt : 24;
@@ -5571,7 +5571,7 @@ struct __struct_PWM_CCNT1
 #define PWM_DT1_DTL_MSK	0xffff0000
 #define PWM_DT1_DTL_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DT1_s    MMIO_REG(0x40020238, struct __struct_PWM_DT1)
+#define PWM_DT1_s	MMIO_REG(0x40020238, struct __struct_PWM_DT1)
 struct __struct_PWM_DT1
 {
   uint32_t dth : 16;
@@ -5586,7 +5586,7 @@ struct __struct_PWM_DT1
 #define PWM_DTUPD1_DTLUPD_MSK	0xffff0000
 #define PWM_DTUPD1_DTLUPD_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DTUPD1_s    MMIO_REG(0x4002023c, struct __struct_PWM_DTUPD1)
+#define PWM_DTUPD1_s	MMIO_REG(0x4002023c, struct __struct_PWM_DTUPD1)
 struct __struct_PWM_DTUPD1
 {
   uint32_t dthupd : 16;
@@ -5604,7 +5604,7 @@ struct __struct_PWM_DTUPD1
 #define PWM_CMR2_DTHI	(1 << 17)
 #define PWM_CMR2_DTLI	(1 << 18)
 
-#define PWM_CMR2_s    MMIO_REG(0x40020240, struct __struct_PWM_CMR2)
+#define PWM_CMR2_s	MMIO_REG(0x40020240, struct __struct_PWM_CMR2)
 struct __struct_PWM_CMR2
 {
   uint32_t cpre : 4;
@@ -5624,7 +5624,7 @@ struct __struct_PWM_CMR2
 #define PWM_CDTY2_CDTY_MSK	0x00ffffff
 #define PWM_CDTY2_CDTY_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTY2_s    MMIO_REG(0x40020244, struct __struct_PWM_CDTY2)
+#define PWM_CDTY2_s	MMIO_REG(0x40020244, struct __struct_PWM_CDTY2)
 struct __struct_PWM_CDTY2
 {
   uint32_t cdty : 24;
@@ -5636,7 +5636,7 @@ struct __struct_PWM_CDTY2
 #define PWM_CDTYUPD2_CDTYUPD_MSK	0x00ffffff
 #define PWM_CDTYUPD2_CDTYUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTYUPD2_s    MMIO_REG(0x40020248, struct __struct_PWM_CDTYUPD2)
+#define PWM_CDTYUPD2_s	MMIO_REG(0x40020248, struct __struct_PWM_CDTYUPD2)
 struct __struct_PWM_CDTYUPD2
 {
   uint32_t cdtyupd : 24;
@@ -5648,7 +5648,7 @@ struct __struct_PWM_CDTYUPD2
 #define PWM_CPRD2_CPRD_MSK	0x00ffffff
 #define PWM_CPRD2_CPRD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRD2_s    MMIO_REG(0x4002024c, struct __struct_PWM_CPRD2)
+#define PWM_CPRD2_s	MMIO_REG(0x4002024c, struct __struct_PWM_CPRD2)
 struct __struct_PWM_CPRD2
 {
   uint32_t cprd : 24;
@@ -5660,7 +5660,7 @@ struct __struct_PWM_CPRD2
 #define PWM_CPRDUPD2_CPRDUPD_MSK	0x00ffffff
 #define PWM_CPRDUPD2_CPRDUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRDUPD2_s    MMIO_REG(0x40020250, struct __struct_PWM_CPRDUPD2)
+#define PWM_CPRDUPD2_s	MMIO_REG(0x40020250, struct __struct_PWM_CPRDUPD2)
 struct __struct_PWM_CPRDUPD2
 {
   uint32_t cprdupd : 24;
@@ -5672,7 +5672,7 @@ struct __struct_PWM_CPRDUPD2
 #define PWM_CCNT2_CNT_MSK	0x00ffffff
 #define PWM_CCNT2_CNT_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CCNT2_s    MMIO_REG(0x40020254, struct __struct_PWM_CCNT2)
+#define PWM_CCNT2_s	MMIO_REG(0x40020254, struct __struct_PWM_CCNT2)
 struct __struct_PWM_CCNT2
 {
   uint32_t cnt : 24;
@@ -5687,7 +5687,7 @@ struct __struct_PWM_CCNT2
 #define PWM_DT2_DTL_MSK	0xffff0000
 #define PWM_DT2_DTL_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DT2_s    MMIO_REG(0x40020258, struct __struct_PWM_DT2)
+#define PWM_DT2_s	MMIO_REG(0x40020258, struct __struct_PWM_DT2)
 struct __struct_PWM_DT2
 {
   uint32_t dth : 16;
@@ -5702,7 +5702,7 @@ struct __struct_PWM_DT2
 #define PWM_DTUPD2_DTLUPD_MSK	0xffff0000
 #define PWM_DTUPD2_DTLUPD_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DTUPD2_s    MMIO_REG(0x4002025c, struct __struct_PWM_DTUPD2)
+#define PWM_DTUPD2_s	MMIO_REG(0x4002025c, struct __struct_PWM_DTUPD2)
 struct __struct_PWM_DTUPD2
 {
   uint32_t dthupd : 16;
@@ -5720,7 +5720,7 @@ struct __struct_PWM_DTUPD2
 #define PWM_CMR3_DTHI	(1 << 17)
 #define PWM_CMR3_DTLI	(1 << 18)
 
-#define PWM_CMR3_s    MMIO_REG(0x40020260, struct __struct_PWM_CMR3)
+#define PWM_CMR3_s	MMIO_REG(0x40020260, struct __struct_PWM_CMR3)
 struct __struct_PWM_CMR3
 {
   uint32_t cpre : 4;
@@ -5740,7 +5740,7 @@ struct __struct_PWM_CMR3
 #define PWM_CDTY3_CDTY_MSK	0x00ffffff
 #define PWM_CDTY3_CDTY_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTY3_s    MMIO_REG(0x40020264, struct __struct_PWM_CDTY3)
+#define PWM_CDTY3_s	MMIO_REG(0x40020264, struct __struct_PWM_CDTY3)
 struct __struct_PWM_CDTY3
 {
   uint32_t cdty : 24;
@@ -5752,7 +5752,7 @@ struct __struct_PWM_CDTY3
 #define PWM_CDTYUPD3_CDTYUPD_MSK	0x00ffffff
 #define PWM_CDTYUPD3_CDTYUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CDTYUPD3_s    MMIO_REG(0x40020268, struct __struct_PWM_CDTYUPD3)
+#define PWM_CDTYUPD3_s	MMIO_REG(0x40020268, struct __struct_PWM_CDTYUPD3)
 struct __struct_PWM_CDTYUPD3
 {
   uint32_t cdtyupd : 24;
@@ -5764,7 +5764,7 @@ struct __struct_PWM_CDTYUPD3
 #define PWM_CPRD3_CPRD_MSK	0x00ffffff
 #define PWM_CPRD3_CPRD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRD3_s    MMIO_REG(0x4002026c, struct __struct_PWM_CPRD3)
+#define PWM_CPRD3_s	MMIO_REG(0x4002026c, struct __struct_PWM_CPRD3)
 struct __struct_PWM_CPRD3
 {
   uint32_t cprd : 24;
@@ -5776,7 +5776,7 @@ struct __struct_PWM_CPRD3
 #define PWM_CPRDUPD3_CPRDUPD_MSK	0x00ffffff
 #define PWM_CPRDUPD3_CPRDUPD_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CPRDUPD3_s    MMIO_REG(0x40020270, struct __struct_PWM_CPRDUPD3)
+#define PWM_CPRDUPD3_s	MMIO_REG(0x40020270, struct __struct_PWM_CPRDUPD3)
 struct __struct_PWM_CPRDUPD3
 {
   uint32_t cprdupd : 24;
@@ -5788,7 +5788,7 @@ struct __struct_PWM_CPRDUPD3
 #define PWM_CCNT3_CNT_MSK	0x00ffffff
 #define PWM_CCNT3_CNT_VAL(x)	(((x) >> 0) & 0xffffff)
 
-#define PWM_CCNT3_s    MMIO_REG(0x40020274, struct __struct_PWM_CCNT3)
+#define PWM_CCNT3_s	MMIO_REG(0x40020274, struct __struct_PWM_CCNT3)
 struct __struct_PWM_CCNT3
 {
   uint32_t cnt : 24;
@@ -5803,7 +5803,7 @@ struct __struct_PWM_CCNT3
 #define PWM_DT3_DTL_MSK	0xffff0000
 #define PWM_DT3_DTL_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DT3_s    MMIO_REG(0x40020278, struct __struct_PWM_DT3)
+#define PWM_DT3_s	MMIO_REG(0x40020278, struct __struct_PWM_DT3)
 struct __struct_PWM_DT3
 {
   uint32_t dth : 16;
@@ -5818,7 +5818,7 @@ struct __struct_PWM_DT3
 #define PWM_DTUPD3_DTLUPD_MSK	0xffff0000
 #define PWM_DTUPD3_DTLUPD_VAL(x)	(((x) >> 16) & 0xffff)
 
-#define PWM_DTUPD3_s    MMIO_REG(0x4002027c, struct __struct_PWM_DTUPD3)
+#define PWM_DTUPD3_s	MMIO_REG(0x4002027c, struct __struct_PWM_DTUPD3)
 struct __struct_PWM_DTUPD3
 {
   uint32_t dthupd : 16;
@@ -5849,7 +5849,7 @@ struct __struct_PWM_DTUPD3
 #define PWM_PDC_PTCR_TXTEN	(1 << 8)
 #define PWM_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define PWM_PDC_PTCR_s    MMIO_REG(0x40020120, struct __struct_PWM_PDC_PTCR)
+#define PWM_PDC_PTCR_s	MMIO_REG(0x40020120, struct __struct_PWM_PDC_PTCR)
 struct __struct_PWM_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -5864,7 +5864,7 @@ struct __struct_PWM_PDC_PTCR
 #define PWM_PDC_PTSR_RXTEN	(1 << 0)
 #define PWM_PDC_PTSR_TXTEN	(1 << 8)
 
-#define PWM_PDC_PTSR_s    MMIO_REG(0x40020124, struct __struct_PWM_PDC_PTSR)
+#define PWM_PDC_PTSR_s	MMIO_REG(0x40020124, struct __struct_PWM_PDC_PTSR)
 struct __struct_PWM_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -5895,7 +5895,7 @@ struct __struct_PWM_PDC_PTSR
 #define USART0_CR_RTSEN	(1 << 18)
 #define USART0_CR_RTSDIS	(1 << 19)
 
-#define USART0_CR_s    MMIO_REG(0x40024000, struct __struct_USART0_CR)
+#define USART0_CR_s	MMIO_REG(0x40024000, struct __struct_USART0_CR)
 struct __struct_USART0_CR
 {
   uint32_t  : 2;
@@ -5931,7 +5931,7 @@ struct __struct_USART0_CR
 #define USART0_CR_SPI_FCS	(1 << 18)
 #define USART0_CR_SPI_RCS	(1 << 19)
 
-#define USART0_CR_SPI_s    MMIO_REG(0x40024000, struct __struct_USART0_CR_SPI)
+#define USART0_CR_SPI_s	MMIO_REG(0x40024000, struct __struct_USART0_CR_SPI)
 struct __struct_USART0_CR_SPI
 {
   uint32_t  : 2;
@@ -5984,7 +5984,7 @@ struct __struct_USART0_CR_SPI
 #define USART0_MR_MODSYNC	(1 << 30)
 #define USART0_MR_ONEBIT	(1 << 31)
 
-#define USART0_MR_s    MMIO_REG(0x40024004, struct __struct_USART0_MR)
+#define USART0_MR_s	MMIO_REG(0x40024004, struct __struct_USART0_MR)
 struct __struct_USART0_MR
 {
   uint32_t usart_mode : 4;
@@ -6024,7 +6024,7 @@ struct __struct_USART0_MR
 #define USART0_MR_SPI_CPOL	(1 << 16)
 #define USART0_MR_SPI_WRDBT	(1 << 20)
 
-#define USART0_MR_SPI_s    MMIO_REG(0x40024004, struct __struct_USART0_MR_SPI)
+#define USART0_MR_SPI_s	MMIO_REG(0x40024004, struct __struct_USART0_MR_SPI)
 struct __struct_USART0_MR_SPI
 {
   uint32_t usart_mode : 4;
@@ -6059,7 +6059,7 @@ struct __struct_USART0_MR_SPI
 #define USART0_IER_CTSIC	(1 << 19)
 #define USART0_IER_MANE	(1 << 24)
 
-#define USART0_IER_s    MMIO_REG(0x40024008, struct __struct_USART0_IER)
+#define USART0_IER_s	MMIO_REG(0x40024008, struct __struct_USART0_IER)
 struct __struct_USART0_IER
 {
   uint32_t rxrdy : 1;
@@ -6093,7 +6093,7 @@ struct __struct_USART0_IER
 #define USART0_IER_SPI_TXEMPTY	(1 << 9)
 #define USART0_IER_SPI_UNRE	(1 << 10)
 
-#define USART0_IER_SPI_s    MMIO_REG(0x40024008, struct __struct_USART0_IER_SPI)
+#define USART0_IER_SPI_s	MMIO_REG(0x40024008, struct __struct_USART0_IER_SPI)
 struct __struct_USART0_IER_SPI
 {
   uint32_t rxrdy : 1;
@@ -6127,7 +6127,7 @@ struct __struct_USART0_IER_SPI
 #define USART0_IDR_CTSIC	(1 << 19)
 #define USART0_IDR_MANE	(1 << 24)
 
-#define USART0_IDR_s    MMIO_REG(0x4002400c, struct __struct_USART0_IDR)
+#define USART0_IDR_s	MMIO_REG(0x4002400c, struct __struct_USART0_IDR)
 struct __struct_USART0_IDR
 {
   uint32_t rxrdy : 1;
@@ -6161,7 +6161,7 @@ struct __struct_USART0_IDR
 #define USART0_IDR_SPI_TXEMPTY	(1 << 9)
 #define USART0_IDR_SPI_UNRE	(1 << 10)
 
-#define USART0_IDR_SPI_s    MMIO_REG(0x4002400c, struct __struct_USART0_IDR_SPI)
+#define USART0_IDR_SPI_s	MMIO_REG(0x4002400c, struct __struct_USART0_IDR_SPI)
 struct __struct_USART0_IDR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6195,7 +6195,7 @@ struct __struct_USART0_IDR_SPI
 #define USART0_IMR_CTSIC	(1 << 19)
 #define USART0_IMR_MANE	(1 << 24)
 
-#define USART0_IMR_s    MMIO_REG(0x40024010, struct __struct_USART0_IMR)
+#define USART0_IMR_s	MMIO_REG(0x40024010, struct __struct_USART0_IMR)
 struct __struct_USART0_IMR
 {
   uint32_t rxrdy : 1;
@@ -6229,7 +6229,7 @@ struct __struct_USART0_IMR
 #define USART0_IMR_SPI_TXEMPTY	(1 << 9)
 #define USART0_IMR_SPI_UNRE	(1 << 10)
 
-#define USART0_IMR_SPI_s    MMIO_REG(0x40024010, struct __struct_USART0_IMR_SPI)
+#define USART0_IMR_SPI_s	MMIO_REG(0x40024010, struct __struct_USART0_IMR_SPI)
 struct __struct_USART0_IMR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6267,7 +6267,7 @@ struct __struct_USART0_IMR_SPI
 #define USART0_CSR_CTS	(1 << 23)
 #define USART0_CSR_MANERR	(1 << 24)
 
-#define USART0_CSR_s    MMIO_REG(0x40024014, struct __struct_USART0_CSR)
+#define USART0_CSR_s	MMIO_REG(0x40024014, struct __struct_USART0_CSR)
 struct __struct_USART0_CSR
 {
   uint32_t rxrdy : 1;
@@ -6304,7 +6304,7 @@ struct __struct_USART0_CSR
 #define USART0_CSR_SPI_TXEMPTY	(1 << 9)
 #define USART0_CSR_SPI_UNRE	(1 << 10)
 
-#define USART0_CSR_SPI_s    MMIO_REG(0x40024014, struct __struct_USART0_CSR_SPI)
+#define USART0_CSR_SPI_s	MMIO_REG(0x40024014, struct __struct_USART0_CSR_SPI)
 struct __struct_USART0_CSR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6323,7 +6323,7 @@ struct __struct_USART0_CSR_SPI
 #define USART0_RHR_RXCHR_VAL(x)	(((x) >> 0) & 0x1ff)
 #define USART0_RHR_RXSYNH	(1 << 15)
 
-#define USART0_RHR_s    MMIO_REG(0x40024018, struct __struct_USART0_RHR)
+#define USART0_RHR_s	MMIO_REG(0x40024018, struct __struct_USART0_RHR)
 struct __struct_USART0_RHR
 {
   uint32_t rxchr : 9;
@@ -6338,7 +6338,7 @@ struct __struct_USART0_RHR
 #define USART0_THR_TXCHR_VAL(x)	(((x) >> 0) & 0x1ff)
 #define USART0_THR_TXSYNH	(1 << 15)
 
-#define USART0_THR_s    MMIO_REG(0x4002401c, struct __struct_USART0_THR)
+#define USART0_THR_s	MMIO_REG(0x4002401c, struct __struct_USART0_THR)
 struct __struct_USART0_THR
 {
   uint32_t txchr : 9;
@@ -6355,7 +6355,7 @@ struct __struct_USART0_THR
 #define USART0_BRGR_FP_MSK	0x00070000
 #define USART0_BRGR_FP_VAL(x)	(((x) >> 16) & 0x7)
 
-#define USART0_BRGR_s    MMIO_REG(0x40024020, struct __struct_USART0_BRGR)
+#define USART0_BRGR_s	MMIO_REG(0x40024020, struct __struct_USART0_BRGR)
 struct __struct_USART0_BRGR
 {
   uint32_t cd : 16;
@@ -6368,7 +6368,7 @@ struct __struct_USART0_BRGR
 #define USART0_RTOR_TO_MSK	0x0000ffff
 #define USART0_RTOR_TO_VAL(x)	(((x) >> 0) & 0xffff)
 
-#define USART0_RTOR_s    MMIO_REG(0x40024024, struct __struct_USART0_RTOR)
+#define USART0_RTOR_s	MMIO_REG(0x40024024, struct __struct_USART0_RTOR)
 struct __struct_USART0_RTOR
 {
   uint32_t to : 16;
@@ -6380,7 +6380,7 @@ struct __struct_USART0_RTOR
 #define USART0_TTGR_TG_MSK	0x000000ff
 #define USART0_TTGR_TG_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART0_TTGR_s    MMIO_REG(0x40024028, struct __struct_USART0_TTGR)
+#define USART0_TTGR_s	MMIO_REG(0x40024028, struct __struct_USART0_TTGR)
 struct __struct_USART0_TTGR
 {
   uint32_t tg : 8;
@@ -6392,7 +6392,7 @@ struct __struct_USART0_TTGR
 #define USART0_FIDI_FI_DI_RATIO_MSK	0x000007ff
 #define USART0_FIDI_FI_DI_RATIO_VAL(x)	(((x) >> 0) & 0x7ff)
 
-#define USART0_FIDI_s    MMIO_REG(0x40024040, struct __struct_USART0_FIDI)
+#define USART0_FIDI_s	MMIO_REG(0x40024040, struct __struct_USART0_FIDI)
 struct __struct_USART0_FIDI
 {
   uint32_t fi_di_ratio : 11;
@@ -6404,7 +6404,7 @@ struct __struct_USART0_FIDI
 #define USART0_NER_NB_ERRORS_MSK	0x000000ff
 #define USART0_NER_NB_ERRORS_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART0_NER_s    MMIO_REG(0x40024044, struct __struct_USART0_NER)
+#define USART0_NER_s	MMIO_REG(0x40024044, struct __struct_USART0_NER)
 struct __struct_USART0_NER
 {
   uint32_t nb_errors : 8;
@@ -6416,7 +6416,7 @@ struct __struct_USART0_NER
 #define USART0_IF_IRDA_FILTER_MSK	0x000000ff
 #define USART0_IF_IRDA_FILTER_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART0_IF_s    MMIO_REG(0x4002404c, struct __struct_USART0_IF)
+#define USART0_IF_s	MMIO_REG(0x4002404c, struct __struct_USART0_IF)
 struct __struct_USART0_IF
 {
   uint32_t irda_filter : 8;
@@ -6441,7 +6441,7 @@ struct __struct_USART0_IF
 #define USART0_MAN_ONE	(1 << 29)
 #define USART0_MAN_DRIFT	(1 << 30)
 
-#define USART0_MAN_s    MMIO_REG(0x40024050, struct __struct_USART0_MAN)
+#define USART0_MAN_s	MMIO_REG(0x40024050, struct __struct_USART0_MAN)
 struct __struct_USART0_MAN
 {
   uint32_t tx_pl : 4;
@@ -6466,7 +6466,7 @@ struct __struct_USART0_MAN
 #define USART0_WPMR_WPKEY_MSK	0xffffff00
 #define USART0_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define USART0_WPMR_s    MMIO_REG(0x400240e4, struct __struct_USART0_WPMR)
+#define USART0_WPMR_s	MMIO_REG(0x400240e4, struct __struct_USART0_WPMR)
 struct __struct_USART0_WPMR
 {
   uint32_t wpen : 1;
@@ -6480,7 +6480,7 @@ struct __struct_USART0_WPMR
 #define USART0_WPSR_WPVSRC_MSK	0x00ffff00
 #define USART0_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define USART0_WPSR_s    MMIO_REG(0x400240e8, struct __struct_USART0_WPSR)
+#define USART0_WPSR_s	MMIO_REG(0x400240e8, struct __struct_USART0_WPSR)
 struct __struct_USART0_WPSR
 {
   uint32_t wpvs : 1;
@@ -6513,7 +6513,7 @@ struct __struct_USART0_WPSR
 #define USART0_PDC_PTCR_TXTEN	(1 << 8)
 #define USART0_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define USART0_PDC_PTCR_s    MMIO_REG(0x40024120, struct __struct_USART0_PDC_PTCR)
+#define USART0_PDC_PTCR_s	MMIO_REG(0x40024120, struct __struct_USART0_PDC_PTCR)
 struct __struct_USART0_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -6528,7 +6528,7 @@ struct __struct_USART0_PDC_PTCR
 #define USART0_PDC_PTSR_RXTEN	(1 << 0)
 #define USART0_PDC_PTSR_TXTEN	(1 << 8)
 
-#define USART0_PDC_PTSR_s    MMIO_REG(0x40024124, struct __struct_USART0_PDC_PTSR)
+#define USART0_PDC_PTSR_s	MMIO_REG(0x40024124, struct __struct_USART0_PDC_PTSR)
 struct __struct_USART0_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -6559,7 +6559,7 @@ struct __struct_USART0_PDC_PTSR
 #define USART1_CR_RTSEN	(1 << 18)
 #define USART1_CR_RTSDIS	(1 << 19)
 
-#define USART1_CR_s    MMIO_REG(0x40028000, struct __struct_USART1_CR)
+#define USART1_CR_s	MMIO_REG(0x40028000, struct __struct_USART1_CR)
 struct __struct_USART1_CR
 {
   uint32_t  : 2;
@@ -6595,7 +6595,7 @@ struct __struct_USART1_CR
 #define USART1_CR_SPI_FCS	(1 << 18)
 #define USART1_CR_SPI_RCS	(1 << 19)
 
-#define USART1_CR_SPI_s    MMIO_REG(0x40028000, struct __struct_USART1_CR_SPI)
+#define USART1_CR_SPI_s	MMIO_REG(0x40028000, struct __struct_USART1_CR_SPI)
 struct __struct_USART1_CR_SPI
 {
   uint32_t  : 2;
@@ -6648,7 +6648,7 @@ struct __struct_USART1_CR_SPI
 #define USART1_MR_MODSYNC	(1 << 30)
 #define USART1_MR_ONEBIT	(1 << 31)
 
-#define USART1_MR_s    MMIO_REG(0x40028004, struct __struct_USART1_MR)
+#define USART1_MR_s	MMIO_REG(0x40028004, struct __struct_USART1_MR)
 struct __struct_USART1_MR
 {
   uint32_t usart_mode : 4;
@@ -6688,7 +6688,7 @@ struct __struct_USART1_MR
 #define USART1_MR_SPI_CPOL	(1 << 16)
 #define USART1_MR_SPI_WRDBT	(1 << 20)
 
-#define USART1_MR_SPI_s    MMIO_REG(0x40028004, struct __struct_USART1_MR_SPI)
+#define USART1_MR_SPI_s	MMIO_REG(0x40028004, struct __struct_USART1_MR_SPI)
 struct __struct_USART1_MR_SPI
 {
   uint32_t usart_mode : 4;
@@ -6723,7 +6723,7 @@ struct __struct_USART1_MR_SPI
 #define USART1_IER_CTSIC	(1 << 19)
 #define USART1_IER_MANE	(1 << 24)
 
-#define USART1_IER_s    MMIO_REG(0x40028008, struct __struct_USART1_IER)
+#define USART1_IER_s	MMIO_REG(0x40028008, struct __struct_USART1_IER)
 struct __struct_USART1_IER
 {
   uint32_t rxrdy : 1;
@@ -6757,7 +6757,7 @@ struct __struct_USART1_IER
 #define USART1_IER_SPI_TXEMPTY	(1 << 9)
 #define USART1_IER_SPI_UNRE	(1 << 10)
 
-#define USART1_IER_SPI_s    MMIO_REG(0x40028008, struct __struct_USART1_IER_SPI)
+#define USART1_IER_SPI_s	MMIO_REG(0x40028008, struct __struct_USART1_IER_SPI)
 struct __struct_USART1_IER_SPI
 {
   uint32_t rxrdy : 1;
@@ -6791,7 +6791,7 @@ struct __struct_USART1_IER_SPI
 #define USART1_IDR_CTSIC	(1 << 19)
 #define USART1_IDR_MANE	(1 << 24)
 
-#define USART1_IDR_s    MMIO_REG(0x4002800c, struct __struct_USART1_IDR)
+#define USART1_IDR_s	MMIO_REG(0x4002800c, struct __struct_USART1_IDR)
 struct __struct_USART1_IDR
 {
   uint32_t rxrdy : 1;
@@ -6825,7 +6825,7 @@ struct __struct_USART1_IDR
 #define USART1_IDR_SPI_TXEMPTY	(1 << 9)
 #define USART1_IDR_SPI_UNRE	(1 << 10)
 
-#define USART1_IDR_SPI_s    MMIO_REG(0x4002800c, struct __struct_USART1_IDR_SPI)
+#define USART1_IDR_SPI_s	MMIO_REG(0x4002800c, struct __struct_USART1_IDR_SPI)
 struct __struct_USART1_IDR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6859,7 +6859,7 @@ struct __struct_USART1_IDR_SPI
 #define USART1_IMR_CTSIC	(1 << 19)
 #define USART1_IMR_MANE	(1 << 24)
 
-#define USART1_IMR_s    MMIO_REG(0x40028010, struct __struct_USART1_IMR)
+#define USART1_IMR_s	MMIO_REG(0x40028010, struct __struct_USART1_IMR)
 struct __struct_USART1_IMR
 {
   uint32_t rxrdy : 1;
@@ -6893,7 +6893,7 @@ struct __struct_USART1_IMR
 #define USART1_IMR_SPI_TXEMPTY	(1 << 9)
 #define USART1_IMR_SPI_UNRE	(1 << 10)
 
-#define USART1_IMR_SPI_s    MMIO_REG(0x40028010, struct __struct_USART1_IMR_SPI)
+#define USART1_IMR_SPI_s	MMIO_REG(0x40028010, struct __struct_USART1_IMR_SPI)
 struct __struct_USART1_IMR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6931,7 +6931,7 @@ struct __struct_USART1_IMR_SPI
 #define USART1_CSR_CTS	(1 << 23)
 #define USART1_CSR_MANERR	(1 << 24)
 
-#define USART1_CSR_s    MMIO_REG(0x40028014, struct __struct_USART1_CSR)
+#define USART1_CSR_s	MMIO_REG(0x40028014, struct __struct_USART1_CSR)
 struct __struct_USART1_CSR
 {
   uint32_t rxrdy : 1;
@@ -6968,7 +6968,7 @@ struct __struct_USART1_CSR
 #define USART1_CSR_SPI_TXEMPTY	(1 << 9)
 #define USART1_CSR_SPI_UNRE	(1 << 10)
 
-#define USART1_CSR_SPI_s    MMIO_REG(0x40028014, struct __struct_USART1_CSR_SPI)
+#define USART1_CSR_SPI_s	MMIO_REG(0x40028014, struct __struct_USART1_CSR_SPI)
 struct __struct_USART1_CSR_SPI
 {
   uint32_t rxrdy : 1;
@@ -6987,7 +6987,7 @@ struct __struct_USART1_CSR_SPI
 #define USART1_RHR_RXCHR_VAL(x)	(((x) >> 0) & 0x1ff)
 #define USART1_RHR_RXSYNH	(1 << 15)
 
-#define USART1_RHR_s    MMIO_REG(0x40028018, struct __struct_USART1_RHR)
+#define USART1_RHR_s	MMIO_REG(0x40028018, struct __struct_USART1_RHR)
 struct __struct_USART1_RHR
 {
   uint32_t rxchr : 9;
@@ -7002,7 +7002,7 @@ struct __struct_USART1_RHR
 #define USART1_THR_TXCHR_VAL(x)	(((x) >> 0) & 0x1ff)
 #define USART1_THR_TXSYNH	(1 << 15)
 
-#define USART1_THR_s    MMIO_REG(0x4002801c, struct __struct_USART1_THR)
+#define USART1_THR_s	MMIO_REG(0x4002801c, struct __struct_USART1_THR)
 struct __struct_USART1_THR
 {
   uint32_t txchr : 9;
@@ -7019,7 +7019,7 @@ struct __struct_USART1_THR
 #define USART1_BRGR_FP_MSK	0x00070000
 #define USART1_BRGR_FP_VAL(x)	(((x) >> 16) & 0x7)
 
-#define USART1_BRGR_s    MMIO_REG(0x40028020, struct __struct_USART1_BRGR)
+#define USART1_BRGR_s	MMIO_REG(0x40028020, struct __struct_USART1_BRGR)
 struct __struct_USART1_BRGR
 {
   uint32_t cd : 16;
@@ -7032,7 +7032,7 @@ struct __struct_USART1_BRGR
 #define USART1_RTOR_TO_MSK	0x0000ffff
 #define USART1_RTOR_TO_VAL(x)	(((x) >> 0) & 0xffff)
 
-#define USART1_RTOR_s    MMIO_REG(0x40028024, struct __struct_USART1_RTOR)
+#define USART1_RTOR_s	MMIO_REG(0x40028024, struct __struct_USART1_RTOR)
 struct __struct_USART1_RTOR
 {
   uint32_t to : 16;
@@ -7044,7 +7044,7 @@ struct __struct_USART1_RTOR
 #define USART1_TTGR_TG_MSK	0x000000ff
 #define USART1_TTGR_TG_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART1_TTGR_s    MMIO_REG(0x40028028, struct __struct_USART1_TTGR)
+#define USART1_TTGR_s	MMIO_REG(0x40028028, struct __struct_USART1_TTGR)
 struct __struct_USART1_TTGR
 {
   uint32_t tg : 8;
@@ -7056,7 +7056,7 @@ struct __struct_USART1_TTGR
 #define USART1_FIDI_FI_DI_RATIO_MSK	0x000007ff
 #define USART1_FIDI_FI_DI_RATIO_VAL(x)	(((x) >> 0) & 0x7ff)
 
-#define USART1_FIDI_s    MMIO_REG(0x40028040, struct __struct_USART1_FIDI)
+#define USART1_FIDI_s	MMIO_REG(0x40028040, struct __struct_USART1_FIDI)
 struct __struct_USART1_FIDI
 {
   uint32_t fi_di_ratio : 11;
@@ -7068,7 +7068,7 @@ struct __struct_USART1_FIDI
 #define USART1_NER_NB_ERRORS_MSK	0x000000ff
 #define USART1_NER_NB_ERRORS_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART1_NER_s    MMIO_REG(0x40028044, struct __struct_USART1_NER)
+#define USART1_NER_s	MMIO_REG(0x40028044, struct __struct_USART1_NER)
 struct __struct_USART1_NER
 {
   uint32_t nb_errors : 8;
@@ -7080,7 +7080,7 @@ struct __struct_USART1_NER
 #define USART1_IF_IRDA_FILTER_MSK	0x000000ff
 #define USART1_IF_IRDA_FILTER_VAL(x)	(((x) >> 0) & 0xff)
 
-#define USART1_IF_s    MMIO_REG(0x4002804c, struct __struct_USART1_IF)
+#define USART1_IF_s	MMIO_REG(0x4002804c, struct __struct_USART1_IF)
 struct __struct_USART1_IF
 {
   uint32_t irda_filter : 8;
@@ -7105,7 +7105,7 @@ struct __struct_USART1_IF
 #define USART1_MAN_ONE	(1 << 29)
 #define USART1_MAN_DRIFT	(1 << 30)
 
-#define USART1_MAN_s    MMIO_REG(0x40028050, struct __struct_USART1_MAN)
+#define USART1_MAN_s	MMIO_REG(0x40028050, struct __struct_USART1_MAN)
 struct __struct_USART1_MAN
 {
   uint32_t tx_pl : 4;
@@ -7130,7 +7130,7 @@ struct __struct_USART1_MAN
 #define USART1_WPMR_WPKEY_MSK	0xffffff00
 #define USART1_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define USART1_WPMR_s    MMIO_REG(0x400280e4, struct __struct_USART1_WPMR)
+#define USART1_WPMR_s	MMIO_REG(0x400280e4, struct __struct_USART1_WPMR)
 struct __struct_USART1_WPMR
 {
   uint32_t wpen : 1;
@@ -7144,7 +7144,7 @@ struct __struct_USART1_WPMR
 #define USART1_WPSR_WPVSRC_MSK	0x00ffff00
 #define USART1_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define USART1_WPSR_s    MMIO_REG(0x400280e8, struct __struct_USART1_WPSR)
+#define USART1_WPSR_s	MMIO_REG(0x400280e8, struct __struct_USART1_WPSR)
 struct __struct_USART1_WPSR
 {
   uint32_t wpvs : 1;
@@ -7177,7 +7177,7 @@ struct __struct_USART1_WPSR
 #define USART1_PDC_PTCR_TXTEN	(1 << 8)
 #define USART1_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define USART1_PDC_PTCR_s    MMIO_REG(0x40028120, struct __struct_USART1_PDC_PTCR)
+#define USART1_PDC_PTCR_s	MMIO_REG(0x40028120, struct __struct_USART1_PDC_PTCR)
 struct __struct_USART1_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -7192,7 +7192,7 @@ struct __struct_USART1_PDC_PTCR
 #define USART1_PDC_PTSR_RXTEN	(1 << 0)
 #define USART1_PDC_PTSR_TXTEN	(1 << 8)
 
-#define USART1_PDC_PTSR_s    MMIO_REG(0x40028124, struct __struct_USART1_PDC_PTSR)
+#define USART1_PDC_PTSR_s	MMIO_REG(0x40028124, struct __struct_USART1_PDC_PTSR)
 struct __struct_USART1_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -7210,7 +7210,7 @@ struct __struct_USART1_PDC_PTSR
 #define UDP_FRM_NUM_FRM_ERR	(1 << 16)
 #define UDP_FRM_NUM_FRM_OK	(1 << 17)
 
-#define UDP_FRM_NUM_s    MMIO_REG(0x40034000, struct __struct_UDP_FRM_NUM)
+#define UDP_FRM_NUM_s	MMIO_REG(0x40034000, struct __struct_UDP_FRM_NUM)
 struct __struct_UDP_FRM_NUM
 {
   uint32_t frm_num : 11;
@@ -7227,7 +7227,7 @@ struct __struct_UDP_FRM_NUM
 #define UDP_GLB_STAT_RSMINPR	(1 << 3)
 #define UDP_GLB_STAT_RMWUPE	(1 << 4)
 
-#define UDP_GLB_STAT_s    MMIO_REG(0x40034004, struct __struct_UDP_GLB_STAT)
+#define UDP_GLB_STAT_s	MMIO_REG(0x40034004, struct __struct_UDP_GLB_STAT)
 struct __struct_UDP_GLB_STAT
 {
   uint32_t fadden : 1;
@@ -7244,7 +7244,7 @@ struct __struct_UDP_GLB_STAT
 #define UDP_FADDR_FADD_VAL(x)	(((x) >> 0) & 0x7f)
 #define UDP_FADDR_FEN	(1 << 8)
 
-#define UDP_FADDR_s    MMIO_REG(0x40034008, struct __struct_UDP_FADDR)
+#define UDP_FADDR_s	MMIO_REG(0x40034008, struct __struct_UDP_FADDR)
 struct __struct_UDP_FADDR
 {
   uint32_t fadd : 7;
@@ -7268,7 +7268,7 @@ struct __struct_UDP_FADDR
 #define UDP_IER_SOFINT	(1 << 11)
 #define UDP_IER_WAKEUP	(1 << 13)
 
-#define UDP_IER_s    MMIO_REG(0x40034010, struct __struct_UDP_IER)
+#define UDP_IER_s	MMIO_REG(0x40034010, struct __struct_UDP_IER)
 struct __struct_UDP_IER
 {
   uint32_t ep0int : 1;
@@ -7303,7 +7303,7 @@ struct __struct_UDP_IER
 #define UDP_IDR_SOFINT	(1 << 11)
 #define UDP_IDR_WAKEUP	(1 << 13)
 
-#define UDP_IDR_s    MMIO_REG(0x40034014, struct __struct_UDP_IDR)
+#define UDP_IDR_s	MMIO_REG(0x40034014, struct __struct_UDP_IDR)
 struct __struct_UDP_IDR
 {
   uint32_t ep0int : 1;
@@ -7339,7 +7339,7 @@ struct __struct_UDP_IDR
 #define UDP_IMR_BIT12	(1 << 12)
 #define UDP_IMR_WAKEUP	(1 << 13)
 
-#define UDP_IMR_s    MMIO_REG(0x40034018, struct __struct_UDP_IMR)
+#define UDP_IMR_s	MMIO_REG(0x40034018, struct __struct_UDP_IMR)
 struct __struct_UDP_IMR
 {
   uint32_t ep0int : 1;
@@ -7375,7 +7375,7 @@ struct __struct_UDP_IMR
 #define UDP_ISR_ENDBUSRES	(1 << 12)
 #define UDP_ISR_WAKEUP	(1 << 13)
 
-#define UDP_ISR_s    MMIO_REG(0x4003401c, struct __struct_UDP_ISR)
+#define UDP_ISR_s	MMIO_REG(0x4003401c, struct __struct_UDP_ISR)
 struct __struct_UDP_ISR
 {
   uint32_t ep0int : 1;
@@ -7403,7 +7403,7 @@ struct __struct_UDP_ISR
 #define UDP_ICR_ENDBUSRES	(1 << 12)
 #define UDP_ICR_WAKEUP	(1 << 13)
 
-#define UDP_ICR_s    MMIO_REG(0x40034020, struct __struct_UDP_ICR)
+#define UDP_ICR_s	MMIO_REG(0x40034020, struct __struct_UDP_ICR)
 struct __struct_UDP_ICR
 {
   uint32_t  : 8;
@@ -7426,7 +7426,7 @@ struct __struct_UDP_ICR
 #define UDP_RST_EP_EP6	(1 << 6)
 #define UDP_RST_EP_EP7	(1 << 7)
 
-#define UDP_RST_EP_s    MMIO_REG(0x40034028, struct __struct_UDP_RST_EP)
+#define UDP_RST_EP_s	MMIO_REG(0x40034028, struct __struct_UDP_RST_EP)
 struct __struct_UDP_RST_EP
 {
   uint32_t ep0 : 1;
@@ -7440,26 +7440,26 @@ struct __struct_UDP_RST_EP
   uint32_t  : 24;
 };
 
-#define UDP_CSR0	MMIO_REG(0x40034030, uint32_t)
-#define UDP_CSR0_TXCOMP	(1 << 0)
-#define UDP_CSR0_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR0_RXSETUP	(1 << 2)
-#define UDP_CSR0_STALLSENT	(1 << 3)
-#define UDP_CSR0_TXPKTRDY	(1 << 4)
-#define UDP_CSR0_FORCESTALL	(1 << 5)
-#define UDP_CSR0_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR0_DIR	(1 << 7)
-#define UDP_CSR0_EPTYPE(x)	((x) << 8)
-#define UDP_CSR0_EPTYPE_MSK	0x00000700
-#define UDP_CSR0_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR0_DTGLE	(1 << 11)
-#define UDP_CSR0_EPEDS	(1 << 15)
-#define UDP_CSR0_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR0_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR0_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
+#define UDP_CSR(n)	MMIO_REG(0x40034030 + n*4, uint32_t)
+#define UDP_CSR_TXCOMP	(1 << 0)
+#define UDP_CSR_RX_DATA_BK0	(1 << 1)
+#define UDP_CSR_RXSETUP	(1 << 2)
+#define UDP_CSR_STALLSENT	(1 << 3)
+#define UDP_CSR_TXPKTRDY	(1 << 4)
+#define UDP_CSR_FORCESTALL	(1 << 5)
+#define UDP_CSR_RX_DATA_BK1	(1 << 6)
+#define UDP_CSR_DIR	(1 << 7)
+#define UDP_CSR_EPTYPE(x)	((x) << 8)
+#define UDP_CSR_EPTYPE_MSK	0x00000700
+#define UDP_CSR_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
+#define UDP_CSR_DTGLE	(1 << 11)
+#define UDP_CSR_EPEDS	(1 << 15)
+#define UDP_CSR_RXBYTECNT(x)	((x) << 16)
+#define UDP_CSR_RXBYTECNT_MSK	0x07ff0000
+#define UDP_CSR_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
 
-#define UDP_CSR0_s    MMIO_REG(0x40034030, struct __struct_UDP_CSR0)
-struct __struct_UDP_CSR0
+#define UDP_CSR_s(n)	MMIO_REG(0x40034030 + n*4, struct __struct_UDP_CSR)
+struct __struct_UDP_CSR
 {
   uint32_t txcomp : 1;
   uint32_t rx_data_bk0 : 1;
@@ -7477,356 +7477,13 @@ struct __struct_UDP_CSR0
   uint32_t  : 5;
 };
 
-#define UDP_CSR1	MMIO_REG(0x40034034, uint32_t)
-#define UDP_CSR1_TXCOMP	(1 << 0)
-#define UDP_CSR1_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR1_RXSETUP	(1 << 2)
-#define UDP_CSR1_STALLSENT	(1 << 3)
-#define UDP_CSR1_TXPKTRDY	(1 << 4)
-#define UDP_CSR1_FORCESTALL	(1 << 5)
-#define UDP_CSR1_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR1_DIR	(1 << 7)
-#define UDP_CSR1_EPTYPE(x)	((x) << 8)
-#define UDP_CSR1_EPTYPE_MSK	0x00000700
-#define UDP_CSR1_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR1_DTGLE	(1 << 11)
-#define UDP_CSR1_EPEDS	(1 << 15)
-#define UDP_CSR1_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR1_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR1_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
+#define UDP_FDR(n)	MMIO_REG(0x40034050 + n*4, uint32_t)
+#define UDP_FDR_FIFO_DATA(x)	((x) << 0)
+#define UDP_FDR_FIFO_DATA_MSK	0x000000ff
+#define UDP_FDR_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
 
-#define UDP_CSR1_s    MMIO_REG(0x40034034, struct __struct_UDP_CSR1)
-struct __struct_UDP_CSR1
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR2	MMIO_REG(0x40034038, uint32_t)
-#define UDP_CSR2_TXCOMP	(1 << 0)
-#define UDP_CSR2_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR2_RXSETUP	(1 << 2)
-#define UDP_CSR2_STALLSENT	(1 << 3)
-#define UDP_CSR2_TXPKTRDY	(1 << 4)
-#define UDP_CSR2_FORCESTALL	(1 << 5)
-#define UDP_CSR2_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR2_DIR	(1 << 7)
-#define UDP_CSR2_EPTYPE(x)	((x) << 8)
-#define UDP_CSR2_EPTYPE_MSK	0x00000700
-#define UDP_CSR2_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR2_DTGLE	(1 << 11)
-#define UDP_CSR2_EPEDS	(1 << 15)
-#define UDP_CSR2_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR2_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR2_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR2_s    MMIO_REG(0x40034038, struct __struct_UDP_CSR2)
-struct __struct_UDP_CSR2
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR3	MMIO_REG(0x4003403c, uint32_t)
-#define UDP_CSR3_TXCOMP	(1 << 0)
-#define UDP_CSR3_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR3_RXSETUP	(1 << 2)
-#define UDP_CSR3_STALLSENT	(1 << 3)
-#define UDP_CSR3_TXPKTRDY	(1 << 4)
-#define UDP_CSR3_FORCESTALL	(1 << 5)
-#define UDP_CSR3_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR3_DIR	(1 << 7)
-#define UDP_CSR3_EPTYPE(x)	((x) << 8)
-#define UDP_CSR3_EPTYPE_MSK	0x00000700
-#define UDP_CSR3_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR3_DTGLE	(1 << 11)
-#define UDP_CSR3_EPEDS	(1 << 15)
-#define UDP_CSR3_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR3_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR3_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR3_s    MMIO_REG(0x4003403c, struct __struct_UDP_CSR3)
-struct __struct_UDP_CSR3
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR4	MMIO_REG(0x40034040, uint32_t)
-#define UDP_CSR4_TXCOMP	(1 << 0)
-#define UDP_CSR4_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR4_RXSETUP	(1 << 2)
-#define UDP_CSR4_STALLSENT	(1 << 3)
-#define UDP_CSR4_TXPKTRDY	(1 << 4)
-#define UDP_CSR4_FORCESTALL	(1 << 5)
-#define UDP_CSR4_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR4_DIR	(1 << 7)
-#define UDP_CSR4_EPTYPE(x)	((x) << 8)
-#define UDP_CSR4_EPTYPE_MSK	0x00000700
-#define UDP_CSR4_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR4_DTGLE	(1 << 11)
-#define UDP_CSR4_EPEDS	(1 << 15)
-#define UDP_CSR4_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR4_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR4_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR4_s    MMIO_REG(0x40034040, struct __struct_UDP_CSR4)
-struct __struct_UDP_CSR4
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR5	MMIO_REG(0x40034044, uint32_t)
-#define UDP_CSR5_TXCOMP	(1 << 0)
-#define UDP_CSR5_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR5_RXSETUP	(1 << 2)
-#define UDP_CSR5_STALLSENT	(1 << 3)
-#define UDP_CSR5_TXPKTRDY	(1 << 4)
-#define UDP_CSR5_FORCESTALL	(1 << 5)
-#define UDP_CSR5_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR5_DIR	(1 << 7)
-#define UDP_CSR5_EPTYPE(x)	((x) << 8)
-#define UDP_CSR5_EPTYPE_MSK	0x00000700
-#define UDP_CSR5_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR5_DTGLE	(1 << 11)
-#define UDP_CSR5_EPEDS	(1 << 15)
-#define UDP_CSR5_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR5_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR5_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR5_s    MMIO_REG(0x40034044, struct __struct_UDP_CSR5)
-struct __struct_UDP_CSR5
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR6	MMIO_REG(0x40034048, uint32_t)
-#define UDP_CSR6_TXCOMP	(1 << 0)
-#define UDP_CSR6_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR6_RXSETUP	(1 << 2)
-#define UDP_CSR6_STALLSENT	(1 << 3)
-#define UDP_CSR6_TXPKTRDY	(1 << 4)
-#define UDP_CSR6_FORCESTALL	(1 << 5)
-#define UDP_CSR6_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR6_DIR	(1 << 7)
-#define UDP_CSR6_EPTYPE(x)	((x) << 8)
-#define UDP_CSR6_EPTYPE_MSK	0x00000700
-#define UDP_CSR6_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR6_DTGLE	(1 << 11)
-#define UDP_CSR6_EPEDS	(1 << 15)
-#define UDP_CSR6_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR6_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR6_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR6_s    MMIO_REG(0x40034048, struct __struct_UDP_CSR6)
-struct __struct_UDP_CSR6
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_CSR7	MMIO_REG(0x4003404c, uint32_t)
-#define UDP_CSR7_TXCOMP	(1 << 0)
-#define UDP_CSR7_RX_DATA_BK0	(1 << 1)
-#define UDP_CSR7_RXSETUP	(1 << 2)
-#define UDP_CSR7_STALLSENT	(1 << 3)
-#define UDP_CSR7_TXPKTRDY	(1 << 4)
-#define UDP_CSR7_FORCESTALL	(1 << 5)
-#define UDP_CSR7_RX_DATA_BK1	(1 << 6)
-#define UDP_CSR7_DIR	(1 << 7)
-#define UDP_CSR7_EPTYPE(x)	((x) << 8)
-#define UDP_CSR7_EPTYPE_MSK	0x00000700
-#define UDP_CSR7_EPTYPE_VAL(x)	(((x) >> 8) & 0x7)
-#define UDP_CSR7_DTGLE	(1 << 11)
-#define UDP_CSR7_EPEDS	(1 << 15)
-#define UDP_CSR7_RXBYTECNT(x)	((x) << 16)
-#define UDP_CSR7_RXBYTECNT_MSK	0x07ff0000
-#define UDP_CSR7_RXBYTECNT_VAL(x)	(((x) >> 16) & 0x7ff)
-
-#define UDP_CSR7_s    MMIO_REG(0x4003404c, struct __struct_UDP_CSR7)
-struct __struct_UDP_CSR7
-{
-  uint32_t txcomp : 1;
-  uint32_t rx_data_bk0 : 1;
-  uint32_t rxsetup : 1;
-  uint32_t stallsent : 1;
-  uint32_t txpktrdy : 1;
-  uint32_t forcestall : 1;
-  uint32_t rx_data_bk1 : 1;
-  uint32_t dir : 1;
-  uint32_t eptype : 3;
-  uint32_t dtgle : 1;
-  uint32_t  : 3;
-  uint32_t epeds : 1;
-  uint32_t rxbytecnt : 11;
-  uint32_t  : 5;
-};
-
-#define UDP_FDR0	MMIO_REG(0x40034050, uint32_t)
-#define UDP_FDR0_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR0_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR0_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR0_s    MMIO_REG(0x40034050, struct __struct_UDP_FDR0)
-struct __struct_UDP_FDR0
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR1	MMIO_REG(0x40034054, uint32_t)
-#define UDP_FDR1_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR1_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR1_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR1_s    MMIO_REG(0x40034054, struct __struct_UDP_FDR1)
-struct __struct_UDP_FDR1
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR2	MMIO_REG(0x40034058, uint32_t)
-#define UDP_FDR2_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR2_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR2_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR2_s    MMIO_REG(0x40034058, struct __struct_UDP_FDR2)
-struct __struct_UDP_FDR2
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR3	MMIO_REG(0x4003405c, uint32_t)
-#define UDP_FDR3_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR3_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR3_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR3_s    MMIO_REG(0x4003405c, struct __struct_UDP_FDR3)
-struct __struct_UDP_FDR3
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR4	MMIO_REG(0x40034060, uint32_t)
-#define UDP_FDR4_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR4_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR4_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR4_s    MMIO_REG(0x40034060, struct __struct_UDP_FDR4)
-struct __struct_UDP_FDR4
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR5	MMIO_REG(0x40034064, uint32_t)
-#define UDP_FDR5_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR5_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR5_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR5_s    MMIO_REG(0x40034064, struct __struct_UDP_FDR5)
-struct __struct_UDP_FDR5
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR6	MMIO_REG(0x40034068, uint32_t)
-#define UDP_FDR6_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR6_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR6_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR6_s    MMIO_REG(0x40034068, struct __struct_UDP_FDR6)
-struct __struct_UDP_FDR6
-{
-  uint32_t fifo_data : 8;
-  uint32_t  : 24;
-};
-
-#define UDP_FDR7	MMIO_REG(0x4003406c, uint32_t)
-#define UDP_FDR7_FIFO_DATA(x)	((x) << 0)
-#define UDP_FDR7_FIFO_DATA_MSK	0x000000ff
-#define UDP_FDR7_FIFO_DATA_VAL(x)	(((x) >> 0) & 0xff)
-
-#define UDP_FDR7_s    MMIO_REG(0x4003406c, struct __struct_UDP_FDR7)
-struct __struct_UDP_FDR7
+#define UDP_FDR_s(n)	MMIO_REG(0x40034050 + n*4, struct __struct_UDP_FDR)
+struct __struct_UDP_FDR
 {
   uint32_t fifo_data : 8;
   uint32_t  : 24;
@@ -7836,7 +7493,7 @@ struct __struct_UDP_FDR7
 #define UDP_TXVC_TXVDIS	(1 << 8)
 #define UDP_TXVC_PUON	(1 << 9)
 
-#define UDP_TXVC_s    MMIO_REG(0x40034074, struct __struct_UDP_TXVC)
+#define UDP_TXVC_s	MMIO_REG(0x40034074, struct __struct_UDP_TXVC)
 struct __struct_UDP_TXVC
 {
   uint32_t  : 8;
@@ -7852,7 +7509,7 @@ struct __struct_UDP_TXVC
 #define ADC_CR_START	(1 << 1)
 #define ADC_CR_AUTOCAL	(1 << 3)
 
-#define ADC_CR_s    MMIO_REG(0x40038000, struct __struct_ADC_CR)
+#define ADC_CR_s	MMIO_REG(0x40038000, struct __struct_ADC_CR)
 struct __struct_ADC_CR
 {
   uint32_t swrst : 1;
@@ -7889,7 +7546,7 @@ struct __struct_ADC_CR
 #define ADC_MR_TRANSFER_VAL(x)	(((x) >> 28) & 0x3)
 #define ADC_MR_USEQ	(1 << 31)
 
-#define ADC_MR_s    MMIO_REG(0x40038004, struct __struct_ADC_MR)
+#define ADC_MR_s	MMIO_REG(0x40038004, struct __struct_ADC_MR)
 struct __struct_ADC_MR
 {
   uint32_t trgen : 1;
@@ -7935,7 +7592,7 @@ struct __struct_ADC_MR
 #define ADC_SEQR1_USCH8_MSK	0x70000000
 #define ADC_SEQR1_USCH8_VAL(x)	(((x) >> 28) & 0x7)
 
-#define ADC_SEQR1_s    MMIO_REG(0x40038008, struct __struct_ADC_SEQR1)
+#define ADC_SEQR1_s	MMIO_REG(0x40038008, struct __struct_ADC_SEQR1)
 struct __struct_ADC_SEQR1
 {
   uint32_t usch1 : 3;
@@ -7982,7 +7639,7 @@ struct __struct_ADC_SEQR1
 #define ADC_SEQR2_USCH16_MSK	0x70000000
 #define ADC_SEQR2_USCH16_VAL(x)	(((x) >> 28) & 0x7)
 
-#define ADC_SEQR2_s    MMIO_REG(0x4003800c, struct __struct_ADC_SEQR2)
+#define ADC_SEQR2_s	MMIO_REG(0x4003800c, struct __struct_ADC_SEQR2)
 struct __struct_ADC_SEQR2
 {
   uint32_t usch9 : 3;
@@ -8021,7 +7678,7 @@ struct __struct_ADC_SEQR2
 #define ADC_CHER_CH14	(1 << 14)
 #define ADC_CHER_CH15	(1 << 15)
 
-#define ADC_CHER_s    MMIO_REG(0x40038010, struct __struct_ADC_CHER)
+#define ADC_CHER_s	MMIO_REG(0x40038010, struct __struct_ADC_CHER)
 struct __struct_ADC_CHER
 {
   uint32_t ch0 : 1;
@@ -8061,7 +7718,7 @@ struct __struct_ADC_CHER
 #define ADC_CHDR_CH14	(1 << 14)
 #define ADC_CHDR_CH15	(1 << 15)
 
-#define ADC_CHDR_s    MMIO_REG(0x40038014, struct __struct_ADC_CHDR)
+#define ADC_CHDR_s	MMIO_REG(0x40038014, struct __struct_ADC_CHDR)
 struct __struct_ADC_CHDR
 {
   uint32_t ch0 : 1;
@@ -8101,7 +7758,7 @@ struct __struct_ADC_CHDR
 #define ADC_CHSR_CH14	(1 << 14)
 #define ADC_CHSR_CH15	(1 << 15)
 
-#define ADC_CHSR_s    MMIO_REG(0x40038018, struct __struct_ADC_CHSR)
+#define ADC_CHSR_s	MMIO_REG(0x40038018, struct __struct_ADC_CHSR)
 struct __struct_ADC_CHSR
 {
   uint32_t ch0 : 1;
@@ -8131,7 +7788,7 @@ struct __struct_ADC_CHSR
 #define ADC_LCDR_CHNB_MSK	0x0000f000
 #define ADC_LCDR_CHNB_VAL(x)	(((x) >> 12) & 0xf)
 
-#define ADC_LCDR_s    MMIO_REG(0x40038020, struct __struct_ADC_LCDR)
+#define ADC_LCDR_s	MMIO_REG(0x40038020, struct __struct_ADC_LCDR)
 struct __struct_ADC_LCDR
 {
   uint32_t ldata : 12;
@@ -8163,7 +7820,7 @@ struct __struct_ADC_LCDR
 #define ADC_IER_ENDRX	(1 << 27)
 #define ADC_IER_RXBUFF	(1 << 28)
 
-#define ADC_IER_s    MMIO_REG(0x40038024, struct __struct_ADC_IER)
+#define ADC_IER_s	MMIO_REG(0x40038024, struct __struct_ADC_IER)
 struct __struct_ADC_IER
 {
   uint32_t eoc0 : 1;
@@ -8216,7 +7873,7 @@ struct __struct_ADC_IER
 #define ADC_IDR_ENDRX	(1 << 27)
 #define ADC_IDR_RXBUFF	(1 << 28)
 
-#define ADC_IDR_s    MMIO_REG(0x40038028, struct __struct_ADC_IDR)
+#define ADC_IDR_s	MMIO_REG(0x40038028, struct __struct_ADC_IDR)
 struct __struct_ADC_IDR
 {
   uint32_t eoc0 : 1;
@@ -8269,7 +7926,7 @@ struct __struct_ADC_IDR
 #define ADC_IMR_ENDRX	(1 << 27)
 #define ADC_IMR_RXBUFF	(1 << 28)
 
-#define ADC_IMR_s    MMIO_REG(0x4003802c, struct __struct_ADC_IMR)
+#define ADC_IMR_s	MMIO_REG(0x4003802c, struct __struct_ADC_IMR)
 struct __struct_ADC_IMR
 {
   uint32_t eoc0 : 1;
@@ -8322,7 +7979,7 @@ struct __struct_ADC_IMR
 #define ADC_ISR_ENDRX	(1 << 27)
 #define ADC_ISR_RXBUFF	(1 << 28)
 
-#define ADC_ISR_s    MMIO_REG(0x40038030, struct __struct_ADC_ISR)
+#define ADC_ISR_s	MMIO_REG(0x40038030, struct __struct_ADC_ISR)
 struct __struct_ADC_ISR
 {
   uint32_t eoc0 : 1;
@@ -8369,7 +8026,7 @@ struct __struct_ADC_ISR
 #define ADC_OVER_OVRE14	(1 << 14)
 #define ADC_OVER_OVRE15	(1 << 15)
 
-#define ADC_OVER_s    MMIO_REG(0x4003803c, struct __struct_ADC_OVER)
+#define ADC_OVER_s	MMIO_REG(0x4003803c, struct __struct_ADC_OVER)
 struct __struct_ADC_OVER
 {
   uint32_t ovre0 : 1;
@@ -8401,7 +8058,7 @@ struct __struct_ADC_OVER
 #define ADC_EMR_CMPALL	(1 << 9)
 #define ADC_EMR_TAG	(1 << 24)
 
-#define ADC_EMR_s    MMIO_REG(0x40038040, struct __struct_ADC_EMR)
+#define ADC_EMR_s	MMIO_REG(0x40038040, struct __struct_ADC_EMR)
 struct __struct_ADC_EMR
 {
   uint32_t cmpmode : 2;
@@ -8422,7 +8079,7 @@ struct __struct_ADC_EMR
 #define ADC_CWR_HIGHTHRES_MSK	0x0fff0000
 #define ADC_CWR_HIGHTHRES_VAL(x)	(((x) >> 16) & 0xfff)
 
-#define ADC_CWR_s    MMIO_REG(0x40038044, struct __struct_ADC_CWR)
+#define ADC_CWR_s	MMIO_REG(0x40038044, struct __struct_ADC_CWR)
 struct __struct_ADC_CWR
 {
   uint32_t lowthres : 12;
@@ -8481,7 +8138,7 @@ struct __struct_ADC_CWR
 #define ADC_CGR_GAIN15_MSK	0xc0000000
 #define ADC_CGR_GAIN15_VAL(x)	(((x) >> 30) & 0x3)
 
-#define ADC_CGR_s    MMIO_REG(0x40038048, struct __struct_ADC_CGR)
+#define ADC_CGR_s	MMIO_REG(0x40038048, struct __struct_ADC_CGR)
 struct __struct_ADC_CGR
 {
   uint32_t gain0 : 2;
@@ -8536,7 +8193,7 @@ struct __struct_ADC_CGR
 #define ADC_COR_DIFF14	(1 << 30)
 #define ADC_COR_DIFF15	(1 << 31)
 
-#define ADC_COR_s    MMIO_REG(0x4003804c, struct __struct_ADC_COR)
+#define ADC_COR_s	MMIO_REG(0x4003804c, struct __struct_ADC_COR)
 struct __struct_ADC_COR
 {
   uint32_t off0 : 1;
@@ -8578,7 +8235,7 @@ struct __struct_ADC_COR
 #define ADC_CDR0_DATA_MSK	0x00000fff
 #define ADC_CDR0_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR0_s    MMIO_REG(0x40038050, struct __struct_ADC_CDR0)
+#define ADC_CDR0_s	MMIO_REG(0x40038050, struct __struct_ADC_CDR0)
 struct __struct_ADC_CDR0
 {
   uint32_t data : 12;
@@ -8590,7 +8247,7 @@ struct __struct_ADC_CDR0
 #define ADC_CDR1_DATA_MSK	0x00000fff
 #define ADC_CDR1_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR1_s    MMIO_REG(0x40038054, struct __struct_ADC_CDR1)
+#define ADC_CDR1_s	MMIO_REG(0x40038054, struct __struct_ADC_CDR1)
 struct __struct_ADC_CDR1
 {
   uint32_t data : 12;
@@ -8602,7 +8259,7 @@ struct __struct_ADC_CDR1
 #define ADC_CDR2_DATA_MSK	0x00000fff
 #define ADC_CDR2_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR2_s    MMIO_REG(0x40038058, struct __struct_ADC_CDR2)
+#define ADC_CDR2_s	MMIO_REG(0x40038058, struct __struct_ADC_CDR2)
 struct __struct_ADC_CDR2
 {
   uint32_t data : 12;
@@ -8614,7 +8271,7 @@ struct __struct_ADC_CDR2
 #define ADC_CDR3_DATA_MSK	0x00000fff
 #define ADC_CDR3_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR3_s    MMIO_REG(0x4003805c, struct __struct_ADC_CDR3)
+#define ADC_CDR3_s	MMIO_REG(0x4003805c, struct __struct_ADC_CDR3)
 struct __struct_ADC_CDR3
 {
   uint32_t data : 12;
@@ -8626,7 +8283,7 @@ struct __struct_ADC_CDR3
 #define ADC_CDR4_DATA_MSK	0x00000fff
 #define ADC_CDR4_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR4_s    MMIO_REG(0x40038060, struct __struct_ADC_CDR4)
+#define ADC_CDR4_s	MMIO_REG(0x40038060, struct __struct_ADC_CDR4)
 struct __struct_ADC_CDR4
 {
   uint32_t data : 12;
@@ -8638,7 +8295,7 @@ struct __struct_ADC_CDR4
 #define ADC_CDR5_DATA_MSK	0x00000fff
 #define ADC_CDR5_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR5_s    MMIO_REG(0x40038064, struct __struct_ADC_CDR5)
+#define ADC_CDR5_s	MMIO_REG(0x40038064, struct __struct_ADC_CDR5)
 struct __struct_ADC_CDR5
 {
   uint32_t data : 12;
@@ -8650,7 +8307,7 @@ struct __struct_ADC_CDR5
 #define ADC_CDR6_DATA_MSK	0x00000fff
 #define ADC_CDR6_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR6_s    MMIO_REG(0x40038068, struct __struct_ADC_CDR6)
+#define ADC_CDR6_s	MMIO_REG(0x40038068, struct __struct_ADC_CDR6)
 struct __struct_ADC_CDR6
 {
   uint32_t data : 12;
@@ -8662,7 +8319,7 @@ struct __struct_ADC_CDR6
 #define ADC_CDR7_DATA_MSK	0x00000fff
 #define ADC_CDR7_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR7_s    MMIO_REG(0x4003806c, struct __struct_ADC_CDR7)
+#define ADC_CDR7_s	MMIO_REG(0x4003806c, struct __struct_ADC_CDR7)
 struct __struct_ADC_CDR7
 {
   uint32_t data : 12;
@@ -8674,7 +8331,7 @@ struct __struct_ADC_CDR7
 #define ADC_CDR8_DATA_MSK	0x00000fff
 #define ADC_CDR8_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR8_s    MMIO_REG(0x40038070, struct __struct_ADC_CDR8)
+#define ADC_CDR8_s	MMIO_REG(0x40038070, struct __struct_ADC_CDR8)
 struct __struct_ADC_CDR8
 {
   uint32_t data : 12;
@@ -8686,7 +8343,7 @@ struct __struct_ADC_CDR8
 #define ADC_CDR9_DATA_MSK	0x00000fff
 #define ADC_CDR9_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR9_s    MMIO_REG(0x40038074, struct __struct_ADC_CDR9)
+#define ADC_CDR9_s	MMIO_REG(0x40038074, struct __struct_ADC_CDR9)
 struct __struct_ADC_CDR9
 {
   uint32_t data : 12;
@@ -8698,7 +8355,7 @@ struct __struct_ADC_CDR9
 #define ADC_CDR10_DATA_MSK	0x00000fff
 #define ADC_CDR10_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR10_s    MMIO_REG(0x40038078, struct __struct_ADC_CDR10)
+#define ADC_CDR10_s	MMIO_REG(0x40038078, struct __struct_ADC_CDR10)
 struct __struct_ADC_CDR10
 {
   uint32_t data : 12;
@@ -8710,7 +8367,7 @@ struct __struct_ADC_CDR10
 #define ADC_CDR11_DATA_MSK	0x00000fff
 #define ADC_CDR11_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR11_s    MMIO_REG(0x4003807c, struct __struct_ADC_CDR11)
+#define ADC_CDR11_s	MMIO_REG(0x4003807c, struct __struct_ADC_CDR11)
 struct __struct_ADC_CDR11
 {
   uint32_t data : 12;
@@ -8722,7 +8379,7 @@ struct __struct_ADC_CDR11
 #define ADC_CDR12_DATA_MSK	0x00000fff
 #define ADC_CDR12_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR12_s    MMIO_REG(0x40038080, struct __struct_ADC_CDR12)
+#define ADC_CDR12_s	MMIO_REG(0x40038080, struct __struct_ADC_CDR12)
 struct __struct_ADC_CDR12
 {
   uint32_t data : 12;
@@ -8734,7 +8391,7 @@ struct __struct_ADC_CDR12
 #define ADC_CDR13_DATA_MSK	0x00000fff
 #define ADC_CDR13_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR13_s    MMIO_REG(0x40038084, struct __struct_ADC_CDR13)
+#define ADC_CDR13_s	MMIO_REG(0x40038084, struct __struct_ADC_CDR13)
 struct __struct_ADC_CDR13
 {
   uint32_t data : 12;
@@ -8746,7 +8403,7 @@ struct __struct_ADC_CDR13
 #define ADC_CDR14_DATA_MSK	0x00000fff
 #define ADC_CDR14_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR14_s    MMIO_REG(0x40038088, struct __struct_ADC_CDR14)
+#define ADC_CDR14_s	MMIO_REG(0x40038088, struct __struct_ADC_CDR14)
 struct __struct_ADC_CDR14
 {
   uint32_t data : 12;
@@ -8758,7 +8415,7 @@ struct __struct_ADC_CDR14
 #define ADC_CDR15_DATA_MSK	0x00000fff
 #define ADC_CDR15_DATA_VAL(x)	(((x) >> 0) & 0xfff)
 
-#define ADC_CDR15_s    MMIO_REG(0x4003808c, struct __struct_ADC_CDR15)
+#define ADC_CDR15_s	MMIO_REG(0x4003808c, struct __struct_ADC_CDR15)
 struct __struct_ADC_CDR15
 {
   uint32_t data : 12;
@@ -8771,7 +8428,7 @@ struct __struct_ADC_CDR15
 #define ADC_ACR_IBCTL_MSK	0x00000300
 #define ADC_ACR_IBCTL_VAL(x)	(((x) >> 8) & 0x3)
 
-#define ADC_ACR_s    MMIO_REG(0x40038094, struct __struct_ADC_ACR)
+#define ADC_ACR_s	MMIO_REG(0x40038094, struct __struct_ADC_ACR)
 struct __struct_ADC_ACR
 {
   uint32_t  : 4;
@@ -8787,7 +8444,7 @@ struct __struct_ADC_ACR
 #define ADC_WPMR_WPKEY_MSK	0xffffff00
 #define ADC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define ADC_WPMR_s    MMIO_REG(0x400380e4, struct __struct_ADC_WPMR)
+#define ADC_WPMR_s	MMIO_REG(0x400380e4, struct __struct_ADC_WPMR)
 struct __struct_ADC_WPMR
 {
   uint32_t wpen : 1;
@@ -8801,7 +8458,7 @@ struct __struct_ADC_WPMR
 #define ADC_WPSR_WPVSRC_MSK	0x00ffff00
 #define ADC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define ADC_WPSR_s    MMIO_REG(0x400380e8, struct __struct_ADC_WPSR)
+#define ADC_WPSR_s	MMIO_REG(0x400380e8, struct __struct_ADC_WPSR)
 struct __struct_ADC_WPSR
 {
   uint32_t wpvs : 1;
@@ -8834,7 +8491,7 @@ struct __struct_ADC_WPSR
 #define ADC_PDC_PTCR_TXTEN	(1 << 8)
 #define ADC_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define ADC_PDC_PTCR_s    MMIO_REG(0x40038120, struct __struct_ADC_PDC_PTCR)
+#define ADC_PDC_PTCR_s	MMIO_REG(0x40038120, struct __struct_ADC_PDC_PTCR)
 struct __struct_ADC_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -8849,7 +8506,7 @@ struct __struct_ADC_PDC_PTCR
 #define ADC_PDC_PTSR_RXTEN	(1 << 0)
 #define ADC_PDC_PTSR_TXTEN	(1 << 8)
 
-#define ADC_PDC_PTSR_s    MMIO_REG(0x40038124, struct __struct_ADC_PDC_PTSR)
+#define ADC_PDC_PTSR_s	MMIO_REG(0x40038124, struct __struct_ADC_PDC_PTSR)
 struct __struct_ADC_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -8863,7 +8520,7 @@ struct __struct_ADC_PDC_PTSR
 #define DACC_CR	MMIO_REG(0x4003c000, uint32_t)
 #define DACC_CR_SWRST	(1 << 0)
 
-#define DACC_CR_s    MMIO_REG(0x4003c000, struct __struct_DACC_CR)
+#define DACC_CR_s	MMIO_REG(0x4003c000, struct __struct_DACC_CR)
 struct __struct_DACC_CR
 {
   uint32_t swrst : 1;
@@ -8890,7 +8547,7 @@ struct __struct_DACC_CR
 #define DACC_MR_STARTUP_MSK	0x3f000000
 #define DACC_MR_STARTUP_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define DACC_MR_s    MMIO_REG(0x4003c004, struct __struct_DACC_MR)
+#define DACC_MR_s	MMIO_REG(0x4003c004, struct __struct_DACC_MR)
 struct __struct_DACC_MR
 {
   uint32_t trgen : 1;
@@ -8913,7 +8570,7 @@ struct __struct_DACC_MR
 #define DACC_CHER_CH0	(1 << 0)
 #define DACC_CHER_CH1	(1 << 1)
 
-#define DACC_CHER_s    MMIO_REG(0x4003c010, struct __struct_DACC_CHER)
+#define DACC_CHER_s	MMIO_REG(0x4003c010, struct __struct_DACC_CHER)
 struct __struct_DACC_CHER
 {
   uint32_t ch0 : 1;
@@ -8925,7 +8582,7 @@ struct __struct_DACC_CHER
 #define DACC_CHDR_CH0	(1 << 0)
 #define DACC_CHDR_CH1	(1 << 1)
 
-#define DACC_CHDR_s    MMIO_REG(0x4003c014, struct __struct_DACC_CHDR)
+#define DACC_CHDR_s	MMIO_REG(0x4003c014, struct __struct_DACC_CHDR)
 struct __struct_DACC_CHDR
 {
   uint32_t ch0 : 1;
@@ -8937,7 +8594,7 @@ struct __struct_DACC_CHDR
 #define DACC_CHSR_CH0	(1 << 0)
 #define DACC_CHSR_CH1	(1 << 1)
 
-#define DACC_CHSR_s    MMIO_REG(0x4003c018, struct __struct_DACC_CHSR)
+#define DACC_CHSR_s	MMIO_REG(0x4003c018, struct __struct_DACC_CHSR)
 struct __struct_DACC_CHSR
 {
   uint32_t ch0 : 1;
@@ -8953,7 +8610,7 @@ struct __struct_DACC_CHSR
 #define DACC_IER_ENDTX	(1 << 2)
 #define DACC_IER_TXBUFE	(1 << 3)
 
-#define DACC_IER_s    MMIO_REG(0x4003c024, struct __struct_DACC_IER)
+#define DACC_IER_s	MMIO_REG(0x4003c024, struct __struct_DACC_IER)
 struct __struct_DACC_IER
 {
   uint32_t txrdy : 1;
@@ -8969,7 +8626,7 @@ struct __struct_DACC_IER
 #define DACC_IDR_ENDTX	(1 << 2)
 #define DACC_IDR_TXBUFE	(1 << 3)
 
-#define DACC_IDR_s    MMIO_REG(0x4003c028, struct __struct_DACC_IDR)
+#define DACC_IDR_s	MMIO_REG(0x4003c028, struct __struct_DACC_IDR)
 struct __struct_DACC_IDR
 {
   uint32_t txrdy : 1;
@@ -8985,7 +8642,7 @@ struct __struct_DACC_IDR
 #define DACC_IMR_ENDTX	(1 << 2)
 #define DACC_IMR_TXBUFE	(1 << 3)
 
-#define DACC_IMR_s    MMIO_REG(0x4003c02c, struct __struct_DACC_IMR)
+#define DACC_IMR_s	MMIO_REG(0x4003c02c, struct __struct_DACC_IMR)
 struct __struct_DACC_IMR
 {
   uint32_t txrdy : 1;
@@ -9001,7 +8658,7 @@ struct __struct_DACC_IMR
 #define DACC_ISR_ENDTX	(1 << 2)
 #define DACC_ISR_TXBUFE	(1 << 3)
 
-#define DACC_ISR_s    MMIO_REG(0x4003c030, struct __struct_DACC_ISR)
+#define DACC_ISR_s	MMIO_REG(0x4003c030, struct __struct_DACC_ISR)
 struct __struct_DACC_ISR
 {
   uint32_t txrdy : 1;
@@ -9022,7 +8679,7 @@ struct __struct_DACC_ISR
 #define DACC_ACR_IBCTLDACCORE_MSK	0x00000300
 #define DACC_ACR_IBCTLDACCORE_VAL(x)	(((x) >> 8) & 0x3)
 
-#define DACC_ACR_s    MMIO_REG(0x4003c094, struct __struct_DACC_ACR)
+#define DACC_ACR_s	MMIO_REG(0x4003c094, struct __struct_DACC_ACR)
 struct __struct_DACC_ACR
 {
   uint32_t ibctlch0 : 2;
@@ -9038,7 +8695,7 @@ struct __struct_DACC_ACR
 #define DACC_WPMR_WPKEY_MSK	0xffffff00
 #define DACC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define DACC_WPMR_s    MMIO_REG(0x4003c0e4, struct __struct_DACC_WPMR)
+#define DACC_WPMR_s	MMIO_REG(0x4003c0e4, struct __struct_DACC_WPMR)
 struct __struct_DACC_WPMR
 {
   uint32_t wpen : 1;
@@ -9052,7 +8709,7 @@ struct __struct_DACC_WPMR
 #define DACC_WPSR_WPVSRC_MSK	0x00ffff00
 #define DACC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define DACC_WPSR_s    MMIO_REG(0x4003c0e8, struct __struct_DACC_WPSR)
+#define DACC_WPSR_s	MMIO_REG(0x4003c0e8, struct __struct_DACC_WPSR)
 struct __struct_DACC_WPSR
 {
   uint32_t wpvs : 1;
@@ -9085,7 +8742,7 @@ struct __struct_DACC_WPSR
 #define DACC_PDC_PTCR_TXTEN	(1 << 8)
 #define DACC_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define DACC_PDC_PTCR_s    MMIO_REG(0x4003c120, struct __struct_DACC_PDC_PTCR)
+#define DACC_PDC_PTCR_s	MMIO_REG(0x4003c120, struct __struct_DACC_PDC_PTCR)
 struct __struct_DACC_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -9100,7 +8757,7 @@ struct __struct_DACC_PDC_PTCR
 #define DACC_PDC_PTSR_RXTEN	(1 << 0)
 #define DACC_PDC_PTSR_TXTEN	(1 << 8)
 
-#define DACC_PDC_PTSR_s    MMIO_REG(0x4003c124, struct __struct_DACC_PDC_PTSR)
+#define DACC_PDC_PTSR_s	MMIO_REG(0x4003c124, struct __struct_DACC_PDC_PTSR)
 struct __struct_DACC_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -9114,7 +8771,7 @@ struct __struct_DACC_PDC_PTSR
 #define ACC_CR	MMIO_REG(0x40040000, uint32_t)
 #define ACC_CR_SWRST	(1 << 0)
 
-#define ACC_CR_s    MMIO_REG(0x40040000, struct __struct_ACC_CR)
+#define ACC_CR_s	MMIO_REG(0x40040000, struct __struct_ACC_CR)
 struct __struct_ACC_CR
 {
   uint32_t swrst : 1;
@@ -9136,7 +8793,7 @@ struct __struct_ACC_CR
 #define ACC_MR_SELFS	(1 << 13)
 #define ACC_MR_FE	(1 << 14)
 
-#define ACC_MR_s    MMIO_REG(0x40040004, struct __struct_ACC_MR)
+#define ACC_MR_s	MMIO_REG(0x40040004, struct __struct_ACC_MR)
 struct __struct_ACC_MR
 {
   uint32_t selminus : 3;
@@ -9155,7 +8812,7 @@ struct __struct_ACC_MR
 #define ACC_IER	MMIO_REG(0x40040024, uint32_t)
 #define ACC_IER_CE	(1 << 0)
 
-#define ACC_IER_s    MMIO_REG(0x40040024, struct __struct_ACC_IER)
+#define ACC_IER_s	MMIO_REG(0x40040024, struct __struct_ACC_IER)
 struct __struct_ACC_IER
 {
   uint32_t ce : 1;
@@ -9165,7 +8822,7 @@ struct __struct_ACC_IER
 #define ACC_IDR	MMIO_REG(0x40040028, uint32_t)
 #define ACC_IDR_CE	(1 << 0)
 
-#define ACC_IDR_s    MMIO_REG(0x40040028, struct __struct_ACC_IDR)
+#define ACC_IDR_s	MMIO_REG(0x40040028, struct __struct_ACC_IDR)
 struct __struct_ACC_IDR
 {
   uint32_t ce : 1;
@@ -9175,7 +8832,7 @@ struct __struct_ACC_IDR
 #define ACC_IMR	MMIO_REG(0x4004002c, uint32_t)
 #define ACC_IMR_CE	(1 << 0)
 
-#define ACC_IMR_s    MMIO_REG(0x4004002c, struct __struct_ACC_IMR)
+#define ACC_IMR_s	MMIO_REG(0x4004002c, struct __struct_ACC_IMR)
 struct __struct_ACC_IMR
 {
   uint32_t ce : 1;
@@ -9186,7 +8843,7 @@ struct __struct_ACC_IMR
 #define ACC_ISR_CE	(1 << 0)
 #define ACC_ISR_SCO	(1 << 1)
 
-#define ACC_ISR_s    MMIO_REG(0x40040030, struct __struct_ACC_ISR)
+#define ACC_ISR_s	MMIO_REG(0x40040030, struct __struct_ACC_ISR)
 struct __struct_ACC_ISR
 {
   uint32_t ce : 1;
@@ -9200,7 +8857,7 @@ struct __struct_ACC_ISR
 #define ACC_ACR_HYST_MSK	0x00000006
 #define ACC_ACR_HYST_VAL(x)	(((x) >> 1) & 0x3)
 
-#define ACC_ACR_s    MMIO_REG(0x40040094, struct __struct_ACC_ACR)
+#define ACC_ACR_s	MMIO_REG(0x40040094, struct __struct_ACC_ACR)
 struct __struct_ACC_ACR
 {
   uint32_t isel : 1;
@@ -9214,7 +8871,7 @@ struct __struct_ACC_ACR
 #define ACC_WPMR_WPKEY_MSK	0xffffff00
 #define ACC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define ACC_WPMR_s    MMIO_REG(0x400400e4, struct __struct_ACC_WPMR)
+#define ACC_WPMR_s	MMIO_REG(0x400400e4, struct __struct_ACC_WPMR)
 struct __struct_ACC_WPMR
 {
   uint32_t wpen : 1;
@@ -9228,7 +8885,7 @@ struct __struct_ACC_WPMR
 #define ACC_WPSR_WPVSRC_MSK	0x00ffff00
 #define ACC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define ACC_WPSR_s    MMIO_REG(0x400400e8, struct __struct_ACC_WPSR)
+#define ACC_WPSR_s	MMIO_REG(0x400400e8, struct __struct_ACC_WPSR)
 struct __struct_ACC_WPSR
 {
   uint32_t wpvs : 1;
@@ -9244,7 +8901,7 @@ struct __struct_ACC_WPSR
 #define CRCCU_DSCR_DSCR_MSK	0xfffffe00
 #define CRCCU_DSCR_DSCR_VAL(x)	(((x) >> 9) & 0x7fffff)
 
-#define CRCCU_DSCR_s    MMIO_REG(0x40044000, struct __struct_CRCCU_DSCR)
+#define CRCCU_DSCR_s	MMIO_REG(0x40044000, struct __struct_CRCCU_DSCR)
 struct __struct_CRCCU_DSCR
 {
   uint32_t  : 9;
@@ -9254,7 +8911,7 @@ struct __struct_CRCCU_DSCR
 #define CRCCU_DMA_EN	MMIO_REG(0x40044008, uint32_t)
 #define CRCCU_DMA_EN_DMAEN	(1 << 0)
 
-#define CRCCU_DMA_EN_s    MMIO_REG(0x40044008, struct __struct_CRCCU_DMA_EN)
+#define CRCCU_DMA_EN_s	MMIO_REG(0x40044008, struct __struct_CRCCU_DMA_EN)
 struct __struct_CRCCU_DMA_EN
 {
   uint32_t dmaen : 1;
@@ -9264,7 +8921,7 @@ struct __struct_CRCCU_DMA_EN
 #define CRCCU_DMA_DIS	MMIO_REG(0x4004400c, uint32_t)
 #define CRCCU_DMA_DIS_DMADIS	(1 << 0)
 
-#define CRCCU_DMA_DIS_s    MMIO_REG(0x4004400c, struct __struct_CRCCU_DMA_DIS)
+#define CRCCU_DMA_DIS_s	MMIO_REG(0x4004400c, struct __struct_CRCCU_DMA_DIS)
 struct __struct_CRCCU_DMA_DIS
 {
   uint32_t dmadis : 1;
@@ -9274,7 +8931,7 @@ struct __struct_CRCCU_DMA_DIS
 #define CRCCU_DMA_SR	MMIO_REG(0x40044010, uint32_t)
 #define CRCCU_DMA_SR_DMASR	(1 << 0)
 
-#define CRCCU_DMA_SR_s    MMIO_REG(0x40044010, struct __struct_CRCCU_DMA_SR)
+#define CRCCU_DMA_SR_s	MMIO_REG(0x40044010, struct __struct_CRCCU_DMA_SR)
 struct __struct_CRCCU_DMA_SR
 {
   uint32_t dmasr : 1;
@@ -9284,7 +8941,7 @@ struct __struct_CRCCU_DMA_SR
 #define CRCCU_DMA_IER	MMIO_REG(0x40044014, uint32_t)
 #define CRCCU_DMA_IER_DMAIER	(1 << 0)
 
-#define CRCCU_DMA_IER_s    MMIO_REG(0x40044014, struct __struct_CRCCU_DMA_IER)
+#define CRCCU_DMA_IER_s	MMIO_REG(0x40044014, struct __struct_CRCCU_DMA_IER)
 struct __struct_CRCCU_DMA_IER
 {
   uint32_t dmaier : 1;
@@ -9294,7 +8951,7 @@ struct __struct_CRCCU_DMA_IER
 #define CRCCU_DMA_IDR	MMIO_REG(0x40044018, uint32_t)
 #define CRCCU_DMA_IDR_DMAIDR	(1 << 0)
 
-#define CRCCU_DMA_IDR_s    MMIO_REG(0x40044018, struct __struct_CRCCU_DMA_IDR)
+#define CRCCU_DMA_IDR_s	MMIO_REG(0x40044018, struct __struct_CRCCU_DMA_IDR)
 struct __struct_CRCCU_DMA_IDR
 {
   uint32_t dmaidr : 1;
@@ -9304,7 +8961,7 @@ struct __struct_CRCCU_DMA_IDR
 #define CRCCU_DMA_IMR	MMIO_REG(0x4004401c, uint32_t)
 #define CRCCU_DMA_IMR_DMAIMR	(1 << 0)
 
-#define CRCCU_DMA_IMR_s    MMIO_REG(0x4004401c, struct __struct_CRCCU_DMA_IMR)
+#define CRCCU_DMA_IMR_s	MMIO_REG(0x4004401c, struct __struct_CRCCU_DMA_IMR)
 struct __struct_CRCCU_DMA_IMR
 {
   uint32_t dmaimr : 1;
@@ -9314,7 +8971,7 @@ struct __struct_CRCCU_DMA_IMR
 #define CRCCU_DMA_ISR	MMIO_REG(0x40044020, uint32_t)
 #define CRCCU_DMA_ISR_DMAISR	(1 << 0)
 
-#define CRCCU_DMA_ISR_s    MMIO_REG(0x40044020, struct __struct_CRCCU_DMA_ISR)
+#define CRCCU_DMA_ISR_s	MMIO_REG(0x40044020, struct __struct_CRCCU_DMA_ISR)
 struct __struct_CRCCU_DMA_ISR
 {
   uint32_t dmaisr : 1;
@@ -9324,7 +8981,7 @@ struct __struct_CRCCU_DMA_ISR
 #define CRCCU_CR	MMIO_REG(0x40044034, uint32_t)
 #define CRCCU_CR_RESET	(1 << 0)
 
-#define CRCCU_CR_s    MMIO_REG(0x40044034, struct __struct_CRCCU_CR)
+#define CRCCU_CR_s	MMIO_REG(0x40044034, struct __struct_CRCCU_CR)
 struct __struct_CRCCU_CR
 {
   uint32_t reset : 1;
@@ -9341,7 +8998,7 @@ struct __struct_CRCCU_CR
 #define CRCCU_MR_DIVIDER_MSK	0x000000f0
 #define CRCCU_MR_DIVIDER_VAL(x)	(((x) >> 4) & 0xf)
 
-#define CRCCU_MR_s    MMIO_REG(0x40044038, struct __struct_CRCCU_MR)
+#define CRCCU_MR_s	MMIO_REG(0x40044038, struct __struct_CRCCU_MR)
 struct __struct_CRCCU_MR
 {
   uint32_t enable : 1;
@@ -9356,7 +9013,7 @@ struct __struct_CRCCU_MR
 #define CRCCU_IER	MMIO_REG(0x40044040, uint32_t)
 #define CRCCU_IER_ERRIER	(1 << 0)
 
-#define CRCCU_IER_s    MMIO_REG(0x40044040, struct __struct_CRCCU_IER)
+#define CRCCU_IER_s	MMIO_REG(0x40044040, struct __struct_CRCCU_IER)
 struct __struct_CRCCU_IER
 {
   uint32_t errier : 1;
@@ -9366,7 +9023,7 @@ struct __struct_CRCCU_IER
 #define CRCCU_IDR	MMIO_REG(0x40044044, uint32_t)
 #define CRCCU_IDR_ERRIDR	(1 << 0)
 
-#define CRCCU_IDR_s    MMIO_REG(0x40044044, struct __struct_CRCCU_IDR)
+#define CRCCU_IDR_s	MMIO_REG(0x40044044, struct __struct_CRCCU_IDR)
 struct __struct_CRCCU_IDR
 {
   uint32_t erridr : 1;
@@ -9376,7 +9033,7 @@ struct __struct_CRCCU_IDR
 #define CRCCU_IMR	MMIO_REG(0x40044048, uint32_t)
 #define CRCCU_IMR_ERRIMR	(1 << 0)
 
-#define CRCCU_IMR_s    MMIO_REG(0x40044048, struct __struct_CRCCU_IMR)
+#define CRCCU_IMR_s	MMIO_REG(0x40044048, struct __struct_CRCCU_IMR)
 struct __struct_CRCCU_IMR
 {
   uint32_t errimr : 1;
@@ -9386,7 +9043,7 @@ struct __struct_CRCCU_IMR
 #define CRCCU_ISR	MMIO_REG(0x4004404c, uint32_t)
 #define CRCCU_ISR_ERRISR	(1 << 0)
 
-#define CRCCU_ISR_s    MMIO_REG(0x4004404c, struct __struct_CRCCU_ISR)
+#define CRCCU_ISR_s	MMIO_REG(0x4004404c, struct __struct_CRCCU_ISR)
 struct __struct_CRCCU_ISR
 {
   uint32_t errisr : 1;
@@ -9409,7 +9066,7 @@ struct __struct_CRCCU_ISR
 #define SMC_SETUP0_NCS_RD_SETUP_MSK	0x3f000000
 #define SMC_SETUP0_NCS_RD_SETUP_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define SMC_SETUP0_s    MMIO_REG(0x400e0000, struct __struct_SMC_SETUP0)
+#define SMC_SETUP0_s	MMIO_REG(0x400e0000, struct __struct_SMC_SETUP0)
 struct __struct_SMC_SETUP0
 {
   uint32_t nwe_setup : 6;
@@ -9436,7 +9093,7 @@ struct __struct_SMC_SETUP0
 #define SMC_PULSE0_NCS_RD_PULSE_MSK	0x7f000000
 #define SMC_PULSE0_NCS_RD_PULSE_VAL(x)	(((x) >> 24) & 0x7f)
 
-#define SMC_PULSE0_s    MMIO_REG(0x400e0004, struct __struct_SMC_PULSE0)
+#define SMC_PULSE0_s	MMIO_REG(0x400e0004, struct __struct_SMC_PULSE0)
 struct __struct_SMC_PULSE0
 {
   uint32_t nwe_pulse : 7;
@@ -9457,7 +9114,7 @@ struct __struct_SMC_PULSE0
 #define SMC_CYCLE0_NRD_CYCLE_MSK	0x01ff0000
 #define SMC_CYCLE0_NRD_CYCLE_VAL(x)	(((x) >> 16) & 0x1ff)
 
-#define SMC_CYCLE0_s    MMIO_REG(0x400e0008, struct __struct_SMC_CYCLE0)
+#define SMC_CYCLE0_s	MMIO_REG(0x400e0008, struct __struct_SMC_CYCLE0)
 struct __struct_SMC_CYCLE0
 {
   uint32_t nwe_cycle : 9;
@@ -9481,7 +9138,7 @@ struct __struct_SMC_CYCLE0
 #define SMC_MODE0_PS_MSK	0x18000000
 #define SMC_MODE0_PS_VAL(x)	(((x) >> 27) & 0x3)
 
-#define SMC_MODE0_s    MMIO_REG(0x400e000c, struct __struct_SMC_MODE0)
+#define SMC_MODE0_s	MMIO_REG(0x400e000c, struct __struct_SMC_MODE0)
 struct __struct_SMC_MODE0
 {
   uint32_t read_mode : 1;
@@ -9512,7 +9169,7 @@ struct __struct_SMC_MODE0
 #define SMC_SETUP1_NCS_RD_SETUP_MSK	0x3f000000
 #define SMC_SETUP1_NCS_RD_SETUP_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define SMC_SETUP1_s    MMIO_REG(0x400e0010, struct __struct_SMC_SETUP1)
+#define SMC_SETUP1_s	MMIO_REG(0x400e0010, struct __struct_SMC_SETUP1)
 struct __struct_SMC_SETUP1
 {
   uint32_t nwe_setup : 6;
@@ -9539,7 +9196,7 @@ struct __struct_SMC_SETUP1
 #define SMC_PULSE1_NCS_RD_PULSE_MSK	0x7f000000
 #define SMC_PULSE1_NCS_RD_PULSE_VAL(x)	(((x) >> 24) & 0x7f)
 
-#define SMC_PULSE1_s    MMIO_REG(0x400e0014, struct __struct_SMC_PULSE1)
+#define SMC_PULSE1_s	MMIO_REG(0x400e0014, struct __struct_SMC_PULSE1)
 struct __struct_SMC_PULSE1
 {
   uint32_t nwe_pulse : 7;
@@ -9560,7 +9217,7 @@ struct __struct_SMC_PULSE1
 #define SMC_CYCLE1_NRD_CYCLE_MSK	0x01ff0000
 #define SMC_CYCLE1_NRD_CYCLE_VAL(x)	(((x) >> 16) & 0x1ff)
 
-#define SMC_CYCLE1_s    MMIO_REG(0x400e0018, struct __struct_SMC_CYCLE1)
+#define SMC_CYCLE1_s	MMIO_REG(0x400e0018, struct __struct_SMC_CYCLE1)
 struct __struct_SMC_CYCLE1
 {
   uint32_t nwe_cycle : 9;
@@ -9584,7 +9241,7 @@ struct __struct_SMC_CYCLE1
 #define SMC_MODE1_PS_MSK	0x18000000
 #define SMC_MODE1_PS_VAL(x)	(((x) >> 27) & 0x3)
 
-#define SMC_MODE1_s    MMIO_REG(0x400e001c, struct __struct_SMC_MODE1)
+#define SMC_MODE1_s	MMIO_REG(0x400e001c, struct __struct_SMC_MODE1)
 struct __struct_SMC_MODE1
 {
   uint32_t read_mode : 1;
@@ -9615,7 +9272,7 @@ struct __struct_SMC_MODE1
 #define SMC_SETUP2_NCS_RD_SETUP_MSK	0x3f000000
 #define SMC_SETUP2_NCS_RD_SETUP_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define SMC_SETUP2_s    MMIO_REG(0x400e0020, struct __struct_SMC_SETUP2)
+#define SMC_SETUP2_s	MMIO_REG(0x400e0020, struct __struct_SMC_SETUP2)
 struct __struct_SMC_SETUP2
 {
   uint32_t nwe_setup : 6;
@@ -9642,7 +9299,7 @@ struct __struct_SMC_SETUP2
 #define SMC_PULSE2_NCS_RD_PULSE_MSK	0x7f000000
 #define SMC_PULSE2_NCS_RD_PULSE_VAL(x)	(((x) >> 24) & 0x7f)
 
-#define SMC_PULSE2_s    MMIO_REG(0x400e0024, struct __struct_SMC_PULSE2)
+#define SMC_PULSE2_s	MMIO_REG(0x400e0024, struct __struct_SMC_PULSE2)
 struct __struct_SMC_PULSE2
 {
   uint32_t nwe_pulse : 7;
@@ -9663,7 +9320,7 @@ struct __struct_SMC_PULSE2
 #define SMC_CYCLE2_NRD_CYCLE_MSK	0x01ff0000
 #define SMC_CYCLE2_NRD_CYCLE_VAL(x)	(((x) >> 16) & 0x1ff)
 
-#define SMC_CYCLE2_s    MMIO_REG(0x400e0028, struct __struct_SMC_CYCLE2)
+#define SMC_CYCLE2_s	MMIO_REG(0x400e0028, struct __struct_SMC_CYCLE2)
 struct __struct_SMC_CYCLE2
 {
   uint32_t nwe_cycle : 9;
@@ -9687,7 +9344,7 @@ struct __struct_SMC_CYCLE2
 #define SMC_MODE2_PS_MSK	0x18000000
 #define SMC_MODE2_PS_VAL(x)	(((x) >> 27) & 0x3)
 
-#define SMC_MODE2_s    MMIO_REG(0x400e002c, struct __struct_SMC_MODE2)
+#define SMC_MODE2_s	MMIO_REG(0x400e002c, struct __struct_SMC_MODE2)
 struct __struct_SMC_MODE2
 {
   uint32_t read_mode : 1;
@@ -9718,7 +9375,7 @@ struct __struct_SMC_MODE2
 #define SMC_SETUP3_NCS_RD_SETUP_MSK	0x3f000000
 #define SMC_SETUP3_NCS_RD_SETUP_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define SMC_SETUP3_s    MMIO_REG(0x400e0030, struct __struct_SMC_SETUP3)
+#define SMC_SETUP3_s	MMIO_REG(0x400e0030, struct __struct_SMC_SETUP3)
 struct __struct_SMC_SETUP3
 {
   uint32_t nwe_setup : 6;
@@ -9745,7 +9402,7 @@ struct __struct_SMC_SETUP3
 #define SMC_PULSE3_NCS_RD_PULSE_MSK	0x7f000000
 #define SMC_PULSE3_NCS_RD_PULSE_VAL(x)	(((x) >> 24) & 0x7f)
 
-#define SMC_PULSE3_s    MMIO_REG(0x400e0034, struct __struct_SMC_PULSE3)
+#define SMC_PULSE3_s	MMIO_REG(0x400e0034, struct __struct_SMC_PULSE3)
 struct __struct_SMC_PULSE3
 {
   uint32_t nwe_pulse : 7;
@@ -9766,7 +9423,7 @@ struct __struct_SMC_PULSE3
 #define SMC_CYCLE3_NRD_CYCLE_MSK	0x01ff0000
 #define SMC_CYCLE3_NRD_CYCLE_VAL(x)	(((x) >> 16) & 0x1ff)
 
-#define SMC_CYCLE3_s    MMIO_REG(0x400e0038, struct __struct_SMC_CYCLE3)
+#define SMC_CYCLE3_s	MMIO_REG(0x400e0038, struct __struct_SMC_CYCLE3)
 struct __struct_SMC_CYCLE3
 {
   uint32_t nwe_cycle : 9;
@@ -9790,7 +9447,7 @@ struct __struct_SMC_CYCLE3
 #define SMC_MODE3_PS_MSK	0x18000000
 #define SMC_MODE3_PS_VAL(x)	(((x) >> 27) & 0x3)
 
-#define SMC_MODE3_s    MMIO_REG(0x400e003c, struct __struct_SMC_MODE3)
+#define SMC_MODE3_s	MMIO_REG(0x400e003c, struct __struct_SMC_MODE3)
 struct __struct_SMC_MODE3
 {
   uint32_t read_mode : 1;
@@ -9814,7 +9471,7 @@ struct __struct_SMC_MODE3
 #define SMC_OCMS_CS2SE	(1 << 18)
 #define SMC_OCMS_CS3SE	(1 << 19)
 
-#define SMC_OCMS_s    MMIO_REG(0x400e0080, struct __struct_SMC_OCMS)
+#define SMC_OCMS_s	MMIO_REG(0x400e0080, struct __struct_SMC_OCMS)
 struct __struct_SMC_OCMS
 {
   uint32_t smse : 1;
@@ -9836,7 +9493,7 @@ struct __struct_SMC_OCMS
 #define SMC_WPMR_WPKEY_MSK	0xffffff00
 #define SMC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define SMC_WPMR_s    MMIO_REG(0x400e00e4, struct __struct_SMC_WPMR)
+#define SMC_WPMR_s	MMIO_REG(0x400e00e4, struct __struct_SMC_WPMR)
 struct __struct_SMC_WPMR
 {
   uint32_t wpen : 1;
@@ -9850,7 +9507,7 @@ struct __struct_SMC_WPMR
 #define SMC_WPSR_WPVSRC_MSK	0x00ffff00
 #define SMC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define SMC_WPSR_s    MMIO_REG(0x400e00e8, struct __struct_SMC_WPSR)
+#define SMC_WPSR_s	MMIO_REG(0x400e00e8, struct __struct_SMC_WPSR)
 struct __struct_SMC_WPSR
 {
   uint32_t wpvs : 1;
@@ -9866,7 +9523,7 @@ struct __struct_SMC_WPSR
 #define MATRIX_MCFG0_ULBT_MSK	0x00000007
 #define MATRIX_MCFG0_ULBT_VAL(x)	(((x) >> 0) & 0x7)
 
-#define MATRIX_MCFG0_s    MMIO_REG(0x400e0200, struct __struct_MATRIX_MCFG0)
+#define MATRIX_MCFG0_s	MMIO_REG(0x400e0200, struct __struct_MATRIX_MCFG0)
 struct __struct_MATRIX_MCFG0
 {
   uint32_t ulbt : 3;
@@ -9878,7 +9535,7 @@ struct __struct_MATRIX_MCFG0
 #define MATRIX_MCFG1_ULBT_MSK	0x00000007
 #define MATRIX_MCFG1_ULBT_VAL(x)	(((x) >> 0) & 0x7)
 
-#define MATRIX_MCFG1_s    MMIO_REG(0x400e0204, struct __struct_MATRIX_MCFG1)
+#define MATRIX_MCFG1_s	MMIO_REG(0x400e0204, struct __struct_MATRIX_MCFG1)
 struct __struct_MATRIX_MCFG1
 {
   uint32_t ulbt : 3;
@@ -9890,7 +9547,7 @@ struct __struct_MATRIX_MCFG1
 #define MATRIX_MCFG2_ULBT_MSK	0x00000007
 #define MATRIX_MCFG2_ULBT_VAL(x)	(((x) >> 0) & 0x7)
 
-#define MATRIX_MCFG2_s    MMIO_REG(0x400e0208, struct __struct_MATRIX_MCFG2)
+#define MATRIX_MCFG2_s	MMIO_REG(0x400e0208, struct __struct_MATRIX_MCFG2)
 struct __struct_MATRIX_MCFG2
 {
   uint32_t ulbt : 3;
@@ -9902,7 +9559,7 @@ struct __struct_MATRIX_MCFG2
 #define MATRIX_MCFG3_ULBT_MSK	0x00000007
 #define MATRIX_MCFG3_ULBT_VAL(x)	(((x) >> 0) & 0x7)
 
-#define MATRIX_MCFG3_s    MMIO_REG(0x400e020c, struct __struct_MATRIX_MCFG3)
+#define MATRIX_MCFG3_s	MMIO_REG(0x400e020c, struct __struct_MATRIX_MCFG3)
 struct __struct_MATRIX_MCFG3
 {
   uint32_t ulbt : 3;
@@ -9923,7 +9580,7 @@ struct __struct_MATRIX_MCFG3
 #define MATRIX_SCFG0_ARBT_MSK	0x03000000
 #define MATRIX_SCFG0_ARBT_VAL(x)	(((x) >> 24) & 0x3)
 
-#define MATRIX_SCFG0_s    MMIO_REG(0x400e0240, struct __struct_MATRIX_SCFG0)
+#define MATRIX_SCFG0_s	MMIO_REG(0x400e0240, struct __struct_MATRIX_SCFG0)
 struct __struct_MATRIX_SCFG0
 {
   uint32_t slot_cycle : 8;
@@ -9949,7 +9606,7 @@ struct __struct_MATRIX_SCFG0
 #define MATRIX_SCFG1_ARBT_MSK	0x03000000
 #define MATRIX_SCFG1_ARBT_VAL(x)	(((x) >> 24) & 0x3)
 
-#define MATRIX_SCFG1_s    MMIO_REG(0x400e0244, struct __struct_MATRIX_SCFG1)
+#define MATRIX_SCFG1_s	MMIO_REG(0x400e0244, struct __struct_MATRIX_SCFG1)
 struct __struct_MATRIX_SCFG1
 {
   uint32_t slot_cycle : 8;
@@ -9975,7 +9632,7 @@ struct __struct_MATRIX_SCFG1
 #define MATRIX_SCFG2_ARBT_MSK	0x03000000
 #define MATRIX_SCFG2_ARBT_VAL(x)	(((x) >> 24) & 0x3)
 
-#define MATRIX_SCFG2_s    MMIO_REG(0x400e0248, struct __struct_MATRIX_SCFG2)
+#define MATRIX_SCFG2_s	MMIO_REG(0x400e0248, struct __struct_MATRIX_SCFG2)
 struct __struct_MATRIX_SCFG2
 {
   uint32_t slot_cycle : 8;
@@ -10001,7 +9658,7 @@ struct __struct_MATRIX_SCFG2
 #define MATRIX_SCFG3_ARBT_MSK	0x03000000
 #define MATRIX_SCFG3_ARBT_VAL(x)	(((x) >> 24) & 0x3)
 
-#define MATRIX_SCFG3_s    MMIO_REG(0x400e024c, struct __struct_MATRIX_SCFG3)
+#define MATRIX_SCFG3_s	MMIO_REG(0x400e024c, struct __struct_MATRIX_SCFG3)
 struct __struct_MATRIX_SCFG3
 {
   uint32_t slot_cycle : 8;
@@ -10027,7 +9684,7 @@ struct __struct_MATRIX_SCFG3
 #define MATRIX_SCFG4_ARBT_MSK	0x03000000
 #define MATRIX_SCFG4_ARBT_VAL(x)	(((x) >> 24) & 0x3)
 
-#define MATRIX_SCFG4_s    MMIO_REG(0x400e0250, struct __struct_MATRIX_SCFG4)
+#define MATRIX_SCFG4_s	MMIO_REG(0x400e0250, struct __struct_MATRIX_SCFG4)
 struct __struct_MATRIX_SCFG4
 {
   uint32_t slot_cycle : 8;
@@ -10056,7 +9713,7 @@ struct __struct_MATRIX_SCFG4
 #define MATRIX_PRAS0_M4PR_MSK	0x00030000
 #define MATRIX_PRAS0_M4PR_VAL(x)	(((x) >> 16) & 0x3)
 
-#define MATRIX_PRAS0_s    MMIO_REG(0x400e0280, struct __struct_MATRIX_PRAS0)
+#define MATRIX_PRAS0_s	MMIO_REG(0x400e0280, struct __struct_MATRIX_PRAS0)
 struct __struct_MATRIX_PRAS0
 {
   uint32_t m0pr : 2;
@@ -10088,7 +9745,7 @@ struct __struct_MATRIX_PRAS0
 #define MATRIX_PRAS1_M4PR_MSK	0x00030000
 #define MATRIX_PRAS1_M4PR_VAL(x)	(((x) >> 16) & 0x3)
 
-#define MATRIX_PRAS1_s    MMIO_REG(0x400e0288, struct __struct_MATRIX_PRAS1)
+#define MATRIX_PRAS1_s	MMIO_REG(0x400e0288, struct __struct_MATRIX_PRAS1)
 struct __struct_MATRIX_PRAS1
 {
   uint32_t m0pr : 2;
@@ -10120,7 +9777,7 @@ struct __struct_MATRIX_PRAS1
 #define MATRIX_PRAS2_M4PR_MSK	0x00030000
 #define MATRIX_PRAS2_M4PR_VAL(x)	(((x) >> 16) & 0x3)
 
-#define MATRIX_PRAS2_s    MMIO_REG(0x400e0290, struct __struct_MATRIX_PRAS2)
+#define MATRIX_PRAS2_s	MMIO_REG(0x400e0290, struct __struct_MATRIX_PRAS2)
 struct __struct_MATRIX_PRAS2
 {
   uint32_t m0pr : 2;
@@ -10152,7 +9809,7 @@ struct __struct_MATRIX_PRAS2
 #define MATRIX_PRAS3_M4PR_MSK	0x00030000
 #define MATRIX_PRAS3_M4PR_VAL(x)	(((x) >> 16) & 0x3)
 
-#define MATRIX_PRAS3_s    MMIO_REG(0x400e0298, struct __struct_MATRIX_PRAS3)
+#define MATRIX_PRAS3_s	MMIO_REG(0x400e0298, struct __struct_MATRIX_PRAS3)
 struct __struct_MATRIX_PRAS3
 {
   uint32_t m0pr : 2;
@@ -10184,7 +9841,7 @@ struct __struct_MATRIX_PRAS3
 #define MATRIX_PRAS4_M4PR_MSK	0x00030000
 #define MATRIX_PRAS4_M4PR_VAL(x)	(((x) >> 16) & 0x3)
 
-#define MATRIX_PRAS4_s    MMIO_REG(0x400e02a0, struct __struct_MATRIX_PRAS4)
+#define MATRIX_PRAS4_s	MMIO_REG(0x400e02a0, struct __struct_MATRIX_PRAS4)
 struct __struct_MATRIX_PRAS4
 {
   uint32_t m0pr : 2;
@@ -10208,7 +9865,7 @@ struct __struct_MATRIX_PRAS4
 #define MATRIX_CCFG_SYSIO_SYSIO11	(1 << 11)
 #define MATRIX_CCFG_SYSIO_SYSIO12	(1 << 12)
 
-#define MATRIX_CCFG_SYSIO_s    MMIO_REG(0x400e0314, struct __struct_MATRIX_CCFG_SYSIO)
+#define MATRIX_CCFG_SYSIO_s	MMIO_REG(0x400e0314, struct __struct_MATRIX_CCFG_SYSIO)
 struct __struct_MATRIX_CCFG_SYSIO
 {
   uint32_t  : 4;
@@ -10229,7 +9886,7 @@ struct __struct_MATRIX_CCFG_SYSIO
 #define MATRIX_CCFG_SMCNFCS_SMC_NFCS2	(1 << 2)
 #define MATRIX_CCFG_SMCNFCS_SMC_NFCS3	(1 << 3)
 
-#define MATRIX_CCFG_SMCNFCS_s    MMIO_REG(0x400e031c, struct __struct_MATRIX_CCFG_SMCNFCS)
+#define MATRIX_CCFG_SMCNFCS_s	MMIO_REG(0x400e031c, struct __struct_MATRIX_CCFG_SMCNFCS)
 struct __struct_MATRIX_CCFG_SMCNFCS
 {
   uint32_t smc_nfcs0 : 1;
@@ -10245,7 +9902,7 @@ struct __struct_MATRIX_CCFG_SMCNFCS
 #define MATRIX_WPMR_WPKEY_MSK	0xffffff00
 #define MATRIX_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define MATRIX_WPMR_s    MMIO_REG(0x400e03e4, struct __struct_MATRIX_WPMR)
+#define MATRIX_WPMR_s	MMIO_REG(0x400e03e4, struct __struct_MATRIX_WPMR)
 struct __struct_MATRIX_WPMR
 {
   uint32_t wpen : 1;
@@ -10259,7 +9916,7 @@ struct __struct_MATRIX_WPMR
 #define MATRIX_WPSR_WPVSRC_MSK	0x00ffff00
 #define MATRIX_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define MATRIX_WPSR_s    MMIO_REG(0x400e03e8, struct __struct_MATRIX_WPSR)
+#define MATRIX_WPSR_s	MMIO_REG(0x400e03e8, struct __struct_MATRIX_WPSR)
 struct __struct_MATRIX_WPSR
 {
   uint32_t wpvs : 1;
@@ -10276,7 +9933,7 @@ struct __struct_MATRIX_WPSR
 #define PMC_SCER_PCK1	(1 << 9)
 #define PMC_SCER_PCK2	(1 << 10)
 
-#define PMC_SCER_s    MMIO_REG(0x400e0400, struct __struct_PMC_SCER)
+#define PMC_SCER_s	MMIO_REG(0x400e0400, struct __struct_PMC_SCER)
 struct __struct_PMC_SCER
 {
   uint32_t  : 7;
@@ -10293,7 +9950,7 @@ struct __struct_PMC_SCER
 #define PMC_SCDR_PCK1	(1 << 9)
 #define PMC_SCDR_PCK2	(1 << 10)
 
-#define PMC_SCDR_s    MMIO_REG(0x400e0404, struct __struct_PMC_SCDR)
+#define PMC_SCDR_s	MMIO_REG(0x400e0404, struct __struct_PMC_SCDR)
 struct __struct_PMC_SCDR
 {
   uint32_t  : 7;
@@ -10310,7 +9967,7 @@ struct __struct_PMC_SCDR
 #define PMC_SCSR_PCK1	(1 << 9)
 #define PMC_SCSR_PCK2	(1 << 10)
 
-#define PMC_SCSR_s    MMIO_REG(0x400e0408, struct __struct_PMC_SCSR)
+#define PMC_SCSR_s	MMIO_REG(0x400e0408, struct __struct_PMC_SCSR)
 struct __struct_PMC_SCSR
 {
   uint32_t  : 7;
@@ -10353,7 +10010,7 @@ struct __struct_PMC_SCSR
 #define PMC_PCER0_DACC	(1 << 30)
 #define PMC_PCER0_PWM	(1 << 31)
 
-#define PMC_PCER0_s    MMIO_REG(0x400e0410, struct __struct_PMC_PCER0)
+#define PMC_PCER0_s	MMIO_REG(0x400e0410, struct __struct_PMC_PCER0)
 struct __struct_PMC_PCER0
 {
   uint32_t supc : 1;
@@ -10421,7 +10078,7 @@ struct __struct_PMC_PCER0
 #define PMC_PCDR0_DACC	(1 << 30)
 #define PMC_PCDR0_PWM	(1 << 31)
 
-#define PMC_PCDR0_s    MMIO_REG(0x400e0414, struct __struct_PMC_PCDR0)
+#define PMC_PCDR0_s	MMIO_REG(0x400e0414, struct __struct_PMC_PCDR0)
 struct __struct_PMC_PCDR0
 {
   uint32_t supc : 1;
@@ -10489,7 +10146,7 @@ struct __struct_PMC_PCDR0
 #define PMC_PCSR0_DACC	(1 << 30)
 #define PMC_PCSR0_PWM	(1 << 31)
 
-#define PMC_PCSR0_s    MMIO_REG(0x400e0418, struct __struct_PMC_PCSR0)
+#define PMC_PCSR0_s	MMIO_REG(0x400e0418, struct __struct_PMC_PCSR0)
 struct __struct_PMC_PCSR0
 {
   uint32_t supc : 1;
@@ -10542,7 +10199,7 @@ struct __struct_PMC_PCSR0
 #define PMC_CKGR_MOR_MOSCSEL	(1 << 24)
 #define PMC_CKGR_MOR_CFDEN	(1 << 25)
 
-#define PMC_CKGR_MOR_s    MMIO_REG(0x400e0420, struct __struct_PMC_CKGR_MOR)
+#define PMC_CKGR_MOR_s	MMIO_REG(0x400e0420, struct __struct_PMC_CKGR_MOR)
 struct __struct_PMC_CKGR_MOR
 {
   uint32_t moscxten : 1;
@@ -10565,7 +10222,7 @@ struct __struct_PMC_CKGR_MOR
 #define PMC_CKGR_MCFR_MAINFRDY	(1 << 16)
 #define PMC_CKGR_MCFR_RCMEAS	(1 << 20)
 
-#define PMC_CKGR_MCFR_s    MMIO_REG(0x400e0424, struct __struct_PMC_CKGR_MCFR)
+#define PMC_CKGR_MCFR_s	MMIO_REG(0x400e0424, struct __struct_PMC_CKGR_MCFR)
 struct __struct_PMC_CKGR_MCFR
 {
   uint32_t mainf : 16;
@@ -10587,7 +10244,7 @@ struct __struct_PMC_CKGR_MCFR
 #define PMC_CKGR_PLLAR_MULA_VAL(x)	(((x) >> 16) & 0x7ff)
 #define PMC_CKGR_PLLAR_ONE	(1 << 29)
 
-#define PMC_CKGR_PLLAR_s    MMIO_REG(0x400e0428, struct __struct_PMC_CKGR_PLLAR)
+#define PMC_CKGR_PLLAR_s	MMIO_REG(0x400e0428, struct __struct_PMC_CKGR_PLLAR)
 struct __struct_PMC_CKGR_PLLAR
 {
   uint32_t diva : 8;
@@ -10610,7 +10267,7 @@ struct __struct_PMC_CKGR_PLLAR
 #define PMC_CKGR_PLLBR_MULB_MSK	0x07ff0000
 #define PMC_CKGR_PLLBR_MULB_VAL(x)	(((x) >> 16) & 0x7ff)
 
-#define PMC_CKGR_PLLBR_s    MMIO_REG(0x400e042c, struct __struct_PMC_CKGR_PLLBR)
+#define PMC_CKGR_PLLBR_s	MMIO_REG(0x400e042c, struct __struct_PMC_CKGR_PLLBR)
 struct __struct_PMC_CKGR_PLLBR
 {
   uint32_t divb : 8;
@@ -10630,7 +10287,7 @@ struct __struct_PMC_CKGR_PLLBR
 #define PMC_MCKR_PLLADIV2	(1 << 12)
 #define PMC_MCKR_PLLBDIV2	(1 << 13)
 
-#define PMC_MCKR_s    MMIO_REG(0x400e0430, struct __struct_PMC_MCKR)
+#define PMC_MCKR_s	MMIO_REG(0x400e0430, struct __struct_PMC_MCKR)
 struct __struct_PMC_MCKR
 {
   uint32_t css : 2;
@@ -10648,7 +10305,7 @@ struct __struct_PMC_MCKR
 #define PMC_USB_USBDIV_MSK	0x00000f00
 #define PMC_USB_USBDIV_VAL(x)	(((x) >> 8) & 0xf)
 
-#define PMC_USB_s    MMIO_REG(0x400e0438, struct __struct_PMC_USB)
+#define PMC_USB_s	MMIO_REG(0x400e0438, struct __struct_PMC_USB)
 struct __struct_PMC_USB
 {
   uint32_t usbs : 1;
@@ -10665,7 +10322,7 @@ struct __struct_PMC_USB
 #define PMC_PCK0_PRES_MSK	0x00000070
 #define PMC_PCK0_PRES_VAL(x)	(((x) >> 4) & 0x7)
 
-#define PMC_PCK0_s    MMIO_REG(0x400e0440, struct __struct_PMC_PCK0)
+#define PMC_PCK0_s	MMIO_REG(0x400e0440, struct __struct_PMC_PCK0)
 struct __struct_PMC_PCK0
 {
   uint32_t css : 3;
@@ -10682,7 +10339,7 @@ struct __struct_PMC_PCK0
 #define PMC_PCK1_PRES_MSK	0x00000070
 #define PMC_PCK1_PRES_VAL(x)	(((x) >> 4) & 0x7)
 
-#define PMC_PCK1_s    MMIO_REG(0x400e0444, struct __struct_PMC_PCK1)
+#define PMC_PCK1_s	MMIO_REG(0x400e0444, struct __struct_PMC_PCK1)
 struct __struct_PMC_PCK1
 {
   uint32_t css : 3;
@@ -10699,7 +10356,7 @@ struct __struct_PMC_PCK1
 #define PMC_PCK2_PRES_MSK	0x00000070
 #define PMC_PCK2_PRES_VAL(x)	(((x) >> 4) & 0x7)
 
-#define PMC_PCK2_s    MMIO_REG(0x400e0448, struct __struct_PMC_PCK2)
+#define PMC_PCK2_s	MMIO_REG(0x400e0448, struct __struct_PMC_PCK2)
 struct __struct_PMC_PCK2
 {
   uint32_t css : 3;
@@ -10720,7 +10377,7 @@ struct __struct_PMC_PCK2
 #define PMC_IER_MOSCRCS	(1 << 17)
 #define PMC_IER_CFDEV	(1 << 18)
 
-#define PMC_IER_s    MMIO_REG(0x400e0460, struct __struct_PMC_IER)
+#define PMC_IER_s	MMIO_REG(0x400e0460, struct __struct_PMC_IER)
 struct __struct_PMC_IER
 {
   uint32_t moscxts : 1;
@@ -10750,7 +10407,7 @@ struct __struct_PMC_IER
 #define PMC_IDR_MOSCRCS	(1 << 17)
 #define PMC_IDR_CFDEV	(1 << 18)
 
-#define PMC_IDR_s    MMIO_REG(0x400e0464, struct __struct_PMC_IDR)
+#define PMC_IDR_s	MMIO_REG(0x400e0464, struct __struct_PMC_IDR)
 struct __struct_PMC_IDR
 {
   uint32_t moscxts : 1;
@@ -10783,7 +10440,7 @@ struct __struct_PMC_IDR
 #define PMC_SR_CFDS	(1 << 19)
 #define PMC_SR_FOS	(1 << 20)
 
-#define PMC_SR_s    MMIO_REG(0x400e0468, struct __struct_PMC_SR)
+#define PMC_SR_s	MMIO_REG(0x400e0468, struct __struct_PMC_SR)
 struct __struct_PMC_SR
 {
   uint32_t moscxts : 1;
@@ -10816,7 +10473,7 @@ struct __struct_PMC_SR
 #define PMC_IMR_MOSCRCS	(1 << 17)
 #define PMC_IMR_CFDEV	(1 << 18)
 
-#define PMC_IMR_s    MMIO_REG(0x400e046c, struct __struct_PMC_IMR)
+#define PMC_IMR_s	MMIO_REG(0x400e046c, struct __struct_PMC_IMR)
 struct __struct_PMC_IMR
 {
   uint32_t moscxts : 1;
@@ -10858,7 +10515,7 @@ struct __struct_PMC_IMR
 #define PMC_FSMR_FLPM_MSK	0x00600000
 #define PMC_FSMR_FLPM_VAL(x)	(((x) >> 21) & 0x3)
 
-#define PMC_FSMR_s    MMIO_REG(0x400e0470, struct __struct_PMC_FSMR)
+#define PMC_FSMR_s	MMIO_REG(0x400e0470, struct __struct_PMC_FSMR)
 struct __struct_PMC_FSMR
 {
   uint32_t fstt0 : 1;
@@ -10903,7 +10560,7 @@ struct __struct_PMC_FSMR
 #define PMC_FSPR_FSTP14	(1 << 14)
 #define PMC_FSPR_FSTP15	(1 << 15)
 
-#define PMC_FSPR_s    MMIO_REG(0x400e0474, struct __struct_PMC_FSPR)
+#define PMC_FSPR_s	MMIO_REG(0x400e0474, struct __struct_PMC_FSPR)
 struct __struct_PMC_FSPR
 {
   uint32_t fstp0 : 1;
@@ -10928,7 +10585,7 @@ struct __struct_PMC_FSPR
 #define PMC_FOCR	MMIO_REG(0x400e0478, uint32_t)
 #define PMC_FOCR_FOCLR	(1 << 0)
 
-#define PMC_FOCR_s    MMIO_REG(0x400e0478, struct __struct_PMC_FOCR)
+#define PMC_FOCR_s	MMIO_REG(0x400e0478, struct __struct_PMC_FOCR)
 struct __struct_PMC_FOCR
 {
   uint32_t foclr : 1;
@@ -10941,7 +10598,7 @@ struct __struct_PMC_FOCR
 #define PMC_WPMR_WPKEY_MSK	0xffffff00
 #define PMC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define PMC_WPMR_s    MMIO_REG(0x400e04e4, struct __struct_PMC_WPMR)
+#define PMC_WPMR_s	MMIO_REG(0x400e04e4, struct __struct_PMC_WPMR)
 struct __struct_PMC_WPMR
 {
   uint32_t wpen : 1;
@@ -10955,7 +10612,7 @@ struct __struct_PMC_WPMR
 #define PMC_WPSR_WPVSRC_MSK	0x00ffff00
 #define PMC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define PMC_WPSR_s    MMIO_REG(0x400e04e8, struct __struct_PMC_WPSR)
+#define PMC_WPSR_s	MMIO_REG(0x400e04e8, struct __struct_PMC_WPSR)
 struct __struct_PMC_WPSR
 {
   uint32_t wpvs : 1;
@@ -10969,7 +10626,7 @@ struct __struct_PMC_WPSR
 #define PMC_PCER1_ACC	(1 << 1)
 #define PMC_PCER1_UDP	(1 << 2)
 
-#define PMC_PCER1_s    MMIO_REG(0x400e0500, struct __struct_PMC_PCER1)
+#define PMC_PCER1_s	MMIO_REG(0x400e0500, struct __struct_PMC_PCER1)
 struct __struct_PMC_PCER1
 {
   uint32_t crccu : 1;
@@ -10983,7 +10640,7 @@ struct __struct_PMC_PCER1
 #define PMC_PCDR1_ACC	(1 << 1)
 #define PMC_PCDR1_UDP	(1 << 2)
 
-#define PMC_PCDR1_s    MMIO_REG(0x400e0504, struct __struct_PMC_PCDR1)
+#define PMC_PCDR1_s	MMIO_REG(0x400e0504, struct __struct_PMC_PCDR1)
 struct __struct_PMC_PCDR1
 {
   uint32_t crccu : 1;
@@ -10997,7 +10654,7 @@ struct __struct_PMC_PCDR1
 #define PMC_PCSR1_ACC	(1 << 1)
 #define PMC_PCSR1_UDP	(1 << 2)
 
-#define PMC_PCSR1_s    MMIO_REG(0x400e0508, struct __struct_PMC_PCSR1)
+#define PMC_PCSR1_s	MMIO_REG(0x400e0508, struct __struct_PMC_PCSR1)
 struct __struct_PMC_PCSR1
 {
   uint32_t crccu : 1;
@@ -11020,7 +10677,7 @@ struct __struct_PMC_PCSR1
 #define PMC_OCR_CAL12_VAL(x)	(((x) >> 16) & 0x7f)
 #define PMC_OCR_SEL12	(1 << 23)
 
-#define PMC_OCR_s    MMIO_REG(0x400e0510, struct __struct_PMC_OCR)
+#define PMC_OCR_s	MMIO_REG(0x400e0510, struct __struct_PMC_OCR)
 struct __struct_PMC_OCR
 {
   uint32_t cal4 : 7;
@@ -11043,7 +10700,7 @@ struct __struct_PMC_OCR
 #define UART0_CR_TXDIS	(1 << 7)
 #define UART0_CR_RSTSTA	(1 << 8)
 
-#define UART0_CR_s    MMIO_REG(0x400e0600, struct __struct_UART0_CR)
+#define UART0_CR_s	MMIO_REG(0x400e0600, struct __struct_UART0_CR)
 struct __struct_UART0_CR
 {
   uint32_t  : 2;
@@ -11065,7 +10722,7 @@ struct __struct_UART0_CR
 #define UART0_MR_CHMODE_MSK	0x0000c000
 #define UART0_MR_CHMODE_VAL(x)	(((x) >> 14) & 0x3)
 
-#define UART0_MR_s    MMIO_REG(0x400e0604, struct __struct_UART0_MR)
+#define UART0_MR_s	MMIO_REG(0x400e0604, struct __struct_UART0_MR)
 struct __struct_UART0_MR
 {
   uint32_t  : 9;
@@ -11087,7 +10744,7 @@ struct __struct_UART0_MR
 #define UART0_IER_TXBUFE	(1 << 11)
 #define UART0_IER_RXBUFF	(1 << 12)
 
-#define UART0_IER_s    MMIO_REG(0x400e0608, struct __struct_UART0_IER)
+#define UART0_IER_s	MMIO_REG(0x400e0608, struct __struct_UART0_IER)
 struct __struct_UART0_IER
 {
   uint32_t rxrdy : 1;
@@ -11118,7 +10775,7 @@ struct __struct_UART0_IER
 #define UART0_IDR_TXBUFE	(1 << 11)
 #define UART0_IDR_RXBUFF	(1 << 12)
 
-#define UART0_IDR_s    MMIO_REG(0x400e060c, struct __struct_UART0_IDR)
+#define UART0_IDR_s	MMIO_REG(0x400e060c, struct __struct_UART0_IDR)
 struct __struct_UART0_IDR
 {
   uint32_t rxrdy : 1;
@@ -11149,7 +10806,7 @@ struct __struct_UART0_IDR
 #define UART0_IMR_TXBUFE	(1 << 11)
 #define UART0_IMR_RXBUFF	(1 << 12)
 
-#define UART0_IMR_s    MMIO_REG(0x400e0610, struct __struct_UART0_IMR)
+#define UART0_IMR_s	MMIO_REG(0x400e0610, struct __struct_UART0_IMR)
 struct __struct_UART0_IMR
 {
   uint32_t rxrdy : 1;
@@ -11180,7 +10837,7 @@ struct __struct_UART0_IMR
 #define UART0_SR_TXBUFE	(1 << 11)
 #define UART0_SR_RXBUFF	(1 << 12)
 
-#define UART0_SR_s    MMIO_REG(0x400e0614, struct __struct_UART0_SR)
+#define UART0_SR_s	MMIO_REG(0x400e0614, struct __struct_UART0_SR)
 struct __struct_UART0_SR
 {
   uint32_t rxrdy : 1;
@@ -11204,7 +10861,7 @@ struct __struct_UART0_SR
 #define UART0_RHR_RXCHR_MSK	0x000000ff
 #define UART0_RHR_RXCHR_VAL(x)	(((x) >> 0) & 0xff)
 
-#define UART0_RHR_s    MMIO_REG(0x400e0618, struct __struct_UART0_RHR)
+#define UART0_RHR_s	MMIO_REG(0x400e0618, struct __struct_UART0_RHR)
 struct __struct_UART0_RHR
 {
   uint32_t rxchr : 8;
@@ -11216,7 +10873,7 @@ struct __struct_UART0_RHR
 #define UART0_THR_TXCHR_MSK	0x000000ff
 #define UART0_THR_TXCHR_VAL(x)	(((x) >> 0) & 0xff)
 
-#define UART0_THR_s    MMIO_REG(0x400e061c, struct __struct_UART0_THR)
+#define UART0_THR_s	MMIO_REG(0x400e061c, struct __struct_UART0_THR)
 struct __struct_UART0_THR
 {
   uint32_t txchr : 8;
@@ -11228,7 +10885,7 @@ struct __struct_UART0_THR
 #define UART0_BRGR_CD_MSK	0x0000ffff
 #define UART0_BRGR_CD_VAL(x)	(((x) >> 0) & 0xffff)
 
-#define UART0_BRGR_s    MMIO_REG(0x400e0620, struct __struct_UART0_BRGR)
+#define UART0_BRGR_s	MMIO_REG(0x400e0620, struct __struct_UART0_BRGR)
 struct __struct_UART0_BRGR
 {
   uint32_t cd : 16;
@@ -11259,7 +10916,7 @@ struct __struct_UART0_BRGR
 #define UART0_PDC_PTCR_TXTEN	(1 << 8)
 #define UART0_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define UART0_PDC_PTCR_s    MMIO_REG(0x400e0720, struct __struct_UART0_PDC_PTCR)
+#define UART0_PDC_PTCR_s	MMIO_REG(0x400e0720, struct __struct_UART0_PDC_PTCR)
 struct __struct_UART0_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -11274,7 +10931,7 @@ struct __struct_UART0_PDC_PTCR
 #define UART0_PDC_PTSR_RXTEN	(1 << 0)
 #define UART0_PDC_PTSR_TXTEN	(1 << 8)
 
-#define UART0_PDC_PTSR_s    MMIO_REG(0x400e0724, struct __struct_UART0_PDC_PTSR)
+#define UART0_PDC_PTSR_s	MMIO_REG(0x400e0724, struct __struct_UART0_PDC_PTSR)
 struct __struct_UART0_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -11309,7 +10966,7 @@ struct __struct_UART0_PDC_PTSR
 #define CHIPID_CIDR_NVPTYP_VAL(x)	(((x) >> 28) & 0x7)
 #define CHIPID_CIDR_EXT	(1 << 31)
 
-#define CHIPID_CIDR_s    MMIO_REG(0x400e0740, struct __struct_CHIPID_CIDR)
+#define CHIPID_CIDR_s	MMIO_REG(0x400e0740, struct __struct_CHIPID_CIDR)
 struct __struct_CHIPID_CIDR
 {
   uint32_t version : 5;
@@ -11335,7 +10992,7 @@ struct __struct_CHIPID_CIDR
 #define UART1_CR_TXDIS	(1 << 7)
 #define UART1_CR_RSTSTA	(1 << 8)
 
-#define UART1_CR_s    MMIO_REG(0x400e0800, struct __struct_UART1_CR)
+#define UART1_CR_s	MMIO_REG(0x400e0800, struct __struct_UART1_CR)
 struct __struct_UART1_CR
 {
   uint32_t  : 2;
@@ -11357,7 +11014,7 @@ struct __struct_UART1_CR
 #define UART1_MR_CHMODE_MSK	0x0000c000
 #define UART1_MR_CHMODE_VAL(x)	(((x) >> 14) & 0x3)
 
-#define UART1_MR_s    MMIO_REG(0x400e0804, struct __struct_UART1_MR)
+#define UART1_MR_s	MMIO_REG(0x400e0804, struct __struct_UART1_MR)
 struct __struct_UART1_MR
 {
   uint32_t  : 9;
@@ -11379,7 +11036,7 @@ struct __struct_UART1_MR
 #define UART1_IER_TXBUFE	(1 << 11)
 #define UART1_IER_RXBUFF	(1 << 12)
 
-#define UART1_IER_s    MMIO_REG(0x400e0808, struct __struct_UART1_IER)
+#define UART1_IER_s	MMIO_REG(0x400e0808, struct __struct_UART1_IER)
 struct __struct_UART1_IER
 {
   uint32_t rxrdy : 1;
@@ -11410,7 +11067,7 @@ struct __struct_UART1_IER
 #define UART1_IDR_TXBUFE	(1 << 11)
 #define UART1_IDR_RXBUFF	(1 << 12)
 
-#define UART1_IDR_s    MMIO_REG(0x400e080c, struct __struct_UART1_IDR)
+#define UART1_IDR_s	MMIO_REG(0x400e080c, struct __struct_UART1_IDR)
 struct __struct_UART1_IDR
 {
   uint32_t rxrdy : 1;
@@ -11441,7 +11098,7 @@ struct __struct_UART1_IDR
 #define UART1_IMR_TXBUFE	(1 << 11)
 #define UART1_IMR_RXBUFF	(1 << 12)
 
-#define UART1_IMR_s    MMIO_REG(0x400e0810, struct __struct_UART1_IMR)
+#define UART1_IMR_s	MMIO_REG(0x400e0810, struct __struct_UART1_IMR)
 struct __struct_UART1_IMR
 {
   uint32_t rxrdy : 1;
@@ -11472,7 +11129,7 @@ struct __struct_UART1_IMR
 #define UART1_SR_TXBUFE	(1 << 11)
 #define UART1_SR_RXBUFF	(1 << 12)
 
-#define UART1_SR_s    MMIO_REG(0x400e0814, struct __struct_UART1_SR)
+#define UART1_SR_s	MMIO_REG(0x400e0814, struct __struct_UART1_SR)
 struct __struct_UART1_SR
 {
   uint32_t rxrdy : 1;
@@ -11496,7 +11153,7 @@ struct __struct_UART1_SR
 #define UART1_RHR_RXCHR_MSK	0x000000ff
 #define UART1_RHR_RXCHR_VAL(x)	(((x) >> 0) & 0xff)
 
-#define UART1_RHR_s    MMIO_REG(0x400e0818, struct __struct_UART1_RHR)
+#define UART1_RHR_s	MMIO_REG(0x400e0818, struct __struct_UART1_RHR)
 struct __struct_UART1_RHR
 {
   uint32_t rxchr : 8;
@@ -11508,7 +11165,7 @@ struct __struct_UART1_RHR
 #define UART1_THR_TXCHR_MSK	0x000000ff
 #define UART1_THR_TXCHR_VAL(x)	(((x) >> 0) & 0xff)
 
-#define UART1_THR_s    MMIO_REG(0x400e081c, struct __struct_UART1_THR)
+#define UART1_THR_s	MMIO_REG(0x400e081c, struct __struct_UART1_THR)
 struct __struct_UART1_THR
 {
   uint32_t txchr : 8;
@@ -11520,7 +11177,7 @@ struct __struct_UART1_THR
 #define UART1_BRGR_CD_MSK	0x0000ffff
 #define UART1_BRGR_CD_VAL(x)	(((x) >> 0) & 0xffff)
 
-#define UART1_BRGR_s    MMIO_REG(0x400e0820, struct __struct_UART1_BRGR)
+#define UART1_BRGR_s	MMIO_REG(0x400e0820, struct __struct_UART1_BRGR)
 struct __struct_UART1_BRGR
 {
   uint32_t cd : 16;
@@ -11551,7 +11208,7 @@ struct __struct_UART1_BRGR
 #define UART1_PDC_PTCR_TXTEN	(1 << 8)
 #define UART1_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define UART1_PDC_PTCR_s    MMIO_REG(0x400e0920, struct __struct_UART1_PDC_PTCR)
+#define UART1_PDC_PTCR_s	MMIO_REG(0x400e0920, struct __struct_UART1_PDC_PTCR)
 struct __struct_UART1_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -11566,7 +11223,7 @@ struct __struct_UART1_PDC_PTCR
 #define UART1_PDC_PTSR_RXTEN	(1 << 0)
 #define UART1_PDC_PTSR_TXTEN	(1 << 8)
 
-#define UART1_PDC_PTSR_s    MMIO_REG(0x400e0924, struct __struct_UART1_PDC_PTSR)
+#define UART1_PDC_PTSR_s	MMIO_REG(0x400e0924, struct __struct_UART1_PDC_PTSR)
 struct __struct_UART1_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -11586,7 +11243,7 @@ struct __struct_UART1_PDC_PTSR
 #define EEFC_FMR_FAM	(1 << 24)
 #define EEFC_FMR_CLOE	(1 << 26)
 
-#define EEFC_FMR_s    MMIO_REG(0x400e0a00, struct __struct_EEFC_FMR)
+#define EEFC_FMR_s	MMIO_REG(0x400e0a00, struct __struct_EEFC_FMR)
 struct __struct_EEFC_FMR
 {
   uint32_t frdy : 1;
@@ -11612,7 +11269,7 @@ struct __struct_EEFC_FMR
 #define EEFC_FCR_FKEY_MSK	0xff000000
 #define EEFC_FCR_FKEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define EEFC_FCR_s    MMIO_REG(0x400e0a04, struct __struct_EEFC_FCR)
+#define EEFC_FCR_s	MMIO_REG(0x400e0a04, struct __struct_EEFC_FCR)
 struct __struct_EEFC_FCR
 {
   uint32_t fcmd : 8;
@@ -11626,7 +11283,7 @@ struct __struct_EEFC_FCR
 #define EEFC_FSR_FLOCKE	(1 << 2)
 #define EEFC_FSR_FLERR	(1 << 3)
 
-#define EEFC_FSR_s    MMIO_REG(0x400e0a08, struct __struct_EEFC_FSR)
+#define EEFC_FSR_s	MMIO_REG(0x400e0a08, struct __struct_EEFC_FSR)
 struct __struct_EEFC_FSR
 {
   uint32_t frdy : 1;
@@ -11674,7 +11331,7 @@ struct __struct_EEFC_FSR
 #define PIOA_PER_P30	(1 << 30)
 #define PIOA_PER_P31	(1 << 31)
 
-#define PIOA_PER_s    MMIO_REG(0x400e0e00, struct __struct_PIOA_PER)
+#define PIOA_PER_s	MMIO_REG(0x400e0e00, struct __struct_PIOA_PER)
 struct __struct_PIOA_PER
 {
   uint32_t p0 : 1;
@@ -11745,7 +11402,7 @@ struct __struct_PIOA_PER
 #define PIOA_PDR_P30	(1 << 30)
 #define PIOA_PDR_P31	(1 << 31)
 
-#define PIOA_PDR_s    MMIO_REG(0x400e0e04, struct __struct_PIOA_PDR)
+#define PIOA_PDR_s	MMIO_REG(0x400e0e04, struct __struct_PIOA_PDR)
 struct __struct_PIOA_PDR
 {
   uint32_t p0 : 1;
@@ -11816,7 +11473,7 @@ struct __struct_PIOA_PDR
 #define PIOA_PSR_P30	(1 << 30)
 #define PIOA_PSR_P31	(1 << 31)
 
-#define PIOA_PSR_s    MMIO_REG(0x400e0e08, struct __struct_PIOA_PSR)
+#define PIOA_PSR_s	MMIO_REG(0x400e0e08, struct __struct_PIOA_PSR)
 struct __struct_PIOA_PSR
 {
   uint32_t p0 : 1;
@@ -11887,7 +11544,7 @@ struct __struct_PIOA_PSR
 #define PIOA_OER_P30	(1 << 30)
 #define PIOA_OER_P31	(1 << 31)
 
-#define PIOA_OER_s    MMIO_REG(0x400e0e10, struct __struct_PIOA_OER)
+#define PIOA_OER_s	MMIO_REG(0x400e0e10, struct __struct_PIOA_OER)
 struct __struct_PIOA_OER
 {
   uint32_t p0 : 1;
@@ -11958,7 +11615,7 @@ struct __struct_PIOA_OER
 #define PIOA_ODR_P30	(1 << 30)
 #define PIOA_ODR_P31	(1 << 31)
 
-#define PIOA_ODR_s    MMIO_REG(0x400e0e14, struct __struct_PIOA_ODR)
+#define PIOA_ODR_s	MMIO_REG(0x400e0e14, struct __struct_PIOA_ODR)
 struct __struct_PIOA_ODR
 {
   uint32_t p0 : 1;
@@ -12029,7 +11686,7 @@ struct __struct_PIOA_ODR
 #define PIOA_OSR_P30	(1 << 30)
 #define PIOA_OSR_P31	(1 << 31)
 
-#define PIOA_OSR_s    MMIO_REG(0x400e0e18, struct __struct_PIOA_OSR)
+#define PIOA_OSR_s	MMIO_REG(0x400e0e18, struct __struct_PIOA_OSR)
 struct __struct_PIOA_OSR
 {
   uint32_t p0 : 1;
@@ -12100,7 +11757,7 @@ struct __struct_PIOA_OSR
 #define PIOA_IFER_P30	(1 << 30)
 #define PIOA_IFER_P31	(1 << 31)
 
-#define PIOA_IFER_s    MMIO_REG(0x400e0e20, struct __struct_PIOA_IFER)
+#define PIOA_IFER_s	MMIO_REG(0x400e0e20, struct __struct_PIOA_IFER)
 struct __struct_PIOA_IFER
 {
   uint32_t p0 : 1;
@@ -12171,7 +11828,7 @@ struct __struct_PIOA_IFER
 #define PIOA_IFDR_P30	(1 << 30)
 #define PIOA_IFDR_P31	(1 << 31)
 
-#define PIOA_IFDR_s    MMIO_REG(0x400e0e24, struct __struct_PIOA_IFDR)
+#define PIOA_IFDR_s	MMIO_REG(0x400e0e24, struct __struct_PIOA_IFDR)
 struct __struct_PIOA_IFDR
 {
   uint32_t p0 : 1;
@@ -12242,7 +11899,7 @@ struct __struct_PIOA_IFDR
 #define PIOA_IFSR_P30	(1 << 30)
 #define PIOA_IFSR_P31	(1 << 31)
 
-#define PIOA_IFSR_s    MMIO_REG(0x400e0e28, struct __struct_PIOA_IFSR)
+#define PIOA_IFSR_s	MMIO_REG(0x400e0e28, struct __struct_PIOA_IFSR)
 struct __struct_PIOA_IFSR
 {
   uint32_t p0 : 1;
@@ -12313,7 +11970,7 @@ struct __struct_PIOA_IFSR
 #define PIOA_SODR_P30	(1 << 30)
 #define PIOA_SODR_P31	(1 << 31)
 
-#define PIOA_SODR_s    MMIO_REG(0x400e0e30, struct __struct_PIOA_SODR)
+#define PIOA_SODR_s	MMIO_REG(0x400e0e30, struct __struct_PIOA_SODR)
 struct __struct_PIOA_SODR
 {
   uint32_t p0 : 1;
@@ -12384,7 +12041,7 @@ struct __struct_PIOA_SODR
 #define PIOA_CODR_P30	(1 << 30)
 #define PIOA_CODR_P31	(1 << 31)
 
-#define PIOA_CODR_s    MMIO_REG(0x400e0e34, struct __struct_PIOA_CODR)
+#define PIOA_CODR_s	MMIO_REG(0x400e0e34, struct __struct_PIOA_CODR)
 struct __struct_PIOA_CODR
 {
   uint32_t p0 : 1;
@@ -12455,7 +12112,7 @@ struct __struct_PIOA_CODR
 #define PIOA_ODSR_P30	(1 << 30)
 #define PIOA_ODSR_P31	(1 << 31)
 
-#define PIOA_ODSR_s    MMIO_REG(0x400e0e38, struct __struct_PIOA_ODSR)
+#define PIOA_ODSR_s	MMIO_REG(0x400e0e38, struct __struct_PIOA_ODSR)
 struct __struct_PIOA_ODSR
 {
   uint32_t p0 : 1;
@@ -12526,7 +12183,7 @@ struct __struct_PIOA_ODSR
 #define PIOA_PDSR_P30	(1 << 30)
 #define PIOA_PDSR_P31	(1 << 31)
 
-#define PIOA_PDSR_s    MMIO_REG(0x400e0e3c, struct __struct_PIOA_PDSR)
+#define PIOA_PDSR_s	MMIO_REG(0x400e0e3c, struct __struct_PIOA_PDSR)
 struct __struct_PIOA_PDSR
 {
   uint32_t p0 : 1;
@@ -12597,7 +12254,7 @@ struct __struct_PIOA_PDSR
 #define PIOA_IER_P30	(1 << 30)
 #define PIOA_IER_P31	(1 << 31)
 
-#define PIOA_IER_s    MMIO_REG(0x400e0e40, struct __struct_PIOA_IER)
+#define PIOA_IER_s	MMIO_REG(0x400e0e40, struct __struct_PIOA_IER)
 struct __struct_PIOA_IER
 {
   uint32_t p0 : 1;
@@ -12668,7 +12325,7 @@ struct __struct_PIOA_IER
 #define PIOA_IDR_P30	(1 << 30)
 #define PIOA_IDR_P31	(1 << 31)
 
-#define PIOA_IDR_s    MMIO_REG(0x400e0e44, struct __struct_PIOA_IDR)
+#define PIOA_IDR_s	MMIO_REG(0x400e0e44, struct __struct_PIOA_IDR)
 struct __struct_PIOA_IDR
 {
   uint32_t p0 : 1;
@@ -12739,7 +12396,7 @@ struct __struct_PIOA_IDR
 #define PIOA_IMR_P30	(1 << 30)
 #define PIOA_IMR_P31	(1 << 31)
 
-#define PIOA_IMR_s    MMIO_REG(0x400e0e48, struct __struct_PIOA_IMR)
+#define PIOA_IMR_s	MMIO_REG(0x400e0e48, struct __struct_PIOA_IMR)
 struct __struct_PIOA_IMR
 {
   uint32_t p0 : 1;
@@ -12810,7 +12467,7 @@ struct __struct_PIOA_IMR
 #define PIOA_ISR_P30	(1 << 30)
 #define PIOA_ISR_P31	(1 << 31)
 
-#define PIOA_ISR_s    MMIO_REG(0x400e0e4c, struct __struct_PIOA_ISR)
+#define PIOA_ISR_s	MMIO_REG(0x400e0e4c, struct __struct_PIOA_ISR)
 struct __struct_PIOA_ISR
 {
   uint32_t p0 : 1;
@@ -12881,7 +12538,7 @@ struct __struct_PIOA_ISR
 #define PIOA_MDER_P30	(1 << 30)
 #define PIOA_MDER_P31	(1 << 31)
 
-#define PIOA_MDER_s    MMIO_REG(0x400e0e50, struct __struct_PIOA_MDER)
+#define PIOA_MDER_s	MMIO_REG(0x400e0e50, struct __struct_PIOA_MDER)
 struct __struct_PIOA_MDER
 {
   uint32_t p0 : 1;
@@ -12952,7 +12609,7 @@ struct __struct_PIOA_MDER
 #define PIOA_MDDR_P30	(1 << 30)
 #define PIOA_MDDR_P31	(1 << 31)
 
-#define PIOA_MDDR_s    MMIO_REG(0x400e0e54, struct __struct_PIOA_MDDR)
+#define PIOA_MDDR_s	MMIO_REG(0x400e0e54, struct __struct_PIOA_MDDR)
 struct __struct_PIOA_MDDR
 {
   uint32_t p0 : 1;
@@ -13023,7 +12680,7 @@ struct __struct_PIOA_MDDR
 #define PIOA_MDSR_P30	(1 << 30)
 #define PIOA_MDSR_P31	(1 << 31)
 
-#define PIOA_MDSR_s    MMIO_REG(0x400e0e58, struct __struct_PIOA_MDSR)
+#define PIOA_MDSR_s	MMIO_REG(0x400e0e58, struct __struct_PIOA_MDSR)
 struct __struct_PIOA_MDSR
 {
   uint32_t p0 : 1;
@@ -13094,7 +12751,7 @@ struct __struct_PIOA_MDSR
 #define PIOA_PUDR_P30	(1 << 30)
 #define PIOA_PUDR_P31	(1 << 31)
 
-#define PIOA_PUDR_s    MMIO_REG(0x400e0e60, struct __struct_PIOA_PUDR)
+#define PIOA_PUDR_s	MMIO_REG(0x400e0e60, struct __struct_PIOA_PUDR)
 struct __struct_PIOA_PUDR
 {
   uint32_t p0 : 1;
@@ -13165,7 +12822,7 @@ struct __struct_PIOA_PUDR
 #define PIOA_PUER_P30	(1 << 30)
 #define PIOA_PUER_P31	(1 << 31)
 
-#define PIOA_PUER_s    MMIO_REG(0x400e0e64, struct __struct_PIOA_PUER)
+#define PIOA_PUER_s	MMIO_REG(0x400e0e64, struct __struct_PIOA_PUER)
 struct __struct_PIOA_PUER
 {
   uint32_t p0 : 1;
@@ -13236,7 +12893,7 @@ struct __struct_PIOA_PUER
 #define PIOA_PUSR_P30	(1 << 30)
 #define PIOA_PUSR_P31	(1 << 31)
 
-#define PIOA_PUSR_s    MMIO_REG(0x400e0e68, struct __struct_PIOA_PUSR)
+#define PIOA_PUSR_s	MMIO_REG(0x400e0e68, struct __struct_PIOA_PUSR)
 struct __struct_PIOA_PUSR
 {
   uint32_t p0 : 1;
@@ -13307,7 +12964,7 @@ struct __struct_PIOA_PUSR
 #define PIOA_ABCDSR1_P30	(1 << 30)
 #define PIOA_ABCDSR1_P31	(1 << 31)
 
-#define PIOA_ABCDSR1_s    MMIO_REG(0x400e0e70, struct __struct_PIOA_ABCDSR1)
+#define PIOA_ABCDSR1_s	MMIO_REG(0x400e0e70, struct __struct_PIOA_ABCDSR1)
 struct __struct_PIOA_ABCDSR1
 {
   uint32_t p0 : 1;
@@ -13378,7 +13035,7 @@ struct __struct_PIOA_ABCDSR1
 #define PIOA_ABCDSR2_P30	(1 << 30)
 #define PIOA_ABCDSR2_P31	(1 << 31)
 
-#define PIOA_ABCDSR2_s    MMIO_REG(0x400e0e74, struct __struct_PIOA_ABCDSR2)
+#define PIOA_ABCDSR2_s	MMIO_REG(0x400e0e74, struct __struct_PIOA_ABCDSR2)
 struct __struct_PIOA_ABCDSR2
 {
   uint32_t p0 : 1;
@@ -13449,7 +13106,7 @@ struct __struct_PIOA_ABCDSR2
 #define PIOA_IFSCDR_P30	(1 << 30)
 #define PIOA_IFSCDR_P31	(1 << 31)
 
-#define PIOA_IFSCDR_s    MMIO_REG(0x400e0e80, struct __struct_PIOA_IFSCDR)
+#define PIOA_IFSCDR_s	MMIO_REG(0x400e0e80, struct __struct_PIOA_IFSCDR)
 struct __struct_PIOA_IFSCDR
 {
   uint32_t p0 : 1;
@@ -13520,7 +13177,7 @@ struct __struct_PIOA_IFSCDR
 #define PIOA_IFSCER_P30	(1 << 30)
 #define PIOA_IFSCER_P31	(1 << 31)
 
-#define PIOA_IFSCER_s    MMIO_REG(0x400e0e84, struct __struct_PIOA_IFSCER)
+#define PIOA_IFSCER_s	MMIO_REG(0x400e0e84, struct __struct_PIOA_IFSCER)
 struct __struct_PIOA_IFSCER
 {
   uint32_t p0 : 1;
@@ -13591,7 +13248,7 @@ struct __struct_PIOA_IFSCER
 #define PIOA_IFSCSR_P30	(1 << 30)
 #define PIOA_IFSCSR_P31	(1 << 31)
 
-#define PIOA_IFSCSR_s    MMIO_REG(0x400e0e88, struct __struct_PIOA_IFSCSR)
+#define PIOA_IFSCSR_s	MMIO_REG(0x400e0e88, struct __struct_PIOA_IFSCSR)
 struct __struct_PIOA_IFSCSR
 {
   uint32_t p0 : 1;
@@ -13633,7 +13290,7 @@ struct __struct_PIOA_IFSCSR
 #define PIOA_SCDR_DIV_MSK	0x00003fff
 #define PIOA_SCDR_DIV_VAL(x)	(((x) >> 0) & 0x3fff)
 
-#define PIOA_SCDR_s    MMIO_REG(0x400e0e8c, struct __struct_PIOA_SCDR)
+#define PIOA_SCDR_s	MMIO_REG(0x400e0e8c, struct __struct_PIOA_SCDR)
 struct __struct_PIOA_SCDR
 {
   uint32_t div : 14;
@@ -13674,7 +13331,7 @@ struct __struct_PIOA_SCDR
 #define PIOA_PPDDR_P30	(1 << 30)
 #define PIOA_PPDDR_P31	(1 << 31)
 
-#define PIOA_PPDDR_s    MMIO_REG(0x400e0e90, struct __struct_PIOA_PPDDR)
+#define PIOA_PPDDR_s	MMIO_REG(0x400e0e90, struct __struct_PIOA_PPDDR)
 struct __struct_PIOA_PPDDR
 {
   uint32_t p0 : 1;
@@ -13745,7 +13402,7 @@ struct __struct_PIOA_PPDDR
 #define PIOA_PPDER_P30	(1 << 30)
 #define PIOA_PPDER_P31	(1 << 31)
 
-#define PIOA_PPDER_s    MMIO_REG(0x400e0e94, struct __struct_PIOA_PPDER)
+#define PIOA_PPDER_s	MMIO_REG(0x400e0e94, struct __struct_PIOA_PPDER)
 struct __struct_PIOA_PPDER
 {
   uint32_t p0 : 1;
@@ -13816,7 +13473,7 @@ struct __struct_PIOA_PPDER
 #define PIOA_PPDSR_P30	(1 << 30)
 #define PIOA_PPDSR_P31	(1 << 31)
 
-#define PIOA_PPDSR_s    MMIO_REG(0x400e0e98, struct __struct_PIOA_PPDSR)
+#define PIOA_PPDSR_s	MMIO_REG(0x400e0e98, struct __struct_PIOA_PPDSR)
 struct __struct_PIOA_PPDSR
 {
   uint32_t p0 : 1;
@@ -13887,7 +13544,7 @@ struct __struct_PIOA_PPDSR
 #define PIOA_OWER_P30	(1 << 30)
 #define PIOA_OWER_P31	(1 << 31)
 
-#define PIOA_OWER_s    MMIO_REG(0x400e0ea0, struct __struct_PIOA_OWER)
+#define PIOA_OWER_s	MMIO_REG(0x400e0ea0, struct __struct_PIOA_OWER)
 struct __struct_PIOA_OWER
 {
   uint32_t p0 : 1;
@@ -13958,7 +13615,7 @@ struct __struct_PIOA_OWER
 #define PIOA_OWDR_P30	(1 << 30)
 #define PIOA_OWDR_P31	(1 << 31)
 
-#define PIOA_OWDR_s    MMIO_REG(0x400e0ea4, struct __struct_PIOA_OWDR)
+#define PIOA_OWDR_s	MMIO_REG(0x400e0ea4, struct __struct_PIOA_OWDR)
 struct __struct_PIOA_OWDR
 {
   uint32_t p0 : 1;
@@ -14029,7 +13686,7 @@ struct __struct_PIOA_OWDR
 #define PIOA_OWSR_P30	(1 << 30)
 #define PIOA_OWSR_P31	(1 << 31)
 
-#define PIOA_OWSR_s    MMIO_REG(0x400e0ea8, struct __struct_PIOA_OWSR)
+#define PIOA_OWSR_s	MMIO_REG(0x400e0ea8, struct __struct_PIOA_OWSR)
 struct __struct_PIOA_OWSR
 {
   uint32_t p0 : 1;
@@ -14100,7 +13757,7 @@ struct __struct_PIOA_OWSR
 #define PIOA_AIMER_P30	(1 << 30)
 #define PIOA_AIMER_P31	(1 << 31)
 
-#define PIOA_AIMER_s    MMIO_REG(0x400e0eb0, struct __struct_PIOA_AIMER)
+#define PIOA_AIMER_s	MMIO_REG(0x400e0eb0, struct __struct_PIOA_AIMER)
 struct __struct_PIOA_AIMER
 {
   uint32_t p0 : 1;
@@ -14171,7 +13828,7 @@ struct __struct_PIOA_AIMER
 #define PIOA_AIMDR_P30	(1 << 30)
 #define PIOA_AIMDR_P31	(1 << 31)
 
-#define PIOA_AIMDR_s    MMIO_REG(0x400e0eb4, struct __struct_PIOA_AIMDR)
+#define PIOA_AIMDR_s	MMIO_REG(0x400e0eb4, struct __struct_PIOA_AIMDR)
 struct __struct_PIOA_AIMDR
 {
   uint32_t p0 : 1;
@@ -14242,7 +13899,7 @@ struct __struct_PIOA_AIMDR
 #define PIOA_AIMMR_P30	(1 << 30)
 #define PIOA_AIMMR_P31	(1 << 31)
 
-#define PIOA_AIMMR_s    MMIO_REG(0x400e0eb8, struct __struct_PIOA_AIMMR)
+#define PIOA_AIMMR_s	MMIO_REG(0x400e0eb8, struct __struct_PIOA_AIMMR)
 struct __struct_PIOA_AIMMR
 {
   uint32_t p0 : 1;
@@ -14313,7 +13970,7 @@ struct __struct_PIOA_AIMMR
 #define PIOA_ESR_P30	(1 << 30)
 #define PIOA_ESR_P31	(1 << 31)
 
-#define PIOA_ESR_s    MMIO_REG(0x400e0ec0, struct __struct_PIOA_ESR)
+#define PIOA_ESR_s	MMIO_REG(0x400e0ec0, struct __struct_PIOA_ESR)
 struct __struct_PIOA_ESR
 {
   uint32_t p0 : 1;
@@ -14384,7 +14041,7 @@ struct __struct_PIOA_ESR
 #define PIOA_LSR_P30	(1 << 30)
 #define PIOA_LSR_P31	(1 << 31)
 
-#define PIOA_LSR_s    MMIO_REG(0x400e0ec4, struct __struct_PIOA_LSR)
+#define PIOA_LSR_s	MMIO_REG(0x400e0ec4, struct __struct_PIOA_LSR)
 struct __struct_PIOA_LSR
 {
   uint32_t p0 : 1;
@@ -14455,7 +14112,7 @@ struct __struct_PIOA_LSR
 #define PIOA_ELSR_P30	(1 << 30)
 #define PIOA_ELSR_P31	(1 << 31)
 
-#define PIOA_ELSR_s    MMIO_REG(0x400e0ec8, struct __struct_PIOA_ELSR)
+#define PIOA_ELSR_s	MMIO_REG(0x400e0ec8, struct __struct_PIOA_ELSR)
 struct __struct_PIOA_ELSR
 {
   uint32_t p0 : 1;
@@ -14526,7 +14183,7 @@ struct __struct_PIOA_ELSR
 #define PIOA_FELLSR_P30	(1 << 30)
 #define PIOA_FELLSR_P31	(1 << 31)
 
-#define PIOA_FELLSR_s    MMIO_REG(0x400e0ed0, struct __struct_PIOA_FELLSR)
+#define PIOA_FELLSR_s	MMIO_REG(0x400e0ed0, struct __struct_PIOA_FELLSR)
 struct __struct_PIOA_FELLSR
 {
   uint32_t p0 : 1;
@@ -14597,7 +14254,7 @@ struct __struct_PIOA_FELLSR
 #define PIOA_REHLSR_P30	(1 << 30)
 #define PIOA_REHLSR_P31	(1 << 31)
 
-#define PIOA_REHLSR_s    MMIO_REG(0x400e0ed4, struct __struct_PIOA_REHLSR)
+#define PIOA_REHLSR_s	MMIO_REG(0x400e0ed4, struct __struct_PIOA_REHLSR)
 struct __struct_PIOA_REHLSR
 {
   uint32_t p0 : 1;
@@ -14668,7 +14325,7 @@ struct __struct_PIOA_REHLSR
 #define PIOA_FRLHSR_P30	(1 << 30)
 #define PIOA_FRLHSR_P31	(1 << 31)
 
-#define PIOA_FRLHSR_s    MMIO_REG(0x400e0ed8, struct __struct_PIOA_FRLHSR)
+#define PIOA_FRLHSR_s	MMIO_REG(0x400e0ed8, struct __struct_PIOA_FRLHSR)
 struct __struct_PIOA_FRLHSR
 {
   uint32_t p0 : 1;
@@ -14739,7 +14396,7 @@ struct __struct_PIOA_FRLHSR
 #define PIOA_LOCKSR_P30	(1 << 30)
 #define PIOA_LOCKSR_P31	(1 << 31)
 
-#define PIOA_LOCKSR_s    MMIO_REG(0x400e0ee0, struct __struct_PIOA_LOCKSR)
+#define PIOA_LOCKSR_s	MMIO_REG(0x400e0ee0, struct __struct_PIOA_LOCKSR)
 struct __struct_PIOA_LOCKSR
 {
   uint32_t p0 : 1;
@@ -14782,7 +14439,7 @@ struct __struct_PIOA_LOCKSR
 #define PIOA_WPMR_WPKEY_MSK	0xffffff00
 #define PIOA_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define PIOA_WPMR_s    MMIO_REG(0x400e0ee4, struct __struct_PIOA_WPMR)
+#define PIOA_WPMR_s	MMIO_REG(0x400e0ee4, struct __struct_PIOA_WPMR)
 struct __struct_PIOA_WPMR
 {
   uint32_t wpen : 1;
@@ -14796,7 +14453,7 @@ struct __struct_PIOA_WPMR
 #define PIOA_WPSR_WPVSRC_MSK	0x00ffff00
 #define PIOA_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define PIOA_WPSR_s    MMIO_REG(0x400e0ee8, struct __struct_PIOA_WPSR)
+#define PIOA_WPSR_s	MMIO_REG(0x400e0ee8, struct __struct_PIOA_WPSR)
 struct __struct_PIOA_WPSR
 {
   uint32_t wpvs : 1;
@@ -14839,7 +14496,7 @@ struct __struct_PIOA_WPSR
 #define PIOA_SCHMITT_P30	(1 << 30)
 #define PIOA_SCHMITT_P31	(1 << 31)
 
-#define PIOA_SCHMITT_s    MMIO_REG(0x400e0f00, struct __struct_PIOA_SCHMITT)
+#define PIOA_SCHMITT_s	MMIO_REG(0x400e0f00, struct __struct_PIOA_SCHMITT)
 struct __struct_PIOA_SCHMITT
 {
   uint32_t p0 : 1;
@@ -14885,7 +14542,7 @@ struct __struct_PIOA_SCHMITT
 #define PIOA_PCMR_HALFS	(1 << 10)
 #define PIOA_PCMR_FRSTS	(1 << 11)
 
-#define PIOA_PCMR_s    MMIO_REG(0x400e0f50, struct __struct_PIOA_PCMR)
+#define PIOA_PCMR_s	MMIO_REG(0x400e0f50, struct __struct_PIOA_PCMR)
 struct __struct_PIOA_PCMR
 {
   uint32_t pcen : 1;
@@ -14904,7 +14561,7 @@ struct __struct_PIOA_PCMR
 #define PIOA_PCIER_ENDRX	(1 << 2)
 #define PIOA_PCIER_RXBUFF	(1 << 3)
 
-#define PIOA_PCIER_s    MMIO_REG(0x400e0f54, struct __struct_PIOA_PCIER)
+#define PIOA_PCIER_s	MMIO_REG(0x400e0f54, struct __struct_PIOA_PCIER)
 struct __struct_PIOA_PCIER
 {
   uint32_t drdy : 1;
@@ -14920,7 +14577,7 @@ struct __struct_PIOA_PCIER
 #define PIOA_PCIDR_ENDRX	(1 << 2)
 #define PIOA_PCIDR_RXBUFF	(1 << 3)
 
-#define PIOA_PCIDR_s    MMIO_REG(0x400e0f58, struct __struct_PIOA_PCIDR)
+#define PIOA_PCIDR_s	MMIO_REG(0x400e0f58, struct __struct_PIOA_PCIDR)
 struct __struct_PIOA_PCIDR
 {
   uint32_t drdy : 1;
@@ -14936,7 +14593,7 @@ struct __struct_PIOA_PCIDR
 #define PIOA_PCIMR_ENDRX	(1 << 2)
 #define PIOA_PCIMR_RXBUFF	(1 << 3)
 
-#define PIOA_PCIMR_s    MMIO_REG(0x400e0f5c, struct __struct_PIOA_PCIMR)
+#define PIOA_PCIMR_s	MMIO_REG(0x400e0f5c, struct __struct_PIOA_PCIMR)
 struct __struct_PIOA_PCIMR
 {
   uint32_t drdy : 1;
@@ -14952,7 +14609,7 @@ struct __struct_PIOA_PCIMR
 #define PIOA_PCISR_ENDRX	(1 << 2)
 #define PIOA_PCISR_RXBUFF	(1 << 3)
 
-#define PIOA_PCISR_s    MMIO_REG(0x400e0f60, struct __struct_PIOA_PCISR)
+#define PIOA_PCISR_s	MMIO_REG(0x400e0f60, struct __struct_PIOA_PCISR)
 struct __struct_PIOA_PCISR
 {
   uint32_t drdy : 1;
@@ -14988,7 +14645,7 @@ struct __struct_PIOA_PCISR
 #define PIOA_PDC_PTCR_TXTEN	(1 << 8)
 #define PIOA_PDC_PTCR_TXTDIS	(1 << 9)
 
-#define PIOA_PDC_PTCR_s    MMIO_REG(0x400e0f88, struct __struct_PIOA_PDC_PTCR)
+#define PIOA_PDC_PTCR_s	MMIO_REG(0x400e0f88, struct __struct_PIOA_PDC_PTCR)
 struct __struct_PIOA_PDC_PTCR
 {
   uint32_t rxten : 1;
@@ -15003,7 +14660,7 @@ struct __struct_PIOA_PDC_PTCR
 #define PIOA_PDC_PTSR_RXTEN	(1 << 0)
 #define PIOA_PDC_PTSR_TXTEN	(1 << 8)
 
-#define PIOA_PDC_PTSR_s    MMIO_REG(0x400e0f8c, struct __struct_PIOA_PDC_PTSR)
+#define PIOA_PDC_PTSR_s	MMIO_REG(0x400e0f8c, struct __struct_PIOA_PDC_PTSR)
 struct __struct_PIOA_PDC_PTSR
 {
   uint32_t rxten : 1;
@@ -15048,7 +14705,7 @@ struct __struct_PIOA_PDC_PTSR
 #define PIOB_PER_P30	(1 << 30)
 #define PIOB_PER_P31	(1 << 31)
 
-#define PIOB_PER_s    MMIO_REG(0x400e1000, struct __struct_PIOB_PER)
+#define PIOB_PER_s	MMIO_REG(0x400e1000, struct __struct_PIOB_PER)
 struct __struct_PIOB_PER
 {
   uint32_t p0 : 1;
@@ -15119,7 +14776,7 @@ struct __struct_PIOB_PER
 #define PIOB_PDR_P30	(1 << 30)
 #define PIOB_PDR_P31	(1 << 31)
 
-#define PIOB_PDR_s    MMIO_REG(0x400e1004, struct __struct_PIOB_PDR)
+#define PIOB_PDR_s	MMIO_REG(0x400e1004, struct __struct_PIOB_PDR)
 struct __struct_PIOB_PDR
 {
   uint32_t p0 : 1;
@@ -15190,7 +14847,7 @@ struct __struct_PIOB_PDR
 #define PIOB_PSR_P30	(1 << 30)
 #define PIOB_PSR_P31	(1 << 31)
 
-#define PIOB_PSR_s    MMIO_REG(0x400e1008, struct __struct_PIOB_PSR)
+#define PIOB_PSR_s	MMIO_REG(0x400e1008, struct __struct_PIOB_PSR)
 struct __struct_PIOB_PSR
 {
   uint32_t p0 : 1;
@@ -15261,7 +14918,7 @@ struct __struct_PIOB_PSR
 #define PIOB_OER_P30	(1 << 30)
 #define PIOB_OER_P31	(1 << 31)
 
-#define PIOB_OER_s    MMIO_REG(0x400e1010, struct __struct_PIOB_OER)
+#define PIOB_OER_s	MMIO_REG(0x400e1010, struct __struct_PIOB_OER)
 struct __struct_PIOB_OER
 {
   uint32_t p0 : 1;
@@ -15332,7 +14989,7 @@ struct __struct_PIOB_OER
 #define PIOB_ODR_P30	(1 << 30)
 #define PIOB_ODR_P31	(1 << 31)
 
-#define PIOB_ODR_s    MMIO_REG(0x400e1014, struct __struct_PIOB_ODR)
+#define PIOB_ODR_s	MMIO_REG(0x400e1014, struct __struct_PIOB_ODR)
 struct __struct_PIOB_ODR
 {
   uint32_t p0 : 1;
@@ -15403,7 +15060,7 @@ struct __struct_PIOB_ODR
 #define PIOB_OSR_P30	(1 << 30)
 #define PIOB_OSR_P31	(1 << 31)
 
-#define PIOB_OSR_s    MMIO_REG(0x400e1018, struct __struct_PIOB_OSR)
+#define PIOB_OSR_s	MMIO_REG(0x400e1018, struct __struct_PIOB_OSR)
 struct __struct_PIOB_OSR
 {
   uint32_t p0 : 1;
@@ -15474,7 +15131,7 @@ struct __struct_PIOB_OSR
 #define PIOB_IFER_P30	(1 << 30)
 #define PIOB_IFER_P31	(1 << 31)
 
-#define PIOB_IFER_s    MMIO_REG(0x400e1020, struct __struct_PIOB_IFER)
+#define PIOB_IFER_s	MMIO_REG(0x400e1020, struct __struct_PIOB_IFER)
 struct __struct_PIOB_IFER
 {
   uint32_t p0 : 1;
@@ -15545,7 +15202,7 @@ struct __struct_PIOB_IFER
 #define PIOB_IFDR_P30	(1 << 30)
 #define PIOB_IFDR_P31	(1 << 31)
 
-#define PIOB_IFDR_s    MMIO_REG(0x400e1024, struct __struct_PIOB_IFDR)
+#define PIOB_IFDR_s	MMIO_REG(0x400e1024, struct __struct_PIOB_IFDR)
 struct __struct_PIOB_IFDR
 {
   uint32_t p0 : 1;
@@ -15616,7 +15273,7 @@ struct __struct_PIOB_IFDR
 #define PIOB_IFSR_P30	(1 << 30)
 #define PIOB_IFSR_P31	(1 << 31)
 
-#define PIOB_IFSR_s    MMIO_REG(0x400e1028, struct __struct_PIOB_IFSR)
+#define PIOB_IFSR_s	MMIO_REG(0x400e1028, struct __struct_PIOB_IFSR)
 struct __struct_PIOB_IFSR
 {
   uint32_t p0 : 1;
@@ -15687,7 +15344,7 @@ struct __struct_PIOB_IFSR
 #define PIOB_SODR_P30	(1 << 30)
 #define PIOB_SODR_P31	(1 << 31)
 
-#define PIOB_SODR_s    MMIO_REG(0x400e1030, struct __struct_PIOB_SODR)
+#define PIOB_SODR_s	MMIO_REG(0x400e1030, struct __struct_PIOB_SODR)
 struct __struct_PIOB_SODR
 {
   uint32_t p0 : 1;
@@ -15758,7 +15415,7 @@ struct __struct_PIOB_SODR
 #define PIOB_CODR_P30	(1 << 30)
 #define PIOB_CODR_P31	(1 << 31)
 
-#define PIOB_CODR_s    MMIO_REG(0x400e1034, struct __struct_PIOB_CODR)
+#define PIOB_CODR_s	MMIO_REG(0x400e1034, struct __struct_PIOB_CODR)
 struct __struct_PIOB_CODR
 {
   uint32_t p0 : 1;
@@ -15829,7 +15486,7 @@ struct __struct_PIOB_CODR
 #define PIOB_ODSR_P30	(1 << 30)
 #define PIOB_ODSR_P31	(1 << 31)
 
-#define PIOB_ODSR_s    MMIO_REG(0x400e1038, struct __struct_PIOB_ODSR)
+#define PIOB_ODSR_s	MMIO_REG(0x400e1038, struct __struct_PIOB_ODSR)
 struct __struct_PIOB_ODSR
 {
   uint32_t p0 : 1;
@@ -15900,7 +15557,7 @@ struct __struct_PIOB_ODSR
 #define PIOB_PDSR_P30	(1 << 30)
 #define PIOB_PDSR_P31	(1 << 31)
 
-#define PIOB_PDSR_s    MMIO_REG(0x400e103c, struct __struct_PIOB_PDSR)
+#define PIOB_PDSR_s	MMIO_REG(0x400e103c, struct __struct_PIOB_PDSR)
 struct __struct_PIOB_PDSR
 {
   uint32_t p0 : 1;
@@ -15971,7 +15628,7 @@ struct __struct_PIOB_PDSR
 #define PIOB_IER_P30	(1 << 30)
 #define PIOB_IER_P31	(1 << 31)
 
-#define PIOB_IER_s    MMIO_REG(0x400e1040, struct __struct_PIOB_IER)
+#define PIOB_IER_s	MMIO_REG(0x400e1040, struct __struct_PIOB_IER)
 struct __struct_PIOB_IER
 {
   uint32_t p0 : 1;
@@ -16042,7 +15699,7 @@ struct __struct_PIOB_IER
 #define PIOB_IDR_P30	(1 << 30)
 #define PIOB_IDR_P31	(1 << 31)
 
-#define PIOB_IDR_s    MMIO_REG(0x400e1044, struct __struct_PIOB_IDR)
+#define PIOB_IDR_s	MMIO_REG(0x400e1044, struct __struct_PIOB_IDR)
 struct __struct_PIOB_IDR
 {
   uint32_t p0 : 1;
@@ -16113,7 +15770,7 @@ struct __struct_PIOB_IDR
 #define PIOB_IMR_P30	(1 << 30)
 #define PIOB_IMR_P31	(1 << 31)
 
-#define PIOB_IMR_s    MMIO_REG(0x400e1048, struct __struct_PIOB_IMR)
+#define PIOB_IMR_s	MMIO_REG(0x400e1048, struct __struct_PIOB_IMR)
 struct __struct_PIOB_IMR
 {
   uint32_t p0 : 1;
@@ -16184,7 +15841,7 @@ struct __struct_PIOB_IMR
 #define PIOB_ISR_P30	(1 << 30)
 #define PIOB_ISR_P31	(1 << 31)
 
-#define PIOB_ISR_s    MMIO_REG(0x400e104c, struct __struct_PIOB_ISR)
+#define PIOB_ISR_s	MMIO_REG(0x400e104c, struct __struct_PIOB_ISR)
 struct __struct_PIOB_ISR
 {
   uint32_t p0 : 1;
@@ -16255,7 +15912,7 @@ struct __struct_PIOB_ISR
 #define PIOB_MDER_P30	(1 << 30)
 #define PIOB_MDER_P31	(1 << 31)
 
-#define PIOB_MDER_s    MMIO_REG(0x400e1050, struct __struct_PIOB_MDER)
+#define PIOB_MDER_s	MMIO_REG(0x400e1050, struct __struct_PIOB_MDER)
 struct __struct_PIOB_MDER
 {
   uint32_t p0 : 1;
@@ -16326,7 +15983,7 @@ struct __struct_PIOB_MDER
 #define PIOB_MDDR_P30	(1 << 30)
 #define PIOB_MDDR_P31	(1 << 31)
 
-#define PIOB_MDDR_s    MMIO_REG(0x400e1054, struct __struct_PIOB_MDDR)
+#define PIOB_MDDR_s	MMIO_REG(0x400e1054, struct __struct_PIOB_MDDR)
 struct __struct_PIOB_MDDR
 {
   uint32_t p0 : 1;
@@ -16397,7 +16054,7 @@ struct __struct_PIOB_MDDR
 #define PIOB_MDSR_P30	(1 << 30)
 #define PIOB_MDSR_P31	(1 << 31)
 
-#define PIOB_MDSR_s    MMIO_REG(0x400e1058, struct __struct_PIOB_MDSR)
+#define PIOB_MDSR_s	MMIO_REG(0x400e1058, struct __struct_PIOB_MDSR)
 struct __struct_PIOB_MDSR
 {
   uint32_t p0 : 1;
@@ -16468,7 +16125,7 @@ struct __struct_PIOB_MDSR
 #define PIOB_PUDR_P30	(1 << 30)
 #define PIOB_PUDR_P31	(1 << 31)
 
-#define PIOB_PUDR_s    MMIO_REG(0x400e1060, struct __struct_PIOB_PUDR)
+#define PIOB_PUDR_s	MMIO_REG(0x400e1060, struct __struct_PIOB_PUDR)
 struct __struct_PIOB_PUDR
 {
   uint32_t p0 : 1;
@@ -16539,7 +16196,7 @@ struct __struct_PIOB_PUDR
 #define PIOB_PUER_P30	(1 << 30)
 #define PIOB_PUER_P31	(1 << 31)
 
-#define PIOB_PUER_s    MMIO_REG(0x400e1064, struct __struct_PIOB_PUER)
+#define PIOB_PUER_s	MMIO_REG(0x400e1064, struct __struct_PIOB_PUER)
 struct __struct_PIOB_PUER
 {
   uint32_t p0 : 1;
@@ -16610,7 +16267,7 @@ struct __struct_PIOB_PUER
 #define PIOB_PUSR_P30	(1 << 30)
 #define PIOB_PUSR_P31	(1 << 31)
 
-#define PIOB_PUSR_s    MMIO_REG(0x400e1068, struct __struct_PIOB_PUSR)
+#define PIOB_PUSR_s	MMIO_REG(0x400e1068, struct __struct_PIOB_PUSR)
 struct __struct_PIOB_PUSR
 {
   uint32_t p0 : 1;
@@ -16681,7 +16338,7 @@ struct __struct_PIOB_PUSR
 #define PIOB_ABCDSR1_P30	(1 << 30)
 #define PIOB_ABCDSR1_P31	(1 << 31)
 
-#define PIOB_ABCDSR1_s    MMIO_REG(0x400e1070, struct __struct_PIOB_ABCDSR1)
+#define PIOB_ABCDSR1_s	MMIO_REG(0x400e1070, struct __struct_PIOB_ABCDSR1)
 struct __struct_PIOB_ABCDSR1
 {
   uint32_t p0 : 1;
@@ -16752,7 +16409,7 @@ struct __struct_PIOB_ABCDSR1
 #define PIOB_ABCDSR2_P30	(1 << 30)
 #define PIOB_ABCDSR2_P31	(1 << 31)
 
-#define PIOB_ABCDSR2_s    MMIO_REG(0x400e1074, struct __struct_PIOB_ABCDSR2)
+#define PIOB_ABCDSR2_s	MMIO_REG(0x400e1074, struct __struct_PIOB_ABCDSR2)
 struct __struct_PIOB_ABCDSR2
 {
   uint32_t p0 : 1;
@@ -16823,7 +16480,7 @@ struct __struct_PIOB_ABCDSR2
 #define PIOB_IFSCDR_P30	(1 << 30)
 #define PIOB_IFSCDR_P31	(1 << 31)
 
-#define PIOB_IFSCDR_s    MMIO_REG(0x400e1080, struct __struct_PIOB_IFSCDR)
+#define PIOB_IFSCDR_s	MMIO_REG(0x400e1080, struct __struct_PIOB_IFSCDR)
 struct __struct_PIOB_IFSCDR
 {
   uint32_t p0 : 1;
@@ -16894,7 +16551,7 @@ struct __struct_PIOB_IFSCDR
 #define PIOB_IFSCER_P30	(1 << 30)
 #define PIOB_IFSCER_P31	(1 << 31)
 
-#define PIOB_IFSCER_s    MMIO_REG(0x400e1084, struct __struct_PIOB_IFSCER)
+#define PIOB_IFSCER_s	MMIO_REG(0x400e1084, struct __struct_PIOB_IFSCER)
 struct __struct_PIOB_IFSCER
 {
   uint32_t p0 : 1;
@@ -16965,7 +16622,7 @@ struct __struct_PIOB_IFSCER
 #define PIOB_IFSCSR_P30	(1 << 30)
 #define PIOB_IFSCSR_P31	(1 << 31)
 
-#define PIOB_IFSCSR_s    MMIO_REG(0x400e1088, struct __struct_PIOB_IFSCSR)
+#define PIOB_IFSCSR_s	MMIO_REG(0x400e1088, struct __struct_PIOB_IFSCSR)
 struct __struct_PIOB_IFSCSR
 {
   uint32_t p0 : 1;
@@ -17007,7 +16664,7 @@ struct __struct_PIOB_IFSCSR
 #define PIOB_SCDR_DIV_MSK	0x00003fff
 #define PIOB_SCDR_DIV_VAL(x)	(((x) >> 0) & 0x3fff)
 
-#define PIOB_SCDR_s    MMIO_REG(0x400e108c, struct __struct_PIOB_SCDR)
+#define PIOB_SCDR_s	MMIO_REG(0x400e108c, struct __struct_PIOB_SCDR)
 struct __struct_PIOB_SCDR
 {
   uint32_t div : 14;
@@ -17048,7 +16705,7 @@ struct __struct_PIOB_SCDR
 #define PIOB_PPDDR_P30	(1 << 30)
 #define PIOB_PPDDR_P31	(1 << 31)
 
-#define PIOB_PPDDR_s    MMIO_REG(0x400e1090, struct __struct_PIOB_PPDDR)
+#define PIOB_PPDDR_s	MMIO_REG(0x400e1090, struct __struct_PIOB_PPDDR)
 struct __struct_PIOB_PPDDR
 {
   uint32_t p0 : 1;
@@ -17119,7 +16776,7 @@ struct __struct_PIOB_PPDDR
 #define PIOB_PPDER_P30	(1 << 30)
 #define PIOB_PPDER_P31	(1 << 31)
 
-#define PIOB_PPDER_s    MMIO_REG(0x400e1094, struct __struct_PIOB_PPDER)
+#define PIOB_PPDER_s	MMIO_REG(0x400e1094, struct __struct_PIOB_PPDER)
 struct __struct_PIOB_PPDER
 {
   uint32_t p0 : 1;
@@ -17190,7 +16847,7 @@ struct __struct_PIOB_PPDER
 #define PIOB_PPDSR_P30	(1 << 30)
 #define PIOB_PPDSR_P31	(1 << 31)
 
-#define PIOB_PPDSR_s    MMIO_REG(0x400e1098, struct __struct_PIOB_PPDSR)
+#define PIOB_PPDSR_s	MMIO_REG(0x400e1098, struct __struct_PIOB_PPDSR)
 struct __struct_PIOB_PPDSR
 {
   uint32_t p0 : 1;
@@ -17261,7 +16918,7 @@ struct __struct_PIOB_PPDSR
 #define PIOB_OWER_P30	(1 << 30)
 #define PIOB_OWER_P31	(1 << 31)
 
-#define PIOB_OWER_s    MMIO_REG(0x400e10a0, struct __struct_PIOB_OWER)
+#define PIOB_OWER_s	MMIO_REG(0x400e10a0, struct __struct_PIOB_OWER)
 struct __struct_PIOB_OWER
 {
   uint32_t p0 : 1;
@@ -17332,7 +16989,7 @@ struct __struct_PIOB_OWER
 #define PIOB_OWDR_P30	(1 << 30)
 #define PIOB_OWDR_P31	(1 << 31)
 
-#define PIOB_OWDR_s    MMIO_REG(0x400e10a4, struct __struct_PIOB_OWDR)
+#define PIOB_OWDR_s	MMIO_REG(0x400e10a4, struct __struct_PIOB_OWDR)
 struct __struct_PIOB_OWDR
 {
   uint32_t p0 : 1;
@@ -17403,7 +17060,7 @@ struct __struct_PIOB_OWDR
 #define PIOB_OWSR_P30	(1 << 30)
 #define PIOB_OWSR_P31	(1 << 31)
 
-#define PIOB_OWSR_s    MMIO_REG(0x400e10a8, struct __struct_PIOB_OWSR)
+#define PIOB_OWSR_s	MMIO_REG(0x400e10a8, struct __struct_PIOB_OWSR)
 struct __struct_PIOB_OWSR
 {
   uint32_t p0 : 1;
@@ -17474,7 +17131,7 @@ struct __struct_PIOB_OWSR
 #define PIOB_AIMER_P30	(1 << 30)
 #define PIOB_AIMER_P31	(1 << 31)
 
-#define PIOB_AIMER_s    MMIO_REG(0x400e10b0, struct __struct_PIOB_AIMER)
+#define PIOB_AIMER_s	MMIO_REG(0x400e10b0, struct __struct_PIOB_AIMER)
 struct __struct_PIOB_AIMER
 {
   uint32_t p0 : 1;
@@ -17545,7 +17202,7 @@ struct __struct_PIOB_AIMER
 #define PIOB_AIMDR_P30	(1 << 30)
 #define PIOB_AIMDR_P31	(1 << 31)
 
-#define PIOB_AIMDR_s    MMIO_REG(0x400e10b4, struct __struct_PIOB_AIMDR)
+#define PIOB_AIMDR_s	MMIO_REG(0x400e10b4, struct __struct_PIOB_AIMDR)
 struct __struct_PIOB_AIMDR
 {
   uint32_t p0 : 1;
@@ -17616,7 +17273,7 @@ struct __struct_PIOB_AIMDR
 #define PIOB_AIMMR_P30	(1 << 30)
 #define PIOB_AIMMR_P31	(1 << 31)
 
-#define PIOB_AIMMR_s    MMIO_REG(0x400e10b8, struct __struct_PIOB_AIMMR)
+#define PIOB_AIMMR_s	MMIO_REG(0x400e10b8, struct __struct_PIOB_AIMMR)
 struct __struct_PIOB_AIMMR
 {
   uint32_t p0 : 1;
@@ -17687,7 +17344,7 @@ struct __struct_PIOB_AIMMR
 #define PIOB_ESR_P30	(1 << 30)
 #define PIOB_ESR_P31	(1 << 31)
 
-#define PIOB_ESR_s    MMIO_REG(0x400e10c0, struct __struct_PIOB_ESR)
+#define PIOB_ESR_s	MMIO_REG(0x400e10c0, struct __struct_PIOB_ESR)
 struct __struct_PIOB_ESR
 {
   uint32_t p0 : 1;
@@ -17758,7 +17415,7 @@ struct __struct_PIOB_ESR
 #define PIOB_LSR_P30	(1 << 30)
 #define PIOB_LSR_P31	(1 << 31)
 
-#define PIOB_LSR_s    MMIO_REG(0x400e10c4, struct __struct_PIOB_LSR)
+#define PIOB_LSR_s	MMIO_REG(0x400e10c4, struct __struct_PIOB_LSR)
 struct __struct_PIOB_LSR
 {
   uint32_t p0 : 1;
@@ -17829,7 +17486,7 @@ struct __struct_PIOB_LSR
 #define PIOB_ELSR_P30	(1 << 30)
 #define PIOB_ELSR_P31	(1 << 31)
 
-#define PIOB_ELSR_s    MMIO_REG(0x400e10c8, struct __struct_PIOB_ELSR)
+#define PIOB_ELSR_s	MMIO_REG(0x400e10c8, struct __struct_PIOB_ELSR)
 struct __struct_PIOB_ELSR
 {
   uint32_t p0 : 1;
@@ -17900,7 +17557,7 @@ struct __struct_PIOB_ELSR
 #define PIOB_FELLSR_P30	(1 << 30)
 #define PIOB_FELLSR_P31	(1 << 31)
 
-#define PIOB_FELLSR_s    MMIO_REG(0x400e10d0, struct __struct_PIOB_FELLSR)
+#define PIOB_FELLSR_s	MMIO_REG(0x400e10d0, struct __struct_PIOB_FELLSR)
 struct __struct_PIOB_FELLSR
 {
   uint32_t p0 : 1;
@@ -17971,7 +17628,7 @@ struct __struct_PIOB_FELLSR
 #define PIOB_REHLSR_P30	(1 << 30)
 #define PIOB_REHLSR_P31	(1 << 31)
 
-#define PIOB_REHLSR_s    MMIO_REG(0x400e10d4, struct __struct_PIOB_REHLSR)
+#define PIOB_REHLSR_s	MMIO_REG(0x400e10d4, struct __struct_PIOB_REHLSR)
 struct __struct_PIOB_REHLSR
 {
   uint32_t p0 : 1;
@@ -18042,7 +17699,7 @@ struct __struct_PIOB_REHLSR
 #define PIOB_FRLHSR_P30	(1 << 30)
 #define PIOB_FRLHSR_P31	(1 << 31)
 
-#define PIOB_FRLHSR_s    MMIO_REG(0x400e10d8, struct __struct_PIOB_FRLHSR)
+#define PIOB_FRLHSR_s	MMIO_REG(0x400e10d8, struct __struct_PIOB_FRLHSR)
 struct __struct_PIOB_FRLHSR
 {
   uint32_t p0 : 1;
@@ -18113,7 +17770,7 @@ struct __struct_PIOB_FRLHSR
 #define PIOB_LOCKSR_P30	(1 << 30)
 #define PIOB_LOCKSR_P31	(1 << 31)
 
-#define PIOB_LOCKSR_s    MMIO_REG(0x400e10e0, struct __struct_PIOB_LOCKSR)
+#define PIOB_LOCKSR_s	MMIO_REG(0x400e10e0, struct __struct_PIOB_LOCKSR)
 struct __struct_PIOB_LOCKSR
 {
   uint32_t p0 : 1;
@@ -18156,7 +17813,7 @@ struct __struct_PIOB_LOCKSR
 #define PIOB_WPMR_WPKEY_MSK	0xffffff00
 #define PIOB_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define PIOB_WPMR_s    MMIO_REG(0x400e10e4, struct __struct_PIOB_WPMR)
+#define PIOB_WPMR_s	MMIO_REG(0x400e10e4, struct __struct_PIOB_WPMR)
 struct __struct_PIOB_WPMR
 {
   uint32_t wpen : 1;
@@ -18170,7 +17827,7 @@ struct __struct_PIOB_WPMR
 #define PIOB_WPSR_WPVSRC_MSK	0x00ffff00
 #define PIOB_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define PIOB_WPSR_s    MMIO_REG(0x400e10e8, struct __struct_PIOB_WPSR)
+#define PIOB_WPSR_s	MMIO_REG(0x400e10e8, struct __struct_PIOB_WPSR)
 struct __struct_PIOB_WPSR
 {
   uint32_t wpvs : 1;
@@ -18213,7 +17870,7 @@ struct __struct_PIOB_WPSR
 #define PIOB_SCHMITT_P30	(1 << 30)
 #define PIOB_SCHMITT_P31	(1 << 31)
 
-#define PIOB_SCHMITT_s    MMIO_REG(0x400e1100, struct __struct_PIOB_SCHMITT)
+#define PIOB_SCHMITT_s	MMIO_REG(0x400e1100, struct __struct_PIOB_SCHMITT)
 struct __struct_PIOB_SCHMITT
 {
   uint32_t p0 : 1;
@@ -18259,7 +17916,7 @@ struct __struct_PIOB_SCHMITT
 #define PIOB_PCMR_HALFS	(1 << 10)
 #define PIOB_PCMR_FRSTS	(1 << 11)
 
-#define PIOB_PCMR_s    MMIO_REG(0x400e1150, struct __struct_PIOB_PCMR)
+#define PIOB_PCMR_s	MMIO_REG(0x400e1150, struct __struct_PIOB_PCMR)
 struct __struct_PIOB_PCMR
 {
   uint32_t pcen : 1;
@@ -18278,7 +17935,7 @@ struct __struct_PIOB_PCMR
 #define PIOB_PCIER_ENDRX	(1 << 2)
 #define PIOB_PCIER_RXBUFF	(1 << 3)
 
-#define PIOB_PCIER_s    MMIO_REG(0x400e1154, struct __struct_PIOB_PCIER)
+#define PIOB_PCIER_s	MMIO_REG(0x400e1154, struct __struct_PIOB_PCIER)
 struct __struct_PIOB_PCIER
 {
   uint32_t drdy : 1;
@@ -18294,7 +17951,7 @@ struct __struct_PIOB_PCIER
 #define PIOB_PCIDR_ENDRX	(1 << 2)
 #define PIOB_PCIDR_RXBUFF	(1 << 3)
 
-#define PIOB_PCIDR_s    MMIO_REG(0x400e1158, struct __struct_PIOB_PCIDR)
+#define PIOB_PCIDR_s	MMIO_REG(0x400e1158, struct __struct_PIOB_PCIDR)
 struct __struct_PIOB_PCIDR
 {
   uint32_t drdy : 1;
@@ -18310,7 +17967,7 @@ struct __struct_PIOB_PCIDR
 #define PIOB_PCIMR_ENDRX	(1 << 2)
 #define PIOB_PCIMR_RXBUFF	(1 << 3)
 
-#define PIOB_PCIMR_s    MMIO_REG(0x400e115c, struct __struct_PIOB_PCIMR)
+#define PIOB_PCIMR_s	MMIO_REG(0x400e115c, struct __struct_PIOB_PCIMR)
 struct __struct_PIOB_PCIMR
 {
   uint32_t drdy : 1;
@@ -18326,7 +17983,7 @@ struct __struct_PIOB_PCIMR
 #define PIOB_PCISR_ENDRX	(1 << 2)
 #define PIOB_PCISR_RXBUFF	(1 << 3)
 
-#define PIOB_PCISR_s    MMIO_REG(0x400e1160, struct __struct_PIOB_PCISR)
+#define PIOB_PCISR_s	MMIO_REG(0x400e1160, struct __struct_PIOB_PCISR)
 struct __struct_PIOB_PCISR
 {
   uint32_t drdy : 1;
@@ -18374,7 +18031,7 @@ struct __struct_PIOB_PCISR
 #define PIOC_PER_P30	(1 << 30)
 #define PIOC_PER_P31	(1 << 31)
 
-#define PIOC_PER_s    MMIO_REG(0x400e1200, struct __struct_PIOC_PER)
+#define PIOC_PER_s	MMIO_REG(0x400e1200, struct __struct_PIOC_PER)
 struct __struct_PIOC_PER
 {
   uint32_t p0 : 1;
@@ -18445,7 +18102,7 @@ struct __struct_PIOC_PER
 #define PIOC_PDR_P30	(1 << 30)
 #define PIOC_PDR_P31	(1 << 31)
 
-#define PIOC_PDR_s    MMIO_REG(0x400e1204, struct __struct_PIOC_PDR)
+#define PIOC_PDR_s	MMIO_REG(0x400e1204, struct __struct_PIOC_PDR)
 struct __struct_PIOC_PDR
 {
   uint32_t p0 : 1;
@@ -18516,7 +18173,7 @@ struct __struct_PIOC_PDR
 #define PIOC_PSR_P30	(1 << 30)
 #define PIOC_PSR_P31	(1 << 31)
 
-#define PIOC_PSR_s    MMIO_REG(0x400e1208, struct __struct_PIOC_PSR)
+#define PIOC_PSR_s	MMIO_REG(0x400e1208, struct __struct_PIOC_PSR)
 struct __struct_PIOC_PSR
 {
   uint32_t p0 : 1;
@@ -18587,7 +18244,7 @@ struct __struct_PIOC_PSR
 #define PIOC_OER_P30	(1 << 30)
 #define PIOC_OER_P31	(1 << 31)
 
-#define PIOC_OER_s    MMIO_REG(0x400e1210, struct __struct_PIOC_OER)
+#define PIOC_OER_s	MMIO_REG(0x400e1210, struct __struct_PIOC_OER)
 struct __struct_PIOC_OER
 {
   uint32_t p0 : 1;
@@ -18658,7 +18315,7 @@ struct __struct_PIOC_OER
 #define PIOC_ODR_P30	(1 << 30)
 #define PIOC_ODR_P31	(1 << 31)
 
-#define PIOC_ODR_s    MMIO_REG(0x400e1214, struct __struct_PIOC_ODR)
+#define PIOC_ODR_s	MMIO_REG(0x400e1214, struct __struct_PIOC_ODR)
 struct __struct_PIOC_ODR
 {
   uint32_t p0 : 1;
@@ -18729,7 +18386,7 @@ struct __struct_PIOC_ODR
 #define PIOC_OSR_P30	(1 << 30)
 #define PIOC_OSR_P31	(1 << 31)
 
-#define PIOC_OSR_s    MMIO_REG(0x400e1218, struct __struct_PIOC_OSR)
+#define PIOC_OSR_s	MMIO_REG(0x400e1218, struct __struct_PIOC_OSR)
 struct __struct_PIOC_OSR
 {
   uint32_t p0 : 1;
@@ -18800,7 +18457,7 @@ struct __struct_PIOC_OSR
 #define PIOC_IFER_P30	(1 << 30)
 #define PIOC_IFER_P31	(1 << 31)
 
-#define PIOC_IFER_s    MMIO_REG(0x400e1220, struct __struct_PIOC_IFER)
+#define PIOC_IFER_s	MMIO_REG(0x400e1220, struct __struct_PIOC_IFER)
 struct __struct_PIOC_IFER
 {
   uint32_t p0 : 1;
@@ -18871,7 +18528,7 @@ struct __struct_PIOC_IFER
 #define PIOC_IFDR_P30	(1 << 30)
 #define PIOC_IFDR_P31	(1 << 31)
 
-#define PIOC_IFDR_s    MMIO_REG(0x400e1224, struct __struct_PIOC_IFDR)
+#define PIOC_IFDR_s	MMIO_REG(0x400e1224, struct __struct_PIOC_IFDR)
 struct __struct_PIOC_IFDR
 {
   uint32_t p0 : 1;
@@ -18942,7 +18599,7 @@ struct __struct_PIOC_IFDR
 #define PIOC_IFSR_P30	(1 << 30)
 #define PIOC_IFSR_P31	(1 << 31)
 
-#define PIOC_IFSR_s    MMIO_REG(0x400e1228, struct __struct_PIOC_IFSR)
+#define PIOC_IFSR_s	MMIO_REG(0x400e1228, struct __struct_PIOC_IFSR)
 struct __struct_PIOC_IFSR
 {
   uint32_t p0 : 1;
@@ -19013,7 +18670,7 @@ struct __struct_PIOC_IFSR
 #define PIOC_SODR_P30	(1 << 30)
 #define PIOC_SODR_P31	(1 << 31)
 
-#define PIOC_SODR_s    MMIO_REG(0x400e1230, struct __struct_PIOC_SODR)
+#define PIOC_SODR_s	MMIO_REG(0x400e1230, struct __struct_PIOC_SODR)
 struct __struct_PIOC_SODR
 {
   uint32_t p0 : 1;
@@ -19084,7 +18741,7 @@ struct __struct_PIOC_SODR
 #define PIOC_CODR_P30	(1 << 30)
 #define PIOC_CODR_P31	(1 << 31)
 
-#define PIOC_CODR_s    MMIO_REG(0x400e1234, struct __struct_PIOC_CODR)
+#define PIOC_CODR_s	MMIO_REG(0x400e1234, struct __struct_PIOC_CODR)
 struct __struct_PIOC_CODR
 {
   uint32_t p0 : 1;
@@ -19155,7 +18812,7 @@ struct __struct_PIOC_CODR
 #define PIOC_ODSR_P30	(1 << 30)
 #define PIOC_ODSR_P31	(1 << 31)
 
-#define PIOC_ODSR_s    MMIO_REG(0x400e1238, struct __struct_PIOC_ODSR)
+#define PIOC_ODSR_s	MMIO_REG(0x400e1238, struct __struct_PIOC_ODSR)
 struct __struct_PIOC_ODSR
 {
   uint32_t p0 : 1;
@@ -19226,7 +18883,7 @@ struct __struct_PIOC_ODSR
 #define PIOC_PDSR_P30	(1 << 30)
 #define PIOC_PDSR_P31	(1 << 31)
 
-#define PIOC_PDSR_s    MMIO_REG(0x400e123c, struct __struct_PIOC_PDSR)
+#define PIOC_PDSR_s	MMIO_REG(0x400e123c, struct __struct_PIOC_PDSR)
 struct __struct_PIOC_PDSR
 {
   uint32_t p0 : 1;
@@ -19297,7 +18954,7 @@ struct __struct_PIOC_PDSR
 #define PIOC_IER_P30	(1 << 30)
 #define PIOC_IER_P31	(1 << 31)
 
-#define PIOC_IER_s    MMIO_REG(0x400e1240, struct __struct_PIOC_IER)
+#define PIOC_IER_s	MMIO_REG(0x400e1240, struct __struct_PIOC_IER)
 struct __struct_PIOC_IER
 {
   uint32_t p0 : 1;
@@ -19368,7 +19025,7 @@ struct __struct_PIOC_IER
 #define PIOC_IDR_P30	(1 << 30)
 #define PIOC_IDR_P31	(1 << 31)
 
-#define PIOC_IDR_s    MMIO_REG(0x400e1244, struct __struct_PIOC_IDR)
+#define PIOC_IDR_s	MMIO_REG(0x400e1244, struct __struct_PIOC_IDR)
 struct __struct_PIOC_IDR
 {
   uint32_t p0 : 1;
@@ -19439,7 +19096,7 @@ struct __struct_PIOC_IDR
 #define PIOC_IMR_P30	(1 << 30)
 #define PIOC_IMR_P31	(1 << 31)
 
-#define PIOC_IMR_s    MMIO_REG(0x400e1248, struct __struct_PIOC_IMR)
+#define PIOC_IMR_s	MMIO_REG(0x400e1248, struct __struct_PIOC_IMR)
 struct __struct_PIOC_IMR
 {
   uint32_t p0 : 1;
@@ -19510,7 +19167,7 @@ struct __struct_PIOC_IMR
 #define PIOC_ISR_P30	(1 << 30)
 #define PIOC_ISR_P31	(1 << 31)
 
-#define PIOC_ISR_s    MMIO_REG(0x400e124c, struct __struct_PIOC_ISR)
+#define PIOC_ISR_s	MMIO_REG(0x400e124c, struct __struct_PIOC_ISR)
 struct __struct_PIOC_ISR
 {
   uint32_t p0 : 1;
@@ -19581,7 +19238,7 @@ struct __struct_PIOC_ISR
 #define PIOC_MDER_P30	(1 << 30)
 #define PIOC_MDER_P31	(1 << 31)
 
-#define PIOC_MDER_s    MMIO_REG(0x400e1250, struct __struct_PIOC_MDER)
+#define PIOC_MDER_s	MMIO_REG(0x400e1250, struct __struct_PIOC_MDER)
 struct __struct_PIOC_MDER
 {
   uint32_t p0 : 1;
@@ -19652,7 +19309,7 @@ struct __struct_PIOC_MDER
 #define PIOC_MDDR_P30	(1 << 30)
 #define PIOC_MDDR_P31	(1 << 31)
 
-#define PIOC_MDDR_s    MMIO_REG(0x400e1254, struct __struct_PIOC_MDDR)
+#define PIOC_MDDR_s	MMIO_REG(0x400e1254, struct __struct_PIOC_MDDR)
 struct __struct_PIOC_MDDR
 {
   uint32_t p0 : 1;
@@ -19723,7 +19380,7 @@ struct __struct_PIOC_MDDR
 #define PIOC_MDSR_P30	(1 << 30)
 #define PIOC_MDSR_P31	(1 << 31)
 
-#define PIOC_MDSR_s    MMIO_REG(0x400e1258, struct __struct_PIOC_MDSR)
+#define PIOC_MDSR_s	MMIO_REG(0x400e1258, struct __struct_PIOC_MDSR)
 struct __struct_PIOC_MDSR
 {
   uint32_t p0 : 1;
@@ -19794,7 +19451,7 @@ struct __struct_PIOC_MDSR
 #define PIOC_PUDR_P30	(1 << 30)
 #define PIOC_PUDR_P31	(1 << 31)
 
-#define PIOC_PUDR_s    MMIO_REG(0x400e1260, struct __struct_PIOC_PUDR)
+#define PIOC_PUDR_s	MMIO_REG(0x400e1260, struct __struct_PIOC_PUDR)
 struct __struct_PIOC_PUDR
 {
   uint32_t p0 : 1;
@@ -19865,7 +19522,7 @@ struct __struct_PIOC_PUDR
 #define PIOC_PUER_P30	(1 << 30)
 #define PIOC_PUER_P31	(1 << 31)
 
-#define PIOC_PUER_s    MMIO_REG(0x400e1264, struct __struct_PIOC_PUER)
+#define PIOC_PUER_s	MMIO_REG(0x400e1264, struct __struct_PIOC_PUER)
 struct __struct_PIOC_PUER
 {
   uint32_t p0 : 1;
@@ -19936,7 +19593,7 @@ struct __struct_PIOC_PUER
 #define PIOC_PUSR_P30	(1 << 30)
 #define PIOC_PUSR_P31	(1 << 31)
 
-#define PIOC_PUSR_s    MMIO_REG(0x400e1268, struct __struct_PIOC_PUSR)
+#define PIOC_PUSR_s	MMIO_REG(0x400e1268, struct __struct_PIOC_PUSR)
 struct __struct_PIOC_PUSR
 {
   uint32_t p0 : 1;
@@ -20007,7 +19664,7 @@ struct __struct_PIOC_PUSR
 #define PIOC_ABCDSR1_P30	(1 << 30)
 #define PIOC_ABCDSR1_P31	(1 << 31)
 
-#define PIOC_ABCDSR1_s    MMIO_REG(0x400e1270, struct __struct_PIOC_ABCDSR1)
+#define PIOC_ABCDSR1_s	MMIO_REG(0x400e1270, struct __struct_PIOC_ABCDSR1)
 struct __struct_PIOC_ABCDSR1
 {
   uint32_t p0 : 1;
@@ -20078,7 +19735,7 @@ struct __struct_PIOC_ABCDSR1
 #define PIOC_ABCDSR2_P30	(1 << 30)
 #define PIOC_ABCDSR2_P31	(1 << 31)
 
-#define PIOC_ABCDSR2_s    MMIO_REG(0x400e1274, struct __struct_PIOC_ABCDSR2)
+#define PIOC_ABCDSR2_s	MMIO_REG(0x400e1274, struct __struct_PIOC_ABCDSR2)
 struct __struct_PIOC_ABCDSR2
 {
   uint32_t p0 : 1;
@@ -20149,7 +19806,7 @@ struct __struct_PIOC_ABCDSR2
 #define PIOC_IFSCDR_P30	(1 << 30)
 #define PIOC_IFSCDR_P31	(1 << 31)
 
-#define PIOC_IFSCDR_s    MMIO_REG(0x400e1280, struct __struct_PIOC_IFSCDR)
+#define PIOC_IFSCDR_s	MMIO_REG(0x400e1280, struct __struct_PIOC_IFSCDR)
 struct __struct_PIOC_IFSCDR
 {
   uint32_t p0 : 1;
@@ -20220,7 +19877,7 @@ struct __struct_PIOC_IFSCDR
 #define PIOC_IFSCER_P30	(1 << 30)
 #define PIOC_IFSCER_P31	(1 << 31)
 
-#define PIOC_IFSCER_s    MMIO_REG(0x400e1284, struct __struct_PIOC_IFSCER)
+#define PIOC_IFSCER_s	MMIO_REG(0x400e1284, struct __struct_PIOC_IFSCER)
 struct __struct_PIOC_IFSCER
 {
   uint32_t p0 : 1;
@@ -20291,7 +19948,7 @@ struct __struct_PIOC_IFSCER
 #define PIOC_IFSCSR_P30	(1 << 30)
 #define PIOC_IFSCSR_P31	(1 << 31)
 
-#define PIOC_IFSCSR_s    MMIO_REG(0x400e1288, struct __struct_PIOC_IFSCSR)
+#define PIOC_IFSCSR_s	MMIO_REG(0x400e1288, struct __struct_PIOC_IFSCSR)
 struct __struct_PIOC_IFSCSR
 {
   uint32_t p0 : 1;
@@ -20333,7 +19990,7 @@ struct __struct_PIOC_IFSCSR
 #define PIOC_SCDR_DIV_MSK	0x00003fff
 #define PIOC_SCDR_DIV_VAL(x)	(((x) >> 0) & 0x3fff)
 
-#define PIOC_SCDR_s    MMIO_REG(0x400e128c, struct __struct_PIOC_SCDR)
+#define PIOC_SCDR_s	MMIO_REG(0x400e128c, struct __struct_PIOC_SCDR)
 struct __struct_PIOC_SCDR
 {
   uint32_t div : 14;
@@ -20374,7 +20031,7 @@ struct __struct_PIOC_SCDR
 #define PIOC_PPDDR_P30	(1 << 30)
 #define PIOC_PPDDR_P31	(1 << 31)
 
-#define PIOC_PPDDR_s    MMIO_REG(0x400e1290, struct __struct_PIOC_PPDDR)
+#define PIOC_PPDDR_s	MMIO_REG(0x400e1290, struct __struct_PIOC_PPDDR)
 struct __struct_PIOC_PPDDR
 {
   uint32_t p0 : 1;
@@ -20445,7 +20102,7 @@ struct __struct_PIOC_PPDDR
 #define PIOC_PPDER_P30	(1 << 30)
 #define PIOC_PPDER_P31	(1 << 31)
 
-#define PIOC_PPDER_s    MMIO_REG(0x400e1294, struct __struct_PIOC_PPDER)
+#define PIOC_PPDER_s	MMIO_REG(0x400e1294, struct __struct_PIOC_PPDER)
 struct __struct_PIOC_PPDER
 {
   uint32_t p0 : 1;
@@ -20516,7 +20173,7 @@ struct __struct_PIOC_PPDER
 #define PIOC_PPDSR_P30	(1 << 30)
 #define PIOC_PPDSR_P31	(1 << 31)
 
-#define PIOC_PPDSR_s    MMIO_REG(0x400e1298, struct __struct_PIOC_PPDSR)
+#define PIOC_PPDSR_s	MMIO_REG(0x400e1298, struct __struct_PIOC_PPDSR)
 struct __struct_PIOC_PPDSR
 {
   uint32_t p0 : 1;
@@ -20587,7 +20244,7 @@ struct __struct_PIOC_PPDSR
 #define PIOC_OWER_P30	(1 << 30)
 #define PIOC_OWER_P31	(1 << 31)
 
-#define PIOC_OWER_s    MMIO_REG(0x400e12a0, struct __struct_PIOC_OWER)
+#define PIOC_OWER_s	MMIO_REG(0x400e12a0, struct __struct_PIOC_OWER)
 struct __struct_PIOC_OWER
 {
   uint32_t p0 : 1;
@@ -20658,7 +20315,7 @@ struct __struct_PIOC_OWER
 #define PIOC_OWDR_P30	(1 << 30)
 #define PIOC_OWDR_P31	(1 << 31)
 
-#define PIOC_OWDR_s    MMIO_REG(0x400e12a4, struct __struct_PIOC_OWDR)
+#define PIOC_OWDR_s	MMIO_REG(0x400e12a4, struct __struct_PIOC_OWDR)
 struct __struct_PIOC_OWDR
 {
   uint32_t p0 : 1;
@@ -20729,7 +20386,7 @@ struct __struct_PIOC_OWDR
 #define PIOC_OWSR_P30	(1 << 30)
 #define PIOC_OWSR_P31	(1 << 31)
 
-#define PIOC_OWSR_s    MMIO_REG(0x400e12a8, struct __struct_PIOC_OWSR)
+#define PIOC_OWSR_s	MMIO_REG(0x400e12a8, struct __struct_PIOC_OWSR)
 struct __struct_PIOC_OWSR
 {
   uint32_t p0 : 1;
@@ -20800,7 +20457,7 @@ struct __struct_PIOC_OWSR
 #define PIOC_AIMER_P30	(1 << 30)
 #define PIOC_AIMER_P31	(1 << 31)
 
-#define PIOC_AIMER_s    MMIO_REG(0x400e12b0, struct __struct_PIOC_AIMER)
+#define PIOC_AIMER_s	MMIO_REG(0x400e12b0, struct __struct_PIOC_AIMER)
 struct __struct_PIOC_AIMER
 {
   uint32_t p0 : 1;
@@ -20871,7 +20528,7 @@ struct __struct_PIOC_AIMER
 #define PIOC_AIMDR_P30	(1 << 30)
 #define PIOC_AIMDR_P31	(1 << 31)
 
-#define PIOC_AIMDR_s    MMIO_REG(0x400e12b4, struct __struct_PIOC_AIMDR)
+#define PIOC_AIMDR_s	MMIO_REG(0x400e12b4, struct __struct_PIOC_AIMDR)
 struct __struct_PIOC_AIMDR
 {
   uint32_t p0 : 1;
@@ -20942,7 +20599,7 @@ struct __struct_PIOC_AIMDR
 #define PIOC_AIMMR_P30	(1 << 30)
 #define PIOC_AIMMR_P31	(1 << 31)
 
-#define PIOC_AIMMR_s    MMIO_REG(0x400e12b8, struct __struct_PIOC_AIMMR)
+#define PIOC_AIMMR_s	MMIO_REG(0x400e12b8, struct __struct_PIOC_AIMMR)
 struct __struct_PIOC_AIMMR
 {
   uint32_t p0 : 1;
@@ -21013,7 +20670,7 @@ struct __struct_PIOC_AIMMR
 #define PIOC_ESR_P30	(1 << 30)
 #define PIOC_ESR_P31	(1 << 31)
 
-#define PIOC_ESR_s    MMIO_REG(0x400e12c0, struct __struct_PIOC_ESR)
+#define PIOC_ESR_s	MMIO_REG(0x400e12c0, struct __struct_PIOC_ESR)
 struct __struct_PIOC_ESR
 {
   uint32_t p0 : 1;
@@ -21084,7 +20741,7 @@ struct __struct_PIOC_ESR
 #define PIOC_LSR_P30	(1 << 30)
 #define PIOC_LSR_P31	(1 << 31)
 
-#define PIOC_LSR_s    MMIO_REG(0x400e12c4, struct __struct_PIOC_LSR)
+#define PIOC_LSR_s	MMIO_REG(0x400e12c4, struct __struct_PIOC_LSR)
 struct __struct_PIOC_LSR
 {
   uint32_t p0 : 1;
@@ -21155,7 +20812,7 @@ struct __struct_PIOC_LSR
 #define PIOC_ELSR_P30	(1 << 30)
 #define PIOC_ELSR_P31	(1 << 31)
 
-#define PIOC_ELSR_s    MMIO_REG(0x400e12c8, struct __struct_PIOC_ELSR)
+#define PIOC_ELSR_s	MMIO_REG(0x400e12c8, struct __struct_PIOC_ELSR)
 struct __struct_PIOC_ELSR
 {
   uint32_t p0 : 1;
@@ -21226,7 +20883,7 @@ struct __struct_PIOC_ELSR
 #define PIOC_FELLSR_P30	(1 << 30)
 #define PIOC_FELLSR_P31	(1 << 31)
 
-#define PIOC_FELLSR_s    MMIO_REG(0x400e12d0, struct __struct_PIOC_FELLSR)
+#define PIOC_FELLSR_s	MMIO_REG(0x400e12d0, struct __struct_PIOC_FELLSR)
 struct __struct_PIOC_FELLSR
 {
   uint32_t p0 : 1;
@@ -21297,7 +20954,7 @@ struct __struct_PIOC_FELLSR
 #define PIOC_REHLSR_P30	(1 << 30)
 #define PIOC_REHLSR_P31	(1 << 31)
 
-#define PIOC_REHLSR_s    MMIO_REG(0x400e12d4, struct __struct_PIOC_REHLSR)
+#define PIOC_REHLSR_s	MMIO_REG(0x400e12d4, struct __struct_PIOC_REHLSR)
 struct __struct_PIOC_REHLSR
 {
   uint32_t p0 : 1;
@@ -21368,7 +21025,7 @@ struct __struct_PIOC_REHLSR
 #define PIOC_FRLHSR_P30	(1 << 30)
 #define PIOC_FRLHSR_P31	(1 << 31)
 
-#define PIOC_FRLHSR_s    MMIO_REG(0x400e12d8, struct __struct_PIOC_FRLHSR)
+#define PIOC_FRLHSR_s	MMIO_REG(0x400e12d8, struct __struct_PIOC_FRLHSR)
 struct __struct_PIOC_FRLHSR
 {
   uint32_t p0 : 1;
@@ -21439,7 +21096,7 @@ struct __struct_PIOC_FRLHSR
 #define PIOC_LOCKSR_P30	(1 << 30)
 #define PIOC_LOCKSR_P31	(1 << 31)
 
-#define PIOC_LOCKSR_s    MMIO_REG(0x400e12e0, struct __struct_PIOC_LOCKSR)
+#define PIOC_LOCKSR_s	MMIO_REG(0x400e12e0, struct __struct_PIOC_LOCKSR)
 struct __struct_PIOC_LOCKSR
 {
   uint32_t p0 : 1;
@@ -21482,7 +21139,7 @@ struct __struct_PIOC_LOCKSR
 #define PIOC_WPMR_WPKEY_MSK	0xffffff00
 #define PIOC_WPMR_WPKEY_VAL(x)	(((x) >> 8) & 0xffffff)
 
-#define PIOC_WPMR_s    MMIO_REG(0x400e12e4, struct __struct_PIOC_WPMR)
+#define PIOC_WPMR_s	MMIO_REG(0x400e12e4, struct __struct_PIOC_WPMR)
 struct __struct_PIOC_WPMR
 {
   uint32_t wpen : 1;
@@ -21496,7 +21153,7 @@ struct __struct_PIOC_WPMR
 #define PIOC_WPSR_WPVSRC_MSK	0x00ffff00
 #define PIOC_WPSR_WPVSRC_VAL(x)	(((x) >> 8) & 0xffff)
 
-#define PIOC_WPSR_s    MMIO_REG(0x400e12e8, struct __struct_PIOC_WPSR)
+#define PIOC_WPSR_s	MMIO_REG(0x400e12e8, struct __struct_PIOC_WPSR)
 struct __struct_PIOC_WPSR
 {
   uint32_t wpvs : 1;
@@ -21539,7 +21196,7 @@ struct __struct_PIOC_WPSR
 #define PIOC_SCHMITT_P30	(1 << 30)
 #define PIOC_SCHMITT_P31	(1 << 31)
 
-#define PIOC_SCHMITT_s    MMIO_REG(0x400e1300, struct __struct_PIOC_SCHMITT)
+#define PIOC_SCHMITT_s	MMIO_REG(0x400e1300, struct __struct_PIOC_SCHMITT)
 struct __struct_PIOC_SCHMITT
 {
   uint32_t p0 : 1;
@@ -21585,7 +21242,7 @@ struct __struct_PIOC_SCHMITT
 #define PIOC_PCMR_HALFS	(1 << 10)
 #define PIOC_PCMR_FRSTS	(1 << 11)
 
-#define PIOC_PCMR_s    MMIO_REG(0x400e1350, struct __struct_PIOC_PCMR)
+#define PIOC_PCMR_s	MMIO_REG(0x400e1350, struct __struct_PIOC_PCMR)
 struct __struct_PIOC_PCMR
 {
   uint32_t pcen : 1;
@@ -21604,7 +21261,7 @@ struct __struct_PIOC_PCMR
 #define PIOC_PCIER_ENDRX	(1 << 2)
 #define PIOC_PCIER_RXBUFF	(1 << 3)
 
-#define PIOC_PCIER_s    MMIO_REG(0x400e1354, struct __struct_PIOC_PCIER)
+#define PIOC_PCIER_s	MMIO_REG(0x400e1354, struct __struct_PIOC_PCIER)
 struct __struct_PIOC_PCIER
 {
   uint32_t drdy : 1;
@@ -21620,7 +21277,7 @@ struct __struct_PIOC_PCIER
 #define PIOC_PCIDR_ENDRX	(1 << 2)
 #define PIOC_PCIDR_RXBUFF	(1 << 3)
 
-#define PIOC_PCIDR_s    MMIO_REG(0x400e1358, struct __struct_PIOC_PCIDR)
+#define PIOC_PCIDR_s	MMIO_REG(0x400e1358, struct __struct_PIOC_PCIDR)
 struct __struct_PIOC_PCIDR
 {
   uint32_t drdy : 1;
@@ -21636,7 +21293,7 @@ struct __struct_PIOC_PCIDR
 #define PIOC_PCIMR_ENDRX	(1 << 2)
 #define PIOC_PCIMR_RXBUFF	(1 << 3)
 
-#define PIOC_PCIMR_s    MMIO_REG(0x400e135c, struct __struct_PIOC_PCIMR)
+#define PIOC_PCIMR_s	MMIO_REG(0x400e135c, struct __struct_PIOC_PCIMR)
 struct __struct_PIOC_PCIMR
 {
   uint32_t drdy : 1;
@@ -21652,7 +21309,7 @@ struct __struct_PIOC_PCIMR
 #define PIOC_PCISR_ENDRX	(1 << 2)
 #define PIOC_PCISR_RXBUFF	(1 << 3)
 
-#define PIOC_PCISR_s    MMIO_REG(0x400e1360, struct __struct_PIOC_PCISR)
+#define PIOC_PCISR_s	MMIO_REG(0x400e1360, struct __struct_PIOC_PCISR)
 struct __struct_PIOC_PCISR
 {
   uint32_t drdy : 1;
@@ -21674,7 +21331,7 @@ struct __struct_PIOC_PCISR
 #define RSTC_CR_KEY_MSK	0xff000000
 #define RSTC_CR_KEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define RSTC_CR_s    MMIO_REG(0x400e1400, struct __struct_RSTC_CR)
+#define RSTC_CR_s	MMIO_REG(0x400e1400, struct __struct_RSTC_CR)
 struct __struct_RSTC_CR
 {
   uint32_t procrst : 1;
@@ -21693,7 +21350,7 @@ struct __struct_RSTC_CR
 #define RSTC_SR_NRSTL	(1 << 16)
 #define RSTC_SR_SRCMP	(1 << 17)
 
-#define RSTC_SR_s    MMIO_REG(0x400e1404, struct __struct_RSTC_SR)
+#define RSTC_SR_s	MMIO_REG(0x400e1404, struct __struct_RSTC_SR)
 struct __struct_RSTC_SR
 {
   uint32_t ursts : 1;
@@ -21715,7 +21372,7 @@ struct __struct_RSTC_SR
 #define RSTC_MR_KEY_MSK	0xff000000
 #define RSTC_MR_KEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define RSTC_MR_s    MMIO_REG(0x400e1408, struct __struct_RSTC_MR)
+#define RSTC_MR_s	MMIO_REG(0x400e1408, struct __struct_RSTC_MR)
 struct __struct_RSTC_MR
 {
   uint32_t ursten : 1;
@@ -21736,7 +21393,7 @@ struct __struct_RSTC_MR
 #define SUPC_CR_KEY_MSK	0xff000000
 #define SUPC_CR_KEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define SUPC_CR_s    MMIO_REG(0x400e1410, struct __struct_SUPC_CR)
+#define SUPC_CR_s	MMIO_REG(0x400e1410, struct __struct_SUPC_CR)
 struct __struct_SUPC_CR
 {
   uint32_t  : 2;
@@ -21756,7 +21413,7 @@ struct __struct_SUPC_CR
 #define SUPC_SMMR_SMRSTEN	(1 << 12)
 #define SUPC_SMMR_SMIEN	(1 << 13)
 
-#define SUPC_SMMR_s    MMIO_REG(0x400e1414, struct __struct_SUPC_SMMR)
+#define SUPC_SMMR_s	MMIO_REG(0x400e1414, struct __struct_SUPC_SMMR)
 struct __struct_SUPC_SMMR
 {
   uint32_t smth : 4;
@@ -21777,7 +21434,7 @@ struct __struct_SUPC_SMMR
 #define SUPC_MR_KEY_MSK	0xff000000
 #define SUPC_MR_KEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define SUPC_MR_s    MMIO_REG(0x400e1418, struct __struct_SUPC_MR)
+#define SUPC_MR_s	MMIO_REG(0x400e1418, struct __struct_SUPC_MR)
 struct __struct_SUPC_MR
 {
   uint32_t  : 12;
@@ -21804,7 +21461,7 @@ struct __struct_SUPC_MR
 #define SUPC_WUMR_LPDBC_MSK	0x00070000
 #define SUPC_WUMR_LPDBC_VAL(x)	(((x) >> 16) & 0x7)
 
-#define SUPC_WUMR_s    MMIO_REG(0x400e141c, struct __struct_SUPC_WUMR)
+#define SUPC_WUMR_s	MMIO_REG(0x400e141c, struct __struct_SUPC_WUMR)
 struct __struct_SUPC_WUMR
 {
   uint32_t  : 1;
@@ -21856,7 +21513,7 @@ struct __struct_SUPC_WUMR
 #define SUPC_WUIR_WKUPT14	(1 << 30)
 #define SUPC_WUIR_WKUPT15	(1 << 31)
 
-#define SUPC_WUIR_s    MMIO_REG(0x400e1420, struct __struct_SUPC_WUIR)
+#define SUPC_WUIR_s	MMIO_REG(0x400e1420, struct __struct_SUPC_WUIR)
 struct __struct_SUPC_WUIR
 {
   uint32_t wkupen0 : 1;
@@ -21920,7 +21577,7 @@ struct __struct_SUPC_WUIR
 #define SUPC_SR_WKUPIS14	(1 << 30)
 #define SUPC_SR_WKUPIS15	(1 << 31)
 
-#define SUPC_SR_s    MMIO_REG(0x400e1424, struct __struct_SUPC_SR)
+#define SUPC_SR_s	MMIO_REG(0x400e1424, struct __struct_SUPC_SR)
 struct __struct_SUPC_SR
 {
   uint32_t  : 1;
@@ -21963,7 +21620,7 @@ struct __struct_SUPC_SR
 #define RTT_MR_RTTINCIEN	(1 << 17)
 #define RTT_MR_RTTRST	(1 << 18)
 
-#define RTT_MR_s    MMIO_REG(0x400e1430, struct __struct_RTT_MR)
+#define RTT_MR_s	MMIO_REG(0x400e1430, struct __struct_RTT_MR)
 struct __struct_RTT_MR
 {
   uint32_t rtpres : 16;
@@ -21981,7 +21638,7 @@ struct __struct_RTT_MR
 #define RTT_SR_ALMS	(1 << 0)
 #define RTT_SR_RTTINC	(1 << 1)
 
-#define RTT_SR_s    MMIO_REG(0x400e143c, struct __struct_RTT_SR)
+#define RTT_SR_s	MMIO_REG(0x400e143c, struct __struct_RTT_SR)
 struct __struct_RTT_SR
 {
   uint32_t alms : 1;
@@ -21997,7 +21654,7 @@ struct __struct_RTT_SR
 #define WDT_CR_KEY_MSK	0xff000000
 #define WDT_CR_KEY_VAL(x)	(((x) >> 24) & 0xff)
 
-#define WDT_CR_s    MMIO_REG(0x400e1450, struct __struct_WDT_CR)
+#define WDT_CR_s	MMIO_REG(0x400e1450, struct __struct_WDT_CR)
 struct __struct_WDT_CR
 {
   uint32_t wdrstt : 1;
@@ -22019,7 +21676,7 @@ struct __struct_WDT_CR
 #define WDT_MR_WDDBGHLT	(1 << 28)
 #define WDT_MR_WDIDLEHLT	(1 << 29)
 
-#define WDT_MR_s    MMIO_REG(0x400e1454, struct __struct_WDT_MR)
+#define WDT_MR_s	MMIO_REG(0x400e1454, struct __struct_WDT_MR)
 struct __struct_WDT_MR
 {
   uint32_t wdv : 12;
@@ -22037,7 +21694,7 @@ struct __struct_WDT_MR
 #define WDT_SR_WDUNF	(1 << 0)
 #define WDT_SR_WDERR	(1 << 1)
 
-#define WDT_SR_s    MMIO_REG(0x400e1458, struct __struct_WDT_SR)
+#define WDT_SR_s	MMIO_REG(0x400e1458, struct __struct_WDT_SR)
 struct __struct_WDT_SR
 {
   uint32_t wdunf : 1;
@@ -22057,7 +21714,7 @@ struct __struct_WDT_SR
 #define RTC_CR_CALEVSEL_MSK	0x00030000
 #define RTC_CR_CALEVSEL_VAL(x)	(((x) >> 16) & 0x3)
 
-#define RTC_CR_s    MMIO_REG(0x400e1460, struct __struct_RTC_CR)
+#define RTC_CR_s	MMIO_REG(0x400e1460, struct __struct_RTC_CR)
 struct __struct_RTC_CR
 {
   uint32_t updtim : 1;
@@ -22090,7 +21747,7 @@ struct __struct_RTC_CR
 #define RTC_MR_TPERIOD_MSK	0x30000000
 #define RTC_MR_TPERIOD_VAL(x)	(((x) >> 28) & 0x3)
 
-#define RTC_MR_s    MMIO_REG(0x400e1464, struct __struct_RTC_MR)
+#define RTC_MR_s	MMIO_REG(0x400e1464, struct __struct_RTC_MR)
 struct __struct_RTC_MR
 {
   uint32_t hrmod : 1;
@@ -22122,7 +21779,7 @@ struct __struct_RTC_MR
 #define RTC_TIMR_HOUR_VAL(x)	(((x) >> 16) & 0x3f)
 #define RTC_TIMR_AMPM	(1 << 22)
 
-#define RTC_TIMR_s    MMIO_REG(0x400e1468, struct __struct_RTC_TIMR)
+#define RTC_TIMR_s	MMIO_REG(0x400e1468, struct __struct_RTC_TIMR)
 struct __struct_RTC_TIMR
 {
   uint32_t sec : 7;
@@ -22151,7 +21808,7 @@ struct __struct_RTC_TIMR
 #define RTC_CALR_DATE_MSK	0x3f000000
 #define RTC_CALR_DATE_VAL(x)	(((x) >> 24) & 0x3f)
 
-#define RTC_CALR_s    MMIO_REG(0x400e146c, struct __struct_RTC_CALR)
+#define RTC_CALR_s	MMIO_REG(0x400e146c, struct __struct_RTC_CALR)
 struct __struct_RTC_CALR
 {
   uint32_t cent : 7;
@@ -22178,7 +21835,7 @@ struct __struct_RTC_CALR
 #define RTC_TIMALR_AMPM	(1 << 22)
 #define RTC_TIMALR_HOUREN	(1 << 23)
 
-#define RTC_TIMALR_s    MMIO_REG(0x400e1470, struct __struct_RTC_TIMALR)
+#define RTC_TIMALR_s	MMIO_REG(0x400e1470, struct __struct_RTC_TIMALR)
 struct __struct_RTC_TIMALR
 {
   uint32_t sec : 7;
@@ -22201,7 +21858,7 @@ struct __struct_RTC_TIMALR
 #define RTC_CALALR_DATE_VAL(x)	(((x) >> 24) & 0x3f)
 #define RTC_CALALR_DATEEN	(1 << 31)
 
-#define RTC_CALALR_s    MMIO_REG(0x400e1474, struct __struct_RTC_CALALR)
+#define RTC_CALALR_s	MMIO_REG(0x400e1474, struct __struct_RTC_CALALR)
 struct __struct_RTC_CALALR
 {
   uint32_t  : 16;
@@ -22221,7 +21878,7 @@ struct __struct_RTC_CALALR
 #define RTC_SR_CALEV	(1 << 4)
 #define RTC_SR_TDERR	(1 << 5)
 
-#define RTC_SR_s    MMIO_REG(0x400e1478, struct __struct_RTC_SR)
+#define RTC_SR_s	MMIO_REG(0x400e1478, struct __struct_RTC_SR)
 struct __struct_RTC_SR
 {
   uint32_t ackupd : 1;
@@ -22241,7 +21898,7 @@ struct __struct_RTC_SR
 #define RTC_SCCR_CALCLR	(1 << 4)
 #define RTC_SCCR_TDERRCLR	(1 << 5)
 
-#define RTC_SCCR_s    MMIO_REG(0x400e147c, struct __struct_RTC_SCCR)
+#define RTC_SCCR_s	MMIO_REG(0x400e147c, struct __struct_RTC_SCCR)
 struct __struct_RTC_SCCR
 {
   uint32_t ackclr : 1;
@@ -22261,7 +21918,7 @@ struct __struct_RTC_SCCR
 #define RTC_IER_CALEN	(1 << 4)
 #define RTC_IER_TDERREN	(1 << 5)
 
-#define RTC_IER_s    MMIO_REG(0x400e1480, struct __struct_RTC_IER)
+#define RTC_IER_s	MMIO_REG(0x400e1480, struct __struct_RTC_IER)
 struct __struct_RTC_IER
 {
   uint32_t acken : 1;
@@ -22281,7 +21938,7 @@ struct __struct_RTC_IER
 #define RTC_IDR_CALDIS	(1 << 4)
 #define RTC_IDR_TDERRDIS	(1 << 5)
 
-#define RTC_IDR_s    MMIO_REG(0x400e1484, struct __struct_RTC_IDR)
+#define RTC_IDR_s	MMIO_REG(0x400e1484, struct __struct_RTC_IDR)
 struct __struct_RTC_IDR
 {
   uint32_t ackdis : 1;
@@ -22300,7 +21957,7 @@ struct __struct_RTC_IDR
 #define RTC_IMR_TIM	(1 << 3)
 #define RTC_IMR_CAL	(1 << 4)
 
-#define RTC_IMR_s    MMIO_REG(0x400e1488, struct __struct_RTC_IMR)
+#define RTC_IMR_s	MMIO_REG(0x400e1488, struct __struct_RTC_IMR)
 struct __struct_RTC_IMR
 {
   uint32_t ack : 1;
@@ -22317,7 +21974,7 @@ struct __struct_RTC_IMR
 #define RTC_VER_NVTIMALR	(1 << 2)
 #define RTC_VER_NVCALALR	(1 << 3)
 
-#define RTC_VER_s    MMIO_REG(0x400e148c, struct __struct_RTC_VER)
+#define RTC_VER_s	MMIO_REG(0x400e148c, struct __struct_RTC_VER)
 struct __struct_RTC_VER
 {
   uint32_t nvtim : 1;
