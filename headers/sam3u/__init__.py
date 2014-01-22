@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #
 # Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
 # All rights reserved.

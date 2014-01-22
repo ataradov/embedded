@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,76 +27,73 @@
 #
 
 #------------------------------------------------------------------------------
-eic_int = [
-  ('extint',     16),
-  ('',           16),
+name = 'EIC'
+
+#------------------------------------------------------------------------------
+eic_ints = [
+	('extint',	16),
+	('',		16),
+]
+
+eic_sense = [
+	('NONE',	0),
+	('RISE',	1),
+	('FALL',	2),
+	('BOTH',	3),
+	('HIGH',	4),
+	('LOW',		5),
 ]
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'CTRL', [
-    ('swrst',       1),
-    ('enable',      1),
-    ('',            6),
-  ]),
-  (0x01, 'STATUS', [
-    ('',            7),
-    ('syncbusy',    1),
-  ]),
-  (0x02, 'NMICTRL', [
-    ('nmisense',    3),
-    ('nmiflten',    1),
-    ('',            4),
-  ]),
-  (0x03, 'NMIFLAG', [
-    ('nmi',         1),
-    ('',            7),
-  ]),
-  (0x04, 'EVCTRL', [
-    ('extinteo',   16),
-    ('',           16),
-  ]),
-  (0x08, 'INTENCLR', eic_int),
-  (0x0c, 'INTENSET', eic_int),
-  (0x10, 'INTFLAG', eic_int),
-  (0x14, 'WAKEUP', [
-    ('wakeupen',   16),
-    ('',           16),
-  ]),
-  (0x18, 'CONFIG0', [
-    ('sense0',      3),
-    ('filten0',     1),
-    ('sense1',      3),
-    ('filten1',     1),
-    ('sense2',      3),
-    ('filten2',     1),
-    ('sense3',      3),
-    ('filten3',     1),
-    ('sense4',      3),
-    ('filten4',     1),
-    ('sense5',      3),
-    ('filten5',     1),
-    ('sense6',      3),
-    ('filten6',     1),
-    ('sense7',      3),
-    ('filten7',     1),
-  ]),
-  (0x1c, 'CONFIG1', [
-    ('sense8',      3),
-    ('filten8',     1),
-    ('sense9',      3),
-    ('filten9',     1),
-    ('sense10',     3),
-    ('filten10',    1),
-    ('sense11',     3),
-    ('filten11',    1),
-    ('sense12',     3),
-    ('filten12',    1),
-    ('sense13',     3),
-    ('filten13',    1),
-    ('sense14',     3),
-    ('filten14',    1),
-    ('sense15',     3),
-    ('filten15',    1),
-  ]),
+registers = [
+	(0x00, 'CTRL', [
+		('swrst',	1),
+		('enable',	1),
+		('',		6),
+	]),
+	(0x01, 'STATUS', [
+		('',		7),
+		('syncbusy',	1),
+	]),
+	(0x02, 'NMICTRL', [
+		('nmisense',	3, eic_sense),
+		('nmifilten',	1),
+		('',		4),
+	]),
+	(0x03, 'NMIFLAG', [
+		('nmi',		1),
+		('',		7),
+	]),
+	(0x04, 'EVCTRL', [
+		('extinteo',	16),
+		('',		16),
+	]),
+	(0x08, 'INTENCLR', eic_ints),
+	(0x0c, 'INTENSET', eic_ints),
+	(0x10, 'INTFLAG', eic_ints),
+	(0x14, 'WAKEUP', [
+		('wakeupen',	16),
+		('',		16),
+	]),
+	[ 2, 4, 
+		(0x18, 'CONFIG', [
+			('sense0',	3, ),
+			('filten0',	1),
+			('sense1',	3, eic_sense),
+			('filten1',	1),
+			('sense2',	3, eic_sense),
+			('filten2',	1),
+			('sense3',	3, eic_sense),
+			('filten3',	1),
+			('sense4',	3, eic_sense),
+			('filten4',	1),
+			('sense5',	3, eic_sense),
+			('filten5',	1),
+			('sense6',	3, eic_sense),
+			('filten6',	1),
+			('sense7',	3, eic_sense),
+			('filten7',	1),
+		]),
+	],
 ]
+

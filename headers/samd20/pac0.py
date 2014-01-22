@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,25 +27,23 @@
 #
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'WPCLR', [
-    ('',            1),
-    ('pm',          1),
-    ('sysctrl',     1),
-    ('gclk',        1),
-    ('wdt',         1),
-    ('rtc',         1),
-    ('eic',         1),
-    ('',           25),
-  ]),
-  (0x04, 'WPSET', [
-    ('',            1),
-    ('pm',          1),
-    ('sysctrl',     1),
-    ('gclk',        1),
-    ('wdt',         1),
-    ('rtc',         1),
-    ('eic',         1),
-    ('',           25),
-  ]),
+name = 'PAC0'
+
+#------------------------------------------------------------------------------
+pac0_bits = [
+	('',		1),
+	('pm',		1),
+	('sysctrl',	1),
+	('gclk',	1),
+	('wdt',		1),
+	('rtc',		1),
+	('eic',		1),
+	('',		25),
 ]
+
+#------------------------------------------------------------------------------
+registers = [
+	(0x00, 'WPCLR', pac0_bits),
+	(0x04, 'WPSET', pac0_bits),
+]
+

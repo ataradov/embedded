@@ -27,10 +27,88 @@
 #
 
 #------------------------------------------------------------------------------
-name = 'PTC'
+name = 'SC_USART'
+
+#------------------------------------------------------------------------------
+sc_usart_ints = [
+	('dre',		1),
+	('txc',		1),
+	('rxc',		1),
+	('rxs',		1),
+	('',		4),
+]
 
 #------------------------------------------------------------------------------
 registers = [
-  # Not described in the datasheet
+	(0x00, 'CTRLA', [
+		('swrst',	1),
+		('enable',	1),
+		('mode',	3, [
+			('USART_EXT_CLK', 0),
+			('USART_INT_CLK', 1),
+		]),
+		('',		2),
+		('runstdby',	1),
+		('',		8),
+		('txpo',	1),
+		('',		3),
+		('rxpo',	2),
+		('',		2),
+		('form',	4, [
+			('NO_PARITY',	0),
+			('PARITY',	1),
+		]),
+		('cmode',	1, [
+			('ASYNC',	0),
+			('SYNC',	1),
+		]),
+		('cpol',	1),
+		('dord',	1, [
+			('MSB_FIRST',	0),
+			('LSB_FIRST',	1),
+		]),
+		('',		1),
+	]),
+	(0x04, 'CTRLB', [
+		('chsize',	3, [
+			('8_BITS',	0),
+			('9_BITS',	1),
+			('5_BITS',	5),
+			('6_BITS',	6),
+			('7_BITS',	7),
+		]),
+		('',		3),
+		('sbmode',	1, [
+			('ONE_STOP_BIT',	0),
+			('TWO_STOP_BITS',	1),
+		]),
+		('',		2),
+		('sfde',	1),
+		('',		3),
+		('pmode',	1),
+		('',		2),
+		('txen',	1),
+		('rxen',	1),
+		('',		14),
+	]),
+	(0x08, 'DBGCTRL', [
+		('dbgstop',	1),
+		('',		7),
+	]),
+	(0x0a, 'BAUD', 16),
+	(0x0c, 'INTENCLR', sc_usart_ints),
+	(0x0d, 'INTENSET', sc_usart_ints),
+	(0x0e, 'INTFLAG', sc_usart_ints),
+	(0x10, 'STATUS', [
+		('perr',	1),
+		('ferr',	1),
+		('bufovf',	1),
+		('',		12),
+		('syncbusy',	1),
+	]),
+	(0x18, 'DATA', [
+		('data',	9),
+		('',		7),
+	]),
 ]
 

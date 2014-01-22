@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,53 +27,91 @@
 #
 
 #------------------------------------------------------------------------------
-nvmctrl_int = [
-  ('ready',       1),
-  ('error',       1),
-  ('',            6),
+name = 'NVMCTRL'
+
+
+#------------------------------------------------------------------------------
+nvmctrl_ints = [
+	('ready',	1),
+	('error',	1),
+	('',		6),
 ]
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'CTRLA', [
-    ('cmd',         7),
-    ('',            1),
-    ('cmdex',       8),
-  ]),
-  (0x04, 'CTRLB', [
-    ('',            1),
-    ('rws',         4),
-    ('',            2),
-    ('manw',        1),
-    ('sleepprm',    2),
-    ('',            6),
-    ('readmode',    2),
-    ('cachedis',    1),
-    ('',           13),
-  ]),
-  (0x08, 'PARAM', [
-    ('nvmp',       16),
-    ('psz',         3),
-    ('',           13),
-  ]),
-  (0x0c, 'INTENCLR', nvmctrl_int),
-  (0x10, 'INTENSET', nvmctrl_int),
-  (0x14, 'INTFLAG', nvmctrl_int),
-  (0x18, 'STATUS', [
-    ('prm',         1),
-    ('load',        1),
-    ('proge',       1),
-    ('locke',       1),
-    ('nvme',        1),
-    ('',            3),
-    ('sb',          1),
-    ('',            7),
-  ]),
-  (0x1c, 'ADDR', [
-    ('addr',       22),
-    ('',           10),
-  ]),
-  (0x20, 'LOCK', [
-    ('lock',       16),
-  ]),
+registers = [
+	(0x00, 'CTRLA', [
+		('cmd',		7, [
+			('ER',		0x2),
+			('WP',		0x4),
+			('EAR',		0x5),
+			('WAP',		0x6),
+			('LR',		0x40),
+			('UR',		0x41),
+			('SPRM',	0x42),
+			('CPRM',	0x43),
+			('PBC',		0x44),
+			('SSB',		0x45),
+			('INVALL',	0x46),
+		]),
+		('',		1),
+		('cmdex',	8, [
+			('KEY',		0xa5),
+		]),
+	]),
+	(0x04, 'CTRLB', [
+		('',		1),
+		('rws',		4, [
+			('SINGLE',	0),
+			('HALF',	1),
+			('DUAL',	2),
+		]),
+		('',		2),
+		('manw',	1),
+		('sleepprm',	2, [
+			('WAKEONACCESS',	0),
+			('WAKEUPINSTANT',	1),
+			('DISABLED',	3),
+		]),
+		('',		6),
+		('readmode',	2, [
+			('NO_MISS_PENALTY', 	0),
+			('LOW_POWER',	 	1),
+			('DETERMINISTIC',	2),
+		]),
+		('cachedis',	1),
+		('',		13),
+	]),
+	(0x08, 'PARAM', [
+		('nvmp',	16),
+		('psz',		3, [
+			('8',		0),
+			('16',		1),
+			('32',		2),
+			('64',		3),
+			('128',		4),
+			('256',		5),
+			('512',		6),
+			('1024',	7),
+		]),
+		('',		13),
+	]),
+	(0x0c, 'INTENCLR', nvmctrl_ints),
+	(0x10, 'INTENSET', nvmctrl_ints),
+	(0x14, 'INTFLAG', nvmctrl_ints),
+	(0x18, 'STATUS', [
+		('prm',		1),
+		('load',	1),
+		('proge',	1),
+		('locke',	1),
+		('nvme',	1),
+		('',		3),
+		('sb',		1),
+		('',		7),
+	]),
+	(0x1c, 'ADDR', [
+		('addr',	22),
+		('',		10),
+	]),
+	(0x20, 'LOCK',	16),
 ]
+

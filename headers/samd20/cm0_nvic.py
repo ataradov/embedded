@@ -27,10 +27,53 @@
 #
 
 #------------------------------------------------------------------------------
-name = 'PTC'
+name = 'NVIC'
+
+#------------------------------------------------------------------------------
+cm0_nvic_ints = [
+  ('pm',          1),
+  ('sysctrl',     1),
+  ('wdt',         1),
+  ('rtc',         1),
+  ('eic',         1),
+  ('nvmctrl',     1),
+  ('evsys',       1),
+  ('sercom0',     1),
+  ('sercom1',     1),
+  ('sercom2',     1),
+  ('sercom3',     1),
+  ('sercom4',     1),
+  ('sercom5',     1),
+  ('tc0',         1),
+  ('tc1',         1),
+  ('tc2',         1),
+  ('tc3',         1),
+  ('tc4',         1),
+  ('tc5',         1),
+  ('tc6',         1),
+  ('tc7',         1),
+  ('adc',         1),
+  ('ac',          1),
+  ('dac',         1),
+  ('ptc',         1),
+  ('',            7),
+]
+
+def cm0_nvic_ipr(ipr0, ipr1, ipr2, ipr3):
+  return [('', 6), (ipr0, 2), ('', 6), (ipr1, 2), ('', 6), (ipr2, 2), ('', 6), (ipr3, 2)]
 
 #------------------------------------------------------------------------------
 registers = [
-  # Not described in the datasheet
+  (0x0000, 'ISER', cm0_nvic_ints),
+  (0x0080, 'ICER', cm0_nvic_ints),
+  (0x0100, 'ISPR', cm0_nvic_ints),
+  (0x0180, 'ICPR', cm0_nvic_ints),
+  (0x0300, 'IPR0', cm0_nvic_ipr('pm', 'sysctrl', 'wdt', 'rtc')),
+  (0x0304, 'IPR1', cm0_nvic_ipr('eic', 'nvmctrl', 'evsys', 'sercom0')),
+  (0x0308, 'IPR2', cm0_nvic_ipr('sercom1', 'sercom2', 'sercom3', 'sercom4')),
+  (0x030c, 'IPR3', cm0_nvic_ipr('sercom5', 'tc0', 'tc1', 'tc2')),
+  (0x0310, 'IPR4', cm0_nvic_ipr('tc3', 'tc4', 'tc5', 'tc6')),
+  (0x0314, 'IPR5', cm0_nvic_ipr('tc7', 'adc', 'ac', 'dac')),
+  (0x0318, 'IPR6', cm0_nvic_ipr('ptc', '', '', '')),
 ]
 

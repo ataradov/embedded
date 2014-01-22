@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,36 +27,57 @@
 #
 
 #------------------------------------------------------------------------------
-wdt_int = [
-  ('ew',          1),
-  ('',            7),
+name = 'WDT'
+
+#------------------------------------------------------------------------------
+wdt_timing = [
+	('8', 		0x0),
+	('16',		0x1),
+	('32',		0x2),
+	('64',		0x3),
+	('128',		0x4),
+	('256',		0x5),
+	('512',		0x6),
+	('1024',	0x7),
+	('2048',	0x8),
+	('4096',	0x9),
+	('8192',	0xa),
+	('16384',	0xb),
+]
+
+wdt_ints = [
+	('ew',		1),
+	('',		7),
 ]
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'CTRL', [
-    ('',            1),
-    ('enable',      1),
-    ('wen',         1),
-    ('',            4),
-    ('alwayson',    1),
-  ]),
-  (0x01, 'CONFIG', [
-    ('per',         4),
-    ('window',      4),
-  ]),
-  (0x02, 'EWCTRL', [
-    ('ewoffset',    4),
-    ('',            4),
-  ]),
-  (0x04, 'INTENCLR', wdt_int),
-  (0x05, 'INTENSET', wdt_int),
-  (0x06, 'INTFLAG', wdt_int),
-  (0x07, 'STATUS', [
-    ('',            7),
-    ('syncbusy',    1),
-  ]),
-  (0x08, 'CLEAR', [
-    ('clear',       8),
-  ]),
+registers = [
+	(0x00, 'CTRL', [
+		('',		1),
+		('enable',	1),
+		('wen',		1),
+		('',		4),
+		('alwayson',	1),
+	]),
+	(0x01, 'CONFIG', [
+		('per',		4, wdt_timing),
+		('window',	4, wdt_timing),
+	]),
+	(0x02, 'EWCTRL', [
+		('ewoffset',	4, wdt_timing),
+		('',		4),
+	]),
+	(0x04, 'INTENCLR', wdt_ints),
+	(0x05, 'INTENSET', wdt_ints),
+	(0x06, 'INTFLAG', wdt_ints),
+	(0x07, 'STATUS', [
+		('',		7),
+		('syncbusy',	1),
+	]),
+	(0x08, 'CLEAR', [
+		('clear',	8, [
+			('KEY',		0xa5),
+		]),
+	]),
 ]
+

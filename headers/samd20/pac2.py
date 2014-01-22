@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,51 +27,36 @@
 #
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'WPCLR', [
-    ('',            1),
-    ('evsys',       1),
-    ('sercom0',     1),
-    ('sercom1',     1),
-    ('sercom2',     1),
-    ('sercom3',     1),
-    ('sercom4',     1),
-    ('sercom5',     1),
-    ('tc0',         1),
-    ('tc1',         1),
-    ('tc2',         1),
-    ('tc3',         1),
-    ('tc4',         1),
-    ('tc5',         1),
-    ('tc6',         1),
-    ('tc7',         1),
-    ('adc',         1),
-    ('ac',          1),
-    ('dac',         1),
-    ('ptc',         1),
-    ('',           12),
-  ]),
-  (0x04, 'WPSET', [
-    ('',            1),
-    ('evsys',       1),
-    ('sercom0',     1),
-    ('sercom1',     1),
-    ('sercom2',     1),
-    ('sercom3',     1),
-    ('sercom4',     1),
-    ('sercom5',     1),
-    ('tc0',         1),
-    ('tc1',         1),
-    ('tc2',         1),
-    ('tc3',         1),
-    ('tc4',         1),
-    ('tc5',         1),
-    ('tc6',         1),
-    ('tc7',         1),
-    ('adc',         1),
-    ('ac',          1),
-    ('dac',         1),
-    ('ptc',         1),
-    ('',           12),
-  ]),
+name = 'PAC2'
+
+#------------------------------------------------------------------------------
+pac2_bits = [
+	('',		1),
+	('evsys',	1),
+	('sercom0',	1),
+	('sercom1',	1),
+	('sercom2',	1),
+	('sercom3',	1),
+	('sercom4',	1),
+	('sercom5',	1),
+	('tc0',		1),
+	('tc1',		1),
+	('tc2',		1),
+	('tc3',		1),
+	('tc4',		1),
+	('tc5',		1),
+	('tc6',		1),
+	('tc7',		1),
+	('adc',		1),
+	('ac',		1),
+	('dac',		1),
+	('ptc',		1),
+	('',		12),
 ]
+
+#------------------------------------------------------------------------------
+registers = [
+	(0x00, 'WPCLR', pac2_bits),
+	(0x04, 'WPSET', pac2_bits),
+]
+

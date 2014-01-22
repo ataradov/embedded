@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -27,51 +27,49 @@
 #
 
 #------------------------------------------------------------------------------
-dac_int = [
-  ('underrun',    1),
-  ('empty',       1),
-  ('syncrdy',     1),
-  ('',            5),
+name = 'DAC'
+
+#------------------------------------------------------------------------------
+dac_ints = [
+	('underrun',	1),
+	('empty',	1),
+	('syncrdy',	1),
+	('',		5),
 ]
 
 #------------------------------------------------------------------------------
-regs = [
-  (0x00, 'CTRLA', [
-    ('swrst',       1),
-    ('enable',      1),
-    ('runstdby',    1),
-    ('',            5),
-  ]),
-  (0x01, 'CTRLB', [
-    ('eoen',        1),
-    ('ioen',        1),
-    ('leftadj',     1),
-    ('vpd',         1),
-    ('',            2),
-    ('refsel',      2),
-  ]),
-  (0x02, 'EVCTRL', [
-    ('startei',     1),
-    ('emptyeo',     1),
-    ('',            6),
-  ]),
-  (0x03, 'TEST', [
-    ('testen',      1),
-    ('',            7),
-  ]),
-  (0x04, 'INTENCLR', dac_int),
-  (0x05, 'INTENSET', dac_int),
-  (0x06, 'INTFLAG', dac_int),
-  (0x07, 'STATUS', [
-    ('',            7),
-    ('syncbusy',    1),
-  ]),
-  (0x08, 'DATA', [
-    ('data',       10),
-    ('',            6),
-  ]),
-  (0x0c, 'DATABUF', [
-    ('databuf',    10),
-    ('',            6),
-  ]),
+registers = [
+	(0x00, 'CTRLA', [
+		('swrst',	1),
+		('enable',	1),
+		('runstdby',	1),
+		('',		5),
+	]),
+	(0x01, 'CTRLB', [
+		('eoen',	1),
+		('ioen',	1),
+		('leftadj',	1),
+		('vpd',		1),
+		('',		2),
+		('refsel',	2, [
+			('INT1V',	0),
+			('AVCC',	1),
+			('VREFP',	2),
+		]),
+	]),
+	(0x02, 'EVCTRL', [
+		('startei',	1),
+		('emptyeo',	1),
+		('',		6),
+	]),
+	(0x04, 'INTENCLR', dac_ints),
+	(0x05, 'INTENSET', dac_ints),
+	(0x06, 'INTFLAG', dac_ints),
+	(0x07, 'STATUS', [
+		('',		7),
+		('syncbusy',	1),
+	]),
+	(0x08, 'DATA', 16),
+	(0x0c, 'DATABUF', 16),
 ]
+

@@ -139,10 +139,14 @@ struct __struct_HSMCI_SDCR
 #define HSMCI_CMDR_SPCMD_IT_RESP	0x5
 #define HSMCI_CMDR_SPCMD_BOR	0x6
 #define HSMCI_CMDR_SPCMD_EBO	0x7
-#define HSMCI_CMDR_OPDCMD     	(1 << 11)
+#define HSMCI_CMDR_OPDCMD(x)  	((x) << 11)
+#define HSMCI_CMDR_OPDCMD_m   	0x00000800
+#define HSMCI_CMDR_OPDCMD_v(x)	(((x) >> 11) & 0x1)
 #define HSMCI_CMDR_OPDCMD_PUSHPULL	0x0
 #define HSMCI_CMDR_OPDCMD_OPENDRAIN	0x1
-#define HSMCI_CMDR_MAXLAT     	(1 << 12)
+#define HSMCI_CMDR_MAXLAT(x)  	((x) << 12)
+#define HSMCI_CMDR_MAXLAT_m   	0x00001000
+#define HSMCI_CMDR_MAXLAT_v(x)	(((x) >> 12) & 0x1)
 #define HSMCI_CMDR_MAXLAT_5	0x0
 #define HSMCI_CMDR_MAXLAT_64	0x1
 #define HSMCI_CMDR_TRCMD(x)  	((x) << 16)
@@ -151,7 +155,9 @@ struct __struct_HSMCI_SDCR
 #define HSMCI_CMDR_TRCMD_NO_DATA	0x0
 #define HSMCI_CMDR_TRCMD_START_DATA	0x1
 #define HSMCI_CMDR_TRCMD_STOP_DATA	0x2
-#define HSMCI_CMDR_TRDIR     	(1 << 18)
+#define HSMCI_CMDR_TRDIR(x)  	((x) << 18)
+#define HSMCI_CMDR_TRDIR_m   	0x00040000
+#define HSMCI_CMDR_TRDIR_v(x)	(((x) >> 18) & 0x1)
 #define HSMCI_CMDR_TRDIR_WRITE	0x0
 #define HSMCI_CMDR_TRDIR_READ	0x1
 #define HSMCI_CMDR_TRTYP(x)  	((x) << 19)
@@ -168,7 +174,9 @@ struct __struct_HSMCI_SDCR
 #define HSMCI_CMDR_IOSPCMD_STD	0x0
 #define HSMCI_CMDR_IOSPCMD_SUSPEND	0x1
 #define HSMCI_CMDR_IOSPCMD_RESUME	0x2
-#define HSMCI_CMDR_ATACS     	(1 << 26)
+#define HSMCI_CMDR_ATACS(x)  	((x) << 26)
+#define HSMCI_CMDR_ATACS_m   	0x04000000
+#define HSMCI_CMDR_ATACS_v(x)	(((x) >> 26) & 0x1)
 #define HSMCI_CMDR_ATACS_NORMAL	0x0
 #define HSMCI_CMDR_ATACS_COMPLETION	0x1
 #define HSMCI_CMDR_BOOT_ACK     	(1 << 27)
@@ -464,7 +472,9 @@ struct __struct_HSMCI_IMR
 #define HSMCI_DMA_OFFSET(x)  	((x) << 0)
 #define HSMCI_DMA_OFFSET_m   	0x00000003
 #define HSMCI_DMA_OFFSET_v(x)	(((x) >> 0) & 0x3)
-#define HSMCI_DMA_CHKSIZE     	(1 << 4)
+#define HSMCI_DMA_CHKSIZE(x)  	((x) << 4)
+#define HSMCI_DMA_CHKSIZE_m   	0x00000010
+#define HSMCI_DMA_CHKSIZE_v(x)	(((x) >> 4) & 0x1)
 #define HSMCI_DMA_CHKSIZE_1	0x0
 #define HSMCI_DMA_CHKSIZE_4	0x1
 #define HSMCI_DMA_DMAEN     	(1 << 8)
@@ -633,7 +643,9 @@ struct __struct_SSC_RCMR
 #define SSC_RFMR_FSOS_LOW	0x3
 #define SSC_RFMR_FSOS_HIGH	0x4
 #define SSC_RFMR_FSOS_TOGGLING	0x5
-#define SSC_RFMR_FSEDGE     	(1 << 24)
+#define SSC_RFMR_FSEDGE(x)  	((x) << 24)
+#define SSC_RFMR_FSEDGE_m   	0x01000000
+#define SSC_RFMR_FSEDGE_v(x)	(((x) >> 24) & 0x1)
 #define SSC_RFMR_FSEDGE_POSITIVE	0x0
 #define SSC_RFMR_FSEDGE_NEGATIVE	0x1
 #define SSC_RFMR_FSLEN_EXT(x)  	((x) << 28)
@@ -727,7 +739,9 @@ struct __struct_SSC_TCMR
 #define SSC_TFMR_FSOS_HIGH	0x4
 #define SSC_TFMR_FSOS_TOGGLING	0x5
 #define SSC_TFMR_FSDEN     	(1 << 23)
-#define SSC_TFMR_FSEDGE     	(1 << 24)
+#define SSC_TFMR_FSEDGE(x)  	((x) << 24)
+#define SSC_TFMR_FSEDGE_m   	0x01000000
+#define SSC_TFMR_FSEDGE_v(x)	(((x) >> 24) & 0x1)
 #define SSC_TFMR_FSEDGE_POSITIVE	0x0
 #define SSC_TFMR_FSEDGE_NEGATIVE	0x1
 #define SSC_TFMR_FSLEN_EXT(x)  	((x) << 28)
@@ -3295,7 +3309,9 @@ struct __struct_UDPHS_IPFEATURES
 #define UDPHS_EPTCFG_EPT_SIZE_256	0x5
 #define UDPHS_EPTCFG_EPT_SIZE_512	0x6
 #define UDPHS_EPTCFG_EPT_SIZE_1024	0x7
-#define UDPHS_EPTCFG_EPT_DIR     	(1 << 3)
+#define UDPHS_EPTCFG_EPT_DIR(x)  	((x) << 3)
+#define UDPHS_EPTCFG_EPT_DIR_m   	0x00000008
+#define UDPHS_EPTCFG_EPT_DIR_v(x)	(((x) >> 3) & 0x1)
 #define UDPHS_EPTCFG_EPT_DIR_OUT	0x0
 #define UDPHS_EPTCFG_EPT_DIR_IN	0x1
 #define UDPHS_EPTCFG_EPT_TYPE(x)  	((x) << 4)
@@ -4306,7 +4322,9 @@ struct __struct_ADC_CDR
 
 
 // DMAC
-#define DMAC_GCFG_ARB_CFG     	(1 << 4)
+#define DMAC_GCFG_ARB_CFG(x)  	((x) << 4)
+#define DMAC_GCFG_ARB_CFG_m   	0x00000010
+#define DMAC_GCFG_ARB_CFG_v(x)	(((x) >> 4) & 0x1)
 #define DMAC_GCFG_ARB_CFG_FIXED	0x0
 #define DMAC_GCFG_ARB_CFG_ROUND_ROBIN	0x1
 
@@ -4628,10 +4646,14 @@ struct __struct_DMAC_DSCR
 #define DMAC_CTRLA_BTSIZE(x)  	((x) << 0)
 #define DMAC_CTRLA_BTSIZE_m   	0x00000fff
 #define DMAC_CTRLA_BTSIZE_v(x)	(((x) >> 0) & 0xfff)
-#define DMAC_CTRLA_SCSIZE     	(1 << 16)
+#define DMAC_CTRLA_SCSIZE(x)  	((x) << 16)
+#define DMAC_CTRLA_SCSIZE_m   	0x00010000
+#define DMAC_CTRLA_SCSIZE_v(x)	(((x) >> 16) & 0x1)
 #define DMAC_CTRLA_SCSIZE_1	0x0
 #define DMAC_CTRLA_SCSIZE_4	0x1
-#define DMAC_CTRLA_DCSIZE     	(1 << 20)
+#define DMAC_CTRLA_DCSIZE(x)  	((x) << 20)
+#define DMAC_CTRLA_DCSIZE_m   	0x00100000
+#define DMAC_CTRLA_DCSIZE_v(x)	(((x) >> 20) & 0x1)
 #define DMAC_CTRLA_DCSIZE_1	0x0
 #define DMAC_CTRLA_DCSIZE_4	0x1
 #define DMAC_CTRLA_SRC_WIDTH(x)  	((x) << 24)
@@ -5227,10 +5249,14 @@ struct __struct_SMC_TIMINGS
   uint32_t	nfsel	: 1;
 };
 
-#define SMC_MODE_READ_MODE     	(1 << 0)
+#define SMC_MODE_READ_MODE(x)  	((x) << 0)
+#define SMC_MODE_READ_MODE_m   	0x00000001
+#define SMC_MODE_READ_MODE_v(x)	(((x) >> 0) & 0x1)
 #define SMC_MODE_READ_MODE_NCS_CTRL	0x0
 #define SMC_MODE_READ_MODE_NRD_CTRL	0x1
-#define SMC_MODE_WRITE_MODE     	(1 << 1)
+#define SMC_MODE_WRITE_MODE(x)  	((x) << 1)
+#define SMC_MODE_WRITE_MODE_m   	0x00000002
+#define SMC_MODE_WRITE_MODE_v(x)	(((x) >> 1) & 0x1)
 #define SMC_MODE_WRITE_MODE_NCS_CTRL	0x0
 #define SMC_MODE_WRITE_MODE_NWE_CTRL	0x1
 #define SMC_MODE_EXNW_MODE(x)  	((x) << 4)
@@ -5240,7 +5266,9 @@ struct __struct_SMC_TIMINGS
 #define SMC_MODE_EXNW_MODE_FROZEN	0x2
 #define SMC_MODE_EXNW_MODE_READY	0x3
 #define SMC_MODE_BAT     	(1 << 8)
-#define SMC_MODE_DBW     	(1 << 12)
+#define SMC_MODE_DBW(x)  	((x) << 12)
+#define SMC_MODE_DBW_m   	0x00001000
+#define SMC_MODE_DBW_v(x)	(((x) >> 12) & 0x1)
 #define SMC_MODE_DBW_BIT_8	0x0
 #define SMC_MODE_DBW_BIT_16	0x1
 #define SMC_MODE_TDF_CYCLES(x)  	((x) << 16)
@@ -9400,52 +9428,84 @@ struct __struct_SUPC_WUMR
 #define SUPC_WUIR_WKUPEN13     	(1 << 13)
 #define SUPC_WUIR_WKUPEN14     	(1 << 14)
 #define SUPC_WUIR_WKUPEN15     	(1 << 15)
-#define SUPC_WUIR_WKUPT0     	(1 << 16)
+#define SUPC_WUIR_WKUPT0(x)  	((x) << 16)
+#define SUPC_WUIR_WKUPT0_m   	0x00010000
+#define SUPC_WUIR_WKUPT0_v(x)	(((x) >> 16) & 0x1)
 #define SUPC_WUIR_WKUPT0_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT0_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT1     	(1 << 17)
+#define SUPC_WUIR_WKUPT1(x)  	((x) << 17)
+#define SUPC_WUIR_WKUPT1_m   	0x00020000
+#define SUPC_WUIR_WKUPT1_v(x)	(((x) >> 17) & 0x1)
 #define SUPC_WUIR_WKUPT1_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT1_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT2     	(1 << 18)
+#define SUPC_WUIR_WKUPT2(x)  	((x) << 18)
+#define SUPC_WUIR_WKUPT2_m   	0x00040000
+#define SUPC_WUIR_WKUPT2_v(x)	(((x) >> 18) & 0x1)
 #define SUPC_WUIR_WKUPT2_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT2_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT3     	(1 << 19)
+#define SUPC_WUIR_WKUPT3(x)  	((x) << 19)
+#define SUPC_WUIR_WKUPT3_m   	0x00080000
+#define SUPC_WUIR_WKUPT3_v(x)	(((x) >> 19) & 0x1)
 #define SUPC_WUIR_WKUPT3_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT3_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT4     	(1 << 20)
+#define SUPC_WUIR_WKUPT4(x)  	((x) << 20)
+#define SUPC_WUIR_WKUPT4_m   	0x00100000
+#define SUPC_WUIR_WKUPT4_v(x)	(((x) >> 20) & 0x1)
 #define SUPC_WUIR_WKUPT4_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT4_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT5     	(1 << 21)
+#define SUPC_WUIR_WKUPT5(x)  	((x) << 21)
+#define SUPC_WUIR_WKUPT5_m   	0x00200000
+#define SUPC_WUIR_WKUPT5_v(x)	(((x) >> 21) & 0x1)
 #define SUPC_WUIR_WKUPT5_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT5_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT6     	(1 << 22)
+#define SUPC_WUIR_WKUPT6(x)  	((x) << 22)
+#define SUPC_WUIR_WKUPT6_m   	0x00400000
+#define SUPC_WUIR_WKUPT6_v(x)	(((x) >> 22) & 0x1)
 #define SUPC_WUIR_WKUPT6_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT6_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT7     	(1 << 23)
+#define SUPC_WUIR_WKUPT7(x)  	((x) << 23)
+#define SUPC_WUIR_WKUPT7_m   	0x00800000
+#define SUPC_WUIR_WKUPT7_v(x)	(((x) >> 23) & 0x1)
 #define SUPC_WUIR_WKUPT7_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT7_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT8     	(1 << 24)
+#define SUPC_WUIR_WKUPT8(x)  	((x) << 24)
+#define SUPC_WUIR_WKUPT8_m   	0x01000000
+#define SUPC_WUIR_WKUPT8_v(x)	(((x) >> 24) & 0x1)
 #define SUPC_WUIR_WKUPT8_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT8_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT9     	(1 << 25)
+#define SUPC_WUIR_WKUPT9(x)  	((x) << 25)
+#define SUPC_WUIR_WKUPT9_m   	0x02000000
+#define SUPC_WUIR_WKUPT9_v(x)	(((x) >> 25) & 0x1)
 #define SUPC_WUIR_WKUPT9_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT9_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT10     	(1 << 26)
+#define SUPC_WUIR_WKUPT10(x)  	((x) << 26)
+#define SUPC_WUIR_WKUPT10_m   	0x04000000
+#define SUPC_WUIR_WKUPT10_v(x)	(((x) >> 26) & 0x1)
 #define SUPC_WUIR_WKUPT10_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT10_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT11     	(1 << 27)
+#define SUPC_WUIR_WKUPT11(x)  	((x) << 27)
+#define SUPC_WUIR_WKUPT11_m   	0x08000000
+#define SUPC_WUIR_WKUPT11_v(x)	(((x) >> 27) & 0x1)
 #define SUPC_WUIR_WKUPT11_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT11_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT12     	(1 << 28)
+#define SUPC_WUIR_WKUPT12(x)  	((x) << 28)
+#define SUPC_WUIR_WKUPT12_m   	0x10000000
+#define SUPC_WUIR_WKUPT12_v(x)	(((x) >> 28) & 0x1)
 #define SUPC_WUIR_WKUPT12_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT12_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT13     	(1 << 29)
+#define SUPC_WUIR_WKUPT13(x)  	((x) << 29)
+#define SUPC_WUIR_WKUPT13_m   	0x20000000
+#define SUPC_WUIR_WKUPT13_v(x)	(((x) >> 29) & 0x1)
 #define SUPC_WUIR_WKUPT13_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT13_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT14     	(1 << 30)
+#define SUPC_WUIR_WKUPT14(x)  	((x) << 30)
+#define SUPC_WUIR_WKUPT14_m   	0x40000000
+#define SUPC_WUIR_WKUPT14_v(x)	(((x) >> 30) & 0x1)
 #define SUPC_WUIR_WKUPT14_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT14_LOW_TO_HIGH	0x1
-#define SUPC_WUIR_WKUPT15     	(1 << 31)
+#define SUPC_WUIR_WKUPT15(x)  	((x) << 31)
+#define SUPC_WUIR_WKUPT15_m   	0x80000000
+#define SUPC_WUIR_WKUPT15_v(x)	(((x) >> 31) & 0x1)
 #define SUPC_WUIR_WKUPT15_HIGH_TO_LOW	0x0
 #define SUPC_WUIR_WKUPT15_LOW_TO_HIGH	0x1
 
@@ -9491,13 +9551,19 @@ struct __struct_SUPC_WUIR
 #define SUPC_SR_BODRSTS     	(1 << 3)
 #define SUPC_SR_SMRSTS     	(1 << 4)
 #define SUPC_SR_SMS     	(1 << 5)
-#define SUPC_SR_SMOS     	(1 << 6)
+#define SUPC_SR_SMOS(x)  	((x) << 6)
+#define SUPC_SR_SMOS_m   	0x00000040
+#define SUPC_SR_SMOS_v(x)	(((x) >> 6) & 0x1)
 #define SUPC_SR_SMOS_HIGH	0x0
 #define SUPC_SR_SMOS_LOW	0x1
-#define SUPC_SR_OSCSEL     	(1 << 7)
+#define SUPC_SR_OSCSEL(x)  	((x) << 7)
+#define SUPC_SR_OSCSEL_m   	0x00000080
+#define SUPC_SR_OSCSEL_v(x)	(((x) >> 7) & 0x1)
 #define SUPC_SR_OSCSEL_RC	0x0
 #define SUPC_SR_OSCSEL_CRYST	0x1
-#define SUPC_SR_FWUPIS     	(1 << 12)
+#define SUPC_SR_FWUPIS(x)  	((x) << 12)
+#define SUPC_SR_FWUPIS_m   	0x00001000
+#define SUPC_SR_FWUPIS_v(x)	(((x) >> 12) & 0x1)
 #define SUPC_SR_FWUPIS_LOW	0x0
 #define SUPC_SR_FWUPIS_HIGH	0x1
 #define SUPC_SR_WKUPIS0     	(1 << 16)

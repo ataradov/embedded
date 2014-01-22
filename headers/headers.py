@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Copyright (c) 2013, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -31,10 +31,12 @@
 import sys
 import optparse
 import sam3u
+import samd20
 
 #------------------------------------------------------------------------------
 db_all = [
   ('sam3u',	sam3u.db),
+  ('samd20',	samd20.db),
 ]
 
 #------------------------------------------------------------------------------
@@ -85,7 +87,7 @@ def gen_peripheral_register(options, name, reg):
         for f_name_i in f_names:
           f_name_full = '_'.join([name, r_name, f_name_i.upper()])
 
-          if f_size == 1:
+          if f_size == 1 and len(f_values) == 0:
             s += '#define %s%s     \t(1 << %d)\n' % (options.prefix, f_name_full, f_offset)
           else:
             f_mask = (1 << f_size)-1
@@ -287,4 +289,3 @@ def main():
 
 #------------------------------------------------------------------------------
 main()
-
