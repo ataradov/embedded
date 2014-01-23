@@ -3908,9 +3908,8 @@ struct __struct_TC_8_EVCTRL
 #define TC_8_INTENCLR_OVF     	(1 << 0)
 #define TC_8_INTENCLR_ERR     	(1 << 1)
 #define TC_8_INTENCLR_SYNCRDY     	(1 << 3)
-#define TC_8_INTENCLR_MC(x)  	((x) << 4)
-#define TC_8_INTENCLR_MC_m   	0x00000030
-#define TC_8_INTENCLR_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_8_INTENCLR_MC0     	(1 << 4)
+#define TC_8_INTENCLR_MC1     	(1 << 5)
 
 struct __struct_TC_8_INTENCLR
 {
@@ -3918,16 +3917,16 @@ struct __struct_TC_8_INTENCLR
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_8_INTENSET_OVF     	(1 << 0)
 #define TC_8_INTENSET_ERR     	(1 << 1)
 #define TC_8_INTENSET_SYNCRDY     	(1 << 3)
-#define TC_8_INTENSET_MC(x)  	((x) << 4)
-#define TC_8_INTENSET_MC_m   	0x00000030
-#define TC_8_INTENSET_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_8_INTENSET_MC0     	(1 << 4)
+#define TC_8_INTENSET_MC1     	(1 << 5)
 
 struct __struct_TC_8_INTENSET
 {
@@ -3935,16 +3934,16 @@ struct __struct_TC_8_INTENSET
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_8_INTFLAG_OVF     	(1 << 0)
 #define TC_8_INTFLAG_ERR     	(1 << 1)
 #define TC_8_INTFLAG_SYNCRDY     	(1 << 3)
-#define TC_8_INTFLAG_MC(x)  	((x) << 4)
-#define TC_8_INTFLAG_MC_m   	0x00000030
-#define TC_8_INTFLAG_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_8_INTFLAG_MC0     	(1 << 4)
+#define TC_8_INTFLAG_MC1     	(1 << 5)
 
 struct __struct_TC_8_INTFLAG
 {
@@ -3952,7 +3951,8 @@ struct __struct_TC_8_INTFLAG
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
@@ -4124,9 +4124,8 @@ struct __struct_TC_16_EVCTRL
 #define TC_16_INTENCLR_OVF     	(1 << 0)
 #define TC_16_INTENCLR_ERR     	(1 << 1)
 #define TC_16_INTENCLR_SYNCRDY     	(1 << 3)
-#define TC_16_INTENCLR_MC(x)  	((x) << 4)
-#define TC_16_INTENCLR_MC_m   	0x00000030
-#define TC_16_INTENCLR_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_16_INTENCLR_MC0     	(1 << 4)
+#define TC_16_INTENCLR_MC1     	(1 << 5)
 
 struct __struct_TC_16_INTENCLR
 {
@@ -4134,16 +4133,16 @@ struct __struct_TC_16_INTENCLR
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_16_INTENSET_OVF     	(1 << 0)
 #define TC_16_INTENSET_ERR     	(1 << 1)
 #define TC_16_INTENSET_SYNCRDY     	(1 << 3)
-#define TC_16_INTENSET_MC(x)  	((x) << 4)
-#define TC_16_INTENSET_MC_m   	0x00000030
-#define TC_16_INTENSET_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_16_INTENSET_MC0     	(1 << 4)
+#define TC_16_INTENSET_MC1     	(1 << 5)
 
 struct __struct_TC_16_INTENSET
 {
@@ -4151,16 +4150,16 @@ struct __struct_TC_16_INTENSET
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_16_INTFLAG_OVF     	(1 << 0)
 #define TC_16_INTFLAG_ERR     	(1 << 1)
 #define TC_16_INTFLAG_SYNCRDY     	(1 << 3)
-#define TC_16_INTFLAG_MC(x)  	((x) << 4)
-#define TC_16_INTFLAG_MC_m   	0x00000030
-#define TC_16_INTFLAG_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_16_INTFLAG_MC0     	(1 << 4)
+#define TC_16_INTFLAG_MC1     	(1 << 5)
 
 struct __struct_TC_16_INTFLAG
 {
@@ -4168,7 +4167,8 @@ struct __struct_TC_16_INTFLAG
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
@@ -4340,9 +4340,8 @@ struct __struct_TC_32_EVCTRL
 #define TC_32_INTENCLR_OVF     	(1 << 0)
 #define TC_32_INTENCLR_ERR     	(1 << 1)
 #define TC_32_INTENCLR_SYNCRDY     	(1 << 3)
-#define TC_32_INTENCLR_MC(x)  	((x) << 4)
-#define TC_32_INTENCLR_MC_m   	0x00000030
-#define TC_32_INTENCLR_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_32_INTENCLR_MC0     	(1 << 4)
+#define TC_32_INTENCLR_MC1     	(1 << 5)
 
 struct __struct_TC_32_INTENCLR
 {
@@ -4350,16 +4349,16 @@ struct __struct_TC_32_INTENCLR
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_32_INTENSET_OVF     	(1 << 0)
 #define TC_32_INTENSET_ERR     	(1 << 1)
 #define TC_32_INTENSET_SYNCRDY     	(1 << 3)
-#define TC_32_INTENSET_MC(x)  	((x) << 4)
-#define TC_32_INTENSET_MC_m   	0x00000030
-#define TC_32_INTENSET_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_32_INTENSET_MC0     	(1 << 4)
+#define TC_32_INTENSET_MC1     	(1 << 5)
 
 struct __struct_TC_32_INTENSET
 {
@@ -4367,16 +4366,16 @@ struct __struct_TC_32_INTENSET
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
 #define TC_32_INTFLAG_OVF     	(1 << 0)
 #define TC_32_INTFLAG_ERR     	(1 << 1)
 #define TC_32_INTFLAG_SYNCRDY     	(1 << 3)
-#define TC_32_INTFLAG_MC(x)  	((x) << 4)
-#define TC_32_INTFLAG_MC_m   	0x00000030
-#define TC_32_INTFLAG_MC_v(x)	(((x) >> 4) & 0x3)
+#define TC_32_INTFLAG_MC0     	(1 << 4)
+#define TC_32_INTFLAG_MC1     	(1 << 5)
 
 struct __struct_TC_32_INTFLAG
 {
@@ -4384,7 +4383,8 @@ struct __struct_TC_32_INTFLAG
   uint8_t	err	: 1;
   uint8_t		: 1;
   uint8_t	syncrdy	: 1;
-  uint8_t	mc	: 2;
+  uint8_t	mc0	: 1;
+  uint8_t	mc1	: 1;
   uint8_t		: 2;
 };
 
