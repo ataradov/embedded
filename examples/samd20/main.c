@@ -34,8 +34,8 @@
 #include "samd20.h"
 
 //-----------------------------------------------------------------------------
-#define LED_PIN         PORTA_OUT_P14
-#define BUTTON_PIN      PORTA_IN_P15
+#define LED_PIN         PORT_OUT_P14
+#define BUTTON_PIN      PORT_IN_P15
 
 #define PERIOD_FAST     100
 #define PERIOD_SLOW     500
@@ -50,14 +50,14 @@ void _exit(int status)
 //-----------------------------------------------------------------------------
 static inline void timer_sync(void)
 {
-  while (TC0_16_STATUS & TC0_16_STATUS_SYNCBUSY);
+  while (TC0_16_STATUS & TC_16_STATUS_SYNCBUSY);
 }
 
 //-----------------------------------------------------------------------------
 static void timer_set_period(uint16_t i)
 {
   timer_sync();
-  TC0_16_CC0 = (F_CPU / 1000ul / 256) * i;
+  TC0_16_CC(0) = (F_CPU / 1000ul / 256) * i;
 
   timer_sync();
   TC0_16_COUNT = 0;
@@ -67,7 +67,7 @@ static void timer_set_period(uint16_t i)
 void irq_handler_tc0(void)
 {
   PORTA_OUTTGL = LED_PIN;
-  TC0_16_INTFLAG = TC0_16_INTENSET_MC0;
+  TC0_16_INTFLAG = TC_16_INTENSET_MC0;
 }
 
 //-----------------------------------------------------------------------------
@@ -75,13 +75,16 @@ static void timer_init(void)
 {
   PM_APBCMASK |= PM_APBCMASK_TC0;
 
-  GCLK_CLKCTRL = GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_ID(0x13/*TC0,TC1*/) | GCLK_CLKCTRL_GEN(0);
+  GCLK_CLKCTRL = GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_ID(GCLK_CLKCTRL_ID_TC0_TC1) |
+      GCLK_CLKCTRL_GEN(0);
 
   timer_sync();
-  TC0_16_CTRLA = TC0_16_CTRLA_MODE(0/*16 bit*/) | TC0_16_CTRLA_WAVEGEN(1/*MFRQ*/) |
-      TC0_16_CTRLA_PRESCALER(6/*DIV256*/) | TC0_16_CTRLA_PRESCSYNC(0x1/*PRESC*/);
+  TC0_16_CTRLA = TC_16_CTRLA_MODE(TC_16_CTRLA_MODE_COUNT16) |
+      TC_16_CTRLA_WAVEGEN(TC_16_CTRLA_WAVEGEN_MFRQ) |
+      TC_16_CTRLA_PRESCALER(TC_16_CTRLA_PRESCALER_256) |
+      TC_16_CTRLA_PRESCSYNC(TC_16_CTRLA_PRESCSYNC_PRESC);
 
-  TC0_16_INTENSET = TC0_16_INTENSET_MC0;
+  TC0_16_INTENSET = TC_16_INTENSET_MC0;
   NVIC_ISER = NVIC_ISER_TC0;
 
   timer_sync();
@@ -90,13 +93,13 @@ static void timer_init(void)
   timer_set_period(PERIOD_SLOW);
 
   timer_sync();
-  TC0_16_CTRLA |= TC0_16_CTRLA_ENABLE;
+  TC0_16_CTRLA |= TC_16_CTRLA_ENABLE;
 }
 
 //-----------------------------------------------------------------------------
 static void uart_sync(void)
 {
-  while (SC3_USART_STATUS & SC3_USART_STATUS_SYNCBUSY);
+  while (SC3_USART_STATUS & SC_USART_STATUS_SYNCBUSY);
 }
 
 //-----------------------------------------------------------------------------
@@ -104,33 +107,35 @@ static void uart_init(uint32_t baud)
 {
   uint64_t br = (uint64_t)65536 * (F_CPU - 16 * baud) / F_CPU;
 
-  PORTA_DIRSET = PORTA_OUT_P24;
-  PORTA_OUTSET = PORTA_OUT_P24;
-  PORTA_PINCFG24 |= PORTA_PINCFG24_PMUXEN;
-  PORTA_PMUX12 = PORTA_PMUX12_PMUXE(2/*C*/);
+  PORTA_DIRSET = PORT_OUT_P24;
+  PORTA_OUTSET = PORT_OUT_P24;
+  PORTA_PINCFG(24) |= PORT_PINCFG_PMUXEN;
+  PORTA_PMUX(12) = PORT_PMUX_PMUXE(2/*C*/);
 
   PM_APBCMASK |= PM_APBCMASK_SERCOM3;
 
-  GCLK_CLKCTRL = GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_ID(0x10/*SERCOM3_CORE*/) | GCLK_CLKCTRL_GEN(0);
+  GCLK_CLKCTRL = GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_ID(GCLK_CLKCTRL_ID_SERCOM3_CORE) |
+                 GCLK_CLKCTRL_GEN(0);
 
   uart_sync();
-  SC3_USART_CTRLA = SC3_USART_CTRLA_MODE(1/*USART*/) | SC3_USART_CTRLA_DORD |
-      SC3_USART_CTRLA_RXPO(3/*PAD3*/) | SC3_USART_CTRLA_TXPO/*PAD2*/;
+  SC3_USART_CTRLA = SC_USART_CTRLA_MODE(SC_USART_CTRLA_MODE_USART_INT_CLK) |
+      SC_USART_CTRLA_RXPO(3/*PAD3*/) | SC_USART_CTRLA_TXPO/*PAD2*/ |
+      SC_USART_CTRLA_DORD(SC_USART_CTRLA_DORD_LSB_FIRST);
 
   uart_sync();
-  SC3_USART_CTRLB = SC3_USART_CTRLB_TXEN | SC3_USART_CTRLB_CHSIZE(0/*8 bits*/);
+  SC3_USART_CTRLB = SC_USART_CTRLB_TXEN | SC_USART_CTRLB_CHSIZE(SC_USART_CTRLB_CHSIZE_8_BITS);
 
   uart_sync();
   SC3_USART_BAUD = (uint16_t)br;
 
   uart_sync();
-  SC3_USART_CTRLA |= SC3_USART_CTRLA_ENABLE;
+  SC3_USART_CTRLA |= SC_USART_CTRLA_ENABLE;
 }
 
 //-----------------------------------------------------------------------------
 static void uart_putc(char c)
 {
-  while (!(SC3_USART_INTFLAG & SC3_USART_INTFLAG_DRE));
+  while (!(SC3_USART_INTFLAG & SC_USART_INTFLAG_DRE));
   SC3_USART_DATA = c;
 }
 
@@ -148,7 +153,7 @@ static void sys_init(void)
   asm volatile ("cpsie i");
 
   // Switch to 8MHz clock (disable prescaler)
-  SYSCTRL_OSC8M = (SYSCTRL_OSC8M & ~SYSCTRL_OSC8M_PRESC_MSK) | SYSCTRL_OSC8M_PRESC(0);
+  SYSCTRL_OSC8M = (SYSCTRL_OSC8M & ~SYSCTRL_OSC8M_PRESC_m) | SYSCTRL_OSC8M_PRESC(0);
 }
 
 //-----------------------------------------------------------------------------
@@ -167,7 +172,7 @@ int main(void)
 
   PORTA_DIRCLR = BUTTON_PIN;
   PORTA_OUTSET = BUTTON_PIN;
-  PORTA_PINCFG15 |= PORTA_PINCFG15_INEN | PORTA_PINCFG15_PULLEN;
+  PORTA_PINCFG(15) |= PORT_PINCFG_INEN | PORT_PINCFG_PULLEN;
 
   while (1)
   {

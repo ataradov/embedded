@@ -50,7 +50,7 @@ $(CONFIG)/demo.bin: $(CONFIG)/demo.elf
 	@$(CC) $(CFLAGS) $(filter %$(subst .o,.c,$(notdir $@)), $(SRCS)) -c -o $@
 
 directory:
-	@gmkdir -p $(CONFIG)
+	@mkdir -p $(CONFIG)
 
 size: $(CONFIG)/demo.elf
 	@echo
