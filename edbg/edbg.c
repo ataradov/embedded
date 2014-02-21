@@ -156,6 +156,8 @@ typedef struct
 } debugger_t;
 
 //-----------------------------------------------------------------------------
+// TODO: This is actually wrong. 0x0bc11477 is a common ID for all Cortex devices
+// The real ID must be read from the device I/O-space.
 static target_t targets[] =
 {
   { 0x0bc11477, "SAMD20J18", 0, 131072, 64, 4096, 256 },
