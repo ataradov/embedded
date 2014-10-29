@@ -27,6 +27,7 @@
  */
 
 /*- Includes ----------------------------------------------------------------*/
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -36,7 +37,8 @@
 #include "dap.h"
 
 /*- Definitions -------------------------------------------------------------*/
-#define DSU_DID                0x41002018
+#define DSU_CTRL_STATUS        0x41002100
+#define DSU_DID                0x41002118
 
 /*- Types -------------------------------------------------------------------*/
 typedef struct
@@ -74,7 +76,7 @@ static void target_cm0p_select(void)
     if (device->dsu_did == dsu_did)
     {
       verbose("Target: %s\n", device->name);
-      dap_read_word(device->flash_start); // Some devices need this for Flash to start working
+      dap_read_word(DSU_CTRL_STATUS);
       return;
     }
   }
@@ -87,8 +89,8 @@ static void target_cm0p_erase(void)
 {
   verbose("Erasing... ");
 
-  dap_write_word(0x41002100, 0x00001f00); // Clear flags
-  dap_write_word(0x41002100, 0x00000010); // Chip erase
+  dap_write_word(DSU_CTRL_STATUS, 0x00001f00); // Clear flags
+  dap_write_word(DSU_CTRL_STATUS, 0x00000010); // Chip erase
   while (0 == (dap_read_word(0x41002100) & 0x00000100));
 
   verbose("done.\n");
@@ -108,10 +110,12 @@ static void target_cm0p_lock(void)
 static void target_cm0p_program(char *name)
 {
   uint32_t addr = device->flash_start;
-  uint8_t *buf;
   uint32_t size;
+  uint32_t offs = 0;
+  uint32_t number_of_rows;
+  uint8_t *buf;
 
-  if (dap_read_word(0x41002100) & 0x00010000)
+  if (dap_read_word(DSU_CTRL_STATUS) & 0x00010000)
     error_exit("devices is locked, perform a chip erase before programming");
 
   buf = buf_alloc(device->flash_size);
@@ -122,7 +126,9 @@ static void target_cm0p_program(char *name)
 
   verbose("Programming...");
 
-  while (1)
+  number_of_rows = (size + device->row_size - 1) / device->row_size;
+
+  for (uint32_t row = 0; row < number_of_rows; row++)
   {
     dap_write_word(0x4100401c, addr >> 1);
 
@@ -132,14 +138,10 @@ static void target_cm0p_program(char *name)
     dap_write_word(0x41004000, 0x0000a502); // Erase Row
     while (0 == (dap_read_word(0x41004014) & 1));
 
-    dap_write_block(addr, &buf[addr], device->row_size);
+    dap_write_block(addr, &buf[offs], device->row_size);
 
     addr += device->row_size;
-
-    if (size > device->row_size)
-      size -= device->row_size;
-    else
-      break;
+    offs += device->row_size;
 
     verbose(".");
   }
@@ -153,10 +155,11 @@ static void target_cm0p_program(char *name)
 static void target_cm0p_verify(char *name)
 {
   uint32_t addr = device->flash_start;
-  uint8_t *bufa, *bufb;
   uint32_t size, block_size;
+  uint32_t offs = 0;
+  uint8_t *bufa, *bufb;
 
-  if (dap_read_word(0x41002100) & 0x00010000)
+  if (dap_read_word(DSU_CTRL_STATUS) & 0x00010000)
     error_exit("devices is locked, unable to verify");
 
   bufa = buf_alloc(device->flash_size);
@@ -174,10 +177,10 @@ static void target_cm0p_verify(char *name)
 
     for (int i = 0; i < (int)block_size; i++)
     {
-      if (bufa[addr + i] != bufb[i])
+      if (bufa[offs + i] != bufb[i])
       {
         verbose("\nat address 0x%x expected 0x%02x, read 0x%02x\n",
-            addr + i, bufa[addr + i], bufb[i]);
+            addr + i, bufa[offs + i], bufb[i]);
         free(bufa);
         free(bufb);
         error_exit("verification failed");
@@ -185,6 +188,7 @@ static void target_cm0p_verify(char *name)
     }
 
     addr += device->row_size;
+    offs += device->row_size;
     size -= block_size;
 
     verbose(".");
@@ -201,9 +205,10 @@ static void target_cm0p_read(char *name)
 {
   uint32_t size = device->flash_size;
   uint32_t addr = device->flash_start;
+  uint32_t offs = 0;
   uint8_t *buf;
 
-  if (dap_read_word(0x41002100) & 0x00010000)
+  if (dap_read_word(DSU_CTRL_STATUS) & 0x00010000)
     error_exit("devices is locked, unable to read");
 
   buf = buf_alloc(device->flash_size);
@@ -212,9 +217,10 @@ static void target_cm0p_read(char *name)
 
   while (size)
   {
-    dap_read_block(addr, &buf[addr], device->row_size);
+    dap_read_block(addr, &buf[offs], device->row_size);
 
     addr += device->row_size;
+    offs += device->row_size;
     size -= device->row_size;
 
     verbose(".");

@@ -36,7 +36,20 @@
 #include "dap.h"
 
 /*- Definitions -------------------------------------------------------------*/
+#define SECTOR_SIZE            256
+
 #define CHIPID_CIDR            0x400e0740
+
+#define EEFC_FMR               0x400e0a00
+#define EEFC_FCR               0x400e0a04
+#define EEFC_FSR               0x400e0a08
+#define EEFC_FRR               0x400e0a0c
+#define FSR_FRDY               1
+
+#define CMD_GETD               0x5a000000
+#define CMD_EWP                0x5a000003
+#define CMD_EA                 0x5a000005
+#define CMD_SGPB               0x5a00000b
 
 /*- Types -------------------------------------------------------------------*/
 typedef struct
@@ -46,23 +59,17 @@ typedef struct
   uint32_t  flash_start;
   uint32_t  flash_size;
   uint32_t  page_size;
-  uint32_t  n_pages;
-  uint32_t  row_size;
-
-//.nsectors   =  64,
-//.sector_size = 8192,
-//.page_size   = 512,
 } device_t;
 
 
 /*- Variables ---------------------------------------------------------------*/
 static device_t devices[] =
 {
-  { 0x247e0ae0, "SAM G53G19 Rev A",	0,	512*1024,	0,	0,	0 },
-  { 0x247e0ae8, "SAM G53N19 Rev A",	0,	512*1024,	0,	0,	0 },
-  { 0x247e0ae1, "SAM G53G19 Rev B",	0,	512*1024,	0,	0,	0 },
-  { 0x247e0ae9, "SAM G53N19 Rev B",	0,	512*1024,	0,	0,	0 },
-  { 0, "", 0, 0, 0, 0, 0 },
+  { 0x247e0ae0, "SAM G53G19 Rev A",	0x00400000, 	512*1024,	512 },
+  { 0x247e0ae8, "SAM G53N19 Rev A",	0x00400000, 	512*1024,	512 },
+  { 0x247e0ae1, "SAM G53G19 Rev B",	0x00400000, 	512*1024,	512 },
+  { 0x247e0ae9, "SAM G53N19 Rev B",	0x00400000, 	512*1024,	512 },
+  { 0, "", 0, 0, 0 },
 };
 
 static device_t *device;
@@ -80,7 +87,30 @@ static void target_cm4_select(void)
   {
     if (device->chip_id == chip_id)
     {
+      uint32_t fl_id, fl_size, fl_page_size, fl_nb_palne, fl_nb_lock;
+
       verbose("Target: %s\n", device->name);
+
+      dap_write_word(EEFC_FCR, CMD_GETD);
+      while (0 == (dap_read_word(EEFC_FSR) & FSR_FRDY));
+
+      fl_id = dap_read_word(EEFC_FRR);
+      check(fl_id, "Cannot read flash descriptor, check Erase pin state");
+
+      fl_size = dap_read_word(EEFC_FRR);
+      check(fl_size == device->flash_size, "Invalid reported Flash size (%d)", fl_size);
+
+      fl_page_size = dap_read_word(EEFC_FRR);
+      check(fl_page_size == device->page_size, "Invalid reported page size (%d)", fl_page_size);
+
+      fl_nb_palne = dap_read_word(EEFC_FRR);
+      for (uint32_t i = 0; i < fl_nb_palne; i++)
+        dap_read_word(EEFC_FRR);
+
+      fl_nb_lock =  dap_read_word(EEFC_FRR);
+      for (uint32_t i = 0; i < fl_nb_lock; i++)
+        dap_read_word(EEFC_FRR);
+
       return;
     }
   }
@@ -91,35 +121,138 @@ static void target_cm4_select(void)
 //-----------------------------------------------------------------------------
 static void target_cm4_erase(void)
 {
-  verbose("CM4 erase\n");
-//0x400e0a00 - EFC
+  verbose("Erasing... ");
+
+  dap_write_word(EEFC_FCR, CMD_EA);
+  while (0 == (dap_read_word(EEFC_FSR) & FSR_FRDY));
+
+  verbose("done.\n");
 }
 
 //-----------------------------------------------------------------------------
 static void target_cm4_lock(void)
 {
-  verbose("CM4 lock\n");
+  verbose("Locking... ");
+
+  dap_write_word(EEFC_FCR, CMD_SGPB | (0 << 8));
+
+  verbose("done.\n");
 }
 
 //-----------------------------------------------------------------------------
 static void target_cm4_program(char *name)
 {
-  verbose("CM4 program %s\n", name);
-  (void)name;
+  uint32_t addr = device->flash_start;
+  uint32_t size, number_of_pages;
+  uint32_t offs = 0;
+  uint8_t *buf;
+
+  buf = buf_alloc(device->flash_size);
+
+  size = load_file(name, buf, device->flash_size);
+
+  memset(&buf[size], 0xff, device->flash_size - size);
+
+  verbose("Programming...");
+
+  number_of_pages = (size + device->page_size - 1) / device->page_size;
+
+  for (uint32_t page = 0; page < number_of_pages; page++)
+  {
+    for (uint32_t sector = 0; sector < device->page_size / SECTOR_SIZE; sector++)
+    {
+      dap_write_block(addr, &buf[offs], SECTOR_SIZE);
+      addr += SECTOR_SIZE;
+      offs += SECTOR_SIZE;
+    }
+
+    dap_write_word(EEFC_FCR, CMD_EWP | (page << 8));
+    while (0 == (dap_read_word(EEFC_FSR) & FSR_FRDY));
+
+    verbose(".");
+  }
+
+  buf_free(buf);
+
+  verbose(" done.\n");
 }
 
 //-----------------------------------------------------------------------------
 static void target_cm4_verify(char *name)
 {
-  verbose("CM4 verify %s\n", name);
-  (void)name;
+  uint32_t addr = device->flash_start;
+  uint32_t size, block_size;
+  uint32_t offs = 0;
+  uint8_t *bufa, *bufb;
+
+  bufa = buf_alloc(device->flash_size);
+  bufb = buf_alloc(SECTOR_SIZE);
+
+  size = load_file(name, bufa, device->flash_size);
+
+  verbose("Verification...");
+
+  while (size)
+  {
+    dap_read_block(addr, bufb, SECTOR_SIZE);
+
+    block_size = (size > SECTOR_SIZE) ? SECTOR_SIZE : size;
+
+    for (int i = 0; i < (int)block_size; i++)
+    {
+      if (bufa[offs + i] != bufb[i])
+      {
+        verbose("\nat address 0x%x expected 0x%02x, read 0x%02x\n",
+            addr + i, bufa[offs + i], bufb[i]);
+        free(bufa);
+        free(bufb);
+        error_exit("verification failed");
+      }
+    }
+
+    addr += SECTOR_SIZE;
+    offs += SECTOR_SIZE;
+    size -= block_size;
+
+    verbose(".");
+  }
+
+  free(bufa);
+  free(bufb);
+
+  verbose(" done.\n");
 }
 
 //-----------------------------------------------------------------------------
 static void target_cm4_read(char *name)
 {
-  verbose("CM4 read %s\n", name);
-  (void)name;
+  uint32_t size = device->flash_size;
+  uint32_t addr = device->flash_start;
+  uint32_t offs = 0;
+  uint8_t *buf;
+
+  buf = buf_alloc(device->flash_size);
+
+  verbose("Reading...");
+
+  while (size)
+  {
+    for (uint32_t sector = 0; sector < device->page_size / SECTOR_SIZE; sector++)
+    {
+      dap_read_block(addr, &buf[offs], SECTOR_SIZE);
+      addr += SECTOR_SIZE;
+      offs += SECTOR_SIZE;
+      size -= SECTOR_SIZE;
+    }
+
+    verbose(".");
+  }
+
+  save_file(name, buf, device->flash_size);
+
+  buf_free(buf);
+
+  verbose(" done.\n");
 }
 
 //-----------------------------------------------------------------------------

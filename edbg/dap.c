@@ -314,6 +314,8 @@ uint32_t dap_read_reg(uint8_t reg)
   dap_cmd(buf, sizeof(buf), 4);
   // TODO: check SWD_DP_R_CTRL_STAT
 
+  check(1 == buf[1], "no response while reading the register");
+
   return ((uint32_t)buf[5] << 24) | ((uint32_t)buf[4] << 16) |
          ((uint32_t)buf[3] << 8) | (uint32_t)buf[2];
 }
