@@ -402,7 +402,7 @@ int main(int argc, char **argv)
   get_debugger_info();
   dap_connect();
   dap_swj_clock(DAP_FREQ);
-  dap_transfer_configure(0, 100, 0);
+  dap_transfer_configure(0, 4096, 0);
   dap_swd_configure(0);
   dap_led(0, 1);
   dap_reset_target();

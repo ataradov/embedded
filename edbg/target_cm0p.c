@@ -76,7 +76,6 @@ static void target_cm0p_select(void)
     if (device->dsu_did == dsu_did)
     {
       verbose("Target: %s\n", device->name);
-      dap_read_word(DSU_CTRL_STATUS);
       return;
     }
   }
@@ -91,6 +90,7 @@ static void target_cm0p_erase(void)
 
   dap_write_word(DSU_CTRL_STATUS, 0x00001f00); // Clear flags
   dap_write_word(DSU_CTRL_STATUS, 0x00000010); // Chip erase
+  usleep(100000);
   while (0 == (dap_read_word(0x41002100) & 0x00000100));
 
   verbose("done.\n");
