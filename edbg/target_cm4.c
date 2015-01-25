@@ -38,6 +38,10 @@
 /*- Definitions -------------------------------------------------------------*/
 #define SECTOR_SIZE            256
 
+#define DHCSR                  0xe000edf0
+#define DEMCR                  0xe000edfc
+#define AIRCR                  0xe000ed0c
+
 #define CHIPID_CIDR            0x400e0740
 
 #define EEFC_FMR               0x400e0a00
@@ -47,7 +51,8 @@
 #define FSR_FRDY               1
 
 #define CMD_GETD               0x5a000000
-#define CMD_EWP                0x5a000003
+#define CMD_WP                 0x5a000001
+#define CMD_EPA                0x5a000007
 #define CMD_EA                 0x5a000005
 #define CMD_SGPB               0x5a00000b
 
@@ -69,6 +74,7 @@ static device_t devices[] =
   { 0x247e0ae8, "SAM G53N19 Rev A",	0x00400000, 	512*1024,	512 },
   { 0x247e0ae1, "SAM G53G19 Rev B",	0x00400000, 	512*1024,	512 },
   { 0x247e0ae9, "SAM G53N19 Rev B",	0x00400000, 	512*1024,	512 },
+  { 0x24570ae0, "SAM G55J18 ES",	0x00400000, 	512*1024,	512 },
   { 0, "", 0, 0, 0 },
 };
 
@@ -80,6 +86,11 @@ static device_t *device;
 static void target_cm4_select(void)
 {
   uint32_t chip_id;
+
+  // Stop the core
+  dap_write_word(DHCSR, 0xa05f0003);
+  dap_write_word(DEMCR, 0x00000001);
+  dap_write_word(AIRCR, 0xfa050004);
 
   chip_id = dap_read_word(CHIPID_CIDR);
 
@@ -157,6 +168,16 @@ static void target_cm4_program(char *name)
 
   number_of_pages = (size + device->page_size - 1) / device->page_size;
 
+  for (uint32_t page = 0; page < number_of_pages; page += 8)
+  {
+    dap_write_word(EEFC_FCR, CMD_EPA | ((page | 1) << 8));
+    while (0 == (dap_read_word(EEFC_FSR) & FSR_FRDY));
+
+    verbose(".");
+  }
+
+  verbose(",");
+
   for (uint32_t page = 0; page < number_of_pages; page++)
   {
     for (uint32_t sector = 0; sector < device->page_size / SECTOR_SIZE; sector++)
@@ -166,7 +187,7 @@ static void target_cm4_program(char *name)
       offs += SECTOR_SIZE;
     }
 
-    dap_write_word(EEFC_FCR, CMD_EWP | (page << 8));
+    dap_write_word(EEFC_FCR, CMD_WP | (page << 8));
     while (0 == (dap_read_word(EEFC_FSR) & FSR_FRDY));
 
     verbose(".");

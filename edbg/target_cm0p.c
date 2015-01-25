@@ -37,6 +37,10 @@
 #include "dap.h"
 
 /*- Definitions -------------------------------------------------------------*/
+#define DHCSR                  0xe000edf0
+#define DEMCR                  0xe000edfc
+#define AIRCR                  0xe000ed0c
+
 #define DSU_CTRL_STATUS        0x41002100
 #define DSU_DID                0x41002118
 
@@ -57,6 +61,7 @@ static device_t devices[] =
 {
   { 0x10001100, "SAM D20J18A",	0,	256*1024,	64,	4096,	256 }, 
   { 0x10010100, "SAM D21J18A",	0,	256*1024,	64,	4096,	256 },
+  { 0x10010019, "SAM R21G18 ES", 0,	256*1024,	64,	4096,	256 },
   { 0x10010119, "SAM R21G18",	0,	256*1024,	64,	4096,	256 },
   { 0, "", 0, 0, 0, 0, 0 },
 };
@@ -69,6 +74,12 @@ static device_t *device;
 static void target_cm0p_select(void)
 {
   uint32_t dsu_did;
+
+  // Stop the core
+  dap_write_word(DHCSR, 0xa05f0003);
+  dap_write_word(DEMCR, 0x00000001);
+  dap_write_word(AIRCR, 0xfa050004);
+
   dsu_did = dap_read_word(DSU_DID);
 
   for (device = devices; device->dsu_did > 0; device++)

@@ -53,7 +53,7 @@
 #define DEBUGGER_PID      "2111"
 #define MAX_DEBUGGERS     20
 #define HID_BUFFER_SIZE   513 // Atmel EDBG expects 512 bytes + 1 byte for report ID
-#define DAP_FREQ          8000000 // Hz
+#define DAP_FREQ          16000000 // Hz
 
 /*- Types -------------------------------------------------------------------*/
 typedef struct
@@ -401,12 +401,13 @@ int main(int argc, char **argv)
 
   get_debugger_info();
   dap_connect();
-  dap_swj_clock(DAP_FREQ);
   dap_transfer_configure(0, 4096, 0);
   dap_swd_configure(0);
   dap_led(0, 1);
   dap_reset_target();
   dap_reset_link();
+  dap_swj_clock(DAP_FREQ);
+
   target = target_identify();
   dap_target_prepare();
 
