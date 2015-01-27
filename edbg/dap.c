@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2013-2015, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -34,6 +34,7 @@
 #include <string.h>
 #include "edbg.h"
 #include "dap.h"
+#include "dbg.h"
 
 /*- Definitions -------------------------------------------------------------*/
 
@@ -144,7 +145,7 @@ void dap_led(int index, int state)
   buf[0] = ID_DAP_LED;
   buf[1] = index;
   buf[2] = state;
-  dap_cmd(buf, sizeof(buf), 3);
+  dbg_dap_cmd(buf, sizeof(buf), 3);
 
   check(DAP_OK == buf[0], "DAP_LED failed");
 }
@@ -156,7 +157,7 @@ void dap_connect(void)
 
   buf[0] = ID_DAP_CONNECT;
   buf[1] = DAP_PORT_SWD;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
 
   check(DAP_PORT_SWD == buf[0], "DAP_CONNECT failed");
 }
@@ -167,7 +168,7 @@ void dap_disconnect(void)
   uint8_t buf[1];
 
   buf[0] = ID_DAP_DISCONNECT;
-  dap_cmd(buf, sizeof(buf), 1);
+  dbg_dap_cmd(buf, sizeof(buf), 1);
 }
 
 //-----------------------------------------------------------------------------
@@ -180,7 +181,7 @@ void dap_swj_clock(uint32_t clock)
   buf[2] = (clock >> 8) & 0xff;
   buf[3] = (clock >> 16) & 0xff;
   buf[4] = (clock >> 24) & 0xff;
-  dap_cmd(buf, sizeof(buf), 5);
+  dbg_dap_cmd(buf, sizeof(buf), 5);
 
   check(DAP_OK == buf[0], "SWJ_CLOCK failed");
 }
@@ -196,7 +197,7 @@ void dap_transfer_configure(uint8_t idle, uint16_t count, uint16_t retry)
   buf[3] = (count >> 8) & 0xff;
   buf[4] = retry & 0xff;
   buf[5] = (retry >> 8) & 0xff;
-  dap_cmd(buf, sizeof(buf), 6);
+  dbg_dap_cmd(buf, sizeof(buf), 6);
 
   check(DAP_OK == buf[0], "TRANSFER_CONFIGURE failed");
 }
@@ -208,13 +209,13 @@ void dap_swd_configure(uint8_t cfg)
 
   buf[0] = ID_DAP_SWD_CONFIGURE;
   buf[1] = cfg;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
 
   check(DAP_OK == buf[0], "SWD_CONFIGURE failed");
 }
 
 //-----------------------------------------------------------------------------
-void get_debugger_info(void)
+void dap_get_debugger_info(void)
 {
   uint8_t buf[100];
   char str[500];
@@ -222,35 +223,35 @@ void get_debugger_info(void)
 
   buf[0] = ID_DAP_INFO;
   buf[1] = DAP_INFO_VENDOR;
-  dap_cmd(buf, sizeof(buf), 2);
-  memcpy(ptr, &buf[1], buf[0]-1); // -1 fixes a bug in Atmel EDBG
+  dbg_dap_cmd(buf, sizeof(buf), 2);
+  memcpy(ptr, &buf[1], buf[0]-1); // -1 to adjust for trailing zero
   ptr += buf[0]-1;
   *ptr++ = ' ';
 
   buf[0] = ID_DAP_INFO;
   buf[1] = DAP_INFO_PRODUCT;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
   memcpy(ptr, &buf[1], buf[0]-1);
   ptr += buf[0]-1;
   *ptr++ = ' ';
 
   buf[0] = ID_DAP_INFO;
   buf[1] = DAP_INFO_SER_NUM;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
   memcpy(ptr, &buf[1], buf[0]-1);
   ptr += buf[0]-1;
   *ptr++ = ' ';
 
   buf[0] = ID_DAP_INFO;
   buf[1] = DAP_INFO_FW_VER;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
   memcpy(ptr, &buf[1], buf[0]-1);
   ptr += buf[0]-1;
   *ptr++ = ' ';
 
   buf[0] = ID_DAP_INFO;
   buf[1] = DAP_INFO_CAPABILITIES;
-  dap_cmd(buf, sizeof(buf), 2);
+  dbg_dap_cmd(buf, sizeof(buf), 2);
 
   *ptr++ = '(';
   if (buf[1] & DAP_PORT_SWD)
@@ -271,7 +272,7 @@ void dap_reset_target(void)
   uint8_t buf[1];
 
   buf[0] = ID_DAP_RESET_TARGET;
-  dap_cmd(buf, sizeof(buf), 1);
+  dbg_dap_cmd(buf, sizeof(buf), 1);
 
   check(DAP_OK == buf[0], "RESET_TARGET failed");
 }
@@ -289,7 +290,7 @@ void dap_reset_target_hw(void)
   buf[4] = 0;
   buf[5] = 0;
   buf[6] = 0;
-  dap_cmd(buf, sizeof(buf), 7);
+  dbg_dap_cmd(buf, sizeof(buf), 7);
 
   //-------------
   buf[0] = ID_DAP_SWJ_PINS;
@@ -299,7 +300,7 @@ void dap_reset_target_hw(void)
   buf[4] = 0;
   buf[5] = 0;
   buf[6] = 0;
-  dap_cmd(buf, sizeof(buf), 7);
+  dbg_dap_cmd(buf, sizeof(buf), 7);
 }
 
 //-----------------------------------------------------------------------------
@@ -311,7 +312,7 @@ uint32_t dap_read_reg(uint8_t reg)
   buf[1] = 0x00; // DAP index
   buf[2] = 0x01; // Request size
   buf[3] = reg | DAP_TRANSFER_RnW;
-  dap_cmd(buf, sizeof(buf), 4);
+  dbg_dap_cmd(buf, sizeof(buf), 4);
   // TODO: check SWD_DP_R_CTRL_STAT
 
   check(1 == buf[1], "no response while reading the register");
@@ -333,7 +334,7 @@ void dap_write_reg(uint8_t reg, uint32_t data)
   buf[5] = (data >> 8) & 0xff;
   buf[6] = (data >> 16) & 0xff;
   buf[7] = (data >> 24) & 0xff;
-  dap_cmd(buf, sizeof(buf), 8);
+  dbg_dap_cmd(buf, sizeof(buf), 8);
   // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
 }
 
@@ -363,7 +364,7 @@ void dap_read_block(uint32_t addr, uint8_t *data, int size)
   buf[2] = (size / 4) & 0xff;
   buf[3] = ((size / 4) >> 8) & 0xff;
   buf[4] = SWD_AP_DRW | DAP_TRANSFER_RnW | DAP_TRANSFER_APnDP;
-  dap_cmd(buf, sizeof(buf), 5);
+  dbg_dap_cmd(buf, sizeof(buf), 5);
   // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
 
   memcpy(data, &buf[3], size);
@@ -382,7 +383,7 @@ void dap_write_block(uint32_t addr, uint8_t *data, int size)
   buf[3] = ((size / 4) >> 8) & 0xff;
   buf[4] = SWD_AP_DRW | DAP_TRANSFER_APnDP;
   memcpy(&buf[5], data, size);
-  dap_cmd(buf, sizeof(buf), 5 + size);
+  dbg_dap_cmd(buf, sizeof(buf), 5 + size);
   // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
 }
 
@@ -395,7 +396,7 @@ void dap_reset_link(void)
   buf[0] = ID_DAP_SWJ_SEQUENCE;
   buf[1] = 7 * 8;
   memset(&buf[2], 0xff, 7);
-  dap_cmd(buf, sizeof(buf), 9);
+  dbg_dap_cmd(buf, sizeof(buf), 9);
 
   check(DAP_OK == buf[0], "SWJ_SEQUENCE failed");
 
@@ -404,7 +405,7 @@ void dap_reset_link(void)
   buf[1] = 2 * 8;
   buf[2] = 0x9e;
   buf[3] = 0xe7;
-  dap_cmd(buf, sizeof(buf), 4);
+  dbg_dap_cmd(buf, sizeof(buf), 4);
 
   check(DAP_OK == buf[0], "SWJ_SEQUENCE failed");
 
@@ -412,7 +413,7 @@ void dap_reset_link(void)
   buf[0] = ID_DAP_SWJ_SEQUENCE;
   buf[1] = 7 * 8;
   memset(&buf[2], 0xff, 7);
-  dap_cmd(buf, sizeof(buf), 9);
+  dbg_dap_cmd(buf, sizeof(buf), 9);
 
   check(DAP_OK == buf[0], "SWJ_SEQUENCE failed");
 
@@ -420,7 +421,7 @@ void dap_reset_link(void)
   buf[0] = ID_DAP_SWJ_SEQUENCE;
   buf[1] = 8;
   buf[2] = 0x00;
-  dap_cmd(buf, sizeof(buf), 3);
+  dbg_dap_cmd(buf, sizeof(buf), 3);
 
   check(DAP_OK == buf[0], "SWJ_SEQUENCE failed");
 }

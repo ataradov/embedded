@@ -1,4 +1,4 @@
-BIN = edbg
+UNAME := $(shell uname)
 
 SRCS = \
   dap.c \
@@ -9,12 +9,21 @@ SRCS = \
 
 HDRS = \
   dap.h \
+  dbg.h \
   edbg.h \
   target.h
 
-CFLAGS += -W -Wall -O2 -std=gnu99
+ifeq ($(UNAME), Linux)
+  BIN = edbg
+  SRCS += dbg_lin.c
+  LIBS += -ludev
+else
+  BIN = edbg.exe
+  SRCS += dbg_win.c
+  LIBS += -lhid -lsetupapi
+endif
 
-LIBS += -ludev
+CFLAGS += -W -Wall -O2 -std=gnu99
 
 all: $(SRCS) $(HDRS)
 	gcc $(CFLAGS) $(SRCS) $(LIBS) -o $(BIN)

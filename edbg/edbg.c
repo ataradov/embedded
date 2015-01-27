@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2013-2015, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,39 +30,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdarg.h>
 #include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
 #include <getopt.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <sys/ioctl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <linux/types.h>
-#include <linux/input.h>
-#include <linux/hidraw.h>
-#include <libudev.h>
 #include "target.h"
 #include "edbg.h"
 #include "dap.h"
+#include "dbg.h"
 
 /*- Definitions -------------------------------------------------------------*/
-#define DEBUGGER_VID      "03eb"
-#define DEBUGGER_PID      "2111"
 #define MAX_DEBUGGERS     20
-#define HID_BUFFER_SIZE   513 // Atmel EDBG expects 512 bytes + 1 byte for report ID
 #define DAP_FREQ          16000000 // Hz
 
+#ifndef O_BINARY
+#define O_BINARY 0
+#endif
+
 /*- Types -------------------------------------------------------------------*/
-typedef struct
-{
-  char     *name;
-  char     *serial;
-  char     *manufacturer;
-  char     *product;
-} debugger_t;
 
 /*- Variables ---------------------------------------------------------------*/
 static const struct option long_options[] =
@@ -92,13 +81,6 @@ static char *g_serial = NULL;
 static bool g_list = false;
 static bool g_verbose = false;
 
-static debugger_t debuggers[MAX_DEBUGGERS];
-static int n_debuggers = 0;
-static int debugger = -1;
-static int debugger_fd = -1;
-static target_t *target;
-static uint8_t hid_buffer[HID_BUFFER_SIZE];
-
 /*- Implementations ---------------------------------------------------------*/
 
 //-----------------------------------------------------------------------------
@@ -123,8 +105,7 @@ void check(bool cond, char *fmt, ...)
   {
     va_list args;
 
-    if (-1 != debugger_fd)
-      close(debugger_fd);
+    dbg_close();
 
     va_start(args, fmt);
     fprintf(stderr, "Error: ");
@@ -141,8 +122,7 @@ void error_exit(char *fmt, ...)
 {
   va_list args;
 
-  if (-1 != debugger_fd)
-    close(debugger_fd);
+  dbg_close();
 
   va_start(args, fmt);
   fprintf(stderr, "Error: ");
@@ -156,11 +136,8 @@ void error_exit(char *fmt, ...)
 //-----------------------------------------------------------------------------
 void perror_exit(char *text)
 {
-  if (-1 != debugger_fd)
-    close(debugger_fd);
-
+  dbg_close();
   perror(text);
-
   exit(1);
 }
 
@@ -189,7 +166,7 @@ int load_file(char *name, uint8_t *data, int size)
 
   check(NULL != name, "input file name is not specified");
 
-  fd = open(name, O_RDONLY);
+  fd = open(name, O_RDONLY | O_BINARY);
 
   if (fd < 0)
     perror_exit("open()");
@@ -202,7 +179,7 @@ int load_file(char *name, uint8_t *data, int size)
 
   if (rsize < 0)
     perror_exit("read()");
-  
+
   check(rsize == stat.st_size, "cannot fully read file");
 
   close(fd);
@@ -217,7 +194,7 @@ void save_file(char *name, uint8_t *data, int size)
 
   check(NULL != name, "output file name is not specified");
 
-  fd = open(name, O_WRONLY | O_TRUNC | O_CREAT, 0644);
+  fd = open(name, O_WRONLY | O_TRUNC | O_CREAT | O_BINARY, 0644);
 
   if (fd < 0)
     perror_exit("open()");
@@ -233,87 +210,9 @@ void save_file(char *name, uint8_t *data, int size)
 }
 
 //-----------------------------------------------------------------------------
-int dap_cmd(uint8_t *data, int size, int rsize)
-{
-  char cmd = data[0];
-  int res;
-
-  memset(hid_buffer, 0xff, HID_BUFFER_SIZE);
-
-  hid_buffer[0] = 0x00; // Report ID
-  memcpy(&hid_buffer[1], data, rsize);
-
-  res = write(debugger_fd, hid_buffer, HID_BUFFER_SIZE/*rsize+1*/); // Atmel EDBG expects 512 bytes
-  if (res < 0)
-    perror_exit("debugger write()");
-
-  res = read(debugger_fd, hid_buffer, sizeof(hid_buffer));
-  if (res < 0)
-    perror_exit("debugger read()");
-
-  check(res, "empty response received");
-
-  check(hid_buffer[0] == cmd, "invalid response received");
-
-  res--;
-  memcpy(data, &hid_buffer[1], (size < res) ? size : res);
-
-  return res;
-}
-
-//-----------------------------------------------------------------------------
-static void enumerate_debuggers(void)
-{
-  struct udev *udev;
-  struct udev_enumerate *enumerate;
-  struct udev_list_entry *devices, *dev_list_entry;
-  struct udev_device *dev, *parent;
-
-  udev = udev_new();
-  check(udev, "unable to create udev object");
-
-  enumerate = udev_enumerate_new(udev);
-  udev_enumerate_add_match_subsystem(enumerate, "hidraw");
-  udev_enumerate_scan_devices(enumerate);
-  devices = udev_enumerate_get_list_entry(enumerate);
-
-  udev_list_entry_foreach(dev_list_entry, devices)
-  {
-    const char *path;
-
-    path = udev_list_entry_get_name(dev_list_entry);
-    dev = udev_device_new_from_syspath(udev, path);
-
-    parent = udev_device_get_parent_with_subsystem_devtype(dev, "usb", "usb_device");
-    check(parent, "unable to find parent usb device");
-
-    if (0 == strcmp(udev_device_get_sysattr_value(parent, "idVendor"), DEBUGGER_VID) &&
-        0 == strcmp(udev_device_get_sysattr_value(parent, "idProduct"), DEBUGGER_PID) &&
-        n_debuggers < MAX_DEBUGGERS)
-    {
-      const char *serial = udev_device_get_sysattr_value(parent, "serial");
-      const char *manufacturer = udev_device_get_sysattr_value(parent, "manufacturer");
-      const char *product = udev_device_get_sysattr_value(parent, "product");
-
-      debuggers[n_debuggers].name = strdup(udev_device_get_devnode(dev));
-      debuggers[n_debuggers].serial = serial ? strdup(serial) : "<unknown>";
-      debuggers[n_debuggers].manufacturer = manufacturer ? strdup(manufacturer) : "<unknown>";
-      debuggers[n_debuggers].product = product ? strdup(product) : "<unknown>";
-
-      n_debuggers++;
-    }
-
-    udev_device_unref(parent);
-  }
-
-  udev_enumerate_unref(enumerate);
-  udev_unref(udev);
-}
-
-//-----------------------------------------------------------------------------
 static void print_help(char *name)
 {
-  printf("Atmel EDBG programmer v0.5, built " __DATE__ " " __TIME__ " \n");
+  printf("Atmel EDBG programmer v0.8, built " __DATE__ " " __TIME__ " \n");
   printf("Usage: %s [options]\n", name);
   printf("Options:\n");
   printf("  -h, --help                 print this help message and exit\n");
@@ -359,6 +258,11 @@ static void parse_command_line(int argc, char **argv)
 //-----------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
+  debugger_t debuggers[MAX_DEBUGGERS];
+  int n_debuggers = 0;
+  int debugger = -1;
+  target_t *target;
+
   parse_command_line(argc, argv);
 
   if (!(g_erase || g_program || g_verify || g_lock || g_read || g_list))
@@ -367,7 +271,7 @@ int main(int argc, char **argv)
   if (g_read && (g_erase || g_program || g_verify || g_lock))
     error_exit("mutually exclusive actions specified");
 
-  enumerate_debuggers();
+  n_debuggers = dbg_enumerate(debuggers, MAX_DEBUGGERS);
 
   if (g_list)
   {
@@ -394,12 +298,9 @@ int main(int argc, char **argv)
   else if (n_debuggers > 1 && -1 == debugger)
     error_exit("more than one debugger found, please specify a serial number");
 
-  debugger_fd = open(debuggers[debugger].name, O_RDWR);
+  dbg_open(&debuggers[debugger]);
 
-  if (debugger_fd < 0)
-    perror_exit("unable to open device");
-
-  get_debugger_info();
+  dap_get_debugger_info();
   dap_connect();
   dap_transfer_configure(0, 4096, 0);
   dap_swd_configure(0);
@@ -432,7 +333,7 @@ int main(int argc, char **argv)
   dap_disconnect();
   dap_led(0, 0);
 
-  close(debugger_fd);
+  dbg_close();
 
   return 0;
 }

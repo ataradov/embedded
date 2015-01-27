@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2013-2015, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -34,14 +34,13 @@
 #include <stdbool.h>
 
 /*- Prototypes --------------------------------------------------------------*/
-int dap_cmd(uint8_t *data, int size, int rsize);
 void dap_led(int index, int state);
 void dap_connect(void);
 void dap_disconnect(void);
 void dap_swj_clock(uint32_t clock);
 void dap_transfer_configure(uint8_t idle, uint16_t count, uint16_t retry);
 void dap_swd_configure(uint8_t cfg);
-void get_debugger_info(void);
+void dap_get_debugger_info(void);
 void dap_reset_target(void);
 void dap_reset_target_hw(void);
 uint32_t dap_read_reg(uint8_t reg);

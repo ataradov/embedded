@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2014, Alex Taradov <alex@taradov.com>
+ * Copyright (c) 2013-2015, Alex Taradov <alex@taradov.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
