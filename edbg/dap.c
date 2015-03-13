@@ -111,7 +111,8 @@ enum
   SWD_DP_R_IDCODE    = 0x00,
   SWD_DP_W_ABORT     = 0x00,
   SWD_DP_R_CTRL_STAT = 0x04,
-  SWD_DP_W_WCR       = 0x04,
+  SWD_DP_W_CTRL_STAT = 0x04, // When CTRLSEL == 0
+  SWD_DP_W_WCR       = 0x04, // When CTRLSEL == 1
   SWD_DP_R_RESEND    = 0x08,
   SWD_DP_W_SELECT    = 0x08,
   SWD_DP_R_RDBUFF    = 0x0c,
@@ -313,9 +314,12 @@ uint32_t dap_read_reg(uint8_t reg)
   buf[2] = 0x01; // Request size
   buf[3] = reg | DAP_TRANSFER_RnW;
   dbg_dap_cmd(buf, sizeof(buf), 4);
-  // TODO: check SWD_DP_R_CTRL_STAT
 
-  check(1 == buf[1], "no response while reading the register");
+  if (1 != buf[0] || 1 != buf[1])
+  {
+    error_exit("invalid response while reading the register 0x%02x (count = %d, value = %d)",
+        reg, buf[0], buf[1]);
+  }
 
   return ((uint32_t)buf[5] << 24) | ((uint32_t)buf[4] << 16) |
          ((uint32_t)buf[3] << 8) | (uint32_t)buf[2];
@@ -335,7 +339,12 @@ void dap_write_reg(uint8_t reg, uint32_t data)
   buf[6] = (data >> 16) & 0xff;
   buf[7] = (data >> 24) & 0xff;
   dbg_dap_cmd(buf, sizeof(buf), 8);
-  // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
+
+  if (1 != buf[0] || 1 != buf[1])
+  {
+    error_exit("invalid response while writing the register 0x%02x (count = %d, value = %d)",
+        reg, buf[0], buf[1]);
+  }
 }
 
 //-----------------------------------------------------------------------------
@@ -365,7 +374,6 @@ void dap_read_block(uint32_t addr, uint8_t *data, int size)
   buf[3] = ((size / 4) >> 8) & 0xff;
   buf[4] = SWD_AP_DRW | DAP_TRANSFER_RnW | DAP_TRANSFER_APnDP;
   dbg_dap_cmd(buf, sizeof(buf), 5);
-  // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
 
   memcpy(data, &buf[3], size);
 }
@@ -384,7 +392,6 @@ void dap_write_block(uint32_t addr, uint8_t *data, int size)
   buf[4] = SWD_AP_DRW | DAP_TRANSFER_APnDP;
   memcpy(&buf[5], data, size);
   dbg_dap_cmd(buf, sizeof(buf), 5 + size);
-  // TODO: check SWD_DP_R_CTRL_STAT (0xF0000040)
 }
 
 //-----------------------------------------------------------------------------
@@ -436,7 +443,7 @@ uint32_t dap_read_idcode(void)
 void dap_target_prepare(void)
 {
   dap_write_reg(SWD_DP_W_SELECT, 0x00000000);
-  dap_write_reg(SWD_DP_W_WCR, 0x50000f00);
+  dap_write_reg(SWD_DP_W_CTRL_STAT, 0x50000f00);
   dap_write_reg(SWD_AP_CSW, 0x23000052);
 }
 

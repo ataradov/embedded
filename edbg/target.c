@@ -37,11 +37,13 @@
 /*- Variables ---------------------------------------------------------------*/
 extern target_ops_t target_cm0p_ops;
 extern target_ops_t target_cm4_ops;
+extern target_ops_t target_cm7_ops;
 
 static target_t targets[] =
 {
   { 0x0bc11477, "Cortex-M0+",		&target_cm0p_ops },
   { 0x2ba01477, "Cortex-M4",		&target_cm4_ops },
+  { 0x0bd11477, "Cortex-M7",		&target_cm7_ops },
   { 0, "", NULL },
 };
 
