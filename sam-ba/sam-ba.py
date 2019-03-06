@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Copyright (c) 2014, Alex Taradov <taradov@gmail.com>
+# Copyright (c) 2014-2019, Alex Taradov <taradov@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -34,18 +34,23 @@ import optparse
 import binascii
 
 #------------------------------------------------------------------------------
-EEFC_FMR    = 0x400E0A00
-EEFC_FCR    = 0x400E0A04
-EEFC_FSR    = 0x400E0A08
-EEFC_FRR    = 0x400E0A0C
+N_PLANES    = 2 # NOTE: change according to your device, no auto detect for this
+
+EEFC_FMR    = [0x400e0a00, 0x400e0c00]
+EEFC_FCR    = [0x400e0a04, 0x400e0c04]
+EEFC_FSR    = [0x400e0a08, 0x400e0c08]
+EEFC_FRR    = [0x400e0a0c, 0x400e0c0c]
 FSR_FRDY    = 1
 
-CMD_GETD    = 0x5A000000
-CMD_EWP     = 0x5A000003
-CMD_EA      = 0x5A000005
-CMD_SGPB    = 0x5A00000B
+CMD_GETD    = 0x5a000000
+CMD_WP      = 0x5a000001
+CMD_EPA     = 0x5a000007
+CMD_EA      = 0x5a000005
+CMD_SGPB    = 0x5a00000b
 
-FLASH_START = 0x00400000
+FLASH_START          = 0x00400000
+FLASH_PAGE_SIZE      = 512
+PAGES_IN_ERASE_BLOCK = 16
 
 #------------------------------------------------------------------------------
 def error(text):
@@ -90,8 +95,8 @@ def main():
   parser = optparse.OptionParser(usage = 'usage: %prog [options] file')
   parser.add_option('-d', '--debug', dest = 'debug', help = 'enable debug output', default = False, action = 'store_true')
   parser.add_option('-i', '--interface', dest = 'port', help = 'communication interface [default /dev/ttyUSB0]', default = '/dev/ttyUSB0', metavar = 'PATH')
-  parser.add_option('-p', '--program', dest = 'image', help = 'file to program', metavar = 'FILE')
   parser.add_option('-e', '--erase', dest = 'erase', help = 'erase entire chip', default = False, action = 'store_true')
+  parser.add_option('-p', '--program', dest = 'image', help = 'file to program', metavar = 'FILE')
   (options, args) = parser.parse_args()
 
   try:
@@ -112,38 +117,43 @@ def main():
   else:
     error('SAM-BA not found\n')
 
-  reg(port, EEFC_FCR, CMD_GETD)
-  while reg(port, EEFC_FSR) & FSR_FRDY == 0: pass
+  # We assume that both planes are the same and take parameters from the last one
+  for plane in range(N_PLANES):
+    reg(port, EEFC_FCR[plane], CMD_GETD)
+    while reg(port, EEFC_FSR[plane]) & FSR_FRDY == 0: pass
 
-  fl_id = reg(port, EEFC_FRR)
-  fl_size = reg(port, EEFC_FRR)
-  fl_page_size = reg(port, EEFC_FRR)
-  fl_nb_palne = reg(port, EEFC_FRR)
-  fl_plane = [reg(port, EEFC_FRR) for i in range(fl_nb_palne)]
-  fl_nb_lock = reg(port, EEFC_FRR)
-  fl_lock = [reg(port, EEFC_FRR) for i in range(fl_nb_lock)]
+    fl_id = reg(port, EEFC_FRR[plane])
+    fl_size = reg(port, EEFC_FRR[plane])
+    fl_page_size = reg(port, EEFC_FRR[plane])
+    fl_nb_palne = reg(port, EEFC_FRR[plane])
+    fl_plane = [reg(port, EEFC_FRR[plane]) for i in range(fl_nb_palne)]
+    fl_nb_lock = reg(port, EEFC_FRR[plane])
+    fl_lock = [reg(port, EEFC_FRR[plane]) for i in range(fl_nb_lock)]
 
-#  debug(options.debug, 'Flash Interface Description [FL_ID] : %08x\n' % fl_id)
-#  debug(options.debug, 'Flash size in bytes [FL_SIZE]       : %d\n' % fl_size)
-#  debug(options.debug, 'Page size in bytes [FL_PAGE_SIZE]   : %d\n' % fl_page_size)
-#  debug(options.debug, 'Number of planes [FL_NB_PLANE]      : %d\n' % fl_nb_palne)
-#  for i, size in enumerate(fl_plane):
-#    debug(options.debug, 'Plane %d size in bytes [FL_PLANE]    : %d\n' % (i, size))
-#  debug(options.debug, 'Number of lock bits [FL_NB_LOCK]    : %d\n' % fl_nb_lock)
+    #debug(options.debug, 'Plane %d:\n' % plane)
+    #debug(options.debug, '  Flash Interface Description [FL_ID] : %08x\n' % fl_id)
+    #debug(options.debug, '  Flash size in bytes [FL_SIZE]       : %d\n' % fl_size)
+    #debug(options.debug, '  Page size in bytes [FL_PAGE_SIZE]   : %d\n' % fl_page_size)
+    #debug(options.debug, '  Number of planes [FL_NB_PLANE]      : %d\n' % fl_nb_palne)
+    #for i, size in enumerate(fl_plane):
+    #  debug(options.debug, '  Plane %d size in bytes [FL_PLANE]    : %d\n' % (i, size))
+    #debug(options.debug, '  Number of lock bits [FL_NB_LOCK]    : %d\n' % fl_nb_lock)
 
-  if fl_page_size == 0:
+  if FLASH_PAGE_SIZE == 0:
     error('Reported Flash page size is 0. Check Erase pin state.\n')
 
   if options.erase:
     debug(options.debug, 'Erasing Flash...')
 
-    reg(port, EEFC_FCR, CMD_EA)
-    while reg(port, EEFC_FSR) & FSR_FRDY == 0: pass
+    for plane in range(N_PLANES):
+      reg(port, EEFC_FCR[plane], CMD_EA)
+
+    for plane in range(N_PLANES):
+      while reg(port, EEFC_FSR[plane]) & FSR_FRDY == 0: pass
 
     debug(options.debug, ' done\n')
 
   if options.image:
-    debug(options.debug, 'Programming Flash... ')
     try:
       f = open(options.image, 'rb')
       data = f.read()
@@ -151,29 +161,48 @@ def main():
     except OSError, inst:
       error(inst)
 
-    while (len(data) % fl_page_size) > 0:
+    while (len(data) % FLASH_PAGE_SIZE) > 0:
       data += chr(0xff)
 
-    number_of_pages = len(data) / fl_page_size
+    number_of_pages = len(data) / FLASH_PAGE_SIZE
 
-    for page_index in range(number_of_pages):
-      page = map(ord, data[page_index * fl_page_size:(page_index+1) * fl_page_size])
-      for i in range(0, fl_page_size, 4):
-        value = (page[i+3] << 24) | (page[i+2] << 16) | (page[i+1] << 8) | page[i]
-        reg(port, FLASH_START + i, value)
+    debug(options.debug, 'Prepared %d bytes spanning %d pages\n' % (len(data), number_of_pages))
 
-      reg(port, EEFC_FCR, CMD_EWP | (page_index << 8))
-      while reg(port, EEFC_FSR) & FSR_FRDY == 0: pass
+    debug(options.debug, 'Programming... ')
+
+    for page in range(0, number_of_pages, PAGES_IN_ERASE_BLOCK):
+      plane = page / (fl_size / FLASH_PAGE_SIZE)
+      reg(port, EEFC_FCR[plane], CMD_EPA | ((page | 2) << 8))
+      while reg(port, EEFC_FSR[plane]) & FSR_FRDY == 0: pass
       sys.stdout.write('.')
       sys.stdout.flush()
+
+    sys.stdout.write(',')
+    sys.stdout.flush()
+
+    addr = FLASH_START
+
+    for page in range(number_of_pages):
+      page_data = map(ord, data[page * FLASH_PAGE_SIZE:(page+1) * FLASH_PAGE_SIZE])
+      for i in range(0, FLASH_PAGE_SIZE, 4):
+        value = (page_data[i+3] << 24) | (page_data[i+2] << 16) | (page_data[i+1] << 8) | page_data[i]
+        reg(port, addr + i, value)
+
+      plane = page / (fl_size / FLASH_PAGE_SIZE)
+      reg(port, EEFC_FCR[plane], CMD_WP | (page << 8))
+      while reg(port, EEFC_FSR[plane]) & FSR_FRDY == 0: pass
+
+      sys.stdout.write('.')
+      sys.stdout.flush()
+      addr += FLASH_PAGE_SIZE
 
     debug(options.debug, ' done\n')
 
     # Set GPNVM1 bit
     debug(options.debug, 'Setting GPNVM1 bit...')
 
-    reg(port, EEFC_FCR, CMD_SGPB | (1 << 8))
-    while reg(port, EEFC_FSR) & FSR_FRDY == 0: pass
+    reg(port, EEFC_FCR[0], CMD_SGPB | (1 << 8))
+    while reg(port, EEFC_FSR[0]) & FSR_FRDY == 0: pass
 
     debug(options.debug, ' done')
     debug(True, '\n')
