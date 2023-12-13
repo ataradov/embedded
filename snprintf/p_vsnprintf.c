@@ -296,19 +296,19 @@ int p_vsnprintf(char *buf, size_t size, const char *fmt, va_list ap)
     {
       long long val;
 
-      if (flags & FL_LONG)
-        val = va_arg(ap, long);
-      else if (flags & FL_LONG_LONG)
+      if (flags & FL_LONG_LONG)
         val = va_arg(ap, long long);
+      else if (flags & FL_LONG)
+        val = va_arg(ap, long);
       else
         val = va_arg(ap, int);
 
       if (flags & FL_UNSIGNED)
       {
-        if (flags & FL_LONG)
-          val = (unsigned long)val;
-        else if (flags & FL_LONG_LONG)
+        if (flags & FL_LONG_LONG)
           val = (unsigned long long)val;
+        else if (flags & FL_LONG)
+          val = (unsigned long)val;
         else if (flags & FL_CHAR)
           val = (unsigned char)val;
         else if (flags & FL_SHORT)
